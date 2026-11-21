@@ -541,7 +541,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       h("p", { class: "note", style: "margin:10px 0" }, `Rule: "${DIRECTIVE}" Accommodations, financial aid and demographics are never shared.`),
       h("div", { class: "row", style: "justify-content:space-between" },
         h("span", { class: "note" }, "Estimates have their own HCP category, so Dana can share credentials without them."),
-        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP")));
+        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export learner profile")));
   }
   function adviceBlock(client, label) {
     const a = advise(client);
@@ -749,7 +749,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     if (i === 2) {
       title = "HCP entry for a credential + the advising grant, as LearnCard stores them";
       obj = { credentialEntry: credEntry(byId.netsec), advisingGrant: grantsJson()[2] };
-      keys = ["entry: issuer-attested, VC as evidence, status follows the issuer", "grant: read categories follow Dana's toggles", "full export: use 'Export as HCP'"];
+      keys = ["entry: issuer-attested, VC as evidence, status follows the issuer", "grant: read categories follow Dana's toggles", "full export: use 'Export learner profile'"];
     } else { [[title, obj], [, keys]] = X[MAP[i]]; }
     return h("div", {}, h("div", { class: "note" }, title), h("ul", { class: "keyfields" }, keys.map((k) => h("li", {}, k))),
       h("pre", { tabindex: 0, "aria-label": title }, JSON.stringify(obj, null, 2)));
@@ -876,16 +876,16 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       const counts = {};
       for (const e of ex.entries) counts[e.assertion.declarationType] = (counts[e.assertion.declarationType] || 0) + 1;
       box.replaceChildren(
-        h("h2", { id: "modalTitle" }, "Export my LearnCard as HCP"),
-        h("p", { class: "note" }, "A standard HCP ContextExport that any HCP provider can import, plus a grants file. Choose the pieces to include."),
+        h("h2", { id: "modalTitle" }, "Export my learner profile"),
+        h("p", { class: "note" }, "Dana's learner profile in the open HCP format, so any HCP-compatible service can import it. Choose what to include."),
         h("div", { class: "row", style: "margin:8px 0" }, PIECES.map(([k, label]) => h("label", { class: "pill", style: "padding:4px 10px;font-size:13px" },
           h("input", { type: "checkbox", checked: S.pieces[k], disabled: k === "plan" && !S.planSaved, on: { change: (e) => { S.pieces[k] = e.target.checked; draw(); } } }),
           " " + label + (k === "plan" && !S.planSaved ? " (none saved yet)" : "")))),
         h("p", { style: "font-size:14px" }, `${ex.entries.length} entries (${Object.entries(counts).map(([k, v]) => v + " " + k).join(", ") || "none"}) · ${ex.rules.length} rule · ${ex.directives.length} directive · ${ex.audit.length} audit events`),
         h("pre", { style: "max-height:42vh", tabindex: 0, "aria-label": "Export preview" }, JSON.stringify(ex, null, 2)),
         h("div", { class: "row", style: "margin-top:12px" },
-          h("button", { type: "button", class: "primary", on: { click: () => { download("dana-hcp-export.json", ex); act("context.exported", `HCP export: ${ex.entries.length} entries`); draw(); } } }, "Download export.json"),
-          h("button", { type: "button", on: { click: () => download("dana-hcp-grants.json", grantsJson()) } }, "Download grants.json"),
+          h("button", { type: "button", class: "primary", on: { click: () => { download("dana-learner-profile.hcp.json", ex); act("context.exported", `HCP export: ${ex.entries.length} entries`); draw(); } } }, "Download learner profile"),
+          h("button", { type: "button", on: { click: () => download("dana-sharing-permissions.hcp.json", grantsJson()) } }, "Download sharing permissions"),
           h("button", { type: "button", on: { click: () => { (navigator.clipboard ? navigator.clipboard.writeText(JSON.stringify(ex, null, 2)) : Promise.reject()).then(() => toast("Copied."), () => toast("Copy isn't available here; use Download.")); } } }, "Copy"),
           h("button", { type: "button", on: { click: closeModal } }, "Close")));
     };
@@ -915,7 +915,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     return h("div", {},
       h("div", { class: "row", style: "justify-content:space-between" },
         h("div", {}, h("h2", { id: "maph" }, "Where each piece goes in HCP"), h("p", { class: "sub" }, "HCP is the communication protocol underneath LearnCard. Every piece of information above maps to one HCP structure.")),
-        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP")),
+        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export learner profile")),
       h("div", { style: "overflow:auto;margin-top:10px" }, tbl),
       h("div", { class: "finding" }, h("b", {}, "Finding: "),
         "HCP grants are scoped by category and purpose, not by declaration type. For Dana to share credentials without sharing estimates, estimates need their own category. Here they use a LearnCard-defined category URI (",
@@ -947,7 +947,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       add("Directive", "ask first before sharing; travels with every disclosure", ex.directives[0], { step: 1 });
       add("Grant", "University advising agent may read what Dana shares, and save a plan Dana approves", G[2], { step: 2 });
       add("Standing rule", "never share accommodations, financial aid or demographics", ex.rules[0], { step: 2 });
-      add("ContextExport", "any time: Dana's whole context as one portable HCP file, plus grants", null, { action: true, step: 2 });
+      add("ContextExport", "any time: Dana's learner profile as one portable file (HCP format)", null, { action: true, step: 2 });
     }
     if (i === 3) {
       const who = S.advisor === "appb" ? "appb" : "agent";
@@ -986,7 +986,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       ...outs.map((it, n) => {
         const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
         const head = h("span", { class: "chiphead" }, kind ? dot(kind) : null, h("b", {}, it.type), it.decl ? h("span", { class: "pill" }, it.decl) : null);
-        if (it.action) return h("div", { class: "hcpchip big" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export as HCP"));
+        if (it.action) return h("div", { class: "hcpchip big" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export learner profile"));
         return h("details", { class: "hcpchip big", open: n === 0 }, h("summary", {}, head), h("pre", { tabindex: 0 }, JSON.stringify(it.json, null, 2)));
       }));
   }
@@ -994,7 +994,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
     const head = h("span", { class: "chiphead" }, h("span", { class: "hcptag" }, "HCP"), kind ? dot(kind) : null,
       h("b", {}, it.type), it.decl ? h("span", { class: "note" }, it.decl) : null, h("span", {}, it.label));
-    if (it.action) return h("div", { class: "hcpchip" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export as HCP"));
+    if (it.action) return h("div", { class: "hcpchip" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export learner profile"));
     return h("details", { class: "hcpchip" }, h("summary", {}, head), h("pre", { tabindex: 0 }, JSON.stringify(it.json, null, 2)));
   }
 
