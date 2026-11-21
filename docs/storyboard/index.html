@@ -62,8 +62,8 @@ button[aria-pressed="true"] { border-color: var(--text-secondary); font-weight: 
 @media (max-width: 900px) { .rail { grid-template-columns: repeat(4, 1fr); } }
 
 .stagehead { display: flex; justify-content: space-between; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 12px; }
-.grid3 { display: grid; grid-template-columns: 1.35fr 0.85fr 1fr; gap: 14px; align-items: start; }
-.grid3.nohood { grid-template-columns: 1.4fr 0.9fr; }
+.grid3 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: start; }
+.grid3.nohood { grid-template-columns: 1fr; }
 @media (max-width: 1100px) { .grid3, .grid3.nohood { grid-template-columns: 1fr; } }
 .panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 16px; min-width: 0; }
 
@@ -109,6 +109,24 @@ input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--text-pri
 .pk .val { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 
 /* system view */
+.ovgrid { display: grid; grid-template-columns: 1.75fr 1fr; gap: 18px; align-items: center; }
+@media (max-width: 900px) { .ovgrid { grid-template-columns: 1fr; } }
+#diagram svg { width: 100%; height: auto; display: block; }
+.dg-node rect { fill: var(--surface-1); stroke: var(--border); stroke-width: 1.5; }
+.dg-node text.t { fill: var(--text-primary); font-size: 18px; font-weight: 650; }
+.dg-node text.d { fill: var(--text-secondary); font-size: 13.5px; }
+.dg-node.off { opacity: 0.35; }
+.dg-node.on rect { stroke: var(--text-primary); stroke-width: 2; }
+.dg-node.hub rect { fill: var(--surface-2); }
+.dg-edge path { fill: none; stroke: var(--baseline); stroke-width: 1.5; }
+.dg-edge text { fill: var(--muted); font-size: 13.5px; }
+.dg-edge.on path { stroke: var(--text-primary); stroke-width: 2.25; }
+.dg-edge.on text { fill: var(--text-primary); font-weight: 600; }
+.dg-edge.revoked path { stroke: var(--critical); stroke-dasharray: 6 5; }
+.dg-edge.revoked text { fill: var(--critical); font-weight: 600; }
+.dg-arrow { fill: var(--baseline); }
+.dg-arrow.on { fill: var(--text-primary); }
+.dg-arrow.revoked { fill: var(--critical); }
 .flow { display: flex; flex-direction: column; gap: 0; }
 .node { border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; opacity: 0.45; transition: opacity .2s; background: var(--surface-1); }
 .node.on { opacity: 1; border-color: var(--text-secondary); box-shadow: 0 0 0 1px var(--text-secondary); }
@@ -214,9 +232,15 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     </div>
   </div>
 
+  <section class="panel" aria-labelledby="ovh" style="margin-bottom:14px">
+    <div class="ovgrid">
+      <div><h3 id="ovh">How it connects</h3><div id="diagram"></div></div>
+      <div><h3>What happens</h3><div id="system"></div></div>
+    </div>
+  </section>
+
   <div class="grid3" id="grid">
     <section class="panel" aria-labelledby="lvh"><h3 id="lvh">Learner view</h3><div id="learner"></div></section>
-    <section class="panel" aria-labelledby="svh"><h3 id="svh">System view</h3><div id="system"></div></section>
     <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">HCP output</h3><div id="hood"></div></section>
   </div>
 
@@ -601,24 +625,67 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   const ORDER = ["univ", "infer", "learncard", "agent", "appb"];
   const DESC = { univ: "assessment results", infer: "P(Known) estimates", learncard: "credentials, estimates, goals, permissions · uses HCP", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
   function viewSystem(st) {
-    const f = h("div", { class: "flow" });
-    ORDER.forEach((k, i) => {
-      if (i) {
-        const SHORT = { univ: "University", infer: "Inference engine", learncard: "LearnCard", agent: "Agent", appb: "App B" };
-        const ks = Object.keys(st.edges).filter((e) => e.endsWith("-" + k) && st.nodes.includes(e.split("-")[0]));
-        const key = ks[0];
-        const lbl = ks.map((e) => `${SHORT[e.split("-")[0]]} → ${st.edges[e]}`).join(" · ");
-        f.append(h("div", { class: "edge" + (key ? " on" : "") }, lbl));
-      }
-      f.append(h("div", { class: "node" + (st.nodes.includes(k) ? " on" : "") }, h("div", { class: "t" }, OPS[k]), h("div", { class: "d" }, DESC[k])));
-    });
     const outs = hcpOutputs(S.stage);
-    return h("div", {}, f, h("h3", { style: "margin-top:14px" }, "What happens"),
-      h("ol", { class: "msgs" }, st.msgs.map(([who, what], k) => {
-        const n = outs.filter((o) => o.step === k).length;
-        return h("li", {}, h("b", {}, who + ": "), what, n ? h("span", { class: "hcptag", style: "margin-left:6px", title: "Produces HCP output: see the HCP output column" }, n > 1 ? `HCP ×${n}` : "HCP") : null);
-      })),
-);
+    return h("ol", { class: "msgs", style: "margin-top:0" }, st.msgs.map(([who, what], k) => {
+      const n = outs.filter((o) => o.step === k).length;
+      return h("li", {}, h("b", {}, who + ": "), what, n ? h("span", { class: "hcptag", style: "margin-left:6px", title: "Produces HCP output: see the HCP output column" }, n > 1 ? `HCP ×${n}` : "HCP") : null);
+    }));
+  }
+
+  // ------------------------------------------------- high-level connection diagram
+  const DG_NODES = {
+    univ: { x: 10, y: 60, w: 220, hgt: 60, t: "University", d: "assessments · credentials" },
+    infer: { x: 10, y: 170, w: 220, hgt: 60, t: "Inference engine", d: "P(Known) estimates" },
+    dana: { x: 395, y: 2, w: 210, hgt: 58, t: "Dana", d: "decides who sees what" },
+    learncard: { x: 372, y: 102, w: 256, hgt: 92, t: "LearnCard", d: "Dana's context, via HCP", hub: true },
+    agent: { x: 760, y: 60, w: 230, hgt: 60, t: "University advising agent", d: "reads via HCP" },
+    appb: { x: 760, y: 170, w: 230, hgt: 60, t: "Career app B", d: "reads via HCP (4 h)" },
+  };
+  const DG_EDGES = [
+    { id: "univ-infer", d: "M120,120 L120,170", lx: 130, ly: 150, label: "evidence", anchor: "start" },
+    { id: "univ-learncard", d: "M230,90 C300,90 310,128 372,130", lx: 300, ly: 88, label: "credentials" },
+    { id: "infer-learncard", d: "M230,200 C300,200 310,166 372,166", lx: 300, ly: 218, label: "estimates" },
+    { id: "dana-learncard", d: "M500,60 L500,102", lx: 510, ly: 86, label: "goals · rules · sharing", anchor: "start" },
+    { id: "learncard-agent", d: "M628,130 C690,128 700,90 760,90", lx: 694, ly: 88, label: "HCP query" },
+    { id: "learncard-appb", d: "M628,166 C690,166 700,200 760,200", lx: 694, ly: 218, label: "HCP query" },
+  ];
+  function diagramState(i) {
+    if (i === 0) return { nodes: ["univ", "learncard", "dana"], edges: ["univ-learncard", "dana-learncard"] };
+    if (i === 1) return { nodes: ["univ", "infer", "learncard"], edges: ["univ-infer", "infer-learncard"] };
+    if (i === 2) return { nodes: ["univ", "infer", "learncard", "dana"], edges: ["univ-learncard", "infer-learncard", "dana-learncard"] };
+    return S.advisor === "appb" ? { nodes: ["learncard", "appb", "dana"], edges: ["learncard-appb"] } : { nodes: ["learncard", "agent", "dana"], edges: ["learncard-agent"] };
+  }
+  function drawDiagram(i) {
+    const NS = "http://www.w3.org/2000/svg";
+    const el = (tag, attrs, text) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; return n; };
+    const on = diagramState(i);
+    const svg = el("svg", { viewBox: "0 0 1000 240", role: "img",
+      "aria-label": "The university and the inference engine write into Dana's LearnCard, which uses HCP; Dana controls it; the University advising agent and Career app B read from it through HCP." });
+    const defs = el("defs", {});
+    for (const kind of ["", "on", "revoked"]) {
+      const m = el("marker", { id: "dg-arrow-" + (kind || "off"), viewBox: "0 0 10 10", refX: "9", refY: "5", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" });
+      m.append(el("path", { d: "M0,0 L10,5 L0,10 z", class: "dg-arrow" + (kind ? " " + kind : "") }));
+      defs.append(m);
+    }
+    svg.append(defs);
+    for (const e of DG_EDGES) {
+      const revoked = (e.id === "learncard-agent" && S.agentRevoked) || (e.id === "learncard-appb" && S.appbRevoked);
+      const active = on.edges.includes(e.id);
+      const cls = revoked ? "revoked" : active ? "on" : "";
+      const g = el("g", { class: "dg-edge " + cls });
+      g.append(el("path", { d: e.d, "marker-end": `url(#dg-arrow-${cls || "off"})` }));
+      g.append(el("text", { x: e.lx, y: e.ly, "text-anchor": e.anchor || "middle" }, revoked ? "revoked" : e.label));
+      svg.append(g);
+    }
+    for (const [k, n] of Object.entries(DG_NODES)) {
+      const g = el("g", { class: "dg-node " + (on.nodes.includes(k) ? "on" : "off") + (n.hub ? " hub" : "") });
+      g.append(el("rect", { x: n.x, y: n.y, width: n.w, height: n.hgt, rx: 12 }));
+      const cx = n.x + n.w / 2;
+      g.append(el("text", { class: "t", x: cx, y: n.y + (n.hub ? 42 : 26), "text-anchor": "middle" }, n.t));
+      g.append(el("text", { class: "d", x: cx, y: n.y + (n.hub ? 66 : 47), "text-anchor": "middle" }, n.d));
+      svg.append(g);
+    }
+    return svg;
   }
 
   // --------------------------------------------------------- under the hood
@@ -974,6 +1041,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 3;
     $("learner").replaceChildren(VIEWS[S.stage]());
     $("system").replaceChildren(viewSystem(st));
+    $("diagram").replaceChildren(drawDiagram(S.stage));
     $("hood").replaceChildren(hcpPanel(S.stage));
     renderDrawer();
     hideTip();
@@ -1059,6 +1127,12 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     ok("outputs: stage 3 writes credentials, statements, directive, rule, grant", ["Directive", "Standing rule", "Grant"].every((t) => hcpOutputs(2).some((o) => o.type === t)));
     S.agentRevoked = true;
     ok("outputs: revoked agent gets an error response", hcpOutputs(3).some((o) => o.type.startsWith("Query") && o.json.response.error === "invalid-token"));
+    S.agentRevoked = false;
+    S.advisor = "agent"; S.agentRevoked = false;
+    ok("diagram: stage 3 lights the university, the inference engine, Dana into LearnCard", diagramState(2).edges.length === 3 && diagramState(2).nodes.includes("dana"));
+    ok("diagram: stage 4 follows the selected service", diagramState(3).edges[0] === "learncard-agent" && (S.advisor = "appb", diagramState(3).edges[0] === "learncard-appb"));
+    S.advisor = "agent"; S.agentRevoked = true;
+    ok("diagram: a revoked service is drawn as revoked", drawDiagram(3).querySelector(".dg-edge.revoked") !== null);
     S.agentRevoked = false;
     const fx = document.createElement("script"); fx.type = "application/json"; fx.id = "exportOut";
     fx.textContent = JSON.stringify({ export: ex, grants: grantsJson() }); document.body.append(fx);
