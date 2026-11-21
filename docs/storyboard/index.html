@@ -45,6 +45,7 @@ p { margin: 6px 0; }
 .banner { margin-top: 10px; font-size: 13px; color: var(--text-secondary); background: var(--surface-2); border-radius: 8px; padding: 6px 10px; }
 button { font: inherit; color: inherit; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
 button:hover { background: var(--hover); }
+button:disabled { opacity: 0.4; cursor: default; }
 button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--proven); outline-offset: 2px; }
 button.primary { background: var(--text-primary); color: var(--surface-1); border-color: transparent; }
 button.danger { color: var(--critical); }
@@ -52,7 +53,7 @@ button[aria-pressed="true"] { border-color: var(--text-secondary); font-weight: 
 .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 
 /* stage rail */
-.rail { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 18px 0 14px; list-style: none; padding: 0; }
+.rail { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 18px 0 14px; list-style: none; padding: 0; }
 .rail button { width: 100%; text-align: left; padding: 8px 10px; border-radius: 10px; }
 .rail .num { display: block; font-size: 11px; color: var(--muted); font-weight: 700; letter-spacing: 0.05em; }
 .rail .lbl { display: block; font-size: 13px; line-height: 1.25; }
@@ -113,9 +114,10 @@ input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--text-pri
 .node.on { opacity: 1; border-color: var(--text-secondary); box-shadow: 0 0 0 1px var(--text-secondary); }
 .node .t { font-weight: 600; font-size: 14px; }
 .node .d { font-size: 12px; color: var(--text-secondary); }
-.edge { height: 26px; display: flex; align-items: center; gap: 8px; padding-left: 18px; font-size: 12px; color: var(--muted); }
-.edge::before { content: ""; width: 1px; height: 100%; background: var(--baseline); }
+.edge { min-height: 26px; padding: 3px 0; display: flex; align-items: stretch; gap: 8px; padding-left: 18px; font-size: 12px; color: var(--muted); }
+.edge::before { content: ""; width: 1px; flex: none; background: var(--baseline); }
 .edge.on { color: var(--text-primary); }
+.edge > * , .edge { line-height: 1.35; }
 .edge.on::before { width: 2px; background: var(--text-primary); }
 ol.msgs { margin: 8px 0 0; padding-left: 20px; font-size: 13px; color: var(--text-secondary); }
 ol.msgs li { margin: 4px 0; }
@@ -150,6 +152,10 @@ pre { margin: 0; padding: 10px; background: var(--surface-2); border-radius: 8px
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: none; align-items: center; justify-content: center; z-index: 30; }
 .modal.open { display: flex; }
 .modal .box { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 18px; width: min(460px, 92vw); }
+.modal .box.wide { width: min(900px, 94vw); max-height: 92vh; overflow: auto; }
+.maptbl td:first-child { font-weight: 600; white-space: nowrap; }
+.maptbl code { font: 12px ui-monospace, Consolas, monospace; background: var(--surface-2); padding: 0 4px; border-radius: 4px; }
+.finding { border-left: 4px solid var(--likely); background: var(--surface-2); border-radius: 0 8px 8px 0; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
 .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--text-primary); color: var(--surface-1); padding: 8px 14px; border-radius: 8px; font-size: 14px; display: none; z-index: 50; }
 
 /* presenter mode */
@@ -165,16 +171,16 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 <div class="wrap">
   <header class="top">
     <div>
-      <h1>A university learner's journey: evidence → inference → credential → context → advice</h1>
-      <p class="sub">Storyboard for feasibility review. Follow Dana, a synthetic university learner, through seven stages. The controls are live.</p>
+      <h1>Dana's journey: University → inference engine → learner wallet → AI advising</h1>
+      <p class="sub">Storyboard for feasibility review. Follow Dana, a synthetic university learner, through four stages. The controls are live.</p>
     </div>
     <div class="row">
-      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Dana's controls</button>
+      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Dana's wallet controls</button>
       <button id="presenterBtn" type="button" aria-pressed="false">Presenter mode</button>
       <button id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
     </div>
   </header>
-  <div class="banner">Synthetic persona and data. What the university, the inference engine and the wallet do here is an assumption to validate with each partner; it does not describe their systems today. HCP 2.0-draft-3 (working draft).</div>
+  <div class="banner">Synthetic persona and data. What the university, the inference engine and the wallet do here is an assumption to validate with each partner; it does not describe their systems today. The learner wallet holds Dana's context here, using the Human Context Protocol (HCP 2.0-draft-3, working draft) underneath; who operates the context is still an open partner decision.</div>
 
   <ol class="rail" id="rail" aria-label="Journey stages"></ol>
 
@@ -185,7 +191,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     </div>
     <div class="row">
       <span id="compareWrap" class="row" hidden>
-        <button id="compareBtn" type="button" aria-pressed="false">Compare: without HCP</button>
+        <button id="compareBtn" type="button" aria-pressed="false">Compare: without the wallet</button>
       </span>
       <button id="prevBtn" type="button">← Back</button>
       <button id="nextBtn" type="button" class="primary">Next →</button>
@@ -198,6 +204,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">Under the hood</h3><div id="hood"></div></section>
   </div>
 
+  <section class="panel" id="hcpmap" style="margin-top:14px" hidden aria-labelledby="maph"></section>
   <div class="value" id="value"></div>
   <details class="notes" id="notes"><summary>Speaker notes and feasibility</summary><div id="notesBody"></div></details>
 
@@ -207,7 +214,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 </div>
 
 <aside class="drawer" id="drawer" aria-label="Dana's controls" aria-hidden="true">
-  <header><strong>Dana's controls</strong><button id="closeDrawer" type="button" aria-label="Close controls">Close</button></header>
+  <header><strong>Dana's wallet controls</strong><button id="closeDrawer" type="button" aria-label="Close controls">Close</button></header>
   <div class="body" id="drawerBody"></div>
 </aside>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="box" id="modalBox"></div></div>
@@ -236,7 +243,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   const PREF = "Short practice sets before a full assessment.";
   const DIRECTIVE = "Ask me before you share my profile with an employer.";
   const OPS = {
-    univ: "University assessment records", infer: "Inference engine", wallet: "Learner wallet",
+    univ: "University assessment records", infer: "Inference engine", wallet: "Learner wallet (Dana's context)",
     hcp: "HCP context (Dana's provider)", agent: "University advising agent", appb: "Career app B (independent)",
   };
   const T = "https://hcp.example/spec/authorization/context-access";
@@ -252,16 +259,18 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     agentRevoked: false, appbRevoked: false,
     suspended: {}, directiveOn: true, planSaved: false, shared: null,  // shared: null | "approved" | "declined"
     actions: [],
+    advisor: "agent",
+    pieces: { proven: true, likely: true, wanted: true, plan: true, rules: true, audit: true },
   };
 
   // Which entries exist in HCP at a given stage
   function entriesAt(stage) {
     const list = [];
-    if (stage >= 2) for (const c of C) list.push({ id: eid("est", c.id), kind: "likely", c,
+    if (stage >= 1) for (const c of C) list.push({ id: eid("est", c.id), kind: "likely", c,
       label: `Model estimate: ${c.name}`, detail: `P(Known) ${c.pk.toFixed(2)} · ${band(c)} confidence · ${c.obs} observations · model-inferred` });
-    if (stage >= 3) for (const c of C.filter((x) => x.cred)) list.push({ id: eid("cred", c.id), kind: "proven", c,
+    if (stage >= 2) for (const c of C.filter((x) => x.cred)) list.push({ id: eid("cred", c.id), kind: "proven", c,
       label: `University credential: ${c.name}`, detail: `Open Badges 3.0, issued ${c.issued} · issuer-attested · ${S.suspended[c.id] ? "SUSPENDED by issuer" : "verifies"}` });
-    if (stage >= 4) {
+    if (stage >= 2) {
       list.push({ id: eid("goal", "1"), kind: "wanted", label: "Dana's goal", detail: `"${GOAL}" · person-declared` });
       list.push({ id: eid("constraint", "1"), kind: "wanted", label: "Dana's constraint", detail: `"${CONSTRAINT}" · person-declared` });
       list.push({ id: eid("pref", "1"), kind: "wanted", label: "Dana's preference", detail: `"${PREF}" · person-declared` });
@@ -277,7 +286,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     if (client === "appb" && S.appbRevoked) return { error: "invalid-token" };
     const on = Object.keys(S.cats).filter((k) => S.cats[k]);
     if (!on.length) return { error: "scope-denied" };
-    const ents = entriesAt(Math.max(S.stage, 5)).filter((e) => S.cats[e.kind])
+    const ents = entriesAt(4).filter((e) => S.cats[e.kind])
       .filter((e) => !(e.kind === "proven" && S.suspended[e.c.id]))
       .filter((e) => client === "appb" || e.id !== eid("plan", "1"));
     return { entries: ents };
@@ -391,55 +400,38 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 
   // ------------------------------------------------------------- stages
   const STAGES = [
-    { key: "consent", short: "Consent", title: "Stage 0: Consent and onboarding",
-      sub: "Dana connects the university to their own context. The university may write; no one may read yet.",
-      nodes: ["univ", "hcp"], edges: { "univ-hcp": "write grant" },
-      msgs: [["Dana", "creates their HCP context and reviews the request"], ["Authorization", "issues University records a write grant for education_learner_profile, purpose: school-records"], ["HCP", "logs grant.issued"]],
-      value: [["Learner", "Plain-language consent: who can write, who can read, why."], ["University", "One standard way to put records where the learner controls them."]],
-      feas: ["High", "The grant model is demonstrated by 123/123 Track A fixture scenarios."],
-      notes: "Start with control. Nothing flows yet, and no one can read. The point to land: Dana, not each app, decides who sees what." },
-    { key: "evidence", short: "University assessment evidence", title: "Stage 1: University assessment evidence",
-      sub: "Dana completes assessments. These results are the most trusted evidence in the chain.",
-      nodes: ["univ"], edges: {},
-      msgs: [["University", "records each attempt: competency IDs, item correctness, outcome, evaluator type"], ["University", "makes results available to the inference engine (stage 2) and to issuance (stage 3)"]],
+    { key: "evidence", short: "University evidence", title: "Stage 1: University assessment evidence",
+      sub: "Dana connects the university to their wallet (the university can add records; no one can read yet), then completes assessments.",
+      nodes: ["univ", "wallet"], edges: { "univ-wallet": "write-only permission" },
+      msgs: [["Dana → Wallet", "connects the university: it may add records; no one may read yet"], ["University", "records each attempt: competency IDs, item correctness, outcome, evaluator type"], ["University", "makes results available to the inference engine (stage 2) and for credentials (stage 3)"]],
       value: [["Learner", "Every later recommendation traces back to something Dana actually did."], ["University", "Assessment evidence keeps working for the learner after the course ends."]],
       feas: ["Unknown", "To confirm with the university: which result fields can be exported, at what granularity, and the competency identifiers (RSDs or internal)."],
-      notes: "This is the root of trust. Ask the university team which fields exist and at what granularity. This is the biggest dependency in the plan." },
+      notes: "Start with control: the university can write but no one can read. Then the evidence, which is the root of trust. Ask the university which fields exist; this is the biggest dependency." },
     { key: "inference", short: "Inference engine", title: "Stage 2: Inference engine",
       sub: "P(Known) estimates say what Dana probably knows, with uncertainty, and they expire.",
-      nodes: ["univ", "infer", "hcp"], edges: { "univ-infer": "assessment evidence", "infer-hcp": "model-inferred entries" },
-      msgs: [["University → Inference engine", "item-level evidence"], ["Inference engine", "estimates P(Known) per competency"], ["Inference engine → HCP", "writes model-inferred entries under its own write grant, each with confidence, basis, model version and validUntil"]],
+      nodes: ["univ", "infer", "wallet"], edges: { "univ-infer": "assessment evidence", "infer-wallet": "estimates (model-inferred)" },
+      msgs: [["University → Inference engine", "item-level evidence"], ["Inference engine", "estimates P(Known) per competency"], ["Inference engine → Wallet", "stores estimates in Dana's context, each with confidence, basis, model version and expiry"]],
       value: [["Advising", "A forward-looking view: what Dana is close to mastering, which pass/fail records cannot show."], ["Safeguard", "An estimate is never turned into a credential."]],
-      feas: ["Medium", "To confirm with the inference engine: input and output schema, whether it reports uncertainty, latency, and model versioning. Calibrate the confidence bands together."],
-      notes: "Point at Identity and access management: 0.91 with 8 observations, but no credential. It is likely known, not proven. The rest of the story depends on keeping those two apart." },
-    { key: "credential", short: "Wallet credential", title: "Stage 3: Verified achievement in the learner's wallet",
-      sub: "Passed assessments become verifiable credentials in Dana's wallet, which Dana can present to HCP.",
-      nodes: ["univ", "wallet", "hcp"], edges: { "univ-wallet": "issues Open Badge 3.0", "wallet-hcp": "Dana presents" },
-      msgs: [["University → Wallet", "issues an OpenBadgeCredential with a status-list entry"], ["Dana", "chooses which credentials to present"], ["Wallet → HCP", "presented credentials become issuer-attested entries with the VC as evidence"]],
-      value: [["Learner", "A portable, verifiable achievement that outlives the program."], ["Employers", "Proof instead of self-report, and revocable if needed."]],
-      feas: ["Medium–high", "Wallets that support Open Badges 3.0 / VCs exist, and Track A already shows VC-backed HCP entries with suspension. To confirm: the university's issuance path and the presentation flow from wallet to HCP."],
-      notes: "Try the issuer action in the controls: suspend a credential. In stage 5 the agent downgrades that skill from proven to likely. Verification is live, not a static badge." },
-    { key: "context", short: "HCP context", title: "Stage 4: HCP context assembly",
-      sub: "One place, three kinds of evidence. Dana adds goals and sets who may read, for what purpose.",
-      nodes: ["hcp"], edges: {},
-      msgs: [["Dana → HCP", "adds goal, constraint and preference (person-declared)"], ["Dana", "sets a directive: ask first before sharing with an employer"], ["Authorization", "issues the University advising agent a read grant, purpose: academic-and-career-advising; sensitive categories excluded"]],
-      value: [["Learner", "One consent surface instead of one per app."], ["Everyone", "Each item says who asserted it and how it is known."]],
-      feas: ["High", "Grants, purposes, directives, revocation and audit are demonstrated in this repo; new categories and purposes are configuration."],
-      notes: "Open Dana's controls. Turn off 'What I probably know' and go to stage 5: the agent's answers change and its citations disappear. That is learner control you can see." },
-    { key: "advise", short: "University advising agent", title: "Stage 5: University advising agent",
-      sub: "Three controlled inputs → three outputs. Every claim cites its source; nothing is saved or shared without Dana.",
-      nodes: ["hcp", "agent"], edges: { "hcp-agent": "disclosed entries + directives" },
-      msgs: [["Agent → HCP", "query under its read grant, purpose: academic-and-career-advising"], ["HCP", "returns entries Dana allows, with the ask-first directive; logs context.read"], ["Agent", "answers in three parts, citing entry IDs"], ["Agent → HCP", "on Dana's confirmation only, writes the plan (model-inferred)"]],
-      value: [["Learner", "Specific advice with zero intake questions."], ["University", "Advising that scales, with provenance for every recommendation."]],
-      feas: ["High (scripted) / Medium (LLM)", "An LLM agent needs a citation guardrail and an evaluation that fails any 'likely' presented as 'proven'."],
-      notes: "Use the Compare button. Without HCP, the same agent asks a long list of intake questions and gives generic advice. Then try revoking the agent's grant in the controls." },
-    { key: "portable", short: "Career app B", title: "Stage 6: The payoff: switching to Career app B",
-      sub: "An independent service Dana has never used starts from the same context, through the same protocol, with no résumé.",
-      nodes: ["hcp", "appb"], edges: { "hcp-appb": "temporary read grant" },
-      msgs: [["Dana", "grants Career app B a temporary read (4 hours)"], ["App B → HCP", "the same query call university advising agent used: no pairwise integration"], ["App B", "continues from proven, likely and wanted, plus university advising agent's saved plan, labelled as another service's inference"]],
-      value: [["Learner", "No starting over: the context follows Dana."], ["Ecosystem", "A second, independently built service benefits from context it did not create."]],
-      feas: ["High (demo)", "This is the same mechanism as Track A's Tutor B handoff, which is already demonstrated. Live: depends on stages 1–3."],
-      notes: "This is the investment question in one screen: can one interoperable layer serve many AI applications without a new integration for each?" },
+      feas: ["Medium", "To confirm with the inference-engine partner: input and output schema, whether it reports uncertainty, latency, and model versioning. Calibrate the confidence bands together."],
+      notes: "Point at Identity and access management: 0.91 with 8 observations, but no credential. Likely known, not proven. The rest of the story depends on keeping those two apart." },
+    { key: "wallet", short: "Learner wallet", title: "Stage 3: Learner wallet: Dana's credentials, context and permissions",
+      sub: "One place for what Dana can prove, probably knows and wants, and who may see it. The wallet stores it using HCP underneath.",
+      nodes: ["univ", "infer", "wallet"], edges: { "univ-wallet": "issues credentials", "infer-wallet": "estimates" },
+      msgs: [["University → Wallet", "issues Open Badge 3.0 credentials for passed assessments"], ["Dana → Wallet", "adds goal, constraint and preference; sets a rule: ask first before sharing with an employer"], ["Dana → Wallet", "lets the university advising agent read, for advising only; accommodations, financial aid and demographics are never shared"]],
+      value: [["Learner", "One app for proof, context and consent, instead of a consent screen per tool."], ["Employers", "Verified achievements the issuer can suspend or revoke."]],
+      feas: ["Medium–high", "Wallets that support Open Badges 3.0 / VCs exist today. New: storing context and enforcing permissions using HCP (grants, purposes, revocation, audit), which this repo's provider already models. Decision needed: is the wallet the context operator?"],
+      notes: "Open Dana's controls. Suspend a credential, or turn off 'What I probably know', then go to stage 4: the agent's answers and citations change. That is learner control you can see." },
+    { key: "advising", short: "AI advising: university agent → Career app B", title: "Stage 4: AI advising: University advising agent, then Career app B",
+      sub: "The same wallet context serves the university's advising agent and then an independent career app, through the same HCP request, with no intake.",
+      dyn: () => S.advisor === "appb"
+        ? { nodes: ["wallet", "appb"], edges: { "wallet-appb": "temporary read (4 hours)" },
+            msgs: [["Dana → Wallet", "lets Career app B read for 4 hours"], ["App B → Wallet", "the same HCP request the university agent used: no new integration"], ["App B", "continues from proven, likely and wanted, plus the university agent's saved plan, labelled as another service's inference"]] }
+        : { nodes: ["wallet", "agent"], edges: { "wallet-agent": "what Dana shares + Dana's rules" },
+            msgs: [["Agent → Wallet", "asks, for advising"], ["Wallet", "returns only what Dana allows, with the ask-first rule, and logs the read"], ["Agent", "answers in three parts, citing each source"], ["Agent → Wallet", "saves the plan only after Dana confirms"]] },
+      nodes: [], edges: {}, msgs: [],
+      value: [["Learner", "Specific advice with zero intake, and no starting over with a new tool."], ["Ecosystem", "A second, independently built service benefits from context it did not create, with no new integration."]],
+      feas: ["High (scripted) / Medium (LLM)", "Same mechanism as Track A's tutor handoff, already demonstrated. An LLM agent needs a citation guardrail and an evaluation that fails any 'likely' presented as 'proven'."],
+      notes: "Start with the university agent and use Compare: without the wallet it asks 11 intake questions. Save the plan, then switch to Career app B: it starts from the same context and sees the saved plan, labelled as the university's inference. Try revoking either service in Dana's controls." },
   ];
 
   // --------------------------------------------------------- learner views
@@ -486,13 +478,13 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       return h("div", { class: "card" },
         h("div", { class: "row", style: "justify-content:space-between" }, h("b", {}, c.name),
           sus ? h("span", { class: "st-bad" }, "⚠ Suspended by issuer") : h("span", { class: "st-good" }, "✓ Verified")),
-        h("dl", { class: "kv", style: "margin-top:6px" }, h("dt", {}, "Issuer"), h("dd", {}, "University (test issuer key)"),
+        h("dl", { class: "kv", style: "margin-top:6px" }, h("dt", {}, "Issuer"), h("dd", {}, "The university (test issuer key)"),
           h("dt", {}, "Achievement"), h("dd", {}, "Competency: Competent"), h("dt", {}, "Issued"), h("dd", {}, c.issued),
           h("dt", {}, "In my context"), h("dd", {}, sus ? "Presented, but excluded while suspended" : "Presented to HCP")),
         h("div", { class: "row", style: "margin-top:8px" }, h("button", { type: "button", on: { click: () => toast("Share link copied (demo).") } }, "Share"),
           h("button", { type: "button", on: { click: () => toast(sus ? "Status list: suspended." : "Signature valid · status: active.") } }, "Verify")));
     });
-    return app("Wallet · My credentials", "3 credentials", cards,
+    return app("The wallet · My wallet", "3 credentials", cards,
       h("p", { class: "note" }, "Identity and access management is not here: a high estimate is not an achievement. It will be once Dana passes the assessment."));
   }
   function viewContext() {
@@ -505,8 +497,10 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       g.append(h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, items));
       return g;
     };
-    return app("My Context", "Dana",
-      group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, S.suspended[c.id] ? h("span", { class: "st-bad" }, " (suspended)") : ""))),
+    return app("Wallet · Dana", "credentials · context · permissions",
+      h("div", { class: "card" }, h("b", {}, "Connected sources "), h("span", { class: "note" }, "(can add, cannot read)"),
+        h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, h("li", {}, "University: assessment records and credentials"), h("li", {}, "Inference engine: P(Known) estimates"))),
+      group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, " ", S.suspended[c.id] ? h("span", { class: "st-bad" }, "⚠ suspended by the issuer") : h("span", { class: "st-good" }, "✓ verified"), h("span", { class: "note" }, ` · Open Badge 3.0 · issued ${c.issued}`)))),
       group("likely", C.map((c) => h("li", {}, `${c.name}: ${c.pk.toFixed(2)} (${plain(c).toLowerCase()})`))),
       group("wanted", [h("li", {}, "Goal: ", GOAL), h("li", {}, "Constraint: ", CONSTRAINT), h("li", {}, "Preference: ", PREF)]),
       h("div", { class: "card" }, h("b", {}, "Rules I've set"),
@@ -515,7 +509,10 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
           h("li", {}, "Never shared with advising: accommodations, financial aid, demographics"))),
       h("div", { class: "card" }, h("b", {}, "Readers"),
         h("p", { style: "font-size:14px" }, "University advising agent · read · academic-and-career-advising · ",
-          S.agentRevoked ? h("span", { class: "st-bad" }, "revoked") : h("span", { class: "st-good" }, "active"))));
+          S.agentRevoked ? h("span", { class: "st-bad" }, "revoked") : h("span", { class: "st-good" }, "active"))),
+      h("div", { class: "card" }, h("div", { class: "row", style: "justify-content:space-between" },
+        h("span", {}, h("b", {}, "Take it with you"), h("br"), h("span", { class: "note" }, "Standard HCP export: entries, rules, directives and audit, plus your grants")),
+        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP"))));
   }
   function adviceBlock(client, label) {
     const a = advise(client);
@@ -569,39 +566,50 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         h("button", { type: "button", on: { click: () => { closeModal(); S.shared = "declined"; act("directive.honored", "Share declined by Dana; nothing sent"); } } }, "Decline")));
     $("modal").classList.add("open"); box.querySelector("button").focus();
   }
-  function closeModal() { $("modal").classList.remove("open"); }
+  function closeModal() { $("modal").classList.remove("open"); $("modalBox").classList.remove("wide"); }
   function viewAdvise() {
     if (!S.compare) return app("University · Advising", "agent · reads Dana's context", adviceBlock("agent"));
     return h("div", { class: "cmp" },
-      h("div", {}, h("h4", {}, "With HCP"), app("University · Advising", "with context", adviceBlock("agent"))),
-      h("div", {}, h("h4", {}, "Without HCP"), app("University · Advising", "cold start", coldBlock())));
+      h("div", {}, h("h4", {}, "With the wallet"), app("University · Advising", "with context", adviceBlock("agent"))),
+      h("div", {}, h("h4", {}, "Without the wallet"), app("University · Advising", "cold start", coldBlock())));
   }
   function viewPortable() {
     const a = advise("appb");
     const withN = a.error ? "–" : a.intake.length;
-    const summary = h("table", { style: "margin-top:12px" }, h("thead", {}, h("tr", {}, h("th", {}, ""), h("th", {}, "With HCP"), h("th", {}, "Without HCP"))),
+    const summary = h("table", { style: "margin-top:12px" }, h("thead", {}, h("tr", {}, h("th", {}, ""), h("th", {}, "With the wallet"), h("th", {}, "Without the wallet"))),
       h("tbody", {},
         h("tr", {}, h("th", { scope: "row" }, "Intake steps before first recommendation"), h("td", {}, String(withN)), h("td", {}, "11")),
         h("tr", {}, h("th", { scope: "row" }, "Verified skills it can rely on"), h("td", {}, a.error ? "–" : String(a.entries.filter((e) => e.kind === "proven").length)), h("td", {}, "0 (self-reported)")),
-        h("tr", {}, h("th", { scope: "row" }, "Integration with the university needed"), h("td", {}, "None: same HCP call"), h("td", {}, "A bespoke one, or none")),
+        h("tr", {}, h("th", { scope: "row" }, "Integration with the university needed"), h("td", {}, "None: same wallet request"), h("td", {}, "A bespoke one, or none")),
         h("tr", {}, h("th", { scope: "row" }, "Knows Dana's schedule and goal"), h("td", {}, a.error ? "–" : (S.cats.wanted ? "Yes" : "No (withheld)")), h("td", {}, "Only after asking"))));
     const main = app("Career app B", "temporary access · 4 hours", adviceBlock("appb"), summary);
     if (!S.compare) return main;
-    return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With HCP"), main),
-      h("div", {}, h("h4", {}, "Without HCP"), app("Career app B", "cold start", coldBlock())));
+    return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With the wallet"), main),
+      h("div", {}, h("h4", {}, "Without the wallet"), app("Career app B", "cold start", coldBlock())));
   }
-  const VIEWS = [viewConsent, viewEvidence, viewInference, viewCredential, viewContext, viewAdvise, viewPortable];
+  function viewAdvising() {
+    const tabs = h("div", { class: "row", role: "group", "aria-label": "Advising service", style: "margin-bottom:10px" },
+      h("button", { type: "button", "aria-pressed": String(S.advisor !== "appb"), on: { click: () => { S.advisor = "agent"; render(); } } }, "① University advising agent"),
+      h("span", { class: "note" }, "→"),
+      h("button", { type: "button", "aria-pressed": String(S.advisor === "appb"), on: { click: () => { S.advisor = "appb"; render(); } } }, "② Switch to Career app B"));
+    const body = S.advisor === "appb" ? viewPortable() : viewAdvise();
+    const next = S.advisor === "appb" ? null : h("div", { class: "row", style: "margin-top:10px;justify-content:flex-end" },
+      h("button", { type: "button", class: "primary", on: { click: () => { S.advisor = "appb"; render(); } } }, "Dana switches to Career app B →"));
+    return h("div", {}, tabs, body, next);
+  }
+  const VIEWS = [viewEvidence, viewInference, viewContext, viewAdvising];
 
   // ----------------------------------------------------------- system view
-  const ORDER = ["univ", "infer", "wallet", "hcp", "agent", "appb"];
-  const DESC = { univ: "assessment results", infer: "P(Known) estimates", wallet: "verifiable credentials", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
+  const ORDER = ["univ", "infer", "wallet", "agent", "appb"];
+  const DESC = { univ: "assessment results", infer: "P(Known) estimates", wallet: "credentials, estimates, goals, permissions · uses HCP", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
   function viewSystem(st) {
     const f = h("div", { class: "flow" });
     ORDER.forEach((k, i) => {
       if (i) {
-        const key = Object.keys(st.edges).find((e) => e.endsWith("-" + k) && st.nodes.includes(e.split("-")[0]));
-        const SHORT = { univ: "University", infer: "Inference engine", wallet: "Wallet", hcp: "HCP", agent: "Agent", appb: "App B" };
-        const lbl = key ? `${SHORT[key.split("-")[0]]} → ${st.edges[key]}` : "";
+        const SHORT = { univ: "University", infer: "Inference engine", wallet: "Wallet", agent: "Agent", appb: "App B" };
+        const ks = Object.keys(st.edges).filter((e) => e.endsWith("-" + k) && st.nodes.includes(e.split("-")[0]));
+        const key = ks[0];
+        const lbl = ks.map((e) => `${SHORT[e.split("-")[0]]} → ${st.edges[e]}`).join(" · ");
         f.append(h("div", { class: "edge" + (key ? " on" : "") }, lbl));
       }
       f.append(h("div", { class: "node" + (st.nodes.includes(k) ? " on" : "") }, h("div", { class: "t" }, OPS[k]), h("div", { class: "d" }, DESC[k])));
@@ -612,10 +620,10 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 
   // --------------------------------------------------------- under the hood
   function hoodFor(i) {
-    const cats = (o) => Object.keys(S.cats).filter((k) => S.cats[k]).map((k) => ({ proven: "education_credentials", likely: "education_learner_profile", wanted: "goals_and_constraints" })[k]);
+    const cats = () => sharedCats();
     const iam = byId.iam, net = byId.netsec;
     const X = {
-      0: [["Grant", { grantId: "urn:uuid:dana-grant-univ-records", client: { id: "https://records.university.example/clients/hcp", name: "University records service" },
+      0: [["Grant", { grantId: "urn:uuid:dana-grant-univ-records", client: { id: "https://records.univ.example/clients/hcp", name: "University records service" },
         access: [{ type: T, actions: ["write"], categories: ["education_learner_profile", "education_credentials"], purposes: [{ code: "https://hcp.example/purposes/school-records", description: "Keep the school's record of your learning in your context" }] }],
         grantType: "persistent", issuedAt: "2026-01-12T17:00:00Z", status: "active" }], ["key", ["actions: write only", "no reader exists yet", "purpose is stated and shown to Dana"]]],
       1: [["University assessment export (assumed shape)", { learner: "univ:student:dana (pseudonymous)", competency: { id: "https://osn.example/rsd/network-security-fundamentals", name: net.name },
@@ -627,16 +635,16 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         assertion: { declarationType: "model-inferred", confidence: band(iam), validUntil: "2026-12-01T00:00:00Z",
           basis: { drawnFrom: ["observation"], rationale: "Knowledge-tracing estimate from practice and assessment items mapped to this competency." } },
         classification: { categories: ["education_learner_profile"], dimension: "p_known/identity-and-access-management" },
-        record: { provenance: { assertedBy: { id: "https://inference.example/models/kt", assurance: "authenticated" }, source: "integration", submittedByClient: { name: "Inference engine" } } } }],
+        record: { provenance: { assertedBy: { id: "https://infer.example/models/kt", assurance: "authenticated" }, source: "integration", submittedByClient: { name: "Inference engine" } } } }],
         ["key", ["declarationType: model-inferred, never a credential", "confidence mapped from P(Known) and observation count", "validUntil: estimates go stale"]]],
       3: [["Open Badge 3.0 credential (presented into HCP)", { "@context": ["https://www.w3.org/ns/credentials/v2", "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"],
         type: ["VerifiableCredential", "OpenBadgeCredential"], issuer: { id: "did:key:z6Mk…test", name: "University (test key)" }, validFrom: net.issued + "T00:00:00Z",
         credentialSubject: { id: DANA.did, type: ["AchievementSubject"], achievement: { id: "https://osn.example/rsd/network-security-fundamentals", type: ["Achievement"], achievementType: "Competency", name: net.name } },
-        credentialStatus: [{ type: "BitstringStatusListEntry", statusPurpose: "suspension", statusListIndex: "4821", statusListCredential: "https://credentials.university.example/status/suspension" }],
+        credentialStatus: [{ type: "BitstringStatusListEntry", statusPurpose: "suspension", statusListIndex: "4821", statusListCredential: "https://credentials.univ.example/status/suspension" }],
         proof: { type: "DataIntegrityProof", cryptosuite: "eddsa-rdfc-2022", "…": "…" },
         _hcpEntry: { declarationType: "issuer-attested", assurance: "cryptographically-verified", status: S.suspended.netsec ? "suspended" : "active" } }],
         ["key", ["issuer-attested + verifiable signature", "status list: issuer can suspend or revoke", "same structure the Track A fixture uses"]]],
-      4: [["Advising grant + directive", { grant: { grantId: "urn:uuid:dana-grant-advising", client: { name: "University advising agent", operator: { id: "https://advising.university.example" } },
+      4: [["Advising grant + directive", { grant: { grantId: "urn:uuid:dana-grant-advising", client: { name: "University advising agent", operator: { id: "https://advising.univ.example" } },
         access: [{ type: T, actions: ["read"], categories: cats(), purposes: [{ code: "https://hcp.example/purposes/academic-and-career-advising" }] }],
         grantType: "persistent", status: S.agentRevoked ? "revoked" : "active" },
         directive: { action: "share", effect: S.directiveOn ? "ask-first" : "permit", text: DIRECTIVE },
@@ -652,21 +660,194 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
           grantType: "temporary", expiresAt: "+4h", status: S.appbRevoked ? "revoked" : "active" },
           request: { operation: "query", query: "Skills, goals and plan for career navigation", purpose: "https://hcp.example/purposes/career-navigation" },
           response: a.error ? { error: a.error } : { entries: a.entries.map((e) => e.id) } }; })()],
-        ["key", ["same protocol call as university advising agent", "temporary grant, expires on its own", "The university advising agent's plan arrives labelled model-inferred"]]],
+        ["key", ["same protocol call as the university agent", "temporary grant, expires on its own", "university agent's plan arrives labelled model-inferred"]]],
     };
-    const [[title, obj], [, keys]] = X[i];
+    const MAP = { 0: 1, 1: 2, 3: S.advisor === "appb" ? 6 : 5 };
+    let title, obj, keys;
+    if (i === 2) {
+      title = "HCP entry for a credential + the advising grant, as the wallet stores them";
+      obj = { credentialEntry: credEntry(byId.netsec), advisingGrant: grantsJson()[2] };
+      keys = ["entry: issuer-attested, VC as evidence, status follows the issuer", "grant: read categories follow Dana's toggles", "full export: use 'Export as HCP'"];
+    } else { [[title, obj], [, keys]] = X[MAP[i]]; }
     return h("div", {}, h("div", { class: "note" }, title), h("ul", { class: "keyfields" }, keys.map((k) => h("li", {}, k))),
       h("pre", { tabindex: 0, "aria-label": title }, JSON.stringify(obj, null, 2)));
   }
 
+  // ------------------------------------------- HCP structures (The wallet as provider)
+  const PROVIDER = "https://wallet.example/hcp";
+  const CAT = { proven: "education_learner_profile", likely: "https://wallet.example/hcp/categories/competency-estimates", goals: "goals_and_constraints", prefs: "general_preferences" };
+  const CATS_FOR = { proven: [CAT.proven], likely: [CAT.likely], wanted: [CAT.goals, CAT.prefs] };
+  const SENSITIVE = ["https://wallet.example/hcp/categories/accommodations", "https://wallet.example/hcp/categories/financial-aid", "https://wallet.example/hcp/categories/demographics"];
+  const CLIENTS = {
+    univ: { id: "https://records.univ.example/clients/hcp", name: "University records service", operator: { id: "https://univ.example", name: "University (synthetic)" } },
+    infer: { id: "https://infer.example/clients/hcp", name: "Inference engine", operator: { id: "https://infer.example", name: "Inference engine (synthetic)" } },
+    wallet: { id: "https://wallet.example/clients/app", name: "Wallet app", operator: { id: "https://wallet.example", name: "Wallet (synthetic)" } },
+    agent: { id: "https://advising.univ.example/clients/hcp", name: "University advising agent", operator: { id: "https://advising.univ.example", name: "University advising (synthetic)" } },
+    appb: { id: "https://careers-b.example/clients/hcp", name: "Career app B", operator: { id: "https://careers-b.example", name: "Career app B (synthetic)" } },
+  };
+  const GID = { univ: "urn:uuid:dana-grant-univ-records", infer: "urn:uuid:dana-grant-infer", agent: "urn:uuid:dana-grant-advising", appb: "urn:uuid:dana-grant-career-b" };
+  const PURPOSE = { records: "https://hcp.example/purposes/school-records", estimate: "https://hcp.example/purposes/competency-estimation", advising: "https://hcp.example/purposes/academic-and-career-advising", career: "https://hcp.example/purposes/career-navigation" };
+  const ISSUER_DID = "did:key:z6MkSyntheticUnivTestIssuerKeyNotReal";
+  const compUri = (c) => "https://osn.example/rsd/" + c.name.toLowerCase().replace(/[^a-z]+/g, "-").replace(/-+$/, "");
+  const sharedCats = () => Object.keys(S.cats).filter((k) => S.cats[k]).flatMap((k) => CATS_FOR[k]);
+  function prov(by, assurance, at, client, grant, source) {
+    return { assertedBy: { id: by, assurance }, assertedAt: at, source, submittedByClient: CLIENTS[client], authorizedUnder: grant, recordedByProvider: PROVIDER, recordedAt: at };
+  }
+  function entry(id, content, assertion, classification, record, evidence) {
+    const e = { "@context": ["https://hcp.example/contexts/v2"], schema: "https://hcp.example/spec/entry/2.0", id, type: ["ContextEntry"],
+      subject: { id: DANA.did, relationship: null }, content, assertion, classification };
+    if (evidence) e.evidence = evidence;
+    e.record = { status: "active", version: 1, relationships: [], metadata: { synthetic: true, generator: "wallet-storyboard" }, ...record };
+    return e;
+  }
+  function ob3(c) {
+    const idx = String(4800 + C.indexOf(c));
+    return { "@context": ["https://www.w3.org/ns/credentials/v2", "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"],
+      id: "urn:uuid:dana-vc-" + c.id, type: ["VerifiableCredential", "OpenBadgeCredential"], name: c.name + ": Competent",
+      issuer: { id: ISSUER_DID, type: ["Profile"], name: "University (synthetic test issuer)" }, validFrom: c.issued + "T16:00:00Z",
+      credentialStatus: [{ id: "https://credentials.univ.example/status/suspension#" + idx, type: "BitstringStatusListEntry", statusPurpose: "suspension", statusListIndex: idx, statusListCredential: "https://credentials.univ.example/status/suspension" }],
+      credentialSubject: { id: DANA.did, type: ["AchievementSubject"], achievement: { id: compUri(c), type: ["Achievement"], achievementType: "Competency", name: c.name, criteria: { narrative: "Passed the university competency assessment (synthetic)." } } },
+      proof: { type: "DataIntegrityProof", cryptosuite: "eddsa-rdfc-2022", verificationMethod: ISSUER_DID + "#key-1", proofValue: "z-synthetic-placeholder-not-a-real-signature" } };
+  }
+  function credEntry(c) {
+    const at = c.issued + "T16:00:00Z";
+    return entry(eid("cred", c.id), { profile: "https://hcp.example/spec/profiles/vc-evidence/2.0", evidence: 0 },
+      { declarationType: "issuer-attested", confidence: null, validUntil: null },
+      { categories: [CAT.proven], dimension: compUri(c) },
+      { status: S.suspended[c.id] ? "suspended" : "active", provenance: prov(ISSUER_DID, "cryptographically-verified", at, "univ", GID.univ, "integration") },
+      [{ role: "content", type: "verifiable-credential", credential: ob3(c) }]);
+  }
+  function estEntry(c) {
+    const at = "2026-07-20T02:00:00Z";
+    return entry(eid("est", c.id), { profile: "https://hcp.example/spec/profiles/general-context/2.0", value: { competency: compUri(c), pKnown: c.pk, observations: c.obs, modelVersion: "kt-model-2.3 (assumed)" }, language: "en" },
+      { declarationType: "model-inferred", confidence: band(c), validUntil: "2026-12-01T00:00:00Z",
+        basis: { drawnFrom: ["observation"], task: "Competency assessments and practice", setting: "University (synthetic)", rationale: "Knowledge-tracing estimate from assessment and practice items mapped to this competency." } },
+      { categories: [CAT.likely], dimension: "p_known/" + c.id },
+      { provenance: prov("https://infer.example/models/kt", "authenticated", at, "infer", GID.infer, "integration") });
+  }
+  function saidEntry(id, cat, dim, text) {
+    return entry(eid(id, "1"), { profile: "https://hcp.example/spec/profiles/general-context/2.0", value: text, language: "en" },
+      { declarationType: "person-declared", confidence: null, validUntil: null },
+      { categories: [cat], dimension: dim },
+      { provenance: prov(DANA.did, "authenticated", "2026-07-21T19:00:00Z", "wallet", null, "person-input") });
+  }
+  function planEntry() {
+    const a = advise("agent");
+    return entry(eid("plan", "1"), { profile: "https://hcp.example/spec/profiles/general-context/2.0", value: { summary: a.error ? "Advising plan" : a.o1, targetRole: ROLE.name }, language: "en" },
+      { declarationType: "model-inferred", confidence: "medium", validUntil: "2027-01-22T00:00:00Z",
+        basis: { drawnFrom: ["context"], rationale: "Drafted by the advising agent from the context Dana shared; saved after Dana confirmed." } },
+      { categories: [CAT.goals], dimension: "advising_plan" },
+      { provenance: prov("https://advising.univ.example/models/advisor", "authenticated", "2026-07-22T18:40:00Z", "agent", GID.agent, "integration") });
+  }
+  function grantsJson() {
+    const g = (key, blocks, type, issued, expires, revoked) => ({
+      grantId: GID[key], subject: { id: "did:example:pairwise:dana-" + key }, authorizingPrincipal: { id: DANA.did },
+      client: CLIENTS[key],
+      access: blocks.filter((x) => x[1].length).map(([actions, categories, purpose, description]) => ({ type: T, actions, categories, purposes: [{ code: purpose, description }] })),
+      scopes: blocks.flatMap(([actions, categories]) => categories.flatMap((c) => actions.map((x) => `hcp:${c}:${x}`))),
+      grantType: type, issuedAt: issued, expiresAt: expires, status: revoked ? "revoked" : "active" });
+    const read = sharedCats();
+    return [
+      g("univ", [[["write"], [CAT.proven], PURPOSE.records, "Keep the university's record of your learning in your wallet"]], "persistent", "2026-01-12T17:00:00Z", null, false),
+      g("infer", [[["write"], [CAT.likely], PURPOSE.estimate, "Add estimates of what you probably know"]], "persistent", "2026-03-13T02:00:00Z", null, false),
+      g("agent", [[["read"], read, PURPOSE.advising, "Academic and career advising"], [["write"], [CAT.goals], PURPOSE.advising, "Save an advising plan you approve"]], "persistent", "2026-07-21T19:05:00Z", null, S.agentRevoked),
+      g("appb", [[["read"], read, PURPOSE.career, "Career navigation"]], "temporary", "2026-08-03T12:00:00Z", "2026-08-03T16:00:00Z", S.appbRevoked),
+    ];
+  }
+  function auditEvents() {
+    const toIso = (t) => t.replace(" ", "T") + ":00Z";
+    const grantOf = (d) => /advising/.test(d) ? GID.agent : /Career app B/.test(d) ? GID.appb : /inference engine/i.test(d) ? GID.infer : /university/i.test(d) ? GID.univ : null;
+    const ev = baseline(3).map(([t, e, d], i) => ({ eventId: "urn:uuid:dana-audit-" + i, eventType: e, timestamp: toIso(t),
+      participants: { initiator: { role: e.startsWith("grant") ? "authorization-service" : "hcp-provider" }, provider: { id: PROVIDER } },
+      entryId: null, categories: [], purpose: null, grantId: e.startsWith("grant") || e === "context.read" ? grantOf(d) : null, data: { note: d } }));
+    S.actions.forEach((x, i) => ev.push({ eventId: "urn:uuid:dana-audit-act-" + i, eventType: x.type, timestamp: `2026-08-10T00:${String(i % 60).padStart(2, "0")}:00Z`,
+      participants: { initiator: { role: "management-client" }, provider: { id: PROVIDER } },
+      entryId: null, categories: [], purpose: null, grantId: x.type.startsWith("grant") ? grantOf(x.detail) : null, data: { note: x.detail } }));
+    return ev;
+  }
+  const PIECES = [["proven", "Credentials (university)"], ["likely", "Estimates (inference engine)"], ["wanted", "Goals and preferences (Dana)"], ["plan", "Saved advising plan"], ["rules", "Rules and directives"], ["audit", "Audit log"]];
+  function hcpExport(pc) {
+    const entries = [];
+    if (pc.proven) entries.push(...C.filter((c) => c.cred).map(credEntry));
+    if (pc.likely) entries.push(...C.map(estEntry));
+    if (pc.wanted) entries.push(saidEntry("goal", CAT.goals, "learner_statement/goal", GOAL),
+      saidEntry("constraint", CAT.goals, "learner_statement/pacing", CONSTRAINT), saidEntry("pref", CAT.prefs, "learner_statement/what_helps", PREF));
+    if (pc.plan && S.planSaved) entries.push(planEntry());
+    return { "@context": ["https://hcp.example/contexts/v2"], type: "ContextExport", schema: "https://hcp.example/spec/export/2.0",
+      subject: { id: DANA.did }, exportedBy: PROVIDER, exportedAt: "2026-08-10T12:00:00Z",
+      options: { excludeDeleted: false, includeVersions: true, includeAudit: !!pc.audit },
+      entries, versions: [],
+      rules: pc.rules ? [{ ruleId: "urn:uuid:dana-rule-sensitive", effect: "deny", operators: [CLIENTS.agent.operator.id, CLIENTS.appb.operator.id], categories: SENSITIVE, setBy: DANA.did, createdAt: "2026-07-21T19:01:00Z" }] : [],
+      directives: pc.rules ? [{ directiveId: "urn:uuid:dana-directive-share", action: "share", effect: S.directiveOn ? "ask-first" : "permit", text: DIRECTIVE, categories: [CAT.proven, CAT.likely, CAT.goals, CAT.prefs], setBy: DANA.did, createdAt: "2026-07-21T19:02:00Z" }] : [],
+      delegations: [], audit: pc.audit ? auditEvents() : [] };
+  }
+  function download(name, obj) {
+    const blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
+    const link = h("a", { href: URL.createObjectURL(blob), download: name });
+    document.body.append(link); link.click();
+    setTimeout(() => { URL.revokeObjectURL(link.href); link.remove(); }, 500);
+  }
+  function openExport() {
+    const box = $("modalBox"); box.classList.add("wide");
+    const draw = () => {
+      const ex = hcpExport(S.pieces);
+      const counts = {};
+      for (const e of ex.entries) counts[e.assertion.declarationType] = (counts[e.assertion.declarationType] || 0) + 1;
+      box.replaceChildren(
+        h("h2", { id: "modalTitle" }, "Export my wallet as HCP"),
+        h("p", { class: "note" }, "A standard HCP ContextExport that any HCP provider can import, plus a grants file. Choose the pieces to include."),
+        h("div", { class: "row", style: "margin:8px 0" }, PIECES.map(([k, label]) => h("label", { class: "pill", style: "padding:4px 10px;font-size:13px" },
+          h("input", { type: "checkbox", checked: S.pieces[k], disabled: k === "plan" && !S.planSaved, on: { change: (e) => { S.pieces[k] = e.target.checked; draw(); } } }),
+          " " + label + (k === "plan" && !S.planSaved ? " (none saved yet)" : "")))),
+        h("p", { style: "font-size:14px" }, `${ex.entries.length} entries (${Object.entries(counts).map(([k, v]) => v + " " + k).join(", ") || "none"}) · ${ex.rules.length} rule · ${ex.directives.length} directive · ${ex.audit.length} audit events`),
+        h("pre", { style: "max-height:42vh", tabindex: 0, "aria-label": "Export preview" }, JSON.stringify(ex, null, 2)),
+        h("div", { class: "row", style: "margin-top:12px" },
+          h("button", { type: "button", class: "primary", on: { click: () => { download("dana-hcp-export.json", ex); act("context.exported", `HCP export: ${ex.entries.length} entries`); draw(); } } }, "Download export.json"),
+          h("button", { type: "button", on: { click: () => download("dana-hcp-grants.json", grantsJson()) } }, "Download grants.json"),
+          h("button", { type: "button", on: { click: () => { (navigator.clipboard ? navigator.clipboard.writeText(JSON.stringify(ex, null, 2)) : Promise.reject()).then(() => toast("Copied."), () => toast("Copy isn't available here; use Download.")); } } }, "Copy"),
+          h("button", { type: "button", on: { click: closeModal } }, "Close")));
+    };
+    draw(); $("modal").classList.add("open"); box.querySelector("input, button").focus();
+  }
+  function mapView() {
+    const rows = [
+      ["Passed assessment → credential", "University · write grant (school records)", "ContextEntry + VC evidence", ["evidence[0].credential (Open Badge 3.0)", "classification.dimension = competency URI", "record.provenance.assertedBy = university issuer DID", "record.status follows the university's status list"], "issuer-attested"],
+      ["Raw assessment attempts", "Stays at the university", "Not stored by default", ["Feeds the inference engine", "If needed: a record-extract entry, as the Track A fixture does for assessments"], "–"],
+      ["P(Known) estimate", "Inference engine · write grant (competency estimation)", "ContextEntry", ["content.value {competency, pKnown, observations, modelVersion}", "assertion.confidence (high / medium / low)", "assertion.validUntil", "assertion.basis.rationale", "its own category (see finding)"], "model-inferred"],
+      ["Goal, constraint, preference", "Dana · in the wallet app", "ContextEntry", ["content.value (Dana's words)", "classification.categories: goals_and_constraints / general_preferences", "record.provenance.source = person-input"], "person-declared"],
+      ["Who may read, for what", "Dana", "Grant", ["client", "access[].actions, categories, purposes", "grantType: persistent or temporary", "expiresAt"], "–"],
+      ["\"Ask me before sharing\"", "Dana", "Directive", ["action: share", "effect: ask-first", "categories; travels with every disclosure"], "–"],
+      ["Never share sensitive data", "Dana", "Standing rule", ["effect: deny", "operators", "categories: accommodations, financial aid, demographics"], "–"],
+      ["What a reader receives", "Wallet · as HCP provider", "Query response (disclosure)", ["entries the grant reaches", "directives that apply", "logged as context.read"], "–"],
+      ["Plan Dana chooses to save", "University advising agent · write grant (goals only)", "ContextEntry", ["content.value (the plan)", "record.provenance.submittedByClient = agent", "authorizedUnder = agent's grant"], "model-inferred"],
+      ["Every grant, read, write, revoke", "Wallet · as HCP provider", "Audit event", ["eventType, timestamp, participants", "grantId, entryId"], "–"],
+      ["Take it all elsewhere", "Dana", "ContextExport + grants", ["entries, versions, rules, directives, delegations, audit", "grants.json alongside"], "–"],
+    ];
+    const kindOf = (d) => d === "issuer-attested" ? "proven" : d === "model-inferred" ? "likely" : d === "person-declared" ? "wanted" : null;
+    const tbl = h("table", { class: "maptbl" },
+      h("thead", {}, h("tr", {}, ["Piece of information", "Written by", "HCP structure", "Where it goes (key fields)", "Declared as"].map((x) => h("th", { scope: "col" }, x)))),
+      h("tbody", {}, rows.map(([piece, by, obj, fields, decl]) => h("tr", {},
+        h("td", {}, piece), h("td", {}, by), h("td", {}, obj),
+        h("td", {}, h("ul", { style: "margin:0;padding-left:16px" }, fields.map((f) => h("li", {}, h("code", {}, f))))),
+        h("td", {}, kindOf(decl) ? h("span", { class: "kind" }, dot(kindOf(decl)), decl) : h("span", { class: "note" }, decl))))));
+    return h("div", {},
+      h("div", { class: "row", style: "justify-content:space-between" },
+        h("div", {}, h("h2", { id: "maph" }, "Where each piece goes in HCP"), h("p", { class: "sub" }, "HCP is the communication protocol underneath the wallet. Every piece of information above maps to one HCP structure.")),
+        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP")),
+      h("div", { style: "overflow:auto;margin-top:10px" }, tbl),
+      h("div", { class: "finding" }, h("b", {}, "Finding: "),
+        "HCP grants are scoped by category and purpose, not by declaration type. For Dana to share credentials without sharing estimates, estimates need their own category. Here they use a wallet-defined category URI (",
+        h("code", {}, CAT.likely), "). Decide together whether to propose it upstream as part of the Education Context profile."),
+      h("p", { class: "note" }, "Categories in use: education_learner_profile (credentials) · …/competency-estimates (estimates) · goals_and_constraints · general_preferences. Sensitive categories exist but are never granted to advising."));
+  }
+
   // ---------------------------------------------------------------- audit
   function baseline(stage) {
-    const ev = [["2026-01-12 17:00", "grant.issued", "University records · write"]];
-    if (stage >= 2) { ev.push(["2026-03-13 02:00", "grant.issued", "The inference engine · write · education_learner_profile"]); ev.push(["2026-07-20 02:00", "context.created", "6 model-inferred estimates (inference engine)"]); }
-    if (stage >= 3) ev.push(["2026-07-20 09:12", "context.created", "3 issuer-attested credentials (presented from the wallet)"]);
-    if (stage >= 4) { ev.push(["2026-07-21 19:00", "context.created", "goal, constraint, preference (Dana)"]); ev.push(["2026-07-21 19:02", "directive.set", "share: ask-first"]); ev.push(["2026-07-21 19:05", "grant.issued", "University advising agent · read"]); }
-    if (stage >= 5) ev.push(["2026-07-22 18:30", "context.read", S.agentRevoked ? "University advising agent · refused (invalid-token)" : "University advising agent · " + (disclosed("agent").entries || []).length + " entries"]);
-    if (stage >= 6) { ev.push(["2026-08-03 12:00", "grant.issued", "Career app B · read · temporary 4h"]); ev.push(["2026-08-03 12:01", "context.read", S.appbRevoked ? "Career app B · refused (invalid-token)" : "Career app B · " + (disclosed("appb").entries || []).length + " entries"]); }
+    const ev = [["2026-01-12 17:00", "grant.issued", "University · write only"]];
+    if (stage >= 1) { ev.push(["2026-03-13 02:00", "grant.issued", "Inference engine · write only"]); ev.push(["2026-07-20 02:00", "context.created", "6 estimates (inference engine, model-inferred)"]); }
+    if (stage >= 2) { ev.push(["2026-07-20 09:12", "context.created", "3 credentials (university, issuer-attested)"]); ev.push(["2026-07-21 19:00", "context.created", "goal, constraint, preference (Dana)"]); ev.push(["2026-07-21 19:02", "directive.set", "share: ask first"]); ev.push(["2026-07-21 19:05", "grant.issued", "University advising agent · read · advising"]); }
+    if (stage >= 3) ev.push(["2026-07-22 18:30", "context.read", S.agentRevoked ? "University advising agent · refused (invalid-token)" : "University advising agent · " + (disclosed("agent").entries || []).length + " entries"]);
+    if (stage >= 3) { ev.push(["2026-08-03 12:00", "grant.issued", "Career app B · read · 4 hours"]); ev.push(["2026-08-03 12:01", "context.read", S.appbRevoked ? "Career app B · refused (invalid-token)" : "Career app B · " + (disclosed("appb").entries || []).length + " entries"]); }
     return ev;
   }
 
@@ -693,31 +874,34 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     for (const [t, e, d] of baseline(S.stage)) log.append(h("div", {}, `${t}  ${e}  ${d}`));
     for (const a of S.actions) log.append(h("div", { class: "new" }, `now               ${a.type}  ${a.detail}`));
     b.append(h("section", {}, h("h3", {}, "Audit log"), log, h("p", { class: "note" }, "Every grant, write, read and change is recorded and visible to Dana.")),
-      h("section", {}, h("button", { type: "button", on: { click: () => { Object.assign(S, { cats: { proven: true, likely: true, wanted: true }, agentRevoked: false, appbRevoked: false, suspended: {}, directiveOn: true, planSaved: false, shared: null, actions: [] }); render(); toast("Demo reset."); } } }, "Reset demo")));
+      h("section", {}, h("button", { type: "button", on: { click: () => { Object.assign(S, { cats: { proven: true, likely: true, wanted: true }, agentRevoked: false, appbRevoked: false, suspended: {}, directiveOn: true, planSaved: false, shared: null, actions: [], advisor: "agent" }); render(); toast("Demo reset."); } } }, "Reset demo")));
   }
 
   // --------------------------------------------------------------- render
   function render() {
-    const st = STAGES[S.stage];
+    const st0 = STAGES[S.stage];
+    const st = st0.dyn ? { ...st0, ...st0.dyn() } : st0;
     const rail = $("rail"); rail.replaceChildren();
     STAGES.forEach((s, i) => rail.append(h("li", {}, h("button", { type: "button", class: i < S.stage ? "done" : "", "aria-current": i === S.stage ? "step" : false,
-      on: { click: () => go(i) } }, h("span", { class: "num" }, "STAGE " + i), h("span", { class: "lbl" }, s.short)))));
+      on: { click: () => go(i) } }, h("span", { class: "num" }, "STAGE " + (i + 1)), h("span", { class: "lbl" }, s.short)))));
     $("stageTitle").textContent = st.title; $("stageSub").textContent = st.sub;
-    $("compareWrap").hidden = S.stage < 5;
+    $("compareWrap").hidden = S.stage < 3;
     $("compareBtn").setAttribute("aria-pressed", String(S.compare));
-    $("compareBtn").textContent = S.compare ? "Hide comparison" : "Compare: without HCP";
+    $("compareBtn").textContent = S.compare ? "Hide comparison" : "Compare: without the wallet";
     $("prevBtn").disabled = S.stage === 0; $("nextBtn").disabled = S.stage === STAGES.length - 1;
-    $("grid").className = "grid3" + (S.compare && S.stage >= 5 ? " nohood" : "");
-    document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 5;
+    $("grid").className = "grid3" + (S.compare && S.stage >= 3 ? " nohood" : "");
+    document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 3;
     $("learner").replaceChildren(VIEWS[S.stage]());
     $("system").replaceChildren(viewSystem(st));
+    $("hcpmap").hidden = S.stage !== 2;
+    if (S.stage === 2) $("hcpmap").replaceChildren(mapView());
     $("hood").replaceChildren(hoodFor(S.stage));
     $("value").replaceChildren(...st.value.map(([w, t]) => h("div", { class: "v" }, h("b", {}, "Value · " + w), t)),
       h("div", { class: "v" }, h("b", {}, "Feasibility · " + st.feas[0]), st.feas[1]));
     $("notesBody").replaceChildren(h("p", {}, st.notes));
     renderDrawer();
     hideTip();
-    history.replaceState(null, "", "#stage=" + S.stage + (S.compare ? "&compare=1" : ""));
+    history.replaceState(null, "", "#stage=" + S.stage + (S.compare ? "&compare=1" : "") + (S.advisor === "appb" ? "&advisor=appb" : ""));
   }
   function go(i) { S.stage = Math.max(0, Math.min(STAGES.length - 1, i)); render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
 
@@ -751,6 +935,8 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   const HASH = location.hash;
   const m = /stage=(\d)/.exec(HASH); if (m) S.stage = +m[1];
   if (/compare=1/.test(HASH)) S.compare = true;
+  if (/advisor=appb/.test(HASH)) S.advisor = "appb";
+  if (/export=1/.test(HASH)) setTimeout(() => openExport(), 0);
   if (/drawer=1/.test(HASH)) setTimeout(() => toggleDrawer(true), 0);
   render();
 
@@ -759,7 +945,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const out = [], ok = (name, cond) => out.push((cond ? "PASS " : "FAIL ") + name);
     const snap = JSON.stringify(S);
     const st = (r, id) => r.table.find((x) => x.c.id === id).s;
-    S.stage = 5;
+    S.stage = 3;
     let r = advise("agent");
     ok("default: IAM is next action", /Identity and access management/.test(r.o1));
     ok("default: netsec proven, iam likely, ir gap", st(r, "netsec") === "proven" && st(r, "iam") === "likely" && st(r, "ir") === "gap");
@@ -783,6 +969,22 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     ok("saved plan reaches app B, cited", advise("appb").c2.includes(eid("plan", "1")));
     S.appbRevoked = true;
     ok("app B revoked: invalid-token", advise("appb").error === "invalid-token");
+    Object.assign(S, { stage: 3, cats: { proven: true, likely: true, wanted: true }, agentRevoked: false, appbRevoked: false, planSaved: false, suspended: {} });
+    const all = { proven: true, likely: true, wanted: true, plan: true, rules: true, audit: true };
+    let ex = hcpExport(all);
+    const n = (d) => ex.entries.filter((e) => e.assertion.declarationType === d).length;
+    ok("export: ContextExport with 12 entries", ex.type === "ContextExport" && ex.entries.length === 12);
+    ok("export: 3 issuer-attested, 6 model-inferred, 3 person-declared", n("issuer-attested") === 3 && n("model-inferred") === 6 && n("person-declared") === 3);
+    ok("export: credentials carry Open Badge evidence", ex.entries.filter((e) => e.assertion.declarationType === "issuer-attested").every((e) => e.evidence[0].credential.type.includes("OpenBadgeCredential")));
+    ok("export: estimates carry confidence and expiry", ex.entries.filter((e) => e.assertion.declarationType === "model-inferred").every((e) => e.assertion.confidence && e.assertion.validUntil));
+    ok("export: unchecked pieces are left out", hcpExport({ ...all, likely: false }).entries.every((e) => e.assertion.declarationType !== "model-inferred"));
+    S.planSaved = true; ex = hcpExport(all);
+    ok("export: saved plan included", ex.entries.length === 13);
+    S.cats.likely = false;
+    ok("grants: advising read follows Dana's toggles", !grantsJson()[2].access[0].categories.includes(CAT.likely));
+    S.cats.likely = true;
+    const fx = document.createElement("script"); fx.type = "application/json"; fx.id = "exportOut";
+    fx.textContent = JSON.stringify({ export: ex, grants: grantsJson() }); document.body.append(fx);
     Object.assign(S, JSON.parse(snap));
     const pre = h("pre", { id: "selftest" }, out.join(String.fromCharCode(10))); document.body.append(pre);
     document.title = out.every((l) => l.startsWith("PASS")) ? "SELFTEST PASS" : "SELFTEST FAIL";
