@@ -171,16 +171,16 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 <div class="wrap">
   <header class="top">
     <div>
-      <h1>Dana's journey: University → inference engine → learner wallet → AI advising</h1>
+      <h1>Dana's journey: University → inference engine → LearnCard → AI advising</h1>
       <p class="sub">Storyboard for feasibility review. Follow Dana, a synthetic university learner, through four stages. The controls are live.</p>
     </div>
     <div class="row">
-      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Dana's wallet controls</button>
+      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Dana's LearnCard controls</button>
       <button id="presenterBtn" type="button" aria-pressed="false">Presenter mode</button>
       <button id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
     </div>
   </header>
-  <div class="banner">Synthetic persona and data. What the university, the inference engine and the wallet do here is an assumption to validate with each partner; it does not describe their systems today. The learner wallet holds Dana's context here, using the Human Context Protocol (HCP 2.0-draft-3, working draft) underneath; who operates the context is still an open partner decision.</div>
+  <div class="banner">Synthetic persona and data. What the university, the inference engine and LearnCard do here is an assumption to validate with each partner; it does not describe their systems today. LearnCard holds Dana's context here, using the Human Context Protocol (HCP 2.0-draft-3, working draft) underneath; who operates the context is still an open partner decision.</div>
 
   <ol class="rail" id="rail" aria-label="Journey stages"></ol>
 
@@ -191,7 +191,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     </div>
     <div class="row">
       <span id="compareWrap" class="row" hidden>
-        <button id="compareBtn" type="button" aria-pressed="false">Compare: without the wallet</button>
+        <button id="compareBtn" type="button" aria-pressed="false">Compare: without LearnCard</button>
       </span>
       <button id="prevBtn" type="button">← Back</button>
       <button id="nextBtn" type="button" class="primary">Next →</button>
@@ -214,7 +214,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 </div>
 
 <aside class="drawer" id="drawer" aria-label="Dana's controls" aria-hidden="true">
-  <header><strong>Dana's wallet controls</strong><button id="closeDrawer" type="button" aria-label="Close controls">Close</button></header>
+  <header><strong>Dana's LearnCard controls</strong><button id="closeDrawer" type="button" aria-label="Close controls">Close</button></header>
   <div class="body" id="drawerBody"></div>
 </aside>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="box" id="modalBox"></div></div>
@@ -243,7 +243,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   const PREF = "Short practice sets before a full assessment.";
   const DIRECTIVE = "Ask me before you share my profile with an employer.";
   const OPS = {
-    univ: "University assessment records", infer: "Inference engine", wallet: "Learner wallet (Dana's context)",
+    univ: "University assessment records", infer: "Inference engine", learncard: "LearnCard (Dana's context)",
     hcp: "HCP context (Dana's provider)", agent: "University advising agent", appb: "Career app B (independent)",
   };
   const T = "https://hcp.example/spec/authorization/context-access";
@@ -401,37 +401,37 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   // ------------------------------------------------------------- stages
   const STAGES = [
     { key: "evidence", short: "University evidence", title: "Stage 1: University assessment evidence",
-      sub: "Dana connects the university to their wallet (the university can add records; no one can read yet), then completes assessments.",
-      nodes: ["univ", "wallet"], edges: { "univ-wallet": "write-only permission" },
-      msgs: [["Dana → Wallet", "connects the university: it may add records; no one may read yet"], ["University", "records each attempt: competency IDs, item correctness, outcome, evaluator type"], ["University", "makes results available to the inference engine (stage 2) and for credentials (stage 3)"]],
+      sub: "Dana connects the university to their LearnCard (the university can add records; no one can read yet), then completes assessments.",
+      nodes: ["univ", "learncard"], edges: { "univ-learncard": "write-only permission" },
+      msgs: [["Dana → LearnCard", "connects the university: it may add records; no one may read yet"], ["University", "records each attempt: competency IDs, item correctness, outcome, evaluator type"], ["University", "makes results available to the inference engine (stage 2) and for credentials (stage 3)"]],
       value: [["Learner", "Every later recommendation traces back to something Dana actually did."], ["University", "Assessment evidence keeps working for the learner after the course ends."]],
       feas: ["Unknown", "To confirm with the university: which result fields can be exported, at what granularity, and the competency identifiers (RSDs or internal)."],
       notes: "Start with control: the university can write but no one can read. Then the evidence, which is the root of trust. Ask the university which fields exist; this is the biggest dependency." },
     { key: "inference", short: "Inference engine", title: "Stage 2: Inference engine",
       sub: "P(Known) estimates say what Dana probably knows, with uncertainty, and they expire.",
-      nodes: ["univ", "infer", "wallet"], edges: { "univ-infer": "assessment evidence", "infer-wallet": "estimates (model-inferred)" },
-      msgs: [["University → Inference engine", "item-level evidence"], ["Inference engine", "estimates P(Known) per competency"], ["Inference engine → Wallet", "stores estimates in Dana's context, each with confidence, basis, model version and expiry"]],
+      nodes: ["univ", "infer", "learncard"], edges: { "univ-infer": "assessment evidence", "infer-learncard": "estimates (model-inferred)" },
+      msgs: [["University → Inference engine", "item-level evidence"], ["Inference engine", "estimates P(Known) per competency"], ["Inference engine → LearnCard", "stores estimates in Dana's context, each with confidence, basis, model version and expiry"]],
       value: [["Advising", "A forward-looking view: what Dana is close to mastering, which pass/fail records cannot show."], ["Safeguard", "An estimate is never turned into a credential."]],
       feas: ["Medium", "To confirm with the inference-engine partner: input and output schema, whether it reports uncertainty, latency, and model versioning. Calibrate the confidence bands together."],
       notes: "Point at Identity and access management: 0.91 with 8 observations, but no credential. Likely known, not proven. The rest of the story depends on keeping those two apart." },
-    { key: "wallet", short: "Learner wallet", title: "Stage 3: Learner wallet: Dana's credentials, context and permissions",
-      sub: "One place for what Dana can prove, probably knows and wants, and who may see it. The wallet stores it using HCP underneath.",
-      nodes: ["univ", "infer", "wallet"], edges: { "univ-wallet": "issues credentials", "infer-wallet": "estimates" },
-      msgs: [["University → Wallet", "issues Open Badge 3.0 credentials for passed assessments"], ["Dana → Wallet", "adds goal, constraint and preference; sets a rule: ask first before sharing with an employer"], ["Dana → Wallet", "lets the university advising agent read, for advising only; accommodations, financial aid and demographics are never shared"]],
+    { key: "learncard", short: "LearnCard", title: "Stage 3: LearnCard: Dana's credentials, context and permissions",
+      sub: "One place for what Dana can prove, probably knows and wants, and who may see it. LearnCard stores it using HCP underneath.",
+      nodes: ["univ", "infer", "learncard"], edges: { "univ-learncard": "issues credentials", "infer-learncard": "estimates" },
+      msgs: [["University → LearnCard", "issues Open Badge 3.0 credentials for passed assessments"], ["Dana → LearnCard", "adds goal, constraint and preference; sets a rule: ask first before sharing with an employer"], ["Dana → LearnCard", "lets the university advising agent read, for advising only; accommodations, financial aid and demographics are never shared"]],
       value: [["Learner", "One app for proof, context and consent, instead of a consent screen per tool."], ["Employers", "Verified achievements the issuer can suspend or revoke."]],
-      feas: ["Medium–high", "Wallets that support Open Badges 3.0 / VCs exist today. New: storing context and enforcing permissions using HCP (grants, purposes, revocation, audit), which this repo's provider already models. Decision needed: is the wallet the context operator?"],
+      feas: ["Medium–high", "LearnCard supports Open Badges 3.0 / VCs today. New: storing context and enforcing permissions using HCP (grants, purposes, revocation, audit), which this repo's provider already models. Decision needed: is LearnCard the context operator?"],
       notes: "Open Dana's controls. Suspend a credential, or turn off 'What I probably know', then go to stage 4: the agent's answers and citations change. That is learner control you can see." },
     { key: "advising", short: "AI advising: university agent → Career app B", title: "Stage 4: AI advising: University advising agent, then Career app B",
-      sub: "The same wallet context serves the university's advising agent and then an independent career app, through the same HCP request, with no intake.",
+      sub: "The same LearnCard context serves the university's advising agent and then an independent career app, through the same HCP request, with no intake.",
       dyn: () => S.advisor === "appb"
-        ? { nodes: ["wallet", "appb"], edges: { "wallet-appb": "temporary read (4 hours)" },
-            msgs: [["Dana → Wallet", "lets Career app B read for 4 hours"], ["App B → Wallet", "the same HCP request the university agent used: no new integration"], ["App B", "continues from proven, likely and wanted, plus the university agent's saved plan, labelled as another service's inference"]] }
-        : { nodes: ["wallet", "agent"], edges: { "wallet-agent": "what Dana shares + Dana's rules" },
-            msgs: [["Agent → Wallet", "asks, for advising"], ["Wallet", "returns only what Dana allows, with the ask-first rule, and logs the read"], ["Agent", "answers in three parts, citing each source"], ["Agent → Wallet", "saves the plan only after Dana confirms"]] },
+        ? { nodes: ["learncard", "appb"], edges: { "learncard-appb": "temporary read (4 hours)" },
+            msgs: [["Dana → LearnCard", "lets Career app B read for 4 hours"], ["App B → LearnCard", "the same HCP request the university agent used: no new integration"], ["App B", "continues from proven, likely and wanted, plus the university agent's saved plan, labelled as another service's inference"]] }
+        : { nodes: ["learncard", "agent"], edges: { "learncard-agent": "what Dana shares + Dana's rules" },
+            msgs: [["Agent → LearnCard", "asks, for advising"], ["LearnCard", "returns only what Dana allows, with the ask-first rule, and logs the read"], ["Agent", "answers in three parts, citing each source"], ["Agent → LearnCard", "saves the plan only after Dana confirms"]] },
       nodes: [], edges: {}, msgs: [],
       value: [["Learner", "Specific advice with zero intake, and no starting over with a new tool."], ["Ecosystem", "A second, independently built service benefits from context it did not create, with no new integration."]],
       feas: ["High (scripted) / Medium (LLM)", "Same mechanism as Track A's tutor handoff, already demonstrated. An LLM agent needs a citation guardrail and an evaluation that fails any 'likely' presented as 'proven'."],
-      notes: "Start with the university agent and use Compare: without the wallet it asks 11 intake questions. Save the plan, then switch to Career app B: it starts from the same context and sees the saved plan, labelled as the university's inference. Try revoking either service in Dana's controls." },
+      notes: "Start with the university agent and use Compare: without LearnCard it asks 11 intake questions. Save the plan, then switch to Career app B: it starts from the same context and sees the saved plan, labelled as the university's inference. Try revoking either service in Dana's controls." },
   ];
 
   // --------------------------------------------------------- learner views
@@ -484,7 +484,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         h("div", { class: "row", style: "margin-top:8px" }, h("button", { type: "button", on: { click: () => toast("Share link copied (demo).") } }, "Share"),
           h("button", { type: "button", on: { click: () => toast(sus ? "Status list: suspended." : "Signature valid · status: active.") } }, "Verify")));
     });
-    return app("The wallet · My wallet", "3 credentials", cards,
+    return app("LearnCard · My wallet", "3 credentials", cards,
       h("p", { class: "note" }, "Identity and access management is not here: a high estimate is not an achievement. It will be once Dana passes the assessment."));
   }
   function viewContext() {
@@ -497,7 +497,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       g.append(h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, items));
       return g;
     };
-    return app("Wallet · Dana", "credentials · context · permissions",
+    return app("LearnCard · Dana", "credentials · context · permissions",
       h("div", { class: "card" }, h("b", {}, "Connected sources "), h("span", { class: "note" }, "(can add, cannot read)"),
         h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, h("li", {}, "University: assessment records and credentials"), h("li", {}, "Inference engine: P(Known) estimates"))),
       group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, " ", S.suspended[c.id] ? h("span", { class: "st-bad" }, "⚠ suspended by the issuer") : h("span", { class: "st-good" }, "✓ verified"), h("span", { class: "note" }, ` · Open Badge 3.0 · issued ${c.issued}`)))),
@@ -570,22 +570,22 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   function viewAdvise() {
     if (!S.compare) return app("University · Advising", "agent · reads Dana's context", adviceBlock("agent"));
     return h("div", { class: "cmp" },
-      h("div", {}, h("h4", {}, "With the wallet"), app("University · Advising", "with context", adviceBlock("agent"))),
-      h("div", {}, h("h4", {}, "Without the wallet"), app("University · Advising", "cold start", coldBlock())));
+      h("div", {}, h("h4", {}, "With LearnCard"), app("University · Advising", "with context", adviceBlock("agent"))),
+      h("div", {}, h("h4", {}, "Without LearnCard"), app("University · Advising", "cold start", coldBlock())));
   }
   function viewPortable() {
     const a = advise("appb");
     const withN = a.error ? "–" : a.intake.length;
-    const summary = h("table", { style: "margin-top:12px" }, h("thead", {}, h("tr", {}, h("th", {}, ""), h("th", {}, "With the wallet"), h("th", {}, "Without the wallet"))),
+    const summary = h("table", { style: "margin-top:12px" }, h("thead", {}, h("tr", {}, h("th", {}, ""), h("th", {}, "With LearnCard"), h("th", {}, "Without LearnCard"))),
       h("tbody", {},
         h("tr", {}, h("th", { scope: "row" }, "Intake steps before first recommendation"), h("td", {}, String(withN)), h("td", {}, "11")),
         h("tr", {}, h("th", { scope: "row" }, "Verified skills it can rely on"), h("td", {}, a.error ? "–" : String(a.entries.filter((e) => e.kind === "proven").length)), h("td", {}, "0 (self-reported)")),
-        h("tr", {}, h("th", { scope: "row" }, "Integration with the university needed"), h("td", {}, "None: same wallet request"), h("td", {}, "A bespoke one, or none")),
+        h("tr", {}, h("th", { scope: "row" }, "Integration with the university needed"), h("td", {}, "None: same LearnCard request"), h("td", {}, "A bespoke one, or none")),
         h("tr", {}, h("th", { scope: "row" }, "Knows Dana's schedule and goal"), h("td", {}, a.error ? "–" : (S.cats.wanted ? "Yes" : "No (withheld)")), h("td", {}, "Only after asking"))));
     const main = app("Career app B", "temporary access · 4 hours", adviceBlock("appb"), summary);
     if (!S.compare) return main;
-    return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With the wallet"), main),
-      h("div", {}, h("h4", {}, "Without the wallet"), app("Career app B", "cold start", coldBlock())));
+    return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With LearnCard"), main),
+      h("div", {}, h("h4", {}, "Without LearnCard"), app("Career app B", "cold start", coldBlock())));
   }
   function viewAdvising() {
     const tabs = h("div", { class: "row", role: "group", "aria-label": "Advising service", style: "margin-bottom:10px" },
@@ -600,13 +600,13 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   const VIEWS = [viewEvidence, viewInference, viewContext, viewAdvising];
 
   // ----------------------------------------------------------- system view
-  const ORDER = ["univ", "infer", "wallet", "agent", "appb"];
-  const DESC = { univ: "assessment results", infer: "P(Known) estimates", wallet: "credentials, estimates, goals, permissions · uses HCP", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
+  const ORDER = ["univ", "infer", "learncard", "agent", "appb"];
+  const DESC = { univ: "assessment results", infer: "P(Known) estimates", learncard: "credentials, estimates, goals, permissions · uses HCP", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
   function viewSystem(st) {
     const f = h("div", { class: "flow" });
     ORDER.forEach((k, i) => {
       if (i) {
-        const SHORT = { univ: "University", infer: "Inference engine", wallet: "Wallet", agent: "Agent", appb: "App B" };
+        const SHORT = { univ: "University", infer: "Inference engine", learncard: "LearnCard", agent: "Agent", appb: "App B" };
         const ks = Object.keys(st.edges).filter((e) => e.endsWith("-" + k) && st.nodes.includes(e.split("-")[0]));
         const key = ks[0];
         const lbl = ks.map((e) => `${SHORT[e.split("-")[0]]} → ${st.edges[e]}`).join(" · ");
@@ -665,7 +665,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const MAP = { 0: 1, 1: 2, 3: S.advisor === "appb" ? 6 : 5 };
     let title, obj, keys;
     if (i === 2) {
-      title = "HCP entry for a credential + the advising grant, as the wallet stores them";
+      title = "HCP entry for a credential + the advising grant, as LearnCard stores them";
       obj = { credentialEntry: credEntry(byId.netsec), advisingGrant: grantsJson()[2] };
       keys = ["entry: issuer-attested, VC as evidence, status follows the issuer", "grant: read categories follow Dana's toggles", "full export: use 'Export as HCP'"];
     } else { [[title, obj], [, keys]] = X[MAP[i]]; }
@@ -673,15 +673,15 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       h("pre", { tabindex: 0, "aria-label": title }, JSON.stringify(obj, null, 2)));
   }
 
-  // ------------------------------------------- HCP structures (The wallet as provider)
-  const PROVIDER = "https://wallet.example/hcp";
-  const CAT = { proven: "education_learner_profile", likely: "https://wallet.example/hcp/categories/competency-estimates", goals: "goals_and_constraints", prefs: "general_preferences" };
+  // ------------------------------------------- HCP structures (LearnCard as provider)
+  const PROVIDER = "https://learncard.example/hcp";
+  const CAT = { proven: "education_learner_profile", likely: "https://learncard.example/hcp/categories/competency-estimates", goals: "goals_and_constraints", prefs: "general_preferences" };
   const CATS_FOR = { proven: [CAT.proven], likely: [CAT.likely], wanted: [CAT.goals, CAT.prefs] };
-  const SENSITIVE = ["https://wallet.example/hcp/categories/accommodations", "https://wallet.example/hcp/categories/financial-aid", "https://wallet.example/hcp/categories/demographics"];
+  const SENSITIVE = ["https://learncard.example/hcp/categories/accommodations", "https://learncard.example/hcp/categories/financial-aid", "https://learncard.example/hcp/categories/demographics"];
   const CLIENTS = {
     univ: { id: "https://records.univ.example/clients/hcp", name: "University records service", operator: { id: "https://univ.example", name: "University (synthetic)" } },
     infer: { id: "https://infer.example/clients/hcp", name: "Inference engine", operator: { id: "https://infer.example", name: "Inference engine (synthetic)" } },
-    wallet: { id: "https://wallet.example/clients/app", name: "Wallet app", operator: { id: "https://wallet.example", name: "Wallet (synthetic)" } },
+    learncard: { id: "https://learncard.example/clients/app", name: "LearnCard app", operator: { id: "https://learncard.example", name: "LearnCard (synthetic)" } },
     agent: { id: "https://advising.univ.example/clients/hcp", name: "University advising agent", operator: { id: "https://advising.univ.example", name: "University advising (synthetic)" } },
     appb: { id: "https://careers-b.example/clients/hcp", name: "Career app B", operator: { id: "https://careers-b.example", name: "Career app B (synthetic)" } },
   };
@@ -697,7 +697,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const e = { "@context": ["https://hcp.example/contexts/v2"], schema: "https://hcp.example/spec/entry/2.0", id, type: ["ContextEntry"],
       subject: { id: DANA.did, relationship: null }, content, assertion, classification };
     if (evidence) e.evidence = evidence;
-    e.record = { status: "active", version: 1, relationships: [], metadata: { synthetic: true, generator: "wallet-storyboard" }, ...record };
+    e.record = { status: "active", version: 1, relationships: [], metadata: { synthetic: true, generator: "learncard-storyboard" }, ...record };
     return e;
   }
   function ob3(c) {
@@ -729,7 +729,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     return entry(eid(id, "1"), { profile: "https://hcp.example/spec/profiles/general-context/2.0", value: text, language: "en" },
       { declarationType: "person-declared", confidence: null, validUntil: null },
       { categories: [cat], dimension: dim },
-      { provenance: prov(DANA.did, "authenticated", "2026-07-21T19:00:00Z", "wallet", null, "person-input") });
+      { provenance: prov(DANA.did, "authenticated", "2026-07-21T19:00:00Z", "learncard", null, "person-input") });
   }
   function planEntry() {
     const a = advise("agent");
@@ -748,7 +748,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       grantType: type, issuedAt: issued, expiresAt: expires, status: revoked ? "revoked" : "active" });
     const read = sharedCats();
     return [
-      g("univ", [[["write"], [CAT.proven], PURPOSE.records, "Keep the university's record of your learning in your wallet"]], "persistent", "2026-01-12T17:00:00Z", null, false),
+      g("univ", [[["write"], [CAT.proven], PURPOSE.records, "Keep the university's record of your learning in your LearnCard"]], "persistent", "2026-01-12T17:00:00Z", null, false),
       g("infer", [[["write"], [CAT.likely], PURPOSE.estimate, "Add estimates of what you probably know"]], "persistent", "2026-03-13T02:00:00Z", null, false),
       g("agent", [[["read"], read, PURPOSE.advising, "Academic and career advising"], [["write"], [CAT.goals], PURPOSE.advising, "Save an advising plan you approve"]], "persistent", "2026-07-21T19:05:00Z", null, S.agentRevoked),
       g("appb", [[["read"], read, PURPOSE.career, "Career navigation"]], "temporary", "2026-08-03T12:00:00Z", "2026-08-03T16:00:00Z", S.appbRevoked),
@@ -794,7 +794,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       const counts = {};
       for (const e of ex.entries) counts[e.assertion.declarationType] = (counts[e.assertion.declarationType] || 0) + 1;
       box.replaceChildren(
-        h("h2", { id: "modalTitle" }, "Export my wallet as HCP"),
+        h("h2", { id: "modalTitle" }, "Export my LearnCard as HCP"),
         h("p", { class: "note" }, "A standard HCP ContextExport that any HCP provider can import, plus a grants file. Choose the pieces to include."),
         h("div", { class: "row", style: "margin:8px 0" }, PIECES.map(([k, label]) => h("label", { class: "pill", style: "padding:4px 10px;font-size:13px" },
           h("input", { type: "checkbox", checked: S.pieces[k], disabled: k === "plan" && !S.planSaved, on: { change: (e) => { S.pieces[k] = e.target.checked; draw(); } } }),
@@ -814,13 +814,13 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       ["Passed assessment → credential", "University · write grant (school records)", "ContextEntry + VC evidence", ["evidence[0].credential (Open Badge 3.0)", "classification.dimension = competency URI", "record.provenance.assertedBy = university issuer DID", "record.status follows the university's status list"], "issuer-attested"],
       ["Raw assessment attempts", "Stays at the university", "Not stored by default", ["Feeds the inference engine", "If needed: a record-extract entry, as the Track A fixture does for assessments"], "–"],
       ["P(Known) estimate", "Inference engine · write grant (competency estimation)", "ContextEntry", ["content.value {competency, pKnown, observations, modelVersion}", "assertion.confidence (high / medium / low)", "assertion.validUntil", "assertion.basis.rationale", "its own category (see finding)"], "model-inferred"],
-      ["Goal, constraint, preference", "Dana · in the wallet app", "ContextEntry", ["content.value (Dana's words)", "classification.categories: goals_and_constraints / general_preferences", "record.provenance.source = person-input"], "person-declared"],
+      ["Goal, constraint, preference", "Dana · in the LearnCard app", "ContextEntry", ["content.value (Dana's words)", "classification.categories: goals_and_constraints / general_preferences", "record.provenance.source = person-input"], "person-declared"],
       ["Who may read, for what", "Dana", "Grant", ["client", "access[].actions, categories, purposes", "grantType: persistent or temporary", "expiresAt"], "–"],
       ["\"Ask me before sharing\"", "Dana", "Directive", ["action: share", "effect: ask-first", "categories; travels with every disclosure"], "–"],
       ["Never share sensitive data", "Dana", "Standing rule", ["effect: deny", "operators", "categories: accommodations, financial aid, demographics"], "–"],
-      ["What a reader receives", "Wallet · as HCP provider", "Query response (disclosure)", ["entries the grant reaches", "directives that apply", "logged as context.read"], "–"],
+      ["What a reader receives", "LearnCard · as HCP provider", "Query response (disclosure)", ["entries the grant reaches", "directives that apply", "logged as context.read"], "–"],
       ["Plan Dana chooses to save", "University advising agent · write grant (goals only)", "ContextEntry", ["content.value (the plan)", "record.provenance.submittedByClient = agent", "authorizedUnder = agent's grant"], "model-inferred"],
-      ["Every grant, read, write, revoke", "Wallet · as HCP provider", "Audit event", ["eventType, timestamp, participants", "grantId, entryId"], "–"],
+      ["Every grant, read, write, revoke", "LearnCard · as HCP provider", "Audit event", ["eventType, timestamp, participants", "grantId, entryId"], "–"],
       ["Take it all elsewhere", "Dana", "ContextExport + grants", ["entries, versions, rules, directives, delegations, audit", "grants.json alongside"], "–"],
     ];
     const kindOf = (d) => d === "issuer-attested" ? "proven" : d === "model-inferred" ? "likely" : d === "person-declared" ? "wanted" : null;
@@ -832,11 +832,11 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         h("td", {}, kindOf(decl) ? h("span", { class: "kind" }, dot(kindOf(decl)), decl) : h("span", { class: "note" }, decl))))));
     return h("div", {},
       h("div", { class: "row", style: "justify-content:space-between" },
-        h("div", {}, h("h2", { id: "maph" }, "Where each piece goes in HCP"), h("p", { class: "sub" }, "HCP is the communication protocol underneath the wallet. Every piece of information above maps to one HCP structure.")),
+        h("div", {}, h("h2", { id: "maph" }, "Where each piece goes in HCP"), h("p", { class: "sub" }, "HCP is the communication protocol underneath LearnCard. Every piece of information above maps to one HCP structure.")),
         h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP")),
       h("div", { style: "overflow:auto;margin-top:10px" }, tbl),
       h("div", { class: "finding" }, h("b", {}, "Finding: "),
-        "HCP grants are scoped by category and purpose, not by declaration type. For Dana to share credentials without sharing estimates, estimates need their own category. Here they use a wallet-defined category URI (",
+        "HCP grants are scoped by category and purpose, not by declaration type. For Dana to share credentials without sharing estimates, estimates need their own category. Here they use a LearnCard-defined category URI (",
         h("code", {}, CAT.likely), "). Decide together whether to propose it upstream as part of the Education Context profile."),
       h("p", { class: "note" }, "Categories in use: education_learner_profile (credentials) · …/competency-estimates (estimates) · goals_and_constraints · general_preferences. Sensitive categories exist but are never granted to advising."));
   }
@@ -887,7 +887,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     $("stageTitle").textContent = st.title; $("stageSub").textContent = st.sub;
     $("compareWrap").hidden = S.stage < 3;
     $("compareBtn").setAttribute("aria-pressed", String(S.compare));
-    $("compareBtn").textContent = S.compare ? "Hide comparison" : "Compare: without the wallet";
+    $("compareBtn").textContent = S.compare ? "Hide comparison" : "Compare: without LearnCard";
     $("prevBtn").disabled = S.stage === 0; $("nextBtn").disabled = S.stage === STAGES.length - 1;
     $("grid").className = "grid3" + (S.compare && S.stage >= 3 ? " nohood" : "");
     document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 3;
