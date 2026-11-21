@@ -1,6 +1,6 @@
 # Track B: Career navigation (design)
 
-Status: design. Not yet runnable. No institutional fixture exists for this
+Status: design, with an interactive storyboard ([live](https://xd2164.github.io/hcp-learner-continuity/storyboard/), [source](storyboard/index.html)) and a [PRD](track-b-storyboard-prd.md). The integration is not yet runnable. No institutional fixture exists for this
 track yet, and building one is step 1 below.
 
 ## Journey

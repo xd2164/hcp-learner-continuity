@@ -15,7 +15,7 @@ It runs two parallel demonstrations on the same infrastructure:
 |---|---|---|
 | Journey | Learning platform → HCP → Tutor A → Tutor B | University → HCP + learner wallet → Career app A → Career app B |
 | Evidence | Assessment and mastery records | Institutional competencies and credentials |
-| Status here | **Runnable demo on synthetic learners** | Design and data mapping ([docs/track-b-career-navigation.md](docs/track-b-career-navigation.md)) |
+| Status here | **Runnable demo on synthetic learners** | Interactive storyboard ([live](https://xd2164.github.io/hcp-learner-continuity/storyboard/)), [PRD](docs/track-b-storyboard-prd.md) and [design](docs/track-b-career-navigation.md) |
 
 See [docs/vision.md](docs/vision.md) for the full argument and the investment question.
 
@@ -53,7 +53,7 @@ python -m hcp_demo.html_view
 python -m unittest discover -s tests
 ```
 
-**Interactive view:** <https://xd2164.github.io/hcp-learner-continuity/>. It has the cohort
+**Interactive views:** Track A results at <https://xd2164.github.io/hcp-learner-continuity/>; the Track B storyboard at <https://xd2164.github.io/hcp-learner-continuity/storyboard/>. It has the cohort
 chart, and you can follow any learner through the five steps. It is a single self-contained file
 ([docs/index.html](docs/index.html)) and works offline.
 

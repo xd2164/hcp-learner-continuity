@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storyboard: a university learner's journey through HCP</title>
+<style>
+.viz-root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --surface-2: #f3f2ee; --text-primary: #0b0b0b; --text-secondary: #52514e;
+  --muted: #898781; --grid: #e1e0d9; --baseline: #c3c2b7; --border: rgba(11,11,11,0.10); --hover: rgba(11,11,11,0.04);
+  --proven: #2a78d6; --wanted: #eb6834; --likely: #1baf7a;
+  --good: #0ca30c; --good-text: #006300; --critical: #d03b3b; --warning: #fab219;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322; --text-primary: #f0efec; --text-secondary: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --baseline: #383835; --border: rgba(255,255,255,0.10); --hover: rgba(255,255,255,0.05);
+    --proven: #3987e5; --wanted: #d95926; --likely: #199e70;
+    --good: #0ca30c; --good-text: #0ca30c; --critical: #d03b3b; --warning: #fab219;
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322; --text-primary: #f0efec; --text-secondary: #c3c2b7;
+  --muted: #898781; --grid: #2c2c2a; --baseline: #383835; --border: rgba(255,255,255,0.10); --hover: rgba(255,255,255,0.05);
+  --proven: #3987e5; --wanted: #d95926; --likely: #199e70;
+  --good: #0ca30c; --good-text: #0ca30c; --critical: #d03b3b; --warning: #fab219;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+.viz-root { background: var(--page); color: var(--text-primary); min-height: 100vh;
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 20px 20px 48px; }
+header.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 18px; margin: 0 0 4px; }
+h3 { font-size: 14px; margin: 0 0 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+h4 { font-size: 15px; margin: 0 0 4px; }
+p { margin: 6px 0; }
+.sub { color: var(--text-secondary); margin: 2px 0 0; }
+.note { color: var(--muted); font-size: 13px; }
+.banner { margin-top: 10px; font-size: 13px; color: var(--text-secondary); background: var(--surface-2); border-radius: 8px; padding: 6px 10px; }
+button { font: inherit; color: inherit; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+button:hover { background: var(--hover); }
+button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--proven); outline-offset: 2px; }
+button.primary { background: var(--text-primary); color: var(--surface-1); border-color: transparent; }
+button.danger { color: var(--critical); }
+button[aria-pressed="true"] { border-color: var(--text-secondary); font-weight: 600; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+/* stage rail */
+.rail { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 18px 0 14px; list-style: none; padding: 0; }
+.rail button { width: 100%; text-align: left; padding: 8px 10px; border-radius: 10px; }
+.rail .num { display: block; font-size: 11px; color: var(--muted); font-weight: 700; letter-spacing: 0.05em; }
+.rail .lbl { display: block; font-size: 13px; line-height: 1.25; }
+.rail button[aria-current="step"] { border-color: var(--text-primary); background: var(--surface-1); box-shadow: inset 0 -3px 0 var(--text-primary); }
+.rail button.done .num::after { content: " ✓"; color: var(--good-text); }
+@media (max-width: 900px) { .rail { grid-template-columns: repeat(4, 1fr); } }
+
+.stagehead { display: flex; justify-content: space-between; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 12px; }
+.grid3 { display: grid; grid-template-columns: 1.35fr 0.85fr 1fr; gap: 14px; align-items: start; }
+.grid3.nohood { grid-template-columns: 1.4fr 0.9fr; }
+@media (max-width: 1100px) { .grid3, .grid3.nohood { grid-template-columns: 1fr; } }
+.panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 16px; min-width: 0; }
+
+/* learner view mock app */
+.app { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.appbar { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: var(--surface-2); font-size: 13px; color: var(--text-secondary); }
+.appbar strong { color: var(--text-primary); }
+.appbody { padding: 14px; }
+.card { border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin: 10px 0; }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; font-size: 14px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; }
+.pill { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); white-space: nowrap; }
+.st-good { color: var(--good-text); font-weight: 600; }
+.st-bad { color: var(--critical); font-weight: 600; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+.kind { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); }
+.groupbox { border-left: 4px solid var(--border); padding: 4px 0 4px 12px; margin: 12px 0; }
+.bubble { background: var(--surface-2); border-radius: 12px 12px 12px 4px; padding: 10px 12px; margin: 8px 0; max-width: 92%; }
+.bubble.me { margin-left: auto; border-radius: 12px 12px 4px 12px; background: transparent; border: 1px solid var(--border); }
+.out { border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin: 10px 0; }
+.out .n { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.cites { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.cite { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; color: var(--text-secondary); cursor: help; background: var(--surface-1); }
+.cite .k { width: 10px; height: 2px; display: inline-block; }
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .cmp { grid-template-columns: 1fr; } }
+.cmp > div > h4 { display: flex; gap: 8px; align-items: center; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--text-secondary); font-weight: 600; font-size: 13px; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.switch { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--grid); }
+.switch:last-child { border-bottom: 0; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--text-primary); }
+
+/* P(Known) bars */
+.pk { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(120px, 1.3fr) 104px; gap: 8px; align-items: center; font-size: 13px; padding: 4px 0; }
+.pk .track { position: relative; height: 12px; }
+.pk .track .bar { position: absolute; left: 0; top: 0; height: 12px; border-radius: 0 4px 4px 0; background: var(--likely); }
+.pk .track .thr { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--text-secondary); }
+.pk .track .base { position: absolute; left: 0; top: -3px; bottom: -3px; width: 1px; background: var(--baseline); }
+.pk .val { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+
+/* system view */
+.flow { display: flex; flex-direction: column; gap: 0; }
+.node { border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; opacity: 0.45; transition: opacity .2s; background: var(--surface-1); }
+.node.on { opacity: 1; border-color: var(--text-secondary); box-shadow: 0 0 0 1px var(--text-secondary); }
+.node .t { font-weight: 600; font-size: 14px; }
+.node .d { font-size: 12px; color: var(--text-secondary); }
+.edge { height: 26px; display: flex; align-items: center; gap: 8px; padding-left: 18px; font-size: 12px; color: var(--muted); }
+.edge::before { content: ""; width: 1px; height: 100%; background: var(--baseline); }
+.edge.on { color: var(--text-primary); }
+.edge.on::before { width: 2px; background: var(--text-primary); }
+ol.msgs { margin: 8px 0 0; padding-left: 20px; font-size: 13px; color: var(--text-secondary); }
+ol.msgs li { margin: 4px 0; }
+ol.msgs b { color: var(--text-primary); font-weight: 600; }
+
+/* under the hood */
+pre { margin: 0; padding: 10px; background: var(--surface-2); border-radius: 8px; overflow: auto; font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; max-height: 520px; white-space: pre; }
+.hoodtabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.keyfields { font-size: 13px; color: var(--text-secondary); margin: 0 0 8px; padding-left: 18px; }
+
+/* value strip & notes */
+.value { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+.value .v { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+.value .v b { display: block; font-size: 12px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2px; }
+.notes { margin-top: 12px; background: var(--surface-1); border: 1px dashed var(--baseline); border-radius: 10px; padding: 10px 14px; }
+.notes summary { cursor: pointer; color: var(--text-secondary); font-weight: 600; }
+.feas { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; }
+
+/* drawer */
+.drawer { position: fixed; top: 0; right: 0; height: 100vh; width: min(420px, 100vw); background: var(--surface-1); border-left: 1px solid var(--border);
+  box-shadow: -8px 0 24px rgba(0,0,0,0.12); transform: translateX(105%); transition: transform .2s; z-index: 20; display: flex; flex-direction: column; }
+.drawer.open { transform: none; }
+.drawer header { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--grid); }
+.drawer .body { overflow: auto; padding: 12px 16px 24px; }
+.drawer section { margin-bottom: 18px; }
+.audit { font: 12px/1.5 ui-monospace, Consolas, monospace; color: var(--text-secondary); max-height: 260px; overflow: auto; background: var(--surface-2); border-radius: 8px; padding: 8px; }
+.audit div.new { color: var(--text-primary); }
+
+.tip { position: fixed; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 10px; font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,0.14); display: none; z-index: 40; max-width: 340px; }
+.tip strong { display: block; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: none; align-items: center; justify-content: center; z-index: 30; }
+.modal.open { display: flex; }
+.modal .box { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 18px; width: min(460px, 92vw); }
+.toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--text-primary); color: var(--surface-1); padding: 8px 14px; border-radius: 8px; font-size: 14px; display: none; z-index: 50; }
+
+/* presenter mode */
+.presenter .viz-root, .viz-root.presenter { font-size: 18px; }
+.viz-root.presenter .hoodcol { display: none; }
+.viz-root.presenter .grid3 { grid-template-columns: 1.4fr 0.9fr; }
+.viz-root.presenter .notes { display: block; }
+footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="viz-root" id="root">
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>A university learner's journey: evidence → inference → credential → context → advice</h1>
+      <p class="sub">Storyboard for feasibility review. Follow Dana, a synthetic university learner, through seven stages. The controls are live.</p>
+    </div>
+    <div class="row">
+      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Dana's controls</button>
+      <button id="presenterBtn" type="button" aria-pressed="false">Presenter mode</button>
+      <button id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
+    </div>
+  </header>
+  <div class="banner">Synthetic persona and data. What the university, the inference engine and the wallet do here is an assumption to validate with each partner; it does not describe their systems today. HCP 2.0-draft-3 (working draft).</div>
+
+  <ol class="rail" id="rail" aria-label="Journey stages"></ol>
+
+  <div class="stagehead">
+    <div>
+      <h2 id="stageTitle"></h2>
+      <p class="sub" id="stageSub"></p>
+    </div>
+    <div class="row">
+      <span id="compareWrap" class="row" hidden>
+        <button id="compareBtn" type="button" aria-pressed="false">Compare: without HCP</button>
+      </span>
+      <button id="prevBtn" type="button">← Back</button>
+      <button id="nextBtn" type="button" class="primary">Next →</button>
+    </div>
+  </div>
+
+  <div class="grid3" id="grid">
+    <section class="panel" aria-labelledby="lvh"><h3 id="lvh">Learner view</h3><div id="learner"></div></section>
+    <section class="panel" aria-labelledby="svh"><h3 id="svh">System view</h3><div id="system"></div></section>
+    <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">Under the hood</h3><div id="hood"></div></section>
+  </div>
+
+  <div class="value" id="value"></div>
+  <details class="notes" id="notes"><summary>Speaker notes and feasibility</summary><div id="notesBody"></div></details>
+
+  <footer>
+    Keyboard: ← → to move between stages. Hover or focus a citation chip to see the entry behind it. Everything is computed in this page from synthetic data; nothing is sent anywhere.
+  </footer>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="Dana's controls" aria-hidden="true">
+  <header><strong>Dana's controls</strong><button id="closeDrawer" type="button" aria-label="Close controls">Close</button></header>
+  <div class="body" id="drawerBody"></div>
+</aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="box" id="modalBox"></div></div>
+<div class="tip" id="tip" role="tooltip"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // ------------------------------------------------------------------ data
+  const DANA = { name: "Dana", did: "did:example:learner:dana", program: "B.S. Cloud Computing (synthetic)", age: 34,
+    job: "IT support, full time" };
+  const ROLE = { name: "Cloud security analyst", comps: ["netsec", "cloud", "linux", "iam", "ir", "auto"] };
+  const C = [
+    { id: "netsec", name: "Network security fundamentals", pk: 0.96, obs: 14, cred: true, issued: "2026-03-14", attempts: [["2026-02-20", "Objective assessment", "Not yet (68%)"], ["2026-03-12", "Objective assessment", "Passed (84%)"]] },
+    { id: "cloud",  name: "Cloud platform foundations", pk: 0.94, obs: 11, cred: true, issued: "2026-05-02", attempts: [["2026-05-01", "Performance task", "Competent"]] },
+    { id: "linux",  name: "Linux administration", pk: 0.92, obs: 9, cred: true, issued: "2026-07-19", attempts: [["2026-07-18", "Objective assessment", "Passed (79%)"]] },
+    { id: "iam",    name: "Identity and access management", pk: 0.91, obs: 8, cred: false, attempts: [] },
+    { id: "ir",     name: "Incident response", pk: 0.48, obs: 4, cred: false, attempts: [] },
+    { id: "auto",   name: "Security automation (scripting)", pk: 0.62, obs: 6, cred: false, attempts: [] },
+  ];
+  const byId = Object.fromEntries(C.map((c) => [c.id, c]));
+  const GOAL = "Move into a cloud security role within 18 months.";
+  const CONSTRAINT = "About 8 hours a week, mostly weekends.";
+  const PREF = "Short practice sets before a full assessment.";
+  const DIRECTIVE = "Ask me before you share my profile with an employer.";
+  const OPS = {
+    univ: "University assessment records", infer: "Inference engine", wallet: "Learner wallet",
+    hcp: "HCP context (Dana's provider)", agent: "University advising agent", appb: "Career app B (independent)",
+  };
+  const T = "https://hcp.example/spec/authorization/context-access";
+
+  function band(c) { if (c.pk >= 0.9 && c.obs >= 5) return "high"; if (c.pk >= 0.7) return "medium"; return "low"; }
+  function plain(c) { if (c.obs < 3) return "Not enough evidence"; if (c.pk >= 0.85) return "Very likely known"; if (c.pk >= 0.6) return "Developing"; return "Not yet"; }
+  const eid = (kind, id) => `urn:uuid:dana-${kind}-${id}`;
+
+  // ----------------------------------------------------------------- state
+  const S = {
+    stage: 0, compare: false,
+    cats: { proven: true, likely: true, wanted: true },
+    agentRevoked: false, appbRevoked: false,
+    suspended: {}, directiveOn: true, planSaved: false, shared: null,  // shared: null | "approved" | "declined"
+    actions: [],
+  };
+
+  // Which entries exist in HCP at a given stage
+  function entriesAt(stage) {
+    const list = [];
+    if (stage >= 2) for (const c of C) list.push({ id: eid("est", c.id), kind: "likely", c,
+      label: `Model estimate: ${c.name}`, detail: `P(Known) ${c.pk.toFixed(2)} · ${band(c)} confidence · ${c.obs} observations · model-inferred` });
+    if (stage >= 3) for (const c of C.filter((x) => x.cred)) list.push({ id: eid("cred", c.id), kind: "proven", c,
+      label: `University credential: ${c.name}`, detail: `Open Badges 3.0, issued ${c.issued} · issuer-attested · ${S.suspended[c.id] ? "SUSPENDED by issuer" : "verifies"}` });
+    if (stage >= 4) {
+      list.push({ id: eid("goal", "1"), kind: "wanted", label: "Dana's goal", detail: `"${GOAL}" · person-declared` });
+      list.push({ id: eid("constraint", "1"), kind: "wanted", label: "Dana's constraint", detail: `"${CONSTRAINT}" · person-declared` });
+      list.push({ id: eid("pref", "1"), kind: "wanted", label: "Dana's preference", detail: `"${PREF}" · person-declared` });
+    }
+    if (S.planSaved) list.push({ id: eid("plan", "1"), kind: "likely", label: "Saved plan (University advising agent)", detail: "Advising plan · model-inferred by the University advising agent · saved with Dana's confirmation" });
+    return list;
+  }
+  const ENTRY = () => Object.fromEntries(entriesAt(6).map((e) => [e.id, e]));
+
+  // What a reading client receives, under the learner's controls
+  function disclosed(client) {
+    if (client === "agent" && S.agentRevoked) return { error: "invalid-token" };
+    if (client === "appb" && S.appbRevoked) return { error: "invalid-token" };
+    const on = Object.keys(S.cats).filter((k) => S.cats[k]);
+    if (!on.length) return { error: "scope-denied" };
+    const ents = entriesAt(Math.max(S.stage, 5)).filter((e) => S.cats[e.kind])
+      .filter((e) => !(e.kind === "proven" && S.suspended[e.c.id]))
+      .filter((e) => client === "appb" || e.id !== eid("plan", "1"));
+    return { entries: ents };
+  }
+
+  function statusOf(c, ents) {
+    const ids = new Set(ents.map((e) => e.id));
+    if (ids.has(eid("cred", c.id))) return { s: "proven", cite: [eid("cred", c.id)] };
+    if (ids.has(eid("est", c.id))) {
+      const s = c.pk >= 0.85 && band(c) !== "low" ? "likely" : "gap";
+      return { s, cite: [eid("est", c.id)] };
+    }
+    return { s: "unknown", cite: [] };
+  }
+
+  // The advising agent: three controlled inputs -> three outputs
+  function advise(client) {
+    const r = disclosed(client);
+    if (r.error) return { error: r.error };
+    const ents = r.entries, ids = new Set(ents.map((e) => e.id));
+    const hasGoal = ids.has(eid("goal", "1")), hasCons = ids.has(eid("constraint", "1")), hasPref = ids.has(eid("pref", "1"));
+    const rows = ROLE.comps.map((id) => ({ c: byId[id], ...statusOf(byId[id], ents) }));
+    const intake = [];
+    if (!hasGoal) intake.push("What role are you aiming for?");
+    if (!hasCons) intake.push("How many hours a week can you study, and when?");
+    for (const r0 of rows) if (r0.s === "unknown") intake.push(`How would you rate yourself on ${r0.c.name.toLowerCase()}?`);
+
+    // Output 1: next best learning action
+    const likely = rows.filter((x) => x.s === "likely");
+    const gaps = rows.filter((x) => x.s === "gap").sort((a, b) => b.c.pk - a.c.pk);
+    let o1, c1 = [];
+    const sched = hasCons ? "This fits your ~8 hours a week: two short practice sets on Saturday, then the assessment on Sunday." : "Tell me your weekly availability and I'll schedule it.";
+    if (likely.length) {
+      const x = likely[0];
+      o1 = `You're likely ready to attempt the ${x.c.name} assessment (P(Known) ${x.c.pk.toFixed(2)}, ${band(x.c)} confidence). ${hasPref ? "Two short practice sets first, as you prefer. " : ""}${sched}`;
+      c1 = x.cite.slice();
+    } else if (gaps.length) {
+      const x = gaps[0];
+      o1 = `Work on ${x.c.name} next: the evidence says it's still developing (P(Known) ${x.c.pk.toFixed(2)}). ${sched}`;
+      c1 = x.cite.slice();
+    } else {
+      const unk = rows.filter((x) => x.s === "unknown").length;
+      o1 = unk === rows.length ? "I don't have evidence about your skills yet. Let's start with a short placement check across the six competencies."
+        : `I can see what you've proven, but I have no evidence on the other ${unk}. Let's start with a short check on those.`;
+    }
+    if (hasCons) c1.push(eid("constraint", "1"));
+    if (hasPref && likely.length) c1.push(eid("pref", "1"));
+
+    // Output 2: pathway guidance
+    let o2, c2 = [], table = null;
+    if (hasGoal) {
+      const n = (s) => rows.filter((x) => x.s === s).length;
+      o2 = `${ROLE.name} roles typically ask for ${rows.length} competencies. You have proven ${n("proven")}, are likely strong in ${n("likely")}, and have ${n("gap")} gap${n("gap") === 1 ? "" : "s"}${n("unknown") ? ` and ${n("unknown")} I have no evidence on` : ""}.`;
+      table = rows;
+      c2 = [eid("goal", "1"), ...rows.flatMap((x) => x.cite)];
+    } else {
+      o2 = "You haven't shared a goal, so I can't tailor a pathway. Common options from your coursework: cloud administrator, security analyst, DevOps engineer.";
+      table = rows;
+      c2 = rows.flatMap((x) => x.cite);
+    }
+    if (client === "appb" && ids.has(eid("plan", "1"))) c2.push(eid("plan", "1"));
+    return { o1, c1, o2, c2, table, intake, entries: ents };
+  }
+
+  // --------------------------------------------------------------- helpers
+  const $ = (id) => document.getElementById(id);
+  function h(tag, attrs, ...kids) {
+    const n = document.createElement(tag);
+    for (const k in (attrs || {})) {
+      if (k === "on") for (const ev in attrs.on) n.addEventListener(ev, attrs.on[ev]);
+      else if (k === "style") n.setAttribute("style", attrs.style);
+      else if (attrs[k] !== false && attrs[k] != null) n.setAttribute(k, attrs[k] === true ? "" : attrs[k]);
+    }
+    for (const kid of kids.flat()) if (kid != null && kid !== false) n.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
+    return n;
+  }
+  const KIND = {
+    proven: ["What I can prove", "var(--proven)", "issuer-attested"],
+    likely: ["What I probably know", "var(--likely)", "model-inferred"],
+    wanted: ["What I want", "var(--wanted)", "person-declared"],
+  };
+  const dot = (kind) => { const d = h("span", { class: "dot" }); d.style.background = KIND[kind][1]; return d; };
+  function toast(msg) { const t = $("toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(toast.t); toast.t = setTimeout(() => (t.style.display = "none"), 2400); }
+
+  const tip = $("tip");
+  function showTip(target, title, body) {
+    tip.replaceChildren(h("strong", {}, title), h("span", { class: "note" }, body));
+    tip.style.display = "block";
+    const b = target.getBoundingClientRect();
+    tip.style.left = Math.min(b.left, window.innerWidth - tip.offsetWidth - 8) + "px";
+    tip.style.top = (b.top - tip.offsetHeight - 8 < 8 ? b.bottom + 8 : b.top - tip.offsetHeight - 8) + "px";
+  }
+  const hideTip = () => (tip.style.display = "none");
+  function citeChips(ids) {
+    const E = ENTRY();
+    const uniq = [...new Set(ids)].filter((i) => E[i]);
+    if (!uniq.length) return h("div", { class: "cites" }, h("span", { class: "note" }, "No sources: nothing was shared for this."));
+    return h("div", { class: "cites", "aria-label": "Sources" }, uniq.map((i) => {
+      const e = E[i]; const k = h("span", { class: "k" }); k.style.background = KIND[e.kind][1];
+      const chip = h("span", { class: "cite", tabindex: 0, role: "note", "aria-label": `${e.label}. ${e.detail}` }, k, e.label);
+      chip.addEventListener("pointerenter", () => showTip(chip, e.label, `${e.detail} · ${e.id}`));
+      chip.addEventListener("focus", () => showTip(chip, e.label, `${e.detail} · ${e.id}`));
+      chip.addEventListener("pointerleave", hideTip); chip.addEventListener("blur", hideTip);
+      return chip;
+    }));
+  }
+  function app(title, right, ...body) {
+    return h("div", { class: "app" }, h("div", { class: "appbar" }, h("strong", {}, title), h("span", {}, right)), h("div", { class: "appbody" }, ...body));
+  }
+  function act(type, detail) { S.actions.push({ type, detail, at: S.stage }); render(); }
+
+  // ------------------------------------------------------------- stages
+  const STAGES = [
+    { key: "consent", short: "Consent", title: "Stage 0: Consent and onboarding",
+      sub: "Dana connects the university to their own context. The university may write; no one may read yet.",
+      nodes: ["univ", "hcp"], edges: { "univ-hcp": "write grant" },
+      msgs: [["Dana", "creates their HCP context and reviews the request"], ["Authorization", "issues University records a write grant for education_learner_profile, purpose: school-records"], ["HCP", "logs grant.issued"]],
+      value: [["Learner", "Plain-language consent: who can write, who can read, why."], ["University", "One standard way to put records where the learner controls them."]],
+      feas: ["High", "The grant model is demonstrated by 123/123 Track A fixture scenarios."],
+      notes: "Start with control. Nothing flows yet, and no one can read. The point to land: Dana, not each app, decides who sees what." },
+    { key: "evidence", short: "University assessment evidence", title: "Stage 1: University assessment evidence",
+      sub: "Dana completes assessments. These results are the most trusted evidence in the chain.",
+      nodes: ["univ"], edges: {},
+      msgs: [["University", "records each attempt: competency IDs, item correctness, outcome, evaluator type"], ["University", "makes results available to the inference engine (stage 2) and to issuance (stage 3)"]],
+      value: [["Learner", "Every later recommendation traces back to something Dana actually did."], ["University", "Assessment evidence keeps working for the learner after the course ends."]],
+      feas: ["Unknown", "To confirm with the university: which result fields can be exported, at what granularity, and the competency identifiers (RSDs or internal)."],
+      notes: "This is the root of trust. Ask the university team which fields exist and at what granularity. This is the biggest dependency in the plan." },
+    { key: "inference", short: "Inference engine", title: "Stage 2: Inference engine",
+      sub: "P(Known) estimates say what Dana probably knows, with uncertainty, and they expire.",
+      nodes: ["univ", "infer", "hcp"], edges: { "univ-infer": "assessment evidence", "infer-hcp": "model-inferred entries" },
+      msgs: [["University → Inference engine", "item-level evidence"], ["Inference engine", "estimates P(Known) per competency"], ["Inference engine → HCP", "writes model-inferred entries under its own write grant, each with confidence, basis, model version and validUntil"]],
+      value: [["Advising", "A forward-looking view: what Dana is close to mastering, which pass/fail records cannot show."], ["Safeguard", "An estimate is never turned into a credential."]],
+      feas: ["Medium", "To confirm with the inference engine: input and output schema, whether it reports uncertainty, latency, and model versioning. Calibrate the confidence bands together."],
+      notes: "Point at Identity and access management: 0.91 with 8 observations, but no credential. It is likely known, not proven. The rest of the story depends on keeping those two apart." },
+    { key: "credential", short: "Wallet credential", title: "Stage 3: Verified achievement in the learner's wallet",
+      sub: "Passed assessments become verifiable credentials in Dana's wallet, which Dana can present to HCP.",
+      nodes: ["univ", "wallet", "hcp"], edges: { "univ-wallet": "issues Open Badge 3.0", "wallet-hcp": "Dana presents" },
+      msgs: [["University → Wallet", "issues an OpenBadgeCredential with a status-list entry"], ["Dana", "chooses which credentials to present"], ["Wallet → HCP", "presented credentials become issuer-attested entries with the VC as evidence"]],
+      value: [["Learner", "A portable, verifiable achievement that outlives the program."], ["Employers", "Proof instead of self-report, and revocable if needed."]],
+      feas: ["Medium–high", "Wallets that support Open Badges 3.0 / VCs exist, and Track A already shows VC-backed HCP entries with suspension. To confirm: the university's issuance path and the presentation flow from wallet to HCP."],
+      notes: "Try the issuer action in the controls: suspend a credential. In stage 5 the agent downgrades that skill from proven to likely. Verification is live, not a static badge." },
+    { key: "context", short: "HCP context", title: "Stage 4: HCP context assembly",
+      sub: "One place, three kinds of evidence. Dana adds goals and sets who may read, for what purpose.",
+      nodes: ["hcp"], edges: {},
+      msgs: [["Dana → HCP", "adds goal, constraint and preference (person-declared)"], ["Dana", "sets a directive: ask first before sharing with an employer"], ["Authorization", "issues the University advising agent a read grant, purpose: academic-and-career-advising; sensitive categories excluded"]],
+      value: [["Learner", "One consent surface instead of one per app."], ["Everyone", "Each item says who asserted it and how it is known."]],
+      feas: ["High", "Grants, purposes, directives, revocation and audit are demonstrated in this repo; new categories and purposes are configuration."],
+      notes: "Open Dana's controls. Turn off 'What I probably know' and go to stage 5: the agent's answers change and its citations disappear. That is learner control you can see." },
+    { key: "advise", short: "University advising agent", title: "Stage 5: University advising agent",
+      sub: "Three controlled inputs → three outputs. Every claim cites its source; nothing is saved or shared without Dana.",
+      nodes: ["hcp", "agent"], edges: { "hcp-agent": "disclosed entries + directives" },
+      msgs: [["Agent → HCP", "query under its read grant, purpose: academic-and-career-advising"], ["HCP", "returns entries Dana allows, with the ask-first directive; logs context.read"], ["Agent", "answers in three parts, citing entry IDs"], ["Agent → HCP", "on Dana's confirmation only, writes the plan (model-inferred)"]],
+      value: [["Learner", "Specific advice with zero intake questions."], ["University", "Advising that scales, with provenance for every recommendation."]],
+      feas: ["High (scripted) / Medium (LLM)", "An LLM agent needs a citation guardrail and an evaluation that fails any 'likely' presented as 'proven'."],
+      notes: "Use the Compare button. Without HCP, the same agent asks a long list of intake questions and gives generic advice. Then try revoking the agent's grant in the controls." },
+    { key: "portable", short: "Career app B", title: "Stage 6: The payoff: switching to Career app B",
+      sub: "An independent service Dana has never used starts from the same context, through the same protocol, with no résumé.",
+      nodes: ["hcp", "appb"], edges: { "hcp-appb": "temporary read grant" },
+      msgs: [["Dana", "grants Career app B a temporary read (4 hours)"], ["App B → HCP", "the same query call university advising agent used: no pairwise integration"], ["App B", "continues from proven, likely and wanted, plus university advising agent's saved plan, labelled as another service's inference"]],
+      value: [["Learner", "No starting over: the context follows Dana."], ["Ecosystem", "A second, independently built service benefits from context it did not create."]],
+      feas: ["High (demo)", "This is the same mechanism as Track A's Tutor B handoff, which is already demonstrated. Live: depends on stages 1–3."],
+      notes: "This is the investment question in one screen: can one interoperable layer serve many AI applications without a new integration for each?" },
+  ];
+
+  // --------------------------------------------------------- learner views
+  function viewConsent() {
+    return app("My Context · Connect an institution", "Dana",
+      h("p", {}, h("b", {}, "The university wants to add your academic record to your context.")),
+      h("div", { class: "card" }, h("dl", { class: "kv" },
+        h("dt", {}, "Who"), h("dd", {}, "University records service"),
+        h("dt", {}, "Can"), h("dd", {}, "Add and update entries (write only, cannot read anything else)"),
+        h("dt", {}, "What"), h("dd", {}, "Assessment outcomes, credentials you present, course progress"),
+        h("dt", {}, "Why"), h("dd", {}, "Keep the school's record of your learning in your context"),
+        h("dt", {}, "Until"), h("dd", {}, "You revoke it"))),
+      h("div", { class: "card" }, h("h4", {}, "Who can read your context"), h("p", { class: "note" }, "No one yet. You'll choose each reader separately, for a stated purpose.")),
+      h("div", { class: "row" }, h("button", { type: "button", class: "primary", on: { click: () => toast("Allowed. The university can write; no one can read.") } }, "Allow the university to write"), h("button", { type: "button", on: { click: () => toast("In the demo the grant stays, so the story can continue.") } }, "Not now")));
+  }
+  function viewEvidence() {
+    const rows = C.filter((c) => c.attempts.length).flatMap((c) => c.attempts.map((a) => [c.name, ...a]));
+    const t = h("table", {}, h("thead", {}, h("tr", {}, ["Date", "Competency", "Assessment", "Result"].map((x) => h("th", { scope: "col" }, x)))),
+      h("tbody", {}, rows.sort((a, b) => a[1].localeCompare(b[1])).map((r) => h("tr", {}, h("td", {}, r[1]), h("td", {}, r[0]), h("td", {}, r[2]),
+        h("td", { class: /Passed|Competent/.test(r[3]) ? "st-good" : "" }, r[3])))));
+    return app("University · My assessments", DANA.program, t,
+      h("p", { class: "note" }, "Not yet attempted: Identity and access management, Incident response, Security automation. Practice work on these still produces evidence for stage 2."));
+  }
+  function viewInference() {
+    const list = h("div", {});
+    list.append(h("div", { class: "pk note" }, h("span", {}, "Competency"), h("span", {}, "P(Known) · line marks 0.85, 'very likely'"), h("span", {}, "Reading")));
+    for (const c of C) {
+      const tr = h("div", { class: "track" }); const bar = h("div", { class: "bar" }); bar.style.width = (c.pk * 100) + "%";
+      const thr = h("div", { class: "thr" }); thr.style.left = "85%";
+      tr.append(h("div", { class: "base" }), bar, thr);
+      const row = h("div", { class: "pk", tabindex: 0 }, h("span", {}, c.name), tr, h("span", { class: "val" }, `${c.pk.toFixed(2)} · ${plain(c)}`));
+      const msg = `P(Known) ${c.pk.toFixed(2)} from ${c.obs} observations · ${band(c)} confidence · ${c.cred ? "also has a University credential" : "no credential: likely, not proven"}`;
+      row.addEventListener("pointerenter", () => showTip(row, c.name, msg)); row.addEventListener("focus", () => showTip(row, c.name, msg));
+      row.addEventListener("pointerleave", hideTip); row.addEventListener("blur", hideTip);
+      list.append(row);
+    }
+    return app("University · What you probably know", "estimates by the inference engine",
+      list,
+      h("div", { class: "card" }, h("b", {}, "Why these are estimates, not grades. "), "Each one updates with your practice and assessments, says how sure it is, and expires after 120 days unless new evidence arrives. They help decide what to do next. They never count as a credential."));
+  }
+  function viewCredential() {
+    const cards = C.filter((c) => c.cred).map((c) => {
+      const sus = !!S.suspended[c.id];
+      return h("div", { class: "card" },
+        h("div", { class: "row", style: "justify-content:space-between" }, h("b", {}, c.name),
+          sus ? h("span", { class: "st-bad" }, "⚠ Suspended by issuer") : h("span", { class: "st-good" }, "✓ Verified")),
+        h("dl", { class: "kv", style: "margin-top:6px" }, h("dt", {}, "Issuer"), h("dd", {}, "University (test issuer key)"),
+          h("dt", {}, "Achievement"), h("dd", {}, "Competency: Competent"), h("dt", {}, "Issued"), h("dd", {}, c.issued),
+          h("dt", {}, "In my context"), h("dd", {}, sus ? "Presented, but excluded while suspended" : "Presented to HCP")),
+        h("div", { class: "row", style: "margin-top:8px" }, h("button", { type: "button", on: { click: () => toast("Share link copied (demo).") } }, "Share"),
+          h("button", { type: "button", on: { click: () => toast(sus ? "Status list: suspended." : "Signature valid · status: active.") } }, "Verify")));
+    });
+    return app("Wallet · My credentials", "3 credentials", cards,
+      h("p", { class: "note" }, "Identity and access management is not here: a high estimate is not an achievement. It will be once Dana passes the assessment."));
+  }
+  function viewContext() {
+    const E = entriesAt(4);
+    const group = (kind, items) => {
+      const g = h("div", { class: "groupbox" }); g.style.borderLeftColor = KIND[kind][1];
+      g.append(h("div", { class: "row", style: "justify-content:space-between" },
+        h("span", { class: "kind" }, dot(kind), h("b", { style: "color:var(--text-primary)" }, KIND[kind][0]), h("span", { class: "pill" }, KIND[kind][2])),
+        h("label", { class: "row note" }, h("input", { type: "checkbox", checked: S.cats[kind], on: { change: (e) => { S.cats[kind] = e.target.checked; act("grant.updated", `${KIND[kind][0]}: ${e.target.checked ? "shared" : "withheld"} with advising`); } } }), "Share with advising")));
+      g.append(h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, items));
+      return g;
+    };
+    return app("My Context", "Dana",
+      group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, S.suspended[c.id] ? h("span", { class: "st-bad" }, " (suspended)") : ""))),
+      group("likely", C.map((c) => h("li", {}, `${c.name}: ${c.pk.toFixed(2)} (${plain(c).toLowerCase()})`))),
+      group("wanted", [h("li", {}, "Goal: ", GOAL), h("li", {}, "Constraint: ", CONSTRAINT), h("li", {}, "Preference: ", PREF)]),
+      h("div", { class: "card" }, h("b", {}, "Rules I've set"),
+        h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" },
+          h("li", {}, `Directive: "${DIRECTIVE}" `, h("span", { class: "pill" }, S.directiveOn ? "on" : "off")),
+          h("li", {}, "Never shared with advising: accommodations, financial aid, demographics"))),
+      h("div", { class: "card" }, h("b", {}, "Readers"),
+        h("p", { style: "font-size:14px" }, "University advising agent · read · academic-and-career-advising · ",
+          S.agentRevoked ? h("span", { class: "st-bad" }, "revoked") : h("span", { class: "st-good" }, "active"))));
+  }
+  function adviceBlock(client, label) {
+    const a = advise(client);
+    if (a.error) return h("div", { class: "card" }, h("p", { class: "st-bad" }, `Request refused: ${a.error}`),
+      h("p", { class: "note" }, a.error === "invalid-token" ? "Dana revoked this service's access. It can't read anything now." : "Dana isn't sharing any category with this service."));
+    const q = client === "appb" ? "I'd like help getting into cloud security." : "What should I do next to get to cloud security?";
+    const statusCell = (s) => s === "proven" ? h("span", { class: "kind" }, dot("proven"), "Proven") : s === "likely" ? h("span", { class: "kind" }, dot("likely"), "Likely") :
+      s === "gap" ? h("span", { class: "kind" }, h("span", { class: "dot", style: "background:transparent;border:2px solid var(--text-secondary)" }), "Gap") : h("span", { class: "note" }, "No evidence");
+    const tbl = h("table", { style: "margin-top:6px" }, h("thead", {}, h("tr", {}, h("th", { scope: "col" }, "Competency"), h("th", { scope: "col" }, "Status"), h("th", { scope: "col", class: "num" }, "P(Known)"))),
+      h("tbody", {}, a.table.map((r) => h("tr", {}, h("td", {}, r.c.name), h("td", {}, statusCell(r.s)),
+        h("td", { class: "num" }, a.entries.some((e) => e.id === eid("est", r.c.id)) ? r.c.pk.toFixed(2) : "–")))));
+    const body = [h("div", { class: "bubble me" }, q)];
+    if (client === "appb") {
+      body.push(h("div", { class: "bubble" }, a.entries.some((e) => e.id === eid("plan", "1"))
+        ? "I can see the plan your university advisor saved (their inference, so I'll treat it as a suggestion). Here's where I'd start."
+        : "I can see your verified skills, estimates and goals. Here's where I'd start."));
+    }
+    body.push(
+      h("div", { class: "out" }, h("div", { class: "n" }, "Output 1 · Next best learning action"), h("p", {}, a.o1), citeChips(a.c1)),
+      h("div", { class: "out" }, h("div", { class: "n" }, "Output 2 · Pathway guidance"), h("p", {}, a.o2), tbl, citeChips(a.c2)));
+    if (client === "agent") {
+      const saveBtn = h("button", { type: "button", class: S.planSaved ? "" : "primary", disabled: S.planSaved, on: { click: () => { S.planSaved = true; act("context.created", "Advising plan saved (model-inferred by University advising agent)"); toast("Plan saved to your context."); } } }, S.planSaved ? "✓ Plan saved" : "Save plan to my context");
+      const shareBtn = h("button", { type: "button", on: { click: () => share() } }, "Share skills summary with an employer");
+      const shareState = S.shared === "approved" ? h("p", { class: "st-good" }, "✓ Shared after your approval (proven and likely skills, labelled).") :
+        S.shared === "declined" ? h("p", { class: "note" }, "You declined. Nothing was shared.") : null;
+      body.push(h("div", { class: "out" }, h("div", { class: "n" }, "Output 3 · Learner-approved write-back"),
+        h("p", {}, "Nothing is saved or shared until you confirm."), h("div", { class: "row" }, saveBtn, shareBtn), shareState));
+    }
+    if (a.intake.length) body.push(h("p", { class: "note" }, `Still needs to ask you: ${a.intake.join(" · ")}`));
+    return h("div", {}, ...body);
+  }
+  function coldBlock(label) {
+    const qs = ["Upload your résumé", "What role are you aiming for?", "How many hours a week can you study?",
+      ...ROLE.comps.map((id) => `Rate yourself 1–5 on ${byId[id].name.toLowerCase()}`), "Which courses have you completed?", "How do you prefer to learn?"];
+    return h("div", {},
+      h("div", { class: "bubble me" }, "What should I do next to get to cloud security?"),
+      h("div", { class: "bubble" }, "Happy to help! First I need to learn about you:"),
+      h("ol", { style: "font-size:14px;margin:4px 0;padding-left:20px" }, qs.map((q) => h("li", {}, q))),
+      h("div", { class: "out" }, h("div", { class: "n" }, "Then: generic advice"), h("p", {}, "Most people aiming for cloud security start with a general security certification and build from there. Self-ratings can't be verified, so I can't tell what you've already proven.")),
+      h("p", { class: "note" }, `${qs.length} intake steps · no verified skills · no knowledge of Dana's schedule or preferences`));
+  }
+  function share() {
+    const box = $("modalBox");
+    if (!S.directiveOn) { S.shared = "approved"; act("context.shared", "Skills summary shared (directive off)"); return; }
+    box.replaceChildren(
+      h("h2", { id: "modalTitle" }, "Your rule: ask first"),
+      h("p", {}, `"${DIRECTIVE}"`),
+      h("p", { class: "note" }, "The advising agent wants to share a skills summary with an employer: 3 proven skills (University credentials) and 1 likely skill (estimate, labelled as such). Your goals and constraints are not included."),
+      h("div", { class: "row", style: "margin-top:12px" },
+        h("button", { type: "button", class: "primary", on: { click: () => { closeModal(); S.shared = "approved"; act("context.shared", "Skills summary shared after Dana approved (ask-first directive)"); } } }, "Approve once"),
+        h("button", { type: "button", on: { click: () => { closeModal(); S.shared = "declined"; act("directive.honored", "Share declined by Dana; nothing sent"); } } }, "Decline")));
+    $("modal").classList.add("open"); box.querySelector("button").focus();
+  }
+  function closeModal() { $("modal").classList.remove("open"); }
+  function viewAdvise() {
+    if (!S.compare) return app("University · Advising", "agent · reads Dana's context", adviceBlock("agent"));
+    return h("div", { class: "cmp" },
+      h("div", {}, h("h4", {}, "With HCP"), app("University · Advising", "with context", adviceBlock("agent"))),
+      h("div", {}, h("h4", {}, "Without HCP"), app("University · Advising", "cold start", coldBlock())));
+  }
+  function viewPortable() {
+    const a = advise("appb");
+    const withN = a.error ? "–" : a.intake.length;
+    const summary = h("table", { style: "margin-top:12px" }, h("thead", {}, h("tr", {}, h("th", {}, ""), h("th", {}, "With HCP"), h("th", {}, "Without HCP"))),
+      h("tbody", {},
+        h("tr", {}, h("th", { scope: "row" }, "Intake steps before first recommendation"), h("td", {}, String(withN)), h("td", {}, "11")),
+        h("tr", {}, h("th", { scope: "row" }, "Verified skills it can rely on"), h("td", {}, a.error ? "–" : String(a.entries.filter((e) => e.kind === "proven").length)), h("td", {}, "0 (self-reported)")),
+        h("tr", {}, h("th", { scope: "row" }, "Integration with the university needed"), h("td", {}, "None: same HCP call"), h("td", {}, "A bespoke one, or none")),
+        h("tr", {}, h("th", { scope: "row" }, "Knows Dana's schedule and goal"), h("td", {}, a.error ? "–" : (S.cats.wanted ? "Yes" : "No (withheld)")), h("td", {}, "Only after asking"))));
+    const main = app("Career app B", "temporary access · 4 hours", adviceBlock("appb"), summary);
+    if (!S.compare) return main;
+    return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With HCP"), main),
+      h("div", {}, h("h4", {}, "Without HCP"), app("Career app B", "cold start", coldBlock())));
+  }
+  const VIEWS = [viewConsent, viewEvidence, viewInference, viewCredential, viewContext, viewAdvise, viewPortable];
+
+  // ----------------------------------------------------------- system view
+  const ORDER = ["univ", "infer", "wallet", "hcp", "agent", "appb"];
+  const DESC = { univ: "assessment results", infer: "P(Known) estimates", wallet: "verifiable credentials", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
+  function viewSystem(st) {
+    const f = h("div", { class: "flow" });
+    ORDER.forEach((k, i) => {
+      if (i) {
+        const key = Object.keys(st.edges).find((e) => e.endsWith("-" + k) && st.nodes.includes(e.split("-")[0]));
+        const SHORT = { univ: "University", infer: "Inference engine", wallet: "Wallet", hcp: "HCP", agent: "Agent", appb: "App B" };
+        const lbl = key ? `${SHORT[key.split("-")[0]]} → ${st.edges[key]}` : "";
+        f.append(h("div", { class: "edge" + (key ? " on" : "") }, lbl));
+      }
+      f.append(h("div", { class: "node" + (st.nodes.includes(k) ? " on" : "") }, h("div", { class: "t" }, OPS[k]), h("div", { class: "d" }, DESC[k])));
+    });
+    return h("div", {}, f, h("h3", { style: "margin-top:14px" }, "What happens"),
+      h("ol", { class: "msgs" }, st.msgs.map(([who, what]) => h("li", {}, h("b", {}, who + ": "), what))));
+  }
+
+  // --------------------------------------------------------- under the hood
+  function hoodFor(i) {
+    const cats = (o) => Object.keys(S.cats).filter((k) => S.cats[k]).map((k) => ({ proven: "education_credentials", likely: "education_learner_profile", wanted: "goals_and_constraints" })[k]);
+    const iam = byId.iam, net = byId.netsec;
+    const X = {
+      0: [["Grant", { grantId: "urn:uuid:dana-grant-univ-records", client: { id: "https://records.university.example/clients/hcp", name: "University records service" },
+        access: [{ type: T, actions: ["write"], categories: ["education_learner_profile", "education_credentials"], purposes: [{ code: "https://hcp.example/purposes/school-records", description: "Keep the school's record of your learning in your context" }] }],
+        grantType: "persistent", issuedAt: "2026-01-12T17:00:00Z", status: "active" }], ["key", ["actions: write only", "no reader exists yet", "purpose is stated and shown to Dana"]]],
+      1: [["University assessment export (assumed shape)", { learner: "univ:student:dana (pseudonymous)", competency: { id: "https://osn.example/rsd/network-security-fundamentals", name: net.name },
+        assessment: { type: "objective", form: "OA-v3" }, attempt: 2, submittedAt: "2026-03-12T15:40:00Z", outcome: "passed", score: 0.84, cutScore: 0.75,
+        items: [{ item: "q17", skill: "firewall-rules", correct: true }, { item: "q18", skill: "tls-handshake", correct: false }, "…"] }],
+        ["key", ["to confirm: item-level vs competency-level", "to confirm: RSD URIs or internal IDs", "feeds stages 2 and 3"]]],
+      2: [["HCP entry (written by the inference engine)", { id: eid("est", "iam"), type: ["ContextEntry"], subject: { id: DANA.did },
+        content: { profile: "https://hcp.example/spec/profiles/general-context/2.0", value: { competency: "https://osn.example/rsd/identity-and-access-management", pKnown: iam.pk, observations: iam.obs, modelVersion: "kt-model-2.3 (assumed)" } },
+        assertion: { declarationType: "model-inferred", confidence: band(iam), validUntil: "2026-12-01T00:00:00Z",
+          basis: { drawnFrom: ["observation"], rationale: "Knowledge-tracing estimate from practice and assessment items mapped to this competency." } },
+        classification: { categories: ["education_learner_profile"], dimension: "p_known/identity-and-access-management" },
+        record: { provenance: { assertedBy: { id: "https://inference.example/models/kt", assurance: "authenticated" }, source: "integration", submittedByClient: { name: "Inference engine" } } } }],
+        ["key", ["declarationType: model-inferred, never a credential", "confidence mapped from P(Known) and observation count", "validUntil: estimates go stale"]]],
+      3: [["Open Badge 3.0 credential (presented into HCP)", { "@context": ["https://www.w3.org/ns/credentials/v2", "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"],
+        type: ["VerifiableCredential", "OpenBadgeCredential"], issuer: { id: "did:key:z6Mk…test", name: "University (test key)" }, validFrom: net.issued + "T00:00:00Z",
+        credentialSubject: { id: DANA.did, type: ["AchievementSubject"], achievement: { id: "https://osn.example/rsd/network-security-fundamentals", type: ["Achievement"], achievementType: "Competency", name: net.name } },
+        credentialStatus: [{ type: "BitstringStatusListEntry", statusPurpose: "suspension", statusListIndex: "4821", statusListCredential: "https://credentials.university.example/status/suspension" }],
+        proof: { type: "DataIntegrityProof", cryptosuite: "eddsa-rdfc-2022", "…": "…" },
+        _hcpEntry: { declarationType: "issuer-attested", assurance: "cryptographically-verified", status: S.suspended.netsec ? "suspended" : "active" } }],
+        ["key", ["issuer-attested + verifiable signature", "status list: issuer can suspend or revoke", "same structure the Track A fixture uses"]]],
+      4: [["Advising grant + directive", { grant: { grantId: "urn:uuid:dana-grant-advising", client: { name: "University advising agent", operator: { id: "https://advising.university.example" } },
+        access: [{ type: T, actions: ["read"], categories: cats(), purposes: [{ code: "https://hcp.example/purposes/academic-and-career-advising" }] }],
+        grantType: "persistent", status: S.agentRevoked ? "revoked" : "active" },
+        directive: { action: "share", effect: S.directiveOn ? "ask-first" : "permit", text: DIRECTIVE },
+        excluded: ["accommodations", "financial_aid", "demographics"] }],
+        ["key", ["categories follow Dana's toggles", "directive travels with every disclosure", "sensitive categories are never in the grant"]]],
+      5: [["Agent query and response", (() => { const a = advise("agent");
+        return { request: { operation: "query", query: "What should Dana do next toward cloud security?", purpose: "https://hcp.example/purposes/academic-and-career-advising", maxEntries: 40 },
+          response: a.error ? { error: a.error } : { entries: a.entries.map((e) => e.id), directives: [{ effect: S.directiveOn ? "ask-first" : "permit", action: "share", text: DIRECTIVE }] },
+          agentOutput: a.error ? null : { output1: { text: a.o1, cites: [...new Set(a.c1)] }, output2: { cites: [...new Set(a.c2)] }, output3: { planSaved: S.planSaved, shared: S.shared } } }; })()],
+        ["key", ["every claim cites entry IDs", "'likely' is never stated as 'proven'", "write-back only after confirmation"]]],
+      6: [["Career app B grant and query", (() => { const a = advise("appb");
+        return { grant: { client: { name: "Career app B", operator: { id: "https://careers-b.example" } }, access: [{ type: T, actions: ["read"], categories: cats(), purposes: [{ code: "https://hcp.example/purposes/career-navigation" }] }],
+          grantType: "temporary", expiresAt: "+4h", status: S.appbRevoked ? "revoked" : "active" },
+          request: { operation: "query", query: "Skills, goals and plan for career navigation", purpose: "https://hcp.example/purposes/career-navigation" },
+          response: a.error ? { error: a.error } : { entries: a.entries.map((e) => e.id) } }; })()],
+        ["key", ["same protocol call as university advising agent", "temporary grant, expires on its own", "The university advising agent's plan arrives labelled model-inferred"]]],
+    };
+    const [[title, obj], [, keys]] = X[i];
+    return h("div", {}, h("div", { class: "note" }, title), h("ul", { class: "keyfields" }, keys.map((k) => h("li", {}, k))),
+      h("pre", { tabindex: 0, "aria-label": title }, JSON.stringify(obj, null, 2)));
+  }
+
+  // ---------------------------------------------------------------- audit
+  function baseline(stage) {
+    const ev = [["2026-01-12 17:00", "grant.issued", "University records · write"]];
+    if (stage >= 2) { ev.push(["2026-03-13 02:00", "grant.issued", "The inference engine · write · education_learner_profile"]); ev.push(["2026-07-20 02:00", "context.created", "6 model-inferred estimates (inference engine)"]); }
+    if (stage >= 3) ev.push(["2026-07-20 09:12", "context.created", "3 issuer-attested credentials (presented from the wallet)"]);
+    if (stage >= 4) { ev.push(["2026-07-21 19:00", "context.created", "goal, constraint, preference (Dana)"]); ev.push(["2026-07-21 19:02", "directive.set", "share: ask-first"]); ev.push(["2026-07-21 19:05", "grant.issued", "University advising agent · read"]); }
+    if (stage >= 5) ev.push(["2026-07-22 18:30", "context.read", S.agentRevoked ? "University advising agent · refused (invalid-token)" : "University advising agent · " + (disclosed("agent").entries || []).length + " entries"]);
+    if (stage >= 6) { ev.push(["2026-08-03 12:00", "grant.issued", "Career app B · read · temporary 4h"]); ev.push(["2026-08-03 12:01", "context.read", S.appbRevoked ? "Career app B · refused (invalid-token)" : "Career app B · " + (disclosed("appb").entries || []).length + " entries"]); }
+    return ev;
+  }
+
+  // --------------------------------------------------------------- drawer
+  function renderDrawer() {
+    const b = $("drawerBody"); b.replaceChildren();
+    const sw = (label, sub, checked, onchange, kind) => h("label", { class: "switch" },
+      h("span", {}, h("span", { class: "kind" }, kind ? dot(kind) : null, h("b", { style: "color:var(--text-primary)" }, label)), h("br"), h("span", { class: "note" }, sub)),
+      h("input", { type: "checkbox", checked, on: { change: onchange } }));
+    b.append(h("section", {}, h("h3", {}, "Share with advising"),
+      ...["proven", "likely", "wanted"].map((k) => sw(KIND[k][0], KIND[k][2], S.cats[k], (e) => { S.cats[k] = e.target.checked; act("grant.updated", `${KIND[k][0]}: ${e.target.checked ? "shared" : "withheld"}`); }, k))));
+    b.append(h("section", {}, h("h3", {}, "Rules"),
+      sw("Ask first before sharing", `"${DIRECTIVE}"`, S.directiveOn, (e) => { S.directiveOn = e.target.checked; act("directive.set", `share: ${e.target.checked ? "ask-first" : "permit"}`); })));
+    const grantRow = (name, revoked, onRevoke, onRestore) => h("div", { class: "switch" },
+      h("span", {}, h("b", {}, name), h("br"), revoked ? h("span", { class: "st-bad" }, "Revoked") : h("span", { class: "st-good" }, "Active")),
+      revoked ? h("button", { type: "button", on: { click: onRestore } }, "Re-grant") : h("button", { type: "button", class: "danger", on: { click: onRevoke } }, "Revoke"));
+    b.append(h("section", {}, h("h3", {}, "Who can read"),
+      grantRow("University advising agent", S.agentRevoked, () => { S.agentRevoked = true; act("grant.revoked", "University advising agent"); }, () => { S.agentRevoked = false; act("grant.issued", "University advising agent · read (re-granted)"); }),
+      grantRow("Career app B (temporary)", S.appbRevoked, () => { S.appbRevoked = true; act("grant.revoked", "Career app B"); }, () => { S.appbRevoked = false; act("grant.issued", "Career app B · read (re-granted)"); })));
+    b.append(h("section", {}, h("h3", {}, "Issuer actions (demo)"),
+      ...C.filter((c) => c.cred).map((c) => h("div", { class: "switch" }, h("span", {}, h("b", {}, c.name), h("br"), h("span", { class: "note" }, S.suspended[c.id] ? "Suspended on the university's status list" : "Active on the university's status list")),
+        h("button", { type: "button", on: { click: () => { S.suspended[c.id] = !S.suspended[c.id]; act("context.credentialStatus", `${c.name}: ${S.suspended[c.id] ? "suspended" : "reinstated"} by issuer`); } } }, S.suspended[c.id] ? "Reinstate" : "Suspend")))));
+    const log = h("div", { class: "audit", tabindex: 0, "aria-label": "Audit log" });
+    for (const [t, e, d] of baseline(S.stage)) log.append(h("div", {}, `${t}  ${e}  ${d}`));
+    for (const a of S.actions) log.append(h("div", { class: "new" }, `now               ${a.type}  ${a.detail}`));
+    b.append(h("section", {}, h("h3", {}, "Audit log"), log, h("p", { class: "note" }, "Every grant, write, read and change is recorded and visible to Dana.")),
+      h("section", {}, h("button", { type: "button", on: { click: () => { Object.assign(S, { cats: { proven: true, likely: true, wanted: true }, agentRevoked: false, appbRevoked: false, suspended: {}, directiveOn: true, planSaved: false, shared: null, actions: [] }); render(); toast("Demo reset."); } } }, "Reset demo")));
+  }
+
+  // --------------------------------------------------------------- render
+  function render() {
+    const st = STAGES[S.stage];
+    const rail = $("rail"); rail.replaceChildren();
+    STAGES.forEach((s, i) => rail.append(h("li", {}, h("button", { type: "button", class: i < S.stage ? "done" : "", "aria-current": i === S.stage ? "step" : false,
+      on: { click: () => go(i) } }, h("span", { class: "num" }, "STAGE " + i), h("span", { class: "lbl" }, s.short)))));
+    $("stageTitle").textContent = st.title; $("stageSub").textContent = st.sub;
+    $("compareWrap").hidden = S.stage < 5;
+    $("compareBtn").setAttribute("aria-pressed", String(S.compare));
+    $("compareBtn").textContent = S.compare ? "Hide comparison" : "Compare: without HCP";
+    $("prevBtn").disabled = S.stage === 0; $("nextBtn").disabled = S.stage === STAGES.length - 1;
+    $("grid").className = "grid3" + (S.compare && S.stage >= 5 ? " nohood" : "");
+    document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 5;
+    $("learner").replaceChildren(VIEWS[S.stage]());
+    $("system").replaceChildren(viewSystem(st));
+    $("hood").replaceChildren(hoodFor(S.stage));
+    $("value").replaceChildren(...st.value.map(([w, t]) => h("div", { class: "v" }, h("b", {}, "Value · " + w), t)),
+      h("div", { class: "v" }, h("b", {}, "Feasibility · " + st.feas[0]), st.feas[1]));
+    $("notesBody").replaceChildren(h("p", {}, st.notes));
+    renderDrawer();
+    hideTip();
+    history.replaceState(null, "", "#stage=" + S.stage + (S.compare ? "&compare=1" : ""));
+  }
+  function go(i) { S.stage = Math.max(0, Math.min(STAGES.length - 1, i)); render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+
+  $("prevBtn").addEventListener("click", () => go(S.stage - 1));
+  $("nextBtn").addEventListener("click", () => go(S.stage + 1));
+  $("compareBtn").addEventListener("click", () => { S.compare = !S.compare; render(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.target.matches("input, textarea")) return;
+    if (e.key === "Escape") { closeModal(); toggleDrawer(false); }
+    if ($("modal").classList.contains("open")) return;
+    if (e.key === "ArrowRight") go(S.stage + 1);
+    if (e.key === "ArrowLeft") go(S.stage - 1);
+  });
+  function toggleDrawer(open) {
+    const d = $("drawer"); const o = open == null ? !d.classList.contains("open") : open;
+    d.classList.toggle("open", o); d.setAttribute("aria-hidden", String(!o)); $("controlsBtn").setAttribute("aria-expanded", String(o));
+    if (o) $("closeDrawer").focus();
+  }
+  $("controlsBtn").addEventListener("click", () => toggleDrawer());
+  $("closeDrawer").addEventListener("click", () => toggleDrawer(false));
+  $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
+  $("presenterBtn").addEventListener("click", (e) => {
+    const on = $("root").classList.toggle("presenter"); e.currentTarget.setAttribute("aria-pressed", String(on)); $("notes").open = on;
+  });
+  $("themeBtn").addEventListener("click", () => {
+    const r = document.documentElement;
+    const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    r.dataset.theme = dark ? "light" : "dark";
+  });
+
+  const HASH = location.hash;
+  const m = /stage=(\d)/.exec(HASH); if (m) S.stage = +m[1];
+  if (/compare=1/.test(HASH)) S.compare = true;
+  if (/drawer=1/.test(HASH)) setTimeout(() => toggleDrawer(true), 0);
+  render();
+
+  // Self-test of the agent logic: open with #selftest=1
+  if (/selftest=1/.test(HASH)) {
+    const out = [], ok = (name, cond) => out.push((cond ? "PASS " : "FAIL ") + name);
+    const snap = JSON.stringify(S);
+    const st = (r, id) => r.table.find((x) => x.c.id === id).s;
+    S.stage = 5;
+    let r = advise("agent");
+    ok("default: IAM is next action", /Identity and access management/.test(r.o1));
+    ok("default: netsec proven, iam likely, ir gap", st(r, "netsec") === "proven" && st(r, "iam") === "likely" && st(r, "ir") === "gap");
+    ok("default: zero intake", r.intake.length === 0);
+    ok("default: agent never sees saved plan", !r.entries.some((e) => e.id === eid("plan", "1")));
+    S.suspended.netsec = true; r = advise("agent");
+    ok("suspended credential downgrades to likely, not proven", st(r, "netsec") === "likely");
+    S.suspended = {}; S.cats.likely = false; r = advise("agent");
+    ok("estimates withheld: iam unknown, no estimate cited", st(r, "iam") === "unknown" && !r.c2.some((i) => i.includes("-est-")));
+    ok("estimates withheld: asks for self-ratings", r.intake.some((q) => /identity and access/.test(q)));
+    S.cats.likely = true; S.cats.wanted = false; r = advise("agent");
+    ok("goals withheld: asks goal and hours", r.intake.length === 2 && /Tell me your weekly availability/.test(r.o1));
+    S.cats.wanted = true; S.cats.proven = false; r = advise("agent");
+    ok("credentials withheld: netsec becomes likely (never proven)", st(r, "netsec") === "likely");
+    S.cats = { proven: false, likely: false, wanted: false };
+    ok("nothing shared: scope-denied", advise("agent").error === "scope-denied");
+    S.cats = { proven: true, likely: true, wanted: true }; S.agentRevoked = true;
+    ok("revoked: invalid-token", advise("agent").error === "invalid-token");
+    ok("revoking agent does not affect app B", !advise("appb").error);
+    S.agentRevoked = false; S.planSaved = true;
+    ok("saved plan reaches app B, cited", advise("appb").c2.includes(eid("plan", "1")));
+    S.appbRevoked = true;
+    ok("app B revoked: invalid-token", advise("appb").error === "invalid-token");
+    Object.assign(S, JSON.parse(snap));
+    const pre = h("pre", { id: "selftest" }, out.join(String.fromCharCode(10))); document.body.append(pre);
+    document.title = out.every((l) => l.startsWith("PASS")) ? "SELFTEST PASS" : "SELFTEST FAIL";
+    render();
+  }
+})();
+</script>
+</body>
+</html>
