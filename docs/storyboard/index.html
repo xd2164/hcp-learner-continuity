@@ -196,7 +196,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Controls</button>
     </div>
   </header>
-  <div class="banner">Synthetic persona and data. What the university, the inference engine and LearnCard do here is an assumption to validate with each partner; it does not describe their systems today. LearnCard holds Dana's context here, using the Human Context Protocol (HCP 2.0-draft-3, working draft) underneath; who operates the context is still an open partner decision.</div>
+  <div class="banner">Synthetic data. Partner roles are assumptions to confirm. LearnCard holds Dana's context using HCP (2.0-draft-3).</div>
 
   <ol class="rail" id="rail" aria-label="Journey stages"></ol>
 
@@ -220,10 +220,8 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">HCP output</h3><div id="hood"></div></section>
   </div>
 
-  <section class="panel" id="hcpmap" style="margin-top:14px" hidden aria-labelledby="maph"></section>
-
   <footer>
-    Keyboard: ← → to move between stages. Hover or focus a citation chip to see the entry behind it. Everything is computed in this page from synthetic data; nothing is sent anywhere.
+    ← → keys move between stages.
   </footer>
 </div>
 
@@ -466,8 +464,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const t = h("table", {}, h("thead", {}, h("tr", {}, ["Date", "Competency", "Assessment", "Result"].map((x) => h("th", { scope: "col" }, x)))),
       h("tbody", {}, rows.sort((a, b) => a[1].localeCompare(b[1])).map((r) => h("tr", {}, h("td", {}, r[1]), h("td", {}, r[0]), h("td", {}, r[2]),
         h("td", { class: /Passed|Competent/.test(r[3]) ? "st-good" : "" }, r[3])))));
-    return app("University · My assessments", DANA.program, t,
-      h("p", { class: "note" }, "Not yet attempted: Identity and access management, Incident response, Security automation. Practice work on these still produces evidence for stage 2."));
+    return app("University · My assessments", DANA.program, t);
   }
   function viewInference() {
     const list = h("div", {});
@@ -484,7 +481,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     }
     return app("University · What you probably know", "estimates by the inference engine",
       list,
-      h("div", { class: "card" }, h("b", {}, "Why these are estimates, not grades. "), "Each one updates with your practice and assessments, says how sure it is, and expires after 120 days unless new evidence arrives. They help decide what to do next. They never count as a credential."));
+      h("p", { class: "note", style: "margin-top:10px" }, "Estimates update with new evidence and expire. They guide what to do next; they never count as a credential."));
   }
   function viewCredential() {
     const cards = C.filter((c) => c.cred).map((c) => {
@@ -512,21 +509,13 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       return g;
     };
     return app("LearnCard · Dana", "credentials · context · permissions",
-      h("div", { class: "card" }, h("b", {}, "Connected sources "), h("span", { class: "note" }, "(can add, cannot read)"),
-        h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, h("li", {}, "University: assessment records and credentials"), h("li", {}, "Inference engine: P(Known) estimates"))),
-      group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, " ", S.suspended[c.id] ? h("span", { class: "st-bad" }, "⚠ suspended by the issuer") : h("span", { class: "st-good" }, "✓ verified"), h("span", { class: "note" }, ` · Open Badge 3.0 · issued ${c.issued}`)))),
+      group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, " ", S.suspended[c.id] ? h("span", { class: "st-bad" }, "⚠ suspended by the issuer") : h("span", { class: "st-good" }, "✓ verified")))),
       group("likely", C.map((c) => h("li", {}, `${c.name}: ${c.pk.toFixed(2)} (${plain(c).toLowerCase()})`))),
       group("wanted", [h("li", {}, "Goal: ", GOAL), h("li", {}, "Constraint: ", CONSTRAINT), h("li", {}, "Preference: ", PREF)]),
-      h("div", { class: "card" }, h("b", {}, "Rules I've set"),
-        h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" },
-          h("li", {}, `Directive: "${DIRECTIVE}" `, h("span", { class: "pill" }, S.directiveOn ? "on" : "off")),
-          h("li", {}, "Never shared with advising: accommodations, financial aid, demographics"))),
-      h("div", { class: "card" }, h("b", {}, "Readers"),
-        h("p", { style: "font-size:14px" }, "University advising agent · read · academic-and-career-advising · ",
-          S.agentRevoked ? h("span", { class: "st-bad" }, "revoked") : h("span", { class: "st-good" }, "active"))),
-      h("div", { class: "card" }, h("div", { class: "row", style: "justify-content:space-between" },
-        h("span", {}, h("b", {}, "Take it with you"), h("br"), h("span", { class: "note" }, "Standard HCP export: entries, rules, directives and audit, plus your grants")),
-        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP"))));
+      h("p", { class: "note", style: "margin:10px 0" }, `Rule: "${DIRECTIVE}" Accommodations, financial aid and demographics are never shared.`),
+      h("div", { class: "row", style: "justify-content:space-between" },
+        h("span", { class: "note" }, "Estimates have their own HCP category, so Dana can share credentials without them."),
+        h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export as HCP")));
   }
   function adviceBlock(client, label) {
     const a = advise(client);
@@ -546,14 +535,11 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     }
     body.push(
       h("div", { class: "out" }, h("div", { class: "n" }, "Output 1 · Next best learning action"), h("p", {}, a.o1), citeChips(a.c1)),
-      h("div", { class: "out" }, h("div", { class: "n" }, "Output 2 · Pathway guidance"), h("p", {}, a.o2), tbl, citeChips(a.c2)));
+      h("div", { class: "out" }, h("div", { class: "n" }, "Output 2 · Pathway guidance"), h("p", {}, a.o2), tbl));
     if (client === "agent") {
       const saveBtn = h("button", { type: "button", class: S.planSaved ? "" : "primary", disabled: S.planSaved, on: { click: () => { S.planSaved = true; act("context.created", "Advising plan saved (model-inferred by University advising agent)"); toast("Plan saved to your context."); } } }, S.planSaved ? "✓ Plan saved" : "Save plan to my context");
-      const shareBtn = h("button", { type: "button", on: { click: () => share() } }, "Share skills summary with an employer");
-      const shareState = S.shared === "approved" ? h("p", { class: "st-good" }, "✓ Shared after your approval (proven and likely skills, labelled).") :
-        S.shared === "declined" ? h("p", { class: "note" }, "You declined. Nothing was shared.") : null;
       body.push(h("div", { class: "out" }, h("div", { class: "n" }, "Output 3 · Learner-approved write-back"),
-        h("p", {}, "Nothing is saved or shared until you confirm."), h("div", { class: "row" }, saveBtn, shareBtn), shareState));
+        h("p", {}, "Nothing is saved until Dana confirms."), saveBtn));
     }
     if (a.intake.length) body.push(h("p", { class: "note" }, `Still needs to ask you: ${a.intake.join(" · ")}`));
     return h("div", {}, ...body);
@@ -594,8 +580,8 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       h("tbody", {},
         h("tr", {}, h("th", { scope: "row" }, "Intake steps before first recommendation"), h("td", {}, String(withN)), h("td", {}, "11")),
         h("tr", {}, h("th", { scope: "row" }, "Verified skills it can rely on"), h("td", {}, a.error ? "–" : String(a.entries.filter((e) => e.kind === "proven").length)), h("td", {}, "0 (self-reported)")),
-        h("tr", {}, h("th", { scope: "row" }, "Integration with the university needed"), h("td", {}, "None: same LearnCard request"), h("td", {}, "A bespoke one, or none")),
-        h("tr", {}, h("th", { scope: "row" }, "Knows Dana's schedule and goal"), h("td", {}, a.error ? "–" : (S.cats.wanted ? "Yes" : "No (withheld)")), h("td", {}, "Only after asking"))));
+        h("tr", {}, h("th", { scope: "row" }, "New integration needed"), h("td", {}, "None"), h("td", {}, "One per source")),
+));
     const main = app("Career app B", "temporary access · 4 hours", adviceBlock("appb"), summary);
     if (!S.compare) return main;
     return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With LearnCard"), main),
@@ -607,9 +593,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       h("span", { class: "note" }, "→"),
       h("button", { type: "button", "aria-pressed": String(S.advisor === "appb"), on: { click: () => { S.advisor = "appb"; render(); } } }, "② Switch to Career app B"));
     const body = S.advisor === "appb" ? viewPortable() : viewAdvise();
-    const next = S.advisor === "appb" ? null : h("div", { class: "row", style: "margin-top:10px;justify-content:flex-end" },
-      h("button", { type: "button", class: "primary", on: { click: () => { S.advisor = "appb"; render(); } } }, "Dana switches to Career app B →"));
-    return h("div", {}, tabs, body, next);
+    return h("div", {}, tabs, body);
   }
   const VIEWS = [viewEvidence, viewInference, viewContext, viewAdvising];
 
@@ -634,7 +618,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         const n = outs.filter((o) => o.step === k).length;
         return h("li", {}, h("b", {}, who + ": "), what, n ? h("span", { class: "hcptag", style: "margin-left:6px", title: "Produces HCP output: see the HCP output column" }, n > 1 ? `HCP ×${n}` : "HCP") : null);
       })),
-      h("p", { class: "note", style: "margin-top:8px" }, "Steps tagged HCP produce the objects shown in the HCP output column."));
+);
   }
 
   // --------------------------------------------------------- under the hood
@@ -990,8 +974,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 3;
     $("learner").replaceChildren(VIEWS[S.stage]());
     $("system").replaceChildren(viewSystem(st));
-    $("hcpmap").hidden = S.stage !== 2;
-    if (S.stage === 2) $("hcpmap").replaceChildren(mapView());
     $("hood").replaceChildren(hcpPanel(S.stage));
     renderDrawer();
     hideTip();
