@@ -171,6 +171,8 @@ pre { margin: 0; padding: 10px; background: var(--surface-2); border-radius: 8px
 .hcpchip b { color: var(--text-primary); }
 .hcptag { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; color: var(--surface-1); background: var(--text-secondary); border-radius: 4px; padding: 0 5px; }
 .hcpchip pre { margin-top: 6px; max-height: 260px; }
+.hcpchip.big { font-size: 13.5px; padding: 8px 10px; margin: 0 0 8px; }
+.hcpchip.big pre { max-height: 440px; }
 .maptbl td:first-child { font-weight: 600; white-space: nowrap; }
 .maptbl code { font: 12px ui-monospace, Consolas, monospace; background: var(--surface-2); padding: 0 4px; border-radius: 4px; }
 .finding { border-left: 4px solid var(--likely); background: var(--surface-2); border-radius: 0 8px 8px 0; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
@@ -178,8 +180,6 @@ pre { margin: 0; padding: 10px; background: var(--surface-2); border-radius: 8px
 
 /* presenter mode */
 .presenter .viz-root, .viz-root.presenter { font-size: 18px; }
-.viz-root.presenter .hoodcol { display: none; }
-.viz-root.presenter .grid3 { grid-template-columns: 1.4fr 0.9fr; }
 .viz-root.presenter .notes { display: block; }
 footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 </style>
@@ -219,7 +219,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   <div class="grid3" id="grid">
     <section class="panel" aria-labelledby="lvh"><h3 id="lvh">Learner view</h3><div id="learner"></div></section>
     <section class="panel" aria-labelledby="svh"><h3 id="svh">System view</h3><div id="system"></div></section>
-    <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">Under the hood</h3><div id="hood"></div></section>
+    <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">HCP output</h3><div id="hood"></div></section>
   </div>
 
   <section class="panel" id="hcpmap" style="margin-top:14px" hidden aria-labelledby="maph"></section>
@@ -631,10 +631,12 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       f.append(h("div", { class: "node" + (st.nodes.includes(k) ? " on" : "") }, h("div", { class: "t" }, OPS[k]), h("div", { class: "d" }, DESC[k])));
     });
     const outs = hcpOutputs(S.stage);
-    return h("div", {}, f, h("h3", { style: "margin-top:14px" }, "What happens, and its HCP output"),
-      h("ol", { class: "msgs" }, st.msgs.map(([who, what], k) => h("li", {}, h("b", {}, who + ": "), what,
-        ...outs.filter((o) => o.step === k).map(hcpChip)))),
-      h("p", { class: "note", style: "margin-top:8px" }, "Click an HCP item to see its JSON."));
+    return h("div", {}, f, h("h3", { style: "margin-top:14px" }, "What happens"),
+      h("ol", { class: "msgs" }, st.msgs.map(([who, what], k) => {
+        const n = outs.filter((o) => o.step === k).length;
+        return h("li", {}, h("b", {}, who + ": "), what, n ? h("span", { class: "hcptag", style: "margin-left:6px", title: "Produces HCP output: see the HCP output column" }, n > 1 ? `HCP ×${n}` : "HCP") : null);
+      })),
+      h("p", { class: "note", style: "margin-top:8px" }, "Steps tagged HCP produce the objects shown in the HCP output column."));
   }
 
   // --------------------------------------------------------- under the hood
@@ -913,6 +915,23 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     }
     return out;
   }
+  function hcpPanel(i) {
+    const st0 = STAGES[i];
+    const st = st0.dyn ? { ...st0, ...st0.dyn() } : st0;
+    const outs = hcpOutputs(i);
+    return h("div", {},
+      h("p", { class: "note", style: "margin:0 0 8px" }, "What this stage writes to, or reads from, Dana's context, in HCP's own structures."),
+      ...outs.map((it, n) => {
+        const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
+        const from = st.msgs[it.step] ? `Step ${it.step + 1} · ${st.msgs[it.step][0]}` : "";
+        const head = h("span", { class: "chiphead", style: "flex-direction:column;align-items:flex-start;gap:2px" },
+          h("span", { class: "note" }, from),
+          h("span", { class: "chiphead" }, kind ? dot(kind) : null, h("b", {}, it.type), it.decl ? h("span", { class: "pill" }, it.decl) : null),
+          h("span", {}, it.label));
+        if (it.action) return h("div", { class: "hcpchip big" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export as HCP"));
+        return h("details", { class: "hcpchip big", open: n === 0 }, h("summary", {}, head), h("pre", { tabindex: 0 }, JSON.stringify(it.json, null, 2)));
+      }));
+  }
   function hcpChip(it) {
     const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
     const head = h("span", { class: "chiphead" }, h("span", { class: "hcptag" }, "HCP"), kind ? dot(kind) : null,
@@ -975,7 +994,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     $("system").replaceChildren(viewSystem(st));
     $("hcpmap").hidden = S.stage !== 2;
     if (S.stage === 2) $("hcpmap").replaceChildren(mapView());
-    $("hood").replaceChildren(hoodFor(S.stage));
+    $("hood").replaceChildren(hcpPanel(S.stage));
     renderDrawer();
     hideTip();
     history.replaceState(null, "", "#stage=" + S.stage + (S.compare ? "&compare=1" : "") + (S.advisor === "appb" ? "&advisor=appb" : ""));
