@@ -63,8 +63,8 @@ button[aria-pressed="true"] { border-color: var(--text-secondary); font-weight: 
 
 .stagehead { display: flex; justify-content: space-between; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 12px; }
 .grid3 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: start; }
-.grid3.nohood { grid-template-columns: 1fr; }
-@media (max-width: 1100px) { .grid3, .grid3.nohood { grid-template-columns: 1fr; } }
+.grid3.nohood { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 1100px) { .grid3, .grid3.nohood { grid-template-columns: minmax(0, 1fr); } }
 .panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 16px; min-width: 0; }
 
 /* learner view mock app */
@@ -109,11 +109,87 @@ input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--text-pri
 .pk .val { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 
 /* system view */
+.statusline { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.stpill { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; border: 1px solid var(--border); border-radius: 999px; padding: 1px 9px; color: var(--text-secondary); background: var(--surface-1); }
+.stpill b { color: var(--text-primary); font-weight: 600; }
+.stpill.working b { color: var(--good-text); }
+.legend4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+@media (max-width: 800px) { .legend4 { grid-template-columns: 1fr 1fr; } }
+.pipe { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 8px; align-items: stretch; margin-bottom: 14px; }
+@media (max-width: 760px) { .pipe { grid-template-columns: 1fr; } .pipe .arr { transform: rotate(90deg); justify-self: center; } }
+.pipe .box { border: 1px solid var(--border); border-radius: 10px; padding: 10px; font-size: 13.5px; background: var(--surface-1); }
+.pipe .box .k { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.pipe .arr { align-self: center; color: var(--muted); font-size: 20px; }
+.secthead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin: 14px 0 4px; }
+.secthead h4 { margin: 0; font-size: 16px; }
+.bdg { display: inline-flex; align-items: center; gap: 5px; }
+.bdg .dot { width: 8px; height: 8px; }
+.abc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 1000px) { .abc { grid-template-columns: minmax(0, 1fr); } .abc .cond:not(.sel) { display: none; } }
+.cond { min-width: 0; overflow-wrap: anywhere; border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: var(--surface-1); display: flex; flex-direction: column; gap: 8px; }
+.cond.sel { border-color: var(--text-primary); box-shadow: 0 0 0 1px var(--text-primary); }
+.cond h4 { margin: 0; font-size: 16px; }
+.cond .resp { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; font-size: 15px; }
+.cond ul { margin: 0; padding-left: 0; list-style: none; font-size: 13.5px; }
+.cond ul li { margin: 4px 0; }
+.why li { border-left: 3px solid var(--border); padding-left: 8px; }
+.avail li { display: flex; gap: 8px; align-items: center; }
+.chk { width: 16px; text-align: center; font-weight: 700; }
+.chk.on { color: var(--good-text); }
+.chk.off { color: var(--muted); }
+.shared td, .shared th { font-size: 12.5px; padding: 4px 6px; }
+.omit { color: var(--muted); font-style: italic; }
+.seg2 { display: inline-flex; flex-wrap: wrap; max-width: 100%; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.seg2 button { border: 0; border-radius: 0; }
+.seg2 button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); }
+.reqlog { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; color: var(--text-secondary); }
+.adv { max-width: 920px; margin: 0 auto; border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; background: var(--surface-1); }
+.adv h4 { margin: 0; font-size: 18px; }
+.adv .seg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 14px 0 16px; }
+.adv .seg3 button { border: 0; background: transparent; color: var(--muted); font-weight: 600; border-radius: 999px; padding: 8px 10px; }
+.adv .seg3 button[aria-pressed="true"] { background: var(--surface-2); color: var(--text-primary); }
+.adv .asks { font-size: 13px; font-weight: 600; margin-left: 14px; }
+.adv .q { font-size: 17px; margin: 4px 0 14px 14px; }
+.adv .agent { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.adv .agent .who { display: flex; gap: 8px; align-items: center; font-weight: 650; font-size: 16px; margin-bottom: 6px; }
+.adv .agent .ico { width: 14px; height: 10px; border: 1.5px solid var(--text-secondary); border-radius: 3px; display: inline-block; }
+.adv .agent p { margin: 0; font-size: 17px; line-height: 1.6; }
+.adv hr { border: 0; border-top: 1px solid var(--grid); margin: 16px 0 12px; }
+.adv .avail2 { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 10px; font-size: 15.5px; }
+.adv .avail2 li { display: flex; gap: 10px; align-items: center; }
+.adv .ok2 { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--good-text); color: var(--good-text); display: inline-grid; place-items: center; font-size: 11px; font-weight: 800; }
+.adv .no2 { width: 18px; height: 18px; border-radius: 50%; background: var(--baseline); display: inline-block; }
+.adv .foot { margin-top: 12px; }
+.adv .shrow { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.adv .shdetails { flex: 1 1 520px; min-width: 0; }
+.adv .shdetails[open] { flex-basis: 100%; }
+.adv .shwrap { display: grid; gap: 10px; margin-top: 8px; }
+.adv .shgroup { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.adv .shgroup ul { margin: 6px 0 0; padding-left: 18px; font-size: 14px; }
+.adv .shgroup li { margin: 3px 0; }
+.adv .shgroup.off { background: var(--surface-2); }
+.op { max-width: 1060px; margin: 16px auto 0; display: grid; gap: 14px; }
+.op-h { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+.op-n { width: 26px; height: 26px; border-radius: 50%; background: var(--text-primary); color: var(--surface-1); display: inline-grid; place-items: center; font-weight: 700; font-size: 14px; flex: none; }
+.op-h h2 { margin: 0; font-size: 19px; }
+.op-q { font-size: 21px; margin: 2px 0 6px; }
+.adv.op-adv { border: 0; padding: 0; max-width: none; margin: 0; background: transparent; }
+.op-3 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.op-3 .op-dg { max-width: 860px; margin: 0 auto; width: 100%; }
+.op-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
+.op-cards .op-item { margin-bottom: 0; }
+.op-item { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.op-item.off { background: var(--surface-2); }
+.op-item details { margin-top: 6px; }
+.op-tog { display: inline-flex; gap: 6px; align-items: center; margin: 4px 16px 4px 0; font-size: 15px; }
+.op-more { display: grid; gap: 10px; }
+.op-more > details > summary { cursor: pointer; }
+.op-foot { text-align: center; }
 .plainout { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.plainout li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.plainout li { min-width: 0; overflow-wrap: anywhere; display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
 .plainout .dot { margin-top: 7px; }
 .ovgrid { display: grid; grid-template-columns: 1.75fr 1fr; gap: 18px; align-items: start; }
-@media (max-width: 900px) { .ovgrid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .ovgrid { grid-template-columns: minmax(0, 1fr); } }
 #diagram svg { width: 100%; height: auto; display: block; }
 .dg-node rect { fill: var(--surface-1); stroke: var(--border); stroke-width: 1.5; }
 .dg-node text.t { fill: var(--text-primary); font-size: 18px; font-weight: 650; }
@@ -217,6 +293,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Controls</button>
     </div>
   </header>
+  <main id="onepage" class="op" hidden></main>
 
   <ol class="rail" id="rail" aria-label="Journey stages"></ol>
 
@@ -224,17 +301,19 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     <div>
       <h2 id="stageTitle"></h2>
       <p class="sub" id="stageSub"></p>
+      <div class="statusline" id="statusLine" aria-label="Integration status"></div>
     </div>
     <div class="row">
       <span id="compareWrap" class="row" hidden>
         <button id="compareBtn" type="button" aria-pressed="false">Compare: without LearnCard</button>
       </span>
+      <button id="hcpBtn" type="button" aria-pressed="false">Show HCP details</button>
       <button id="prevBtn" type="button">← Back</button>
       <button id="nextBtn" type="button" class="primary">Next →</button>
     </div>
   </div>
 
-  <section class="panel" aria-labelledby="ovh" style="margin-bottom:14px">
+  <section class="panel" id="overview" aria-labelledby="ovh" style="margin-bottom:14px">
     <div class="ovgrid">
       <div><h3 id="ovh">How it connects</h3><div id="diagram"></div></div>
       <div><h3>What HCP produces here</h3><div id="system"></div></div>
@@ -247,7 +326,15 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   </div>
 
   <footer>
-    ← → keys move between stages.
+    <details><summary>What the status labels mean</summary>
+      <div class="legend4">
+        <div><span class="stpill working"><b>● Working</b></span><br>Implemented and running in this page, on synthetic data.</div>
+        <div><span class="stpill"><b>◐ Manually tested</b></span><br>Validated offline by a partner (The university has reported manual the inference engine inference testing).</div>
+        <div><span class="stpill"><b>○ Mocked</b></span><br>Illustrative fixture or sample output, not a live system.</div>
+        <div><span class="stpill"><b>◌ Proposed</b></span><br>Not yet integrated; future state.</div>
+      </div>
+    </details>
+    <p id="keysHint">← → keys move between stages.</p>
   </footer>
 </div>
 
@@ -298,6 +385,12 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     suspended: {}, directiveOn: true, planSaved: false, shared: null,  // shared: null | "approved" | "declined"
     actions: [],
     advisor: "agent",
+    ctx: { history: true, goals: true, prefs: true },
+    cond: "A",
+    showHcp: false,
+    layout: "one",
+    open: {},
+    requests: [],
     pieces: { proven: true, likely: true, wanted: true, plan: true, rules: true, audit: true },
   };
 
@@ -326,7 +419,9 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     if (!on.length) return { error: "scope-denied" };
     const ents = entriesAt(4).filter((e) => S.cats[e.kind])
       .filter((e) => !(e.kind === "proven" && S.suspended[e.c.id]))
-      .filter((e) => client === "appb" || e.id !== eid("plan", "1"));
+      .filter((e) => client === "appb" || e.id !== eid("plan", "1"))
+      .filter((e) => !(e.id === eid("pref", "1") && !S.ctx.prefs))
+      .filter((e) => !((e.id === eid("goal", "1") || e.id === eid("constraint", "1")) && !S.ctx.goals));
     return { entries: ents };
   }
 
@@ -438,29 +533,29 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 
   // ------------------------------------------------------------- stages
   const STAGES = [
-    { key: "evidence", short: "University evidence", title: "Stage 1: University assessment evidence",
-      sub: "Dana connects the university to their LearnCard (the university can add records; no one can read yet), then completes assessments.",
+    { key: "evidence", short: "University evidence", title: "How it works · 1: Dana's learning starts at the university",
+      sub: "Dana completes assessments. Dana lets the university add the results to Dana's LearnCard.",
       nodes: ["univ", "learncard"], edges: { "univ-learncard": "write-only permission" },
       msgs: [["Dana → LearnCard", "connects the university: it may add records; no one may read yet"], ["University", "records each attempt: competency IDs, item correctness, outcome, evaluator type"], ["University", "makes results available to the inference engine (stage 2) and for credentials (stage 3)"]],
       value: [["Learner", "Every later recommendation traces back to something Dana actually did."], ["University", "Assessment evidence keeps working for the learner after the course ends."]],
       feas: ["Unknown", "To confirm with the university: which result fields can be exported, at what granularity, and the competency identifiers (RSDs or internal)."],
       notes: "Start with control: the university can write but no one can read. Then the evidence, which is the root of trust. Ask the university which fields exist; this is the biggest dependency." },
-    { key: "inference", short: "Inference engine", title: "Stage 2: Inference engine",
-      sub: "P(Known) estimates say what Dana probably knows, with uncertainty, and they expire.",
+    { key: "inference", short: "Model estimates", title: "How it works · 2: Model estimates what Dana probably knows",
+      sub: "Assessment evidence becomes an estimate of mastery. An estimate, never a credential.",
       nodes: ["univ", "infer", "learncard"], edges: { "univ-infer": "assessment evidence", "infer-learncard": "estimates (model-inferred)" },
       msgs: [["University → Inference engine", "item-level evidence"], ["Inference engine", "estimates P(Known) per competency"], ["Inference engine → LearnCard", "stores estimates in Dana's context, each with confidence, basis, model version and expiry"]],
       value: [["Advising", "A forward-looking view: what Dana is close to mastering, which pass/fail records cannot show."], ["Safeguard", "An estimate is never turned into a credential."]],
       feas: ["Medium", "To confirm with the inference-engine partner: input and output schema, whether it reports uncertainty, latency, and model versioning. Calibrate the confidence bands together."],
       notes: "Point at Identity and access management: 0.91 with 8 observations, but no credential. Likely known, not proven. The rest of the story depends on keeping those two apart." },
-    { key: "learncard", short: "LearnCard", title: "Stage 3: LearnCard: Dana's credentials, context and permissions",
-      sub: "One place for what Dana can prove, probably knows and wants, and who may see it. LearnCard stores it using HCP underneath.",
+    { key: "learncard", short: "LearnCard + HCP", title: "How it works · 3: LearnCard holds the proof, HCP carries the context",
+      sub: "Dana chooses what each service may see.",
       nodes: ["univ", "infer", "learncard"], edges: { "univ-learncard": "issues credentials", "infer-learncard": "estimates" },
       msgs: [["University → LearnCard", "issues Open Badge 3.0 credentials for passed assessments"], ["Dana → LearnCard", "adds goal, constraint and preference; sets a rule: ask first before sharing with an employer"], ["Dana → LearnCard", "lets the university advising agent read, for advising only; accommodations, financial aid and demographics are never shared"]],
       value: [["Learner", "One app for proof, context and consent, instead of a consent screen per tool."], ["Employers", "Verified achievements the issuer can suspend or revoke."]],
       feas: ["Medium–high", "LearnCard supports Open Badges 3.0 / VCs today. New: storing context and enforcing permissions using HCP (grants, purposes, revocation, audit), which this repo's provider already models. Decision needed: is LearnCard the context operator?"],
       notes: "Open Dana's controls. Suspend a credential, or turn off 'What I probably know', then go to stage 4: the agent's answers and citations change. That is learner control you can see." },
-    { key: "advising", short: "AI advising: university agent → Career app B", title: "Stage 4: AI advising: University advising agent, then Career app B",
-      sub: "The same LearnCard context serves the university's advising agent and then an independent career app, through the same HCP request, with no intake.",
+    { key: "advising", short: "Same advisor, three levels of context", title: "Same question. Same advisor. Three levels of context.",
+      sub: "Switch between No context, LearnCard and + HCP to see how the university advisor's answer changes.",
       dyn: () => S.advisor === "appb"
         ? { nodes: ["learncard", "appb"], edges: { "learncard-appb": "temporary read (4 hours)" },
             msgs: [["Dana → LearnCard", "lets Career app B read for 4 hours"], ["App B → LearnCard", "the same HCP request the university agent used: no new integration"], ["App B", "continues from proven, likely and wanted, plus the university agent's saved plan, labelled as another service's inference"]] }
@@ -490,7 +585,11 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const t = h("table", {}, h("thead", {}, h("tr", {}, ["Date", "Competency", "Assessment", "Result"].map((x) => h("th", { scope: "col" }, x)))),
       h("tbody", {}, rows.sort((a, b) => a[1].localeCompare(b[1])).map((r) => h("tr", {}, h("td", {}, r[1]), h("td", {}, r[0]), h("td", {}, r[2]),
         h("td", { class: /Passed|Competent/.test(r[3]) ? "st-good" : "" }, r[3])))));
-    return app("University · My assessments", DANA.program, t);
+    return h("div", {},
+      h("div", { class: "card", style: "margin-top:0" }, h("b", {}, "Meet Dana "), h("span", { class: "note" }, "(synthetic learner)"),
+        h("p", { style: "margin:4px 0 0" }, `Works full time in IT support · studies about 8 hours a week · ${DANA.program}. Goal: a cloud security role within 18 months.`)),
+      app("University · My assessments", DANA.program, t),
+      h("p", { class: "note" }, "This learning exists before Dana opens any new AI chat."));
   }
   function viewInference() {
     const list = h("div", {});
@@ -505,8 +604,18 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       row.addEventListener("pointerleave", hideTip); row.addEventListener("blur", hideTip);
       list.append(row);
     }
+    const iam = byId.iam;
+    const pipe = h("div", { class: "pipe", "aria-label": "From assessment evidence to a mastery estimate" },
+      h("div", { class: "box" }, h("div", { class: "k" }, "Measured · the university"), h("b", {}, "Assessment artifacts"),
+        h("div", { class: "note" }, `${iam.obs} scored observations on identity and access management (practice and assessment items)`)),
+      h("div", { class: "arr", "aria-hidden": "true" }, "→"),
+      h("div", { class: "box" }, h("div", { class: "k" }, "Inferred · the inference engine"), h("b", {}, "Knowledge-tracing model"),
+        h("div", { class: "note" }, "Updates the mastery estimate after each observation")),
+      h("div", { class: "arr", "aria-hidden": "true" }, "→"),
+      h("div", { class: "box" }, h("div", { class: "k" }, "Estimate"), h("b", {}, `P(Known) ${iam.pk.toFixed(2)} · ${band(iam)} confidence`),
+        h("div", { class: "note" }, "Expires Dec 2026 unless new evidence arrives · an inference, not a credential")));
     return app("University · What you probably know", "estimates by the inference engine",
-      list,
+      pipe, list,
       h("p", { class: "note", style: "margin-top:10px" }, "Estimates update with new evidence and expire. They guide what to do next; they never count as a credential."));
   }
   function viewCredential() {
@@ -525,22 +634,33 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       h("p", { class: "note" }, "Identity and access management is not here: a high estimate is not an achievement. It will be once Dana passes the assessment."));
   }
   function viewContext() {
-    const E = entriesAt(4);
-    const group = (kind, items) => {
+    const toggle = (checked, onchange, label) => h("label", { class: "row note" }, h("input", { type: "checkbox", checked, on: { change: onchange } }), label || "Share with advising");
+    const group = (kind, title, badgeText, prov, checked, onchange, items) => {
       const g = h("div", { class: "groupbox" }); g.style.borderLeftColor = KIND[kind][1];
       g.append(h("div", { class: "row", style: "justify-content:space-between" },
-        h("span", { class: "kind" }, dot(kind), h("b", { style: "color:var(--text-primary)" }, KIND[kind][0]), h("span", { class: "pill" }, KIND[kind][2])),
-        h("label", { class: "row note" }, h("input", { type: "checkbox", checked: S.cats[kind], on: { change: (e) => { S.cats[kind] = e.target.checked; act("grant.updated", `${KIND[kind][0]}: ${e.target.checked ? "shared" : "withheld"} with advising`); } } }), "Share with advising")));
+        h("span", { class: "kind" }, dot(kind), h("b", { style: "color:var(--text-primary)" }, title), h("span", { class: "pill" }, badgeText)),
+        toggle(checked, onchange)));
       g.append(h("ul", { style: "margin:4px 0 0;padding-left:18px;font-size:14px" }, items));
+      g.append(h("div", { class: "note" }, prov));
       return g;
     };
-    return app("LearnCard · Dana", "credentials · context · permissions",
-      group("proven", C.filter((c) => c.cred).map((c) => h("li", {}, c.name, " ", S.suspended[c.id] ? h("span", { class: "st-bad" }, "⚠ suspended by the issuer") : h("span", { class: "st-good" }, "✓ verified")))),
-      group("likely", C.map((c) => h("li", {}, `${c.name}: ${c.pk.toFixed(2)} (${plain(c).toLowerCase()})`))),
-      group("wanted", [h("li", {}, "Goal: ", GOAL), h("li", {}, "Constraint: ", CONSTRAINT), h("li", {}, "Preference: ", PREF)]),
+    return app("LearnCard · Dana", "verified evidence · HCP context · permissions",
+      h("div", { class: "secthead" }, h("h4", {}, "LearnCard · verified evidence"), h("span", { class: "note" }, "portable credentials")),
+      group("proven", "Verified achievements", "verified", "Issued and signed by the university; anyone Dana shares with can check the signature and status.",
+        S.cats.proven, (e) => { setCat("proven", e.target.checked); act("grant.updated", `Verified achievements: ${e.target.checked ? "shared" : "withheld"}`); },
+        C.filter((c) => c.cred).map((c) => h("li", {}, c.name, " ", S.suspended[c.id] ? h("span", { class: "st-bad" }, "⚠ suspended by the issuer") : h("span", { class: "st-good" }, "✓ verified")))),
+      h("div", { class: "secthead" }, h("h4", {}, "HCP · context package"), h("span", { class: "note" }, "richer context, with provenance and permissions")),
+      group("likely", "Learning history", "inferred", "P(Known) estimates from the inference engine, based on university assessment evidence; each expires.",
+        S.ctx.history, (e) => { setCtx("history", e.target.checked); act("grant.updated", `Learning history: ${e.target.checked ? "shared" : "withdrawn"}`); },
+        C.map((c) => h("li", {}, `${c.name}: ${c.pk.toFixed(2)} (${plain(c).toLowerCase()})`))),
+      group("wanted", "Goals", "learner-declared", "Dana's own words, entered in LearnCard.",
+        S.ctx.goals, (e) => { setCtx("goals", e.target.checked); act("grant.updated", `Goals: ${e.target.checked ? "shared" : "withdrawn"}`); },
+        [h("li", {}, "Goal: ", GOAL), h("li", {}, "Time: ", CONSTRAINT)]),
+      group("wanted", "Preferences", "learner-declared", "Dana's own words, entered in LearnCard.",
+        S.ctx.prefs, (e) => { setCtx("prefs", e.target.checked); act("grant.updated", `Preferences: ${e.target.checked ? "shared" : "withdrawn"}`); },
+        [h("li", {}, PREF)]),
       h("p", { class: "note", style: "margin:10px 0" }, `Rule: "${DIRECTIVE}" Accommodations, financial aid and demographics are never shared.`),
-      h("div", { class: "row", style: "justify-content:space-between" },
-        h("span", { class: "note" }, "Estimates have their own HCP category, so Dana can share credentials without them."),
+      h("div", { class: "row", style: "justify-content:flex-end" },
         h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export learner profile")));
   }
   function adviceBlock(client, label) {
@@ -601,25 +721,305 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   }
   function viewPortable() {
     const a = advise("appb");
-    const withN = a.error ? "–" : a.intake.length;
-    const summary = h("table", { style: "margin-top:12px" }, h("thead", {}, h("tr", {}, h("th", {}, ""), h("th", {}, "With LearnCard"), h("th", {}, "Without LearnCard"))),
-      h("tbody", {},
-        h("tr", {}, h("th", { scope: "row" }, "Intake steps before first recommendation"), h("td", {}, String(withN)), h("td", {}, "11")),
-        h("tr", {}, h("th", { scope: "row" }, "Verified skills it can rely on"), h("td", {}, a.error ? "–" : String(a.entries.filter((e) => e.kind === "proven").length)), h("td", {}, "0 (self-reported)")),
-        h("tr", {}, h("th", { scope: "row" }, "New integration needed"), h("td", {}, "None"), h("td", {}, "One per source")),
-));
-    const main = app("Career app B", "temporary access · 4 hours", adviceBlock("appb"), summary);
+    const main = app("Career app B", "temporary access · 4 hours", adviceBlock("appb"));
     if (!S.compare) return main;
     return h("div", { class: "cmp" }, h("div", {}, h("h4", {}, "With LearnCard"), main),
       h("div", {}, h("h4", {}, "Without LearnCard"), app("Career app B", "cold start", coldBlock())));
   }
+  // ---- the A/B/C comparison: one agent, one question, three input conditions
+  const QUESTION = "I want to move into cloud security. What should I learn next?";
+  const CONDS = {
+    A: { title: "A · No portable context", short: "Question only" },
+    B: { title: "B · LearnCard evidence", short: "+ verified achievements" },
+    C: { title: "C · LearnCard + HCP", short: "+ learning history, goals, preferences" },
+  };
+  const BADGE_KIND = { verified: "proven", inferred: "likely", "learner-declared": "wanted" };
+  function badge(b) { return h("span", { class: "pill bdg" }, dot(BADGE_KIND[b]), b); }
+  function payload(cond) {
+    const items = [];
+    const perm = (inCond, shared, extra) => !inCond ? "not in this condition" : extra || (shared ? "shared" : "withheld by Dana");
+    for (const c of C.filter((x) => x.cred)) items.push({ group: "verified", source: "LearnCard · verified credential", field: c.name, value: "Competent (Open Badge 3.0)",
+      badge: "verified", provenance: "The university, signed", permission: perm(cond !== "A", S.cats.proven, S.suspended[c.id] && cond !== "A" ? "excluded: suspended by the issuer" : null) });
+    for (const c of C) items.push({ group: "history", source: "HCP · learning history", field: `P(Known): ${c.name}`, value: `${c.pk.toFixed(2)} (${band(c)} confidence)`,
+      badge: "inferred", provenance: "The inference engine model", permission: perm(cond === "C", S.ctx.history), c });
+    items.push({ group: "goals", source: "HCP · goals", field: "Goal", value: GOAL, badge: "learner-declared", provenance: "Dana", permission: perm(cond === "C", S.ctx.goals) });
+    items.push({ group: "goals", source: "HCP · goals", field: "Time", value: CONSTRAINT, badge: "learner-declared", provenance: "Dana", permission: perm(cond === "C", S.ctx.goals) });
+    items.push({ group: "prefs", source: "HCP · preferences", field: "What helps", value: PREF, badge: "learner-declared", provenance: "Dana", permission: perm(cond === "C", S.ctx.prefs) });
+    const refused = cond !== "A" && S.agentRevoked;
+    return { cond, refused, items, shared: refused ? [] : items.filter((x) => x.permission === "shared") };
+  }
+  function response(cond) {
+    const P = payload(cond);
+    if (P.refused) return { refused: true, parts: [] };
+    const sh = P.shared, has = (g) => sh.some((x) => x.group === g);
+    const creds = sh.filter((x) => x.group === "verified");
+    const est = (id) => sh.find((x) => x.c && x.c.id === id);
+    const parts = [];
+    if (cond === "A") {
+      parts.push({ t: "Cloud security usually builds on networking, cloud platforms and identity. Consider an introductory security course and some hands-on labs.", why: [["general", "General knowledge only: no records available"]] });
+      parts.push({ t: "Tell me about your background and goals so I can be more specific.", why: [["general", "The agent has to ask, because it knows nothing about Dana"]] });
+      return { parts };
+    }
+    if (creds.length) parts.push({ t: `Your verified achievements in ${creds.map((x) => x.field.toLowerCase()).join(", ")} already cover core prerequisites for cloud security.`, why: creds.map((x) => ["verified", x.field]) });
+    else parts.push({ t: "I can't see any verified achievements, so I'll start from the basics.", why: [["general", "No verified evidence shared"]] });
+    if (est("iam") && est("ir")) parts.push({ t: `Your learning history suggests you're likely ready to attempt the identity and access management assessment (P(Known) ${byId.iam.pk.toFixed(2)}, inferred). Incident response (${byId.ir.pk.toFixed(2)}) is the main gap.`,
+      why: [["inferred", "P(Known): Identity and access management"], ["inferred", "P(Known): Incident response"]] });
+    else parts.push({ t: "A typical next step is identity and access management coursework, then incident response.", why: [["general", "A common pathway, not specific to Dana"]] });
+    if (has("goals")) parts.push({ t: "For your goal of a cloud security role within 18 months, take identity and access management first, then incident response.", why: [["learner-declared", "Goal"]] });
+    if (has("goals") || has("prefs")) {
+      const w = [];
+      if (has("goals")) w.push(["learner-declared", "Time"]);
+      if (has("prefs")) w.push(["learner-declared", "What helps"]);
+      const t = has("goals") && has("prefs") ? "With about 8 hours a week, mostly weekends, and short practice sets first as you prefer: two practice sets on Saturday, then the assessment on Sunday."
+        : has("goals") ? "With about 8 hours a week, mostly weekends: practise on Saturday, then take the assessment on Sunday." : "Start with short practice sets before the full assessment, as you prefer.";
+      parts.push({ t, why: w });
+    }
+    return { parts };
+  }
+  function condCard(cond) {
+    const P = payload(cond), R = response(cond), sel = S.cond === cond;
+    const groups = [["Learner's question", true], ["Verified university achievements", P.shared.some((x) => x.group === "verified")],
+      ["HCP learning history", P.shared.some((x) => x.group === "history")], ["HCP goals", P.shared.some((x) => x.group === "goals")], ["HCP preferences", P.shared.some((x) => x.group === "prefs")]];
+    const avail = h("ul", { class: "avail" }, groups.map(([label, on]) => h("li", {}, h("span", { class: "chk " + (on ? "on" : "off") }, on ? "✓" : "–"), label)));
+    const why = R.refused ? null : h("ul", { class: "why" }, R.parts.map((pt, k) => h("li", {}, h("b", {}, `${k + 1}. `),
+      pt.why.map(([b, f]) => b === "general" ? h("span", { class: "note" }, f + " ") : h("span", {}, badge(b), " ", f, " ")))));
+    const rows = P.items.map((x) => h("tr", {}, h("td", {}, x.source), h("td", {}, x.field), h("td", {}, x.permission === "shared" && !P.refused ? x.value : h("span", { class: "omit" }, "omitted")),
+      h("td", {}, badge(x.badge)), h("td", {}, x.provenance), h("td", {}, P.refused ? "refused: access revoked" : x.permission)));
+    const raw = { receivingService: "University advising agent (same agent, prompt and settings in A, B and C)", question: QUESTION, condition: CONDS[cond].title,
+      verifiedEvidence: P.shared.filter((x) => x.group === "verified").map((x) => ({ credential: x.field, result: x.value, issuer: "The university", status: "verified" })),
+      hcpContext: { learningHistory: P.shared.filter((x) => x.group === "history").map((x) => ({ competency: x.c.name, pKnown: x.c.pk, confidence: band(x.c), declarationType: "model-inferred", assertedBy: "The inference engine" })),
+        goals: P.shared.filter((x) => x.group === "goals").map((x) => ({ [x.field.toLowerCase()]: x.value, declarationType: "person-declared" })),
+        preferences: P.shared.filter((x) => x.group === "prefs").map((x) => ({ whatHelps: x.value, declarationType: "person-declared" })) },
+      omitted: P.items.filter((x) => P.refused || x.permission !== "shared").map((x) => ({ field: x.field, reason: P.refused ? "access revoked" : x.permission })) };
+    return h("div", { class: "cond" + (sel ? " sel" : "") },
+      h("h4", {}, CONDS[cond].title), h("div", { class: "note" }, `${CONDS[cond].short} · same University advising agent · illustrative response (mocked)`),
+      h("div", { class: "note", style: "margin-top:4px" }, "Dana asks"), h("div", {}, `"${QUESTION}"`),
+      R.refused ? h("div", { class: "resp" }, h("span", { class: "st-bad" }, "Refused: Dana revoked the agent's access. "), "It can only answer from the question itself.")
+        : h("div", { class: "resp" }, h("b", {}, "University advising agent: "), R.parts.map((pt) => pt.t).join(" ")),
+      why ? h("div", {}, h("div", { class: "note" }, "Why this advice: each sentence and what supports it"), why) : null,
+      h("div", {}, h("div", { class: "note" }, "Information available to the agent"), avail),
+      h("details", {}, h("summary", { class: "note" }, "What was shared (technical view)"),
+        h("div", { style: "overflow:auto" }, h("table", { class: "shared" }, h("thead", {}, h("tr", {}, ["Source", "Field", "Value", "Type", "Provenance", "Permission"].map((x) => h("th", { scope: "col" }, x)))), h("tbody", {}, rows))),
+        h("details", {}, h("summary", { class: "note" }, "Raw payload (JSON)"), h("pre", { tabindex: 0 }, JSON.stringify(raw, null, 2)))),
+      cond === "C" && !R.refused ? h("button", { type: "button", class: S.planSaved ? "" : "primary", disabled: S.planSaved,
+        on: { click: () => { S.planSaved = true; act("context.created", "Advising plan saved with Dana's OK (model-inferred by University advising agent)"); toast("Plan saved to Dana's LearnCard."); } } },
+        S.planSaved ? "✓ Plan saved to LearnCard" : "Save this plan to LearnCard (Dana confirms)") : null);
+  }
+  function nextRequest() {
+    const P = payload("C");
+    const n = S.requests.length + 1;
+    const count = (g) => P.shared.filter((x) => x.group === g).length;
+    const withheld = ["verified", "history", "goals", "prefs"].filter((g) => !count(g) && !P.refused)
+      .map((g) => ({ verified: "verified achievements", history: "learning history", goals: "goals", prefs: "preferences" })[g]);
+    S.requests.push(P.refused ? `Request ${n}: refused, because Dana revoked the agent's access. Nothing was retrieved.`
+      : `Request ${n}: the agent received ${count("verified")} verified, ${count("history")} inferred and ${count("goals") + count("prefs")} learner-declared items${withheld.length ? `. Not retrievable now: ${withheld.join(", ")}` : ""}.`);
+    act("context.read", `Condition C, request ${n}`);
+  }
+  function viewABC() {
+    const seg = h("div", { class: "seg2", role: "group", "aria-label": "Highlight a condition" },
+      ...["A", "B", "C"].map((k) => h("button", { type: "button", "aria-pressed": String(S.cond === k), on: { click: () => { S.cond = k; render(); } } }, CONDS[k].title)));
+    const ctl = (label, checked, on) => h("label", { class: "row note", style: "margin-right:12px" }, h("input", { type: "checkbox", checked, on: { change: on } }), label);
+    const controls = h("div", { class: "card" },
+      h("div", { class: "row", style: "justify-content:space-between" }, h("b", {}, "Dana's sharing controls"), h("span", { class: "note" }, "Changes apply to the next request")),
+      h("div", { class: "row", style: "margin-top:6px" },
+        ctl("Verified achievements", S.cats.proven, (e) => { setCat("proven", e.target.checked); act("grant.updated", `Verified achievements: ${e.target.checked ? "shared" : "withdrawn"}`); }),
+        ctl("Learning history", S.ctx.history, (e) => { setCtx("history", e.target.checked); act("grant.updated", `Learning history: ${e.target.checked ? "shared" : "withdrawn"}`); }),
+        ctl("Goals", S.ctx.goals, (e) => { setCtx("goals", e.target.checked); act("grant.updated", `Goals: ${e.target.checked ? "shared" : "withdrawn"}`); }),
+        ctl("Preferences", S.ctx.prefs, (e) => { setCtx("prefs", e.target.checked); act("grant.updated", `Preferences: ${e.target.checked ? "shared" : "withdrawn"}`); })),
+      h("div", { class: "row", style: "margin-top:8px" }, h("button", { type: "button", on: { click: () => nextRequest() } }, "Ask the same question again (next request)")),
+      S.requests.length ? h("ol", { class: "reqlog" }, S.requests.map((r) => h("li", {}, r))) : null,
+      h("p", { class: "note", style: "margin-bottom:0" }, "Withdrawing stops future retrieval through LearnCard. It does not delete copies a service already received."));
+    return h("div", {},
+      h("div", { class: "row", style: "justify-content:space-between;margin-bottom:10px" }, h("span", { class: "note" }, "The personalization test: does richer context change the same agent's advice?"), seg),
+      h("div", { class: "abc" }, condCard("A"), condCard("B"), condCard("C")),
+      controls);
+  }
+  // Simple advisor card: one question, one agent, three levels of context
+  function simpleAnswer(cond) {
+    const P = payload(cond), sh = P.shared, has = (g) => sh.some((x) => x.group === g);
+    const generic = "You could build networking and cloud fundamentals, explore cloud security career paths, and look for hands-on practice.";
+    if (cond === "A") return generic;
+    if (P.refused) return "Dana has withdrawn this agent's access, so it can only answer from the question. " + generic;
+    const creds = sh.filter((x) => x.group === "verified").length;
+    if (cond === "B") return creds
+      ? "Your verified university achievements in network security, cloud platforms and Linux cover the core prerequisites. Build on them with identity and access management coursework."
+      : "I can't see any verified achievements yet. " + generic;
+    const out = [];
+    if (creds) out.push("Your verified skills give you a foundation.");
+    if (has("history")) out.push("Your learning history shows you're likely ready for the identity and access management assessment, and incident response is your main gap.");
+    if (has("goals")) out.push(has("history") ? "Given your goal of a cloud security role within 18 months and about 8 hours a week, take that assessment next, then focus on incident response."
+      : "Given your goal of a cloud security role within 18 months and about 8 hours a week, start with identity and access management coursework.");
+    if (has("prefs")) out.push("Start with short practice sets, as you prefer.");
+    return out.length ? out.join(" ") : generic;
+  }
   function viewAdvising() {
-    const tabs = h("div", { class: "row", role: "group", "aria-label": "Advising service", style: "margin-bottom:10px" },
-      h("button", { type: "button", "aria-pressed": String(S.advisor !== "appb"), on: { click: () => { S.advisor = "agent"; render(); } } }, "① University advising agent"),
-      h("span", { class: "note" }, "→"),
-      h("button", { type: "button", "aria-pressed": String(S.advisor === "appb"), on: { click: () => { S.advisor = "appb"; render(); } } }, "② Switch to Career app B"));
-    const body = S.advisor === "appb" ? viewPortable() : viewAdvise();
-    return h("div", {}, tabs, body);
+    if (S.advisor === "appb") return h("div", {},
+      h("div", { class: "row", style: "margin-bottom:10px" }, h("button", { type: "button", on: { click: () => { S.advisor = "agent"; render(); } } }, "← Back to Dana's AI career advisor"),
+        h("span", { class: "stpill" }, h("b", {}, "◌ Proposed · simulated"))),
+      viewPortable());
+    const cond = S.cond, P = payload(cond);
+    const any = (g) => P.shared.some((x) => x.group === g);
+    const rows = [["Learner's question", true], ["Verified university achievements", any("verified")],
+      ["Authorized HCP learning history and goals", any("history") || any("goals") || any("prefs")]];
+    const LABEL = { A: "No context", B: "LearnCard", C: "+ HCP" };
+    const sent = (x) => !P.refused && x.permission === "shared";
+    const reason = (x) => P.refused ? "not sent: Dana revoked the agent's access" : x.permission === "not in this condition" ? `not sent: not part of “${LABEL[cond]}”` : "not sent: " + x.permission;
+    const GROUPS = [
+      ["verified", "LearnCard · verified evidence", "verified", "Issued and signed by the university. Carried by LearnCard as verifiable credentials."],
+      ["history", "HCP · learning history", "inferred", "P(Known) estimates from the inference engine, based on university assessment evidence. An inference, not a credential."],
+      ["goals", "HCP · goals", "learner-declared", "What Dana is working toward and the time available, in Dana's own words (entered in LearnCard)."],
+      ["prefs", "HCP · preferences", "learner-declared", "How Dana likes to learn, in Dana's own words."],
+    ];
+    const tech = GROUPS.map(([g, title, b, explain]) => {
+      const its = P.items.filter((x) => x.group === g);
+      const n = its.filter(sent).length;
+      const reasons = new Set(its.filter((x) => !sent(x)).map(reason));
+      const oneReason = !n && reasons.size === 1 ? [...reasons][0] : null;
+      const label = (x) => x.field.replace(/^P\(Known\): /, "");
+      return h("div", { class: "shgroup" + (n ? "" : " off") },
+        h("div", { class: "row", style: "justify-content:space-between" }, h("span", {}, h("b", {}, title), " ", badge(b)),
+          h("span", { class: n ? "st-good" : "note" }, n ? `${n} of ${its.length} sent` : (oneReason || "not sent"))),
+        h("div", { class: "note" }, explain),
+        h("ul", {}, its.map((x) => h("li", { class: sent(x) ? "" : "omit" }, h("span", {}, label(x), ": "), h("span", {}, x.value),
+          !sent(x) && !oneReason ? h("span", {}, ` (${reason(x)})`) : null))));
+    });
+    const sentIds = new Set(P.shared.map((x) => x.group === "verified" ? null : x.group === "history" ? eid("est", x.c.id) : x.field === "Goal" ? eid("goal", "1") : x.field === "Time" ? eid("constraint", "1") : eid("pref", "1")));
+    const hcpEntries = [...C.map(estEntry), saidEntry("goal", CAT.goals, "learner_statement/goal", GOAL),
+      saidEntry("constraint", CAT.goals, "learner_statement/pacing", CONSTRAINT), saidEntry("pref", CAT.prefs, "learner_statement/what_helps", PREF)].filter((e) => sentIds.has(e.id));
+    const message = {
+      receivingService: "University advising agent",
+      learnCardPresentation: P.shared.some((x) => x.group === "verified")
+        ? { type: ["VerifiablePresentation"], holder: DANA.did, verifiableCredential: C.filter((c) => c.cred && !S.suspended[c.id]).map(ob3) } : null,
+      hcpResponse: cond === "C" && !P.refused ? { outcome: "entries", entries: hcpEntries, directives: [{ action: "share", effect: S.directiveOn ? "ask-first" : "permit", text: DIRECTIVE }] }
+        : { note: P.refused ? "refused: access revoked" : "no HCP request in this condition" },
+    };
+    return h("div", { class: "adv" },
+      h("h4", {}, "Dana's AI career advisor"),
+      h("div", { class: "note" }, "Same question, same University advising agent. Only the information it can see changes."),
+      h("div", { class: "seg3", role: "group", "aria-label": "Information available" },
+        ...["A", "B", "C"].map((k) => h("button", { type: "button", "aria-pressed": String(cond === k), on: { click: () => { S.cond = k; render(); } } }, LABEL[k]))),
+      h("div", { class: "asks" }, "Dana asks"),
+      h("div", { class: "q" }, `"${QUESTION}"`),
+      h("div", { class: "agent" }, h("div", { class: "who" }, h("span", { class: "ico", "aria-hidden": "true" }), "University advising agent"), h("p", {}, simpleAnswer(cond))),
+      h("hr"),
+      h("b", {}, "Information available to the agent"),
+      h("ul", { class: "avail2" }, rows.map(([label, on]) => h("li", {}, on ? h("span", { class: "ok2", "aria-label": "available" }, "✓") : h("span", { class: "no2", "aria-label": "not available" }), label))),
+      h("p", { class: "note foot" }, "Illustrative learner data and recommendations. The live demonstration should use actual the university agent outputs under controlled conditions."),
+      h("div", { class: "shrow" },
+        h("details", { class: "shdetails", open: /shared=1/.test(location.hash) }, h("summary", { class: "note" }, "What was shared with the agent"),
+          h("div", { class: "shwrap" }, ...tech,
+            h("details", {}, h("summary", { class: "note" }, "The HCP message itself (JSON)"), h("pre", { tabindex: 0 }, JSON.stringify(message, null, 2))))),
+        h("div", { class: "row" },
+          h("button", { type: "button", on: { click: () => { S.advisor = "appb"; render(); } } }, "Future: a second service"),
+          h("button", { type: "button", class: "primary", on: { click: () => go(0) } }, "How does this work? →"))));
+  }
+  // ===================== One page: one switch drives the answer, the diagram and the evidence
+  const COND_LABEL = { A: "No context", B: "LearnCard", C: "+ HCP" };
+  const STATUS_TXT = { working: "● Working", manual: "◐ Manually tested", mock: "○ Mocked", proposed: "◌ Proposed" };
+  const stPill = (k, what) => h("span", { class: "stpill" + (k === "working" ? " working" : "") }, h("b", {}, STATUS_TXT[k]), what);
+  function det(key, summary, ...kids) {
+    const d = h("details", { open: !!S.open[key] }, h("summary", { class: "note" }, summary), ...kids);
+    d.addEventListener("toggle", () => { S.open[key] = d.open; });
+    return d;
+  }
+  function diagramForCond(cond) {
+    if (cond === "A") return { nodes: ["agent"], edges: [] };
+    if (cond === "B") return { nodes: ["univ", "learncard", "agent"], edges: ["univ-learncard", "learncard-agent"] };
+    return { nodes: ["univ", "infer", "dana", "learncard", "agent"], edges: ["univ-learncard", "univ-infer", "infer-learncard", "dana-learncard", "learncard-agent"] };
+  }
+  function addedItems(cond) {
+    if (cond === "A") return [];
+    const P = payload(cond), n = (g) => P.shared.filter((x) => x.group === g).length;
+    const items = [{ key: "verified", from: "LearnCard", badge: "verified", n: n("verified"), title: "Verified achievements",
+      src: "Issued and signed by the university, held by Dana in LearnCard", status: ["mock", "University records and credentials"] }];
+    if (cond === "C") items.push(
+      { key: "history", from: "HCP", badge: "inferred", n: n("history"), title: "What Dana probably knows",
+        src: "P(Known) estimates from the inference engine, based on university assessment evidence", status: ["manual", "Inference engine"] },
+      { key: "goals", from: "HCP", badge: "learner-declared", n: n("goals") + n("prefs"), title: "Dana's goals and preferences",
+        src: "In Dana's own words, shared under Dana's permissions", status: ["working", "HCP permissions (in this page)"] });
+    return items;
+  }
+  function assessTable() {
+    const rows = C.filter((c) => c.attempts.length).flatMap((c) => c.attempts.map((a) => [c.name, ...a])).sort((a, b) => a[1].localeCompare(b[1]));
+    return h("table", { style: "margin-top:6px" }, h("thead", {}, h("tr", {}, ["Date", "Competency", "Assessment", "Result"].map((x) => h("th", { scope: "col" }, x)))),
+      h("tbody", {}, rows.map((r) => h("tr", {}, h("td", {}, r[1]), h("td", {}, r[0]), h("td", {}, r[2]), h("td", { class: /Passed|Competent/.test(r[3]) ? "st-good" : "" }, r[3])))));
+  }
+  function goalsList() {
+    const P = payload("C");
+    return h("ul", { style: "margin:6px 0 0;padding-left:18px;font-size:14px" },
+      P.items.filter((x) => x.group === "goals" || x.group === "prefs").map((x) => h("li", { class: x.permission === "shared" ? "" : "omit" }, `${x.field}: ${x.value}`,
+        x.permission === "shared" ? null : " (withheld by Dana)")));
+  }
+  function sharedPanel(cond) {
+    const P = payload(cond), sent = (x) => !P.refused && x.permission === "shared";
+    const reason = (x) => P.refused ? "not sent: Dana withdrew the advisor's access" : x.permission === "not in this condition" ? `not sent: not part of “${COND_LABEL[cond]}”` : "not sent: " + x.permission;
+    const GROUPS = [["verified", "LearnCard · verified evidence", "verified"], ["history", "HCP · learning history", "inferred"], ["goals", "HCP · goals", "learner-declared"], ["prefs", "HCP · preferences", "learner-declared"]];
+    return h("div", { class: "adv op-adv" }, h("div", { class: "shwrap" }, ...GROUPS.map(([g, title, b]) => {
+      const its = P.items.filter((x) => x.group === g), n = its.filter(sent).length;
+      const reasons = new Set(its.filter((x) => !sent(x)).map(reason)), one = !n && reasons.size === 1 ? [...reasons][0] : null;
+      return h("div", { class: "shgroup" + (n ? "" : " off") },
+        h("div", { class: "row", style: "justify-content:space-between" }, h("span", {}, h("b", {}, title), " ", badge(b)), h("span", { class: n ? "st-good" : "note" }, n ? `${n} of ${its.length} sent` : (one || "not sent"))),
+        h("ul", {}, its.map((x) => h("li", { class: sent(x) ? "" : "omit" }, `${x.field.replace(/^P\(Known\): /, "")}: ${x.value}`, !sent(x) && !one ? ` (${reason(x)})` : null))));
+    }), det("json-" + cond, "The HCP message itself (JSON)", h("pre", { tabindex: 0 }, JSON.stringify({ receivingService: "University advising agent", condition: COND_LABEL[cond],
+      verifiedEvidence: P.shared.filter((x) => x.group === "verified").map((x) => ({ credential: x.field, issuer: "The university", status: "verified" })),
+      hcpContext: cond === "C" && !P.refused ? P.shared.filter((x) => x.group !== "verified").map((x) => ({ field: x.field, value: x.value, declarationType: x.badge === "inferred" ? "model-inferred" : "person-declared" })) : [],
+      omitted: P.items.filter((x) => !sent(x)).map((x) => ({ field: x.field, reason: reason(x) })) }, null, 2)))));
+  }
+  function cycleCond(d) { const k = ["A", "B", "C"], i = k.indexOf(S.cond) + d; if (i >= 0 && i < 3) { S.cond = k[i]; render(); } }
+  function onePage() {
+    const cond = S.cond, P = payload(cond), any = (g) => P.shared.some((x) => x.group === g);
+    const sec = (n, title, ...kids) => h("section", { class: "op-sec panel" }, h("div", { class: "op-h" }, h("span", { class: "op-n" }, n), h("h2", {}, title)), ...kids);
+
+    const s1 = sec("1", "Dana asks",
+      h("p", { class: "op-q" }, `"${QUESTION}"`),
+      h("p", { class: "note", style: "margin:0" }, `Dana works full time in IT support and studies about 8 hours a week (${DANA.program}). Synthetic learner.`));
+
+    const seg = h("div", { class: "seg3", role: "group", "aria-label": "Information available to the agent" },
+      ...["A", "B", "C"].map((k) => h("button", { type: "button", "aria-pressed": String(cond === k), on: { click: () => { S.cond = k; render(); } } }, COND_LABEL[k])));
+    const rows = [["Learner's question", true], ["Verified university achievements", any("verified")], ["Authorized HCP learning history and goals", any("history") || any("goals") || any("prefs")]];
+    const s2 = sec("2", "The answer",
+      h("div", { class: "adv op-adv" }, seg,
+        h("div", { class: "agent" }, h("div", { class: "who" }, h("span", { class: "ico", "aria-hidden": "true" }), "University advising agent"), h("p", {}, simpleAnswer(cond))),
+        h("ul", { class: "avail2", style: "margin-top:12px" }, rows.map(([l, on]) => h("li", {}, on ? h("span", { class: "ok2", "aria-label": "available" }, "✓") : h("span", { class: "no2", "aria-label": "not available" }), l))),
+        h("div", { class: "row", style: "margin-top:10px" }, stPill("mock", "Illustrative advisor responses · same question, agent and settings in all three"))));
+
+    const items = addedItems(cond);
+    const where = (key) => key === "verified" ? h("div", {}, assessTable()) : key === "history" ? viewInference() : goalsList();
+    const added = P.refused ? h("p", { class: "st-bad" }, "Dana withdrew the advisor's access, so nothing is sent beyond the question.")
+      : !items.length ? h("p", {}, "Nothing. The advisor starts cold, like every new AI service today.")
+      : h("div", { class: "op-cards" }, items.map((it) => h("div", { class: "op-item" + (it.n ? "" : " off") },
+          h("div", { class: "row", style: "justify-content:space-between" }, h("span", {}, h("span", { class: "pill" }, it.from === "LearnCard" ? "from LearnCard" : "added by HCP"), " ", badge(it.badge)), stPill(...it.status)),
+          h("div", { style: "margin-top:4px" }, h("b", {}, it.title), " ", h("span", { class: it.n ? "st-good" : "note" }, it.n ? `· ${it.n} sent` : "· withheld by Dana")),
+          h("div", { class: "note" }, it.src),
+          det("where-" + it.key, "Where it comes from", where(it.key)))));
+    const s3 = sec("3", "What made the difference",
+      h("div", { class: "op-3" }, h("div", { class: "op-dg" }, drawDiagram(3, diagramForCond(cond))),
+        h("div", {}, h("div", { class: "note", style: "margin-bottom:6px" }, `Information the advisor gets at “${COND_LABEL[cond]}”`), added)));
+
+    const ctl = (label, checked, on) => h("label", { class: "op-tog" }, h("input", { type: "checkbox", checked, on: { change: on } }), label);
+    const s4 = sec("4", "Dana stays in control",
+      h("p", { class: "note", style: "margin-top:0" }, cond === "C" ? "Dana decides what the advisor may see. The answer above changes on the next request." : "Dana decides what the advisor may see. Switch to “+ HCP” above to see every control take effect."),
+      h("div", {},
+        ctl("Verified achievements", S.cats.proven, (e) => { setCat("proven", e.target.checked); act("grant.updated", `Verified achievements: ${e.target.checked ? "shared" : "withdrawn"}`); }),
+        ctl("Learning history", S.ctx.history, (e) => { setCtx("history", e.target.checked); act("grant.updated", `Learning history: ${e.target.checked ? "shared" : "withdrawn"}`); }),
+        ctl("Goals", S.ctx.goals, (e) => { setCtx("goals", e.target.checked); act("grant.updated", `Goals: ${e.target.checked ? "shared" : "withdrawn"}`); }),
+        ctl("Preferences", S.ctx.prefs, (e) => { setCtx("prefs", e.target.checked); act("grant.updated", `Preferences: ${e.target.checked ? "shared" : "withdrawn"}`); })),
+      h("div", { class: "row", style: "margin-top:8px" },
+        h("button", { type: "button", on: { click: () => nextRequest() } }, "Ask again (next request)"),
+        S.agentRevoked ? h("button", { type: "button", on: { click: () => { S.agentRevoked = false; act("grant.issued", "University advising agent · read (re-granted)"); } } }, "Restore advisor access")
+          : h("button", { type: "button", class: "danger", on: { click: () => { S.agentRevoked = true; act("grant.revoked", "University advising agent"); } } }, "Withdraw advisor access")),
+      S.requests.length ? h("ol", { class: "reqlog" }, S.requests.map((r) => h("li", {}, r))) : null,
+      h("p", { class: "note", style: "margin-bottom:0" }, "Withdrawing stops future retrieval through LearnCard. It does not delete copies a service already received."));
+
+    const more = h("div", { class: "op-more" },
+      h("details", { class: "panel", open: !!S.open.hcp, on: { toggle: (e) => { S.open.hcp = e.currentTarget.open; } } },
+        h("summary", {}, h("b", {}, "Show HCP details"), h("span", { class: "note" }, `  · what was shared at “${COND_LABEL[cond]}”`)),
+        h("div", { style: "margin-top:10px" }, sharedPanel(cond)),
+        h("div", { class: "row", style: "margin-top:10px;justify-content:space-between" }, stPill("working", "HCP context, permissions and export (in this page)"),
+          h("button", { type: "button", class: "primary", on: { click: () => openExport() } }, "Export learner profile"))));
+
+    return h("div", { class: "op" }, s1, s2, s3, s4, more,
+      h("p", { class: "note op-foot" }, "← → move the switch · ", h("a", { href: "#stage=0", on: { click: (e) => { e.preventDefault(); S.layout = "stages"; go(0); } } }, "step-by-step view")));
   }
   const VIEWS = [viewEvidence, viewInference, viewContext, viewAdvising];
 
@@ -631,17 +1031,26 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const name = it.type.startsWith("ContextEntry")
       ? (it.decl === "issuer-attested" ? `${n} verified record${n > 1 ? "s" : ""}` : it.decl === "model-inferred" ? `${n} estimate${n > 1 ? "s" : ""} (labelled as inference)` : `${n} statement${n > 1 ? "s" : ""} in Dana's words`)
       : { Grant: "Permission", Directive: "A rule that travels with the data", "Standing rule": "A standing block", "Query → response": "Answer to the request",
-          ContextExport: "Export", "Disclosure (onward share)": "Onward share" }[it.type] || it.type;
+          ContextExport: "Export", "Disclosure (onward share)": "Onward share", "Verifiable presentation": "Verified evidence presented" }[it.type] || it.type;
     const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
     return { name, kind };
   }
+  // High-level ideas: what HCP makes possible at this stage (details live in the HCP output column)
+  function bigIdeas(i) {
+    if (i === 0) return [["Permission", "The university may add to Dana's record. No one can read it yet."]];
+    if (i === 1) return [["Estimates, clearly labelled", "The inference engine adds what Dana probably knows, marked as an estimate, not a fact."]];
+    if (i === 2) return [["One record, three kinds of information", "Proof from the university, estimates from the inference engine, and Dana's own goals, each labelled by where it came from."],
+      ["Dana's choices", "Dana decides who may see which part, and sets a rule: ask first before sharing."]];
+    if (S.advisor === "appb") return S.appbRevoked ? [["Access withdrawn", "Dana withdrew Career app B's access, so it gets nothing."]]
+      : [["Same record, new service", "Career app B reads what Dana allows, for 4 hours, with no new integration."]];
+    if (S.agentRevoked && S.cond !== "A") return [["Access withdrawn", "Dana withdrew the advisor's access, so it gets nothing beyond the question."]];
+    return [["Only what Dana shares", { A: "No record is shared: the advisor sees only Dana's question.",
+      B: "The advisor sees Dana's verified achievements, nothing more.",
+      C: "The advisor sees the proof, estimates and goals Dana chose to share, and nothing else." }[S.cond]]];
+  }
   function viewSystem(st) {
-    const outs = hcpOutputs(S.stage);
-    return h("ul", { class: "plainout" }, outs.map((it) => {
-      const { name, kind } = plainOutput(it);
-      return h("li", {}, kind ? dot(kind) : h("span", { class: "dot", style: "background:var(--text-secondary)" }),
-        h("span", {}, h("b", {}, name + ": "), it.label));
-    }));
+    return h("ul", { class: "plainout" }, bigIdeas(S.stage).map(([k, t]) =>
+      h("li", {}, h("span", { class: "dot", style: "background:var(--text-secondary)" }), h("span", {}, h("b", {}, k + ": "), t))));
   }
 
   // ------------------------------------------------- high-level connection diagram
@@ -649,7 +1058,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     univ: { x: 10, y: 60, w: 220, hgt: 60, t: "University", d: "assessments · credentials" },
     infer: { x: 10, y: 170, w: 220, hgt: 60, t: "Inference engine", d: "P(Known) estimates" },
     dana: { x: 395, y: 2, w: 210, hgt: 58, t: "Dana", d: "decides who sees what" },
-    learncard: { x: 372, y: 102, w: 256, hgt: 92, t: "LearnCard", d: "Dana's context, via HCP", hub: true },
+    learncard: { x: 372, y: 102, w: 256, hgt: 92, t: "LearnCard", d: "verified evidence + HCP context", hub: true },
     agent: { x: 760, y: 60, w: 230, hgt: 60, t: "University advising agent", d: "reads via HCP" },
     appb: { x: 760, y: 170, w: 230, hgt: 60, t: "Career app B", d: "reads via HCP (4 h)" },
   };
@@ -667,10 +1076,10 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     if (i === 2) return { nodes: ["univ", "infer", "learncard", "dana"], edges: ["univ-learncard", "infer-learncard", "dana-learncard"] };
     return S.advisor === "appb" ? { nodes: ["learncard", "appb", "dana"], edges: ["learncard-appb"] } : { nodes: ["learncard", "agent", "dana"], edges: ["learncard-agent"] };
   }
-  function drawDiagram(i) {
+  function drawDiagram(i, forced) {
     const NS = "http://www.w3.org/2000/svg";
     const el = (tag, attrs, text) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; return n; };
-    const on = diagramState(i);
+    const on = forced || diagramState(i);
     const svg = el("svg", { viewBox: "0 0 1000 240", role: "img",
       "aria-label": "The university and the inference engine write into Dana's LearnCard, which uses HCP; Dana controls it; the University advising agent and Career app B read from it through HCP." });
     const defs = el("defs", {});
@@ -771,7 +1180,18 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   const PURPOSE = { records: "https://hcp.example/purposes/school-records", estimate: "https://hcp.example/purposes/competency-estimation", advising: "https://hcp.example/purposes/academic-and-career-advising", career: "https://hcp.example/purposes/career-navigation" };
   const ISSUER_DID = "did:key:z6MkSyntheticUnivTestIssuerKeyNotReal";
   const compUri = (c) => "https://osn.example/rsd/" + c.name.toLowerCase().replace(/[^a-z]+/g, "-").replace(/-+$/, "");
-  const sharedCats = () => Object.keys(S.cats).filter((k) => S.cats[k]).flatMap((k) => CATS_FOR[k]);
+  const sharedCats = () => Object.keys(S.cats).filter((k) => S.cats[k]).flatMap((k) => CATS_FOR[k])
+    .filter((c) => !(c === CAT.goals && !S.ctx.goals) && !(c === CAT.prefs && !S.ctx.prefs));
+  function setCat(kind, v) {
+    S.cats[kind] = v;
+    if (kind === "likely") S.ctx.history = v;
+    if (kind === "wanted") { S.ctx.goals = v; S.ctx.prefs = v; }
+  }
+  function setCtx(k, v) {
+    S.ctx[k] = v;
+    S.cats.likely = S.ctx.history;
+    S.cats.wanted = S.ctx.goals || S.ctx.prefs;
+  }
   function prov(by, assurance, at, client, grant, source) {
     return { assertedBy: { id: by, assurance }, assertedAt: at, source, submittedByClient: CLIENTS[client], authorizedUnder: grant, recordedByProvider: PROVIDER, recordedAt: at };
   }
@@ -952,6 +1372,8 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     if (i === 3) {
       const who = S.advisor === "appb" ? "appb" : "agent";
       if (who === "appb") add("Grant", "Career app B may read for 4 hours (temporary)", G[3], { step: 0 });
+      if (who === "agent" && !S.agentRevoked && S.cats.proven) add("Verifiable presentation", "LearnCard presents Dana's verified credentials (conditions B and C)",
+        { type: ["VerifiablePresentation"], holder: DANA.did, verifiableCredential: C.filter((c) => c.cred && !S.suspended[c.id]).map(ob3) }, { decl: "issuer-attested", step: 0 });
       const d = disclosed(who);
       const req = { operation: "query", query: who === "appb" ? "Skills, goals and plan for career navigation" : "What should Dana do next toward cloud security?",
         purpose: who === "appb" ? PURPOSE.career : PURPOSE.advising };
@@ -966,7 +1388,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         const dirs = d.entries.length ? [{ directiveId: "urn:uuid:dana-directive-share", action: "share", effect: S.directiveOn ? "ask-first" : "permit", text: DIRECTIVE }] : [];
         resp = { outcome: "entries", entries: d.entries.map((e) => e.id), directives: dirs };
         const WORD = { "issuer-attested": "verified records", "model-inferred": "estimates", "person-declared": "of Dana's statements", "model-inferred (saved plan)": "saved plan" };
-        label = `${who === "appb" ? "Career app B" : "The advising agent"} receives ${Object.entries(counts).map(([k, v]) => v + " " + WORD[k]).join(", ")}${dirs.length ? ", plus Dana's ask-first rule" : ""}. Nothing else.`;
+        label = `${who === "appb" ? "Career app B" : "Condition C: the advising agent"} receives ${Object.entries(counts).map(([k, v]) => v + " " + WORD[k]).join(", ")}${dirs.length ? ", plus Dana's ask-first rule" : ""}. Nothing else.`;
       }
       add("Query → response", label, { request: req, response: resp }, { step: 1 });
       if (who === "agent") {
@@ -1015,7 +1437,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       h("span", {}, h("span", { class: "kind" }, kind ? dot(kind) : null, h("b", { style: "color:var(--text-primary)" }, label)), h("br"), h("span", { class: "note" }, sub)),
       h("input", { type: "checkbox", checked, on: { change: onchange } }));
     b.append(h("section", {}, h("h3", {}, "Share with advising"),
-      ...["proven", "likely", "wanted"].map((k) => sw(KIND[k][0], KIND[k][2], S.cats[k], (e) => { S.cats[k] = e.target.checked; act("grant.updated", `${KIND[k][0]}: ${e.target.checked ? "shared" : "withheld"}`); }, k))));
+      ...["proven", "likely", "wanted"].map((k) => sw(KIND[k][0], KIND[k][2], S.cats[k], (e) => { setCat(k, e.target.checked); act("grant.updated", `${KIND[k][0]}: ${e.target.checked ? "shared" : "withheld"}`); }, k))));
     b.append(h("section", {}, h("h3", {}, "Rules"),
       sw("Ask first before sharing", `"${DIRECTIVE}"`, S.directiveOn, (e) => { S.directiveOn = e.target.checked; act("directive.set", `share: ${e.target.checked ? "ask-first" : "permit"}`); })));
     const grantRow = (name, revoked, onRevoke, onRestore) => h("div", { class: "switch" },
@@ -1031,23 +1453,51 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     for (const [t, e, d] of baseline(S.stage)) log.append(h("div", {}, `${t}  ${e}  ${d}`));
     for (const a of S.actions) log.append(h("div", { class: "new" }, `now               ${a.type}  ${a.detail}`));
     b.append(h("section", {}, h("h3", {}, "Audit log"), log, h("p", { class: "note" }, "Every grant, write, read and change is recorded and visible to Dana.")),
-      h("section", {}, h("button", { type: "button", on: { click: () => { Object.assign(S, { cats: { proven: true, likely: true, wanted: true }, agentRevoked: false, appbRevoked: false, suspended: {}, directiveOn: true, planSaved: false, shared: null, actions: [], advisor: "agent" }); render(); toast("Demo reset."); } } }, "Reset demo")));
+      h("section", {}, h("button", { type: "button", on: { click: () => { Object.assign(S, { cats: { proven: true, likely: true, wanted: true }, agentRevoked: false, appbRevoked: false, suspended: {}, directiveOn: true, planSaved: false, shared: null, actions: [], advisor: "agent", ctx: { history: true, goals: true, prefs: true }, cond: "A", requests: [] }); render(); toast("Demo reset."); } } }, "Reset demo")));
   }
 
   // --------------------------------------------------------------- render
   function render() {
+    const one = S.layout === "one";
+    $("onepage").hidden = !one;
+    for (const id of ["rail", "overview", "grid"]) $(id).hidden = one;
+    document.querySelector(".stagehead").hidden = one;
+    $("keysHint").hidden = one;
+    if (one) {
+      $("onepage").replaceChildren(...onePage().childNodes);
+      renderDrawer(); hideTip();
+      history.replaceState(null, "", "#cond=" + S.cond);
+      return;
+    }
     const st0 = STAGES[S.stage];
     const st = st0.dyn ? { ...st0, ...st0.dyn() } : st0;
-    const rail = $("rail"); rail.replaceChildren();
-    STAGES.forEach((s, i) => rail.append(h("li", {}, h("button", { type: "button", class: i < S.stage ? "done" : "", "aria-current": i === S.stage ? "step" : false,
-      on: { click: () => go(i) } }, h("span", { class: "num" }, "STAGE " + (i + 1)), h("span", { class: "lbl" }, s.short)))));
+    const rail = $("rail"); rail.replaceChildren(); rail.hidden = false; $("grid").hidden = false;
+    const pos = DISP.indexOf(S.stage);
+    DISP.forEach((i, k) => rail.append(h("li", {}, h("button", { type: "button", class: k < pos ? "done" : "", "aria-current": i === S.stage ? "step" : false,
+      on: { click: () => go(i) } }, h("span", { class: "num" }, k === 0 ? "THE RESULT" : "HOW IT WORKS · " + k), h("span", { class: "lbl" }, STAGES[i].short)))));
     $("stageTitle").textContent = st.title; $("stageSub").textContent = st.sub;
-    $("compareWrap").hidden = S.stage < 3;
+    $("compareWrap").hidden = !(S.stage === 3 && S.advisor === "appb");
     $("compareBtn").setAttribute("aria-pressed", String(S.compare));
     $("compareBtn").textContent = S.compare ? "Hide comparison" : "Compare: without LearnCard";
-    $("prevBtn").disabled = S.stage === 0; $("nextBtn").disabled = S.stage === STAGES.length - 1;
-    $("grid").className = "grid3" + (S.compare && S.stage >= 3 ? " nohood" : "");
-    document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 3;
+    $("prevBtn").disabled = pos === 0; $("nextBtn").disabled = pos === DISP.length - 1;
+    const lead = S.stage === 3 && S.advisor !== "appb";
+    $("overview").hidden = lead;
+    $("hcpBtn").hidden = lead;
+    $("hcpBtn").textContent = S.showHcp ? "Hide HCP details" : "Show HCP details";
+    $("hcpBtn").setAttribute("aria-pressed", String(S.showHcp));
+    const wide = lead || !S.showHcp || (S.stage === 3 && S.compare);
+    $("grid").className = "grid3" + (wide ? " nohood" : "");
+    document.querySelector(".hoodcol").hidden = wide;
+    $("lvh").textContent = lead ? "" : "Learner view";
+    $("lvh").hidden = lead;
+    const STATUS = { working: "● Working", manual: "◐ Manually tested", mock: "○ Mocked", proposed: "◌ Proposed" };
+    const items = [
+      [["University assessment records", "mock"]],
+      [["The inference engine P(Known) inference", "manual"], ["Values shown", "mock"]],
+      [["LearnCard credentials", "mock"], ["HCP context, permissions and export (in this page)", "working"]],
+      S.advisor === "appb" ? [["Second independent service", "proposed"]] : [["Advisor responses", "mock"], ["Permission changes on the next request (in this page)", "working"], ["Live the university agent connection", "proposed"]],
+    ][S.stage];
+    $("statusLine").replaceChildren(...items.map(([what, k]) => h("span", { class: "stpill" + (k === "working" ? " working" : "") }, h("b", {}, STATUS[k]), what)));
     $("learner").replaceChildren(VIEWS[S.stage]());
     $("system").replaceChildren(viewSystem(st));
     $("diagram").replaceChildren(drawDiagram(S.stage));
@@ -1056,17 +1506,21 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     hideTip();
     history.replaceState(null, "", "#stage=" + S.stage + (S.compare ? "&compare=1" : "") + (S.advisor === "appb" ? "&advisor=appb" : ""));
   }
+  // Display order: lead with the result (stage index 3), then how it works (0, 1, 2)
+  const DISP = [3, 0, 1, 2];
   function go(i) { S.stage = Math.max(0, Math.min(STAGES.length - 1, i)); render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  function stepBy(d) { const k = DISP.indexOf(S.stage) + d; if (k >= 0 && k < DISP.length) go(DISP[k]); }
 
-  $("prevBtn").addEventListener("click", () => go(S.stage - 1));
-  $("nextBtn").addEventListener("click", () => go(S.stage + 1));
+  $("prevBtn").addEventListener("click", () => stepBy(-1));
+  $("nextBtn").addEventListener("click", () => stepBy(1));
+  $("hcpBtn").addEventListener("click", () => { S.showHcp = !S.showHcp; render(); });
   $("compareBtn").addEventListener("click", () => { S.compare = !S.compare; render(); });
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea")) return;
     if (e.key === "Escape") { closeModal(); toggleDrawer(false); }
     if ($("modal").classList.contains("open")) return;
-    if (e.key === "ArrowRight") go(S.stage + 1);
-    if (e.key === "ArrowLeft") go(S.stage - 1);
+    if (e.key === "ArrowRight") { if (S.layout === "one") cycleCond(1); else stepBy(1); }
+    if (e.key === "ArrowLeft") { if (S.layout === "one") cycleCond(-1); else stepBy(-1); }
   });
   function toggleDrawer(open) {
     const d = $("drawer"); const o = open == null ? !d.classList.contains("open") : open;
@@ -1078,9 +1532,10 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
 
   const HASH = location.hash;
-  const m = /stage=(\d)/.exec(HASH); if (m) S.stage = +m[1];
+  const m = /stage=(\d)/.exec(HASH); S.stage = m ? +m[1] : 3; S.layout = m ? "stages" : "one";
   if (/compare=1/.test(HASH)) S.compare = true;
   if (/advisor=appb/.test(HASH)) S.advisor = "appb";
+  { const mc = /cond=([ABC])/.exec(HASH); if (mc) S.cond = mc[1]; }
   if (/export=1/.test(HASH)) setTimeout(() => openExport(), 0);
   if (/drawer=1/.test(HASH)) setTimeout(() => toggleDrawer(true), 0);
   render();
@@ -1143,6 +1598,46 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     S.advisor = "agent"; S.agentRevoked = true;
     ok("diagram: a revoked service is drawn as revoked", drawDiagram(3).querySelector(".dg-edge.revoked") !== null);
     S.agentRevoked = false;
+    Object.assign(S, { cats: { proven: true, likely: true, wanted: true }, ctx: { history: true, goals: true, prefs: true }, agentRevoked: false, suspended: {}, requests: [] });
+    ok("A/B/C: A uses the question only", payload("A").shared.length === 0);
+    ok("A/B/C: B adds 3 verified achievements and no HCP context", payload("B").shared.length === 3 && payload("B").shared.every((x) => x.badge === "verified"));
+    ok("A/B/C: C adds learning history, goals and preferences", ["history", "goals", "prefs"].every((g) => payload("C").shared.some((x) => x.group === g)));
+    ok("A/B/C: responses differ across conditions", new Set(["A", "B", "C"].map((k) => response(k).parts.map((x) => x.t).join(" "))).size === 3);
+    ok("A/B/C: every C sentence names its support", response("C").parts.every((x) => x.why.length > 0));
+    setCtx("history", false);
+    ok("control: withdrawn learning history is omitted from C", !payload("C").shared.some((x) => x.group === "history") && payload("C").items.some((x) => x.group === "history" && x.permission === "withheld by Dana"));
+    ok("control: withdrawn learning history is absent from the HCP read", !disclosed("agent").entries.some((e) => e.kind === "likely"));
+    nextRequest();
+    ok("control: the next request reports it as not retrievable", /Not retrievable now: learning history/.test(S.requests[S.requests.length - 1]));
+    setCtx("history", true); setCtx("prefs", false);
+    ok("control: preferences can be withheld while goals stay", !disclosed("agent").entries.some((e) => e.id === eid("pref", "1")) && disclosed("agent").entries.some((e) => e.id === eid("goal", "1")));
+    setCtx("prefs", true); S.suspended.netsec = true;
+    ok("control: a suspended credential is excluded from B and C", payload("B").shared.length === 2 && payload("C").items.some((x) => x.permission === "excluded: suspended by the issuer"));
+    S.suspended = {}; S.agentRevoked = true;
+    ok("control: after revocation B and C are refused, A still answers", response("B").refused && response("C").refused && !response("A").refused);
+    S.agentRevoked = false; S.requests = [];
+    ok("simple card: three different answers", new Set(["A", "B", "C"].map(simpleAnswer)).size === 3);
+    setCtx("history", false);
+    ok("simple card: withdrawing learning history changes the + HCP answer", !/learning history/.test(simpleAnswer("C")));
+    setCtx("history", true); S.agentRevoked = true;
+    ok("simple card: revoked agent answers from the question only", /withdrawn this agent's access/.test(simpleAnswer("C")));
+    S.agentRevoked = false;
+    ok("app B view has no With/Without summary table", !/Intake steps before first recommendation/.test(viewPortable().textContent));
+    S.stage = 3; S.advisor = "agent"; S.cond = "C";
+    const shown = viewAdvising().textContent;
+    ok("what was shared: goals are listed with Dana's words", /HCP · goals/.test(shown) && shown.includes(GOAL));
+    S.cond = "B";
+    ok("what was shared: in LearnCard-only, goals say why they were not sent", /not part of “LearnCard”/.test(viewAdvising().textContent));
+    ok("big ideas: one or two plain sentences per stage", [0, 1, 2].every((k) => bigIdeas(k).length <= 2) && (S.cond = "C", /chose to share/.test(bigIdeas(3)[0][1])));
+    ok("navigation: the result leads, then how it works 1-3", DISP.join() === "3,0,1,2");
+    ok("one page: the diagram lights more paths as context grows", diagramForCond("A").edges.length === 0 && diagramForCond("B").edges.length === 2 && diagramForCond("C").edges.length === 5);
+    ok("one page: what the advisor gets grows from A to C", addedItems("A").length === 0 && addedItems("B").length === 1 && addedItems("C").length === 3);
+    S.cond = "C";
+    ok("one page: four numbered sections", onePage().querySelectorAll(".op-sec").length === 4);
+    setCtx("goals", false);
+    ok("one page: withheld goals show as withheld", addedItems("C").find((x) => x.key === "goals").n === 1);
+    setCtx("goals", true);
+    S.cond = "A";
     const fx = document.createElement("script"); fx.type = "application/json"; fx.id = "exportOut";
     fx.textContent = JSON.stringify({ export: ex, grants: grantsJson() }); document.body.append(fx);
     Object.assign(S, JSON.parse(snap));
