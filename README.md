@@ -53,6 +53,8 @@ python -m hcp_demo.html_view
 python -m unittest discover -s tests
 ```
 
+**Simple demo (start here):** <https://xd2164.github.io/hcp-learner-continuity/demo/>: a learner's LearnCard (CLR 2.0 transcript + assessment credential) shared with two independent AI tutors through HCP, in four steps.
+
 **Interactive views:** Track A results at <https://xd2164.github.io/hcp-learner-continuity/>; the Track B storyboard at <https://xd2164.github.io/hcp-learner-continuity/storyboard/>. It has the cohort
 chart, and you can follow any learner through the five steps. It is a single self-contained file
 ([docs/index.html](docs/index.html)) and works offline.

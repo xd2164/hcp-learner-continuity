@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo: switch AI tutors, keep your learning</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --card: #fcfcfb; --soft: #f3f2ee; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --line: rgba(11,11,11,0.10); --grid: #e1e0d9;
+  --proven: #2a78d6; --wanted: #eb6834; --likely: #1baf7a; --good: #006300; --bad: #d03b3b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --page: #0d0d0d; --card: #1a1a19; --soft: #232322; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+    --line: rgba(255,255,255,0.10); --grid: #2c2c2a;
+    --proven: #3987e5; --wanted: #d95926; --likely: #199e70; --good: #0ca30c; --bad: #e66767;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 26px; margin: 0; }
+h2 { font-size: 20px; margin: 0 0 4px; }
+h3 { font-size: 13px; margin: 0 0 10px; color: var(--ink2); text-transform: uppercase; letter-spacing: 0.06em; }
+p { margin: 6px 0; }
+.sub { color: var(--ink2); margin: 4px 0 0; }
+.note { color: var(--muted); font-size: 13px; }
+button { font: inherit; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; cursor: pointer; }
+button:hover { filter: brightness(0.97); }
+button:disabled { opacity: 0.4; cursor: default; }
+button.primary { background: var(--ink); color: var(--card); border-color: transparent; }
+button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--proven); outline-offset: 2px; }
+
+.steps { display: flex; gap: 8px; margin: 20px 0 18px; list-style: none; padding: 0; }
+.steps li { flex: 1; }
+.steps button { width: 100%; text-align: left; border-radius: 12px; padding: 10px 12px; }
+.steps .n { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--line); font-size: 13px; font-weight: 700; margin-right: 8px; }
+.steps button[aria-current="step"] { border-color: var(--ink); box-shadow: inset 0 -3px 0 var(--ink); }
+.steps button[aria-current="step"] .n { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.steps button.done .n { background: var(--soft); }
+@media (max-width: 760px) { .steps { flex-direction: column; } }
+
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; min-width: 0; }
+
+.item { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin: 10px 0; }
+.item .body { flex: 1; }
+.item .title { font-weight: 600; }
+.item.locked { background: var(--soft); border-style: dashed; color: var(--ink2); }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; margin-top: 7px; }
+.tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink2); margin-left: 6px; white-space: nowrap; }
+.ok { color: var(--good); font-weight: 600; }
+.bad { color: var(--bad); font-weight: 600; }
+.switch { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--ink2); white-space: nowrap; }
+input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--ink); }
+
+.chat { display: flex; flex-direction: column; gap: 8px; }
+.bubble { background: var(--soft); border-radius: 14px 14px 14px 4px; padding: 10px 14px; max-width: 92%; }
+.bubble.me { align-self: flex-end; background: transparent; border: 1px solid var(--line); border-radius: 14px 14px 4px 14px; }
+.who { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.session { border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .cmp { grid-template-columns: 1fr; } }
+ol.q { margin: 4px 0; padding-left: 20px; font-size: 14px; color: var(--ink2); }
+
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+@media (max-width: 700px) { .tiles { grid-template-columns: 1fr; } }
+.tile { border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.tile .l { font-size: 13px; color: var(--ink2); }
+.tile .v { font-size: 26px; font-weight: 650; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .two { grid-template-columns: 1fr; } }
+.two ul { margin: 6px 0 0; padding-left: 18px; }
+.two li { margin: 4px 0; }
+
+.out { border: 1px solid var(--line); border-radius: 10px; background: var(--soft); margin-bottom: 8px; }
+.out > summary, .out > .row0 { list-style: none; cursor: pointer; padding: 10px 12px; display: flex; gap: 8px; align-items: flex-start; }
+.out > summary::-webkit-details-marker { display: none; }
+.out .hcp { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--card); background: var(--ink2); border-radius: 4px; padding: 1px 6px; margin-top: 3px; }
+.out .t { font-weight: 650; }
+.out .d { font-size: 14px; color: var(--ink2); }
+.out pre { margin: 0 12px 12px; padding: 10px; background: var(--card); border-radius: 8px; overflow: auto; max-height: 340px; font: 12px/1.45 ui-monospace, Consolas, monospace; }
+.out.err { border-color: var(--bad); }
+footer { margin-top: 22px; color: var(--muted); font-size: 13px; }
+a { color: var(--proven); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Switch AI tutors. Keep your learning.</h1>
+  <p class="sub">Dana's LearnCard holds a transcript, an assessment and Dana's own goals. Two independent AI tutors use it through HCP, and Dana decides what each one sees.</p>
+
+  <ol class="steps" id="steps" aria-label="Demo steps"></ol>
+
+  <div class="head">
+    <div><h2 id="title"></h2><p class="sub" id="sub"></p></div>
+    <div style="display:flex;gap:8px">
+      <button id="cmpBtn" type="button" aria-pressed="false" hidden>Compare: without HCP</button>
+      <button id="back" type="button">← Back</button>
+      <button id="next" type="button" class="primary">Next →</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <section class="panel" aria-labelledby="h-l"><h3 id="h-l">What Dana sees</h3><div id="left"></div></section>
+    <section class="panel" aria-labelledby="h-r"><h3 id="h-r">HCP output</h3><div id="right"></div></section>
+  </div>
+
+  <footer>Synthetic learner and data. Partner behaviour is an assumption to confirm. HCP 2.0-draft-3 (working draft); the learner-memory profile is a proposal. ← → keys move between steps. <a href="../storyboard/">Detailed storyboard</a></footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // ---------------------------------------------------------------- data
+  const DANA = "did:example:learner:dana";
+  const UNI = "University (synthetic)", ASSESSOR = "Assessment provider (synthetic)";
+  const COURSES = ["Network security fundamentals", "Cloud platform foundations", "Linux administration", "Identity and access management"];
+  const CAT = {
+    transcript: "https://learncard.example/hcp/categories/transcript",
+    assessment: "https://learncard.example/hcp/categories/assessments",
+    context: "goals_and_constraints",
+    notes: "https://learncard.example/hcp/categories/learning-observations",
+  };
+  const PROFILE = "https://hcp.example/profiles/learner-memory/0.1 (proposed)";
+  const TUTOR = { a: "Tutor A (synthetic)", b: "Tutor B (synthetic)" };
+  const T0 = "2026-08-01T10:00:00Z", T1 = "2026-08-01T10:40:00Z", T2 = "2026-08-08T18:00:00Z";
+  const S = { step: 0, compare: false, share: { transcript: true, assessment: true, context: true, notes: true } };
+
+  function entries() {
+    const list = [
+      { id: "urn:uuid:dana-clr-1", kind: "transcript", decl: "issuer-attested", label: "CLR 2.0 transcript from the university",
+        hcp: { type: "ContextEntry", declarationType: "issuer-attested", categories: [CAT.transcript],
+          evidence: [{ type: "verifiable-credential", credential: { type: ["VerifiableCredential", "ClrCredential"], issuer: UNI,
+            achievements: COURSES.map((c) => ({ name: c, result: "Competent" })) } }],
+          provenance: { assertedBy: "did:key:university-test-issuer", assurance: "cryptographically-verified", recordedAt: "2026-07-20T09:00:00Z" } } },
+      { id: "urn:uuid:dana-assess-1", kind: "assessment", decl: "issuer-attested", label: "Incident response assessment: 48 / 100",
+        hcp: { type: "ContextEntry", declarationType: "issuer-attested", categories: [CAT.assessment],
+          evidence: [{ type: "verifiable-credential", credential: { type: ["VerifiableCredential", "OpenBadgeCredential"], issuer: ASSESSOR,
+            achievement: "Incident response readiness", result: { score: 48, of: 100 } } }],
+          provenance: { assertedBy: "did:key:assessment-provider-test-issuer", assurance: "cryptographically-verified", recordedAt: "2026-07-25T12:00:00Z" } } },
+      ...[["goal", "Goal: a cloud security role within 18 months"], ["time", "Time: about 8 hours a week, mostly weekends"], ["helps", "What helps: a worked example first, then I try one"]]
+        .map(([k, text]) => ({ id: "urn:uuid:dana-" + k, kind: "context", decl: "person-declared", label: text,
+          hcp: { type: "ContextEntry", declarationType: "person-declared", categories: [CAT.context], content: { value: text.split(": ")[1] },
+            provenance: { assertedBy: DANA, source: "person-input", recordedAt: "2026-07-21T19:00:00Z" } } })),
+    ];
+    if (S.step >= 1) list.push(...tutorNotes());
+    return list;
+  }
+  function tutorNotes() {
+    return [
+      { id: "urn:uuid:dana-obs-1", kind: "notes", decl: "model-inferred", label: "Tutor A: learning observation (incident response)",
+        hcp: { type: "ContextEntry", declarationType: "model-inferred", categories: [CAT.notes],
+          content: { profile: PROFILE, value: { type: "LearningObservation", learningContext: { competency: "Incident response", task: "10 practice scenarios" },
+            observedOutcome: { lastFiveCorrect: 4, firstFiveCorrect: 2 },
+            evidenceReference: ["urn:uuid:dana-assess-1", "tutor-a:session:2026-08-01"],
+            temporalValidity: { observedAt: T1, validUntil: "2026-11-01T00:00:00Z" },
+            confidenceAndUncertainty: { level: "medium", basedOn: "10 items in one session" } } },
+          provenance: { assertedBy: "tutor-a:model", submittedByClient: TUTOR.a, recordedAt: T1 } } },
+      { id: "urn:uuid:dana-strategy-1", kind: "notes", decl: "model-inferred", label: "Tutor A: what worked (worked example first)",
+        hcp: { type: "ContextEntry", declarationType: "model-inferred", categories: [CAT.notes],
+          content: { profile: PROFILE, value: { type: "InstructionalStrategy", strategy: "Worked example first, then guided practice",
+            observedOutcome: "accuracy rose from 2 of 5 to 4 of 5 after switching to worked examples",
+            evidenceReference: ["urn:uuid:dana-obs-1", "urn:uuid:dana-helps"],
+            temporalValidity: { observedAt: T1, validUntil: "2026-11-01T00:00:00Z" },
+            confidenceAndUncertainty: { level: "medium", basedOn: "one session; confirm over time" } } },
+          provenance: { assertedBy: "tutor-a:model", submittedByClient: TUTOR.a, recordedAt: T1 } } },
+    ];
+  }
+  // what each tutor is allowed to read (HCP grants follow Dana's switches)
+  function grant(who) {
+    const read = ["transcript", "assessment", "context"].filter((k) => S.share[k]).map((k) => CAT[k]);
+    if (who === "b" && S.share.notes) read.push(CAT.notes);
+    const g = { type: "Grant", grantId: "urn:uuid:dana-grant-tutor-" + who, client: TUTOR[who], authorizingPrincipal: DANA,
+      access: [{ actions: ["read"], categories: read, purposes: ["tutoring"] }], grantType: "persistent", issuedAt: who === "a" ? T0 : T2,
+      status: who === "a" && S.step >= 2 ? "revoked" : "active" };
+    if (who === "a") g.access.push({ actions: ["write"], categories: [CAT.notes], purposes: ["tutoring"] });
+    return g;
+  }
+  function query(who) {
+    if (who === "a" && S.step >= 2) return { outcome: "error", error: "invalid-token", entries: [] };
+    const cats = grant(who).access[0].categories;
+    const es = entries().filter((e) => cats.includes(e.hcp.categories[0]) && !(who === "a" && e.kind === "notes"));
+    return { outcome: "entries", entries: es };
+  }
+  const has = (r, kind) => r.entries.some((e) => e.kind === kind);
+  function intakeFor(who) {
+    const r = query(who), q = [];
+    if (!has(r, "transcript")) q.push("Which courses have you completed?", "What grades did you get?", "Which topics felt hardest?");
+    if (!has(r, "assessment")) q.push("Can you take a short placement quiz on incident response?", "How confident are you, from 1 to 5?");
+    if (!has(r, "context")) q.push("What are you working toward?", "How do you like to learn?");
+    if (who === "b" && !has(r, "notes")) q.push("What did you cover with your last tutor?", "How far did you get?", "What helped you most?");
+    return q;
+  }
+  const COLD = ["Upload your résumé or transcript", "Which courses have you completed?", "What grades did you get?", "Which topics felt hardest?",
+    "Take a placement quiz", "How confident are you, from 1 to 5?", "What are you working toward?", "How many hours a week do you have?",
+    "How do you like to learn?", "What did you cover with your last tutor?", "What helped you most?"];
+
+  // ------------------------------------------------------------- helpers
+  const $ = (id) => document.getElementById(id);
+  function h(tag, attrs, ...kids) {
+    const n = document.createElement(tag);
+    for (const k in attrs || {}) {
+      if (k === "on") for (const ev in attrs.on) n.addEventListener(ev, attrs.on[ev]);
+      else if (attrs[k] !== false && attrs[k] != null) n.setAttribute(k, attrs[k] === true ? "" : attrs[k]);
+    }
+    for (const c of kids.flat()) if (c != null && c !== false) n.append(c instanceof Node ? c : document.createTextNode(String(c)));
+    return n;
+  }
+  const COLOR = { "issuer-attested": "var(--proven)", "person-declared": "var(--wanted)", "model-inferred": "var(--likely)" };
+  const dot = (decl) => { const d = h("span", { class: "dot" }); d.style.background = COLOR[decl] || "var(--muted)"; return d; };
+  const bubble = (who, text, me) => h("div", { class: "bubble" + (me ? " me" : "") }, h("div", { class: "who" }, who), text);
+  function out(title, desc, json, open, err) {
+    if (json == null) return h("div", { class: "out" }, h("div", { class: "row0" }, h("span", { class: "hcp" }, "HCP"), h("div", {}, h("div", { class: "t" }, title), h("div", { class: "d" }, desc))));
+    return h("details", { class: "out" + (err ? " err" : ""), open: !!open },
+      h("summary", {}, h("span", { class: "hcp" }, "HCP"), h("div", {}, h("div", { class: "t" }, title), h("div", { class: "d" }, desc))),
+      h("pre", { tabindex: 0 }, JSON.stringify(json, null, 2)));
+  }
+  const counts = (es) => {
+    const c = {}; for (const e of es) c[e.decl] = (c[e.decl] || 0) + 1;
+    return Object.entries(c).map(([k, v]) => `${v} ${k}`).join(", ") || "nothing";
+  };
+
+  // --------------------------------------------------------------- steps
+  const STEPS = [
+    { short: "Dana's LearnCard", title: "1 · Dana's LearnCard", sub: "Verified records plus Dana's own words. Dana chooses what tutors may see." },
+    { short: "Tutor A", title: "2 · Tutor A teaches", sub: "Tutor A starts from what Dana shared, then writes back what it learned about Dana." },
+    { short: "Switch to Tutor B", title: "3 · Dana switches to Tutor B", sub: "Tutor A loses access. Tutor B, built by a different company, picks up where A left off." },
+    { short: "What moved, what stayed", title: "4 · What moved, what stayed", sub: "Portable, trustworthy personalization, without either tutor owning Dana's data." },
+  ];
+
+  function shareSwitch(k) {
+    return h("label", { class: "switch" }, h("input", { type: "checkbox", checked: S.share[k], on: { change: (e) => { S.share[k] = e.target.checked; render(); } } }), "Share");
+  }
+  function viewWallet() {
+    const row = (kind, title, detail, decl) => h("div", { class: "item" }, dot(decl),
+      h("div", { class: "body" }, h("div", { class: "title" }, title, h("span", { class: "tag" }, decl)), h("div", { class: "note" }, detail)), shareSwitch(kind));
+    return h("div", {},
+      row("transcript", "CLR 2.0 transcript", `${COURSES.length} competencies, issued by the university · ✓ verified`, "issuer-attested"),
+      row("assessment", "Incident response assessment: 48 / 100", "Issued by an assessment provider · ✓ verified", "issuer-attested"),
+      row("context", "My goals and how I learn", "Cloud security role in 18 months · ~8 h a week · a worked example first", "person-declared"),
+      h("div", { class: "item locked" }, h("span", { class: "dot", style: "background:var(--muted)" }),
+        h("div", { class: "body" }, h("div", { class: "title" }, "Accommodations"), h("div", { class: "note" }, "Never shared with tutors")), h("span", { class: "switch" }, "🔒 Private")));
+  }
+  function viewTutorA() {
+    const r = query("a"), q = intakeFor("a");
+    const lines = [];
+    if (has(r, "assessment")) lines.push("Your assessment shows incident response is the gap (48 / 100), so let's start there.");
+    else if (has(r, "transcript")) lines.push("Your transcript doesn't include incident response yet, so let's start there.");
+    else lines.push("I don't know your background yet, so I need to ask a few things first.");
+    if (has(r, "context")) lines.push("You said a worked example first helps: I'll show one, then you try.");
+    return h("div", { class: "chat" },
+      bubble("Dana", "Can you help me with incident response?", true),
+      bubble(TUTOR.a, lines.join(" ")),
+      q.length ? h("div", { class: "bubble" }, h("div", { class: "who" }, `${TUTOR.a} still needs to ask`), h("ol", { class: "q" }, q.map((x) => h("li", {}, x)))) : null,
+      h("div", { class: "session" }, h("b", {}, "Session: "), "10 incident-response scenarios. First 5: 2 correct. After switching to worked examples, last 5: 4 correct."),
+      h("p", { class: "note" }, "Tutor A saves what it learned to Dana's LearnCard, labelled as its own inference."));
+  }
+  function viewTutorB() {
+    const r = query("b"), q = intakeFor("b");
+    const msg = has(r, "notes")
+      ? "Picking up where Tutor A left off: 4 of your last 5 incident-response scenarios were right. Next: containment and recovery. Tutor A noted that worked examples help you, so we'll start with one."
+      : "I don't have notes from your last tutor, so I'll need to ask a few questions first.";
+    const withHcp = h("div", { class: "chat" },
+      h("p", { class: "note", style: "margin:0" }, `Tutor A's next request: `, h("span", { class: "bad" }, "refused (invalid-token)")),
+      bubble("Dana", "Hi, I'm continuing incident response.", true),
+      bubble(TUTOR.b, msg),
+      q.length ? h("div", { class: "bubble" }, h("div", { class: "who" }, `${TUTOR.b} still needs to ask`), h("ol", { class: "q" }, q.map((x) => h("li", {}, x)))) : null,
+      h("label", { class: "switch", style: "margin-top:6px" }, h("input", { type: "checkbox", checked: S.share.notes, on: { change: (e) => { S.share.notes = e.target.checked; render(); } } }), "Share Tutor A's notes with Tutor B"));
+    if (!S.compare) return withHcp;
+    return h("div", { class: "cmp" },
+      h("div", {}, h("h3", {}, "With HCP"), withHcp),
+      h("div", {}, h("h3", {}, "Without HCP"), h("div", { class: "chat" },
+        bubble("Dana", "Hi, I'm continuing incident response.", true),
+        bubble(TUTOR.b, "Welcome! Before we start, I need to learn about you:"),
+        h("div", { class: "bubble" }, h("ol", { class: "q" }, COLD.map((x) => h("li", {}, x)))))));
+  }
+  function viewSummary() {
+    const r = query("b"), qb = intakeFor("b").length;
+    const moved = r.entries.map((e) => h("li", {}, dot(e.decl), " ", e.label));
+    const stayed = [h("li", {}, "Accommodations (never shared)")];
+    for (const [k, label] of [["transcript", "CLR transcript"], ["assessment", "Assessment"], ["context", "Goals and how Dana learns"], ["notes", "Tutor A's notes"]])
+      if (!S.share[k]) stayed.push(h("li", {}, `${label} (Dana switched it off)`));
+    stayed.push(h("li", {}, "Tutor A: access revoked"));
+    const tile = (l, v) => h("div", { class: "tile" }, h("div", { class: "l" }, l), h("div", { class: "v" }, v));
+    return h("div", {},
+      h("div", { class: "tiles" },
+        tile("Tutor B's intake questions", `${qb} vs ${COLD.length}`),
+        tile("Verified records reused", String(r.entries.filter((e) => e.decl === "issuer-attested").length)),
+        tile("Integrations Tutor B needed", "0 new")),
+      h("div", { class: "two" },
+        h("div", {}, h("b", {}, "Moved with Dana"), h("ul", { style: "list-style:none;padding-left:0" }, moved)),
+        h("div", {}, h("b", {}, "Stayed with Dana"), h("ul", {}, stayed))));
+  }
+  const LEFT = [viewWallet, viewTutorA, viewTutorB, viewSummary];
+
+  // HCP output of each step
+  function rightFor(i) {
+    const items = [];
+    if (i === 0) {
+      const es = entries().filter((e) => e.kind !== "notes");
+      items.push(out(`Entries × ${es.length}`, counts(es), es.map((e) => ({ id: e.id, ...e.hcp })), true));
+      items.push(out("Grant → Tutor A", `may read: ${grant("a").access[0].categories.length ? ["transcript", "assessment", "context"].filter((k) => S.share[k]).join(", ") : "nothing"} · may write: its own notes`, grant("a")));
+    }
+    if (i === 1) {
+      const r = query("a");
+      items.push(out("Query → response", `Tutor A receives ${r.entries.length} entries (${counts(r.entries)})`,
+        { request: { operation: "query", client: TUTOR.a, purpose: "tutoring" }, response: { outcome: r.outcome, entries: r.entries.map((e) => e.id) } }, true));
+      const notes = tutorNotes();
+      items.push(out("New entries × 2 (written by Tutor A)", "model-inferred · learner-memory profile: LearningObservation, InstructionalStrategy", notes.map((e) => ({ id: e.id, ...e.hcp }))));
+    }
+    if (i === 2) {
+      items.push(out("Revocation", "Dana revokes Tutor A", { type: "Grant", grantId: "urn:uuid:dana-grant-tutor-a", status: "revoked", revokedAt: T2 }));
+      items.push(out("Refused", "Tutor A's next request: invalid-token. Nothing disclosed.", { outcome: "error", error: "invalid-token" }, false, true));
+      items.push(out("Grant → Tutor B", `may read: ${["transcript", "assessment", "context", "notes"].filter((k) => S.share[k]).join(", ") || "nothing"}`, grant("b")));
+      const r = query("b");
+      items.push(out("Query → response", `Tutor B receives ${r.entries.length} entries (${counts(r.entries)})`,
+        { request: { operation: "query", client: TUTOR.b, purpose: "tutoring" }, response: { outcome: r.outcome, entries: r.entries.map((e) => e.id) } }, true));
+    }
+    if (i === 3) {
+      items.push(out("One protocol, two tutors", "Tutor A and Tutor B made the same HCP query call. Neither stores Dana's record; LearnCard does.", null));
+      items.push(out("Trust stays attached", "Each entry keeps who said it: issuer-attested records, Dana's own words, Tutor A's inferences (with evidence, confidence and expiry).", null));
+      items.push(out("Dana stays in control", "Grants follow Dana's switches; Tutor A was revoked; accommodations were never shared.", null));
+    }
+    return h("div", {}, items);
+  }
+
+  // -------------------------------------------------------------- render
+  function render() {
+    const st = STEPS[S.step];
+    $("steps").replaceChildren(...STEPS.map((s, i) => h("li", {}, h("button", { type: "button", class: i < S.step ? "done" : "", "aria-current": i === S.step ? "step" : false,
+      on: { click: () => go(i) } }, h("span", { class: "n" }, i + 1), s.short))));
+    $("title").textContent = st.title; $("sub").textContent = st.sub;
+    $("cmpBtn").hidden = S.step !== 2;
+    $("cmpBtn").textContent = S.compare ? "Hide comparison" : "Compare: without HCP";
+    $("cmpBtn").setAttribute("aria-pressed", String(S.compare));
+    $("back").disabled = S.step === 0; $("next").disabled = S.step === STEPS.length - 1;
+    $("left").replaceChildren(LEFT[S.step]());
+    $("right").replaceChildren(rightFor(S.step));
+    history.replaceState(null, "", "#step=" + (S.step + 1) + (S.compare ? "&compare=1" : ""));
+  }
+  function go(i) { S.step = Math.max(0, Math.min(STEPS.length - 1, i)); render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  $("back").addEventListener("click", () => go(S.step - 1));
+  $("next").addEventListener("click", () => go(S.step + 1));
+  $("cmpBtn").addEventListener("click", () => { S.compare = !S.compare; render(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.target.matches("input")) return;
+    if (e.key === "ArrowRight") go(S.step + 1);
+    if (e.key === "ArrowLeft") go(S.step - 1);
+  });
+
+  const HASH = location.hash;
+  const m = /step=(\d)/.exec(HASH); if (m) S.step = Math.max(0, Math.min(3, +m[1] - 1));
+  if (/compare=1/.test(HASH)) S.compare = true;
+  render();
+
+  // ------------------------------------------------------------ self-test (#selftest=1)
+  if (/selftest=1/.test(HASH)) {
+    const res = [], ok = (n, c) => res.push((c ? "PASS " : "FAIL ") + n);
+    const keep = JSON.stringify(S);
+    S.step = 1; ok("Tutor A gets transcript, assessment and 3 statements", query("a").entries.length === 5);
+    ok("Tutor A needs no intake when everything is shared", intakeFor("a").length === 0);
+    S.share.assessment = false; ok("assessment off: Tutor A must ask 2 questions", intakeFor("a").length === 2);
+    S.share.assessment = true; S.step = 2;
+    ok("after the switch, Tutor A is refused", query("a").error === "invalid-token");
+    ok("Tutor B receives Tutor A's 2 notes", query("b").entries.filter((e) => e.kind === "notes").length === 2);
+    ok("Tutor B needs no intake", intakeFor("b").length === 0);
+    S.share.notes = false; ok("notes off: Tutor B gets no notes and asks 3 questions", !has(query("b"), "notes") && intakeFor("b").length === 3);
+    ok("accommodations are never an entry", !entries().some((e) => /ccommodation/.test(e.label)));
+    ok("notes carry evidence, validity and confidence", tutorNotes().every((e) => e.hcp.content.value.evidenceReference.length && e.hcp.content.value.temporalValidity.validUntil && e.hcp.content.value.confidenceAndUncertainty.level));
+    Object.assign(S, JSON.parse(keep));
+    document.title = res.every((x) => x.startsWith("PASS")) ? "SELFTEST PASS" : "SELFTEST FAIL";
+    const pre = document.createElement("pre"); pre.id = "selftest"; pre.textContent = res.join(String.fromCharCode(10)); document.body.append(pre);
+    render();
+  }
+})();
+</script>
+</body>
+</html>
