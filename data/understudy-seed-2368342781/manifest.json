@@ -1,0 +1,605 @@
+{
+  "notice": "All records are fully synthetic, assembled from curated word pools by a seeded random generator. First names are common US given names; surnames and school names are constructed blends verified absent from the US Census 2010 surname file, so no name describes a real person, school, or district. No real student data was used and no PII is present. Records are era-neutral: academic-year labels order the record but no year carries a real-world event, and rates and distributions are anchored to published national statistics from 2009 to 2025, so a record resembles no single school year. Values are random-rule-generated and not suitable for training ML models.",
+  "about": "HCP learner bundles projected from Understudy synthetic student records. Every person, school, district, client, organization and key here is synthetic.",
+  "hcp": {
+    "spec": "Human Context Protocol v2",
+    "draft": "2.0-draft-3",
+    "repository": "https://github.com/loyalagents/hcp-spec",
+    "commit": "b790561830702c067cd7810c96ee78dd3d84741c",
+    "schemasLicense": "Apache-2.0",
+    "status": "Working draft. Identifiers use the placeholder namespace hcp.example; later drafts change the wire format."
+  },
+  "understudy": {
+    "build": "1822c01",
+    "params": {
+      "count": 10,
+      "gradeMin": 0,
+      "gradeMax": 12,
+      "includeAssessments": true,
+      "includeInterests": true,
+      "seed": 2368342781
+    }
+  },
+  "learnerStatements": {
+    "requested": "templates",
+    "modelWorded": 0,
+    "frameWorded": 10,
+    "note": "Learner statements use sentence frames; the whole batch is reproducible byte for byte."
+  },
+  "customCategories": [
+    {
+      "id": "https://understudy.example/hcp/categories/education-support-plans",
+      "name": "Education support plans",
+      "description": "Whether the learner has an IEP, a Section 504 plan, or an academic intervention (MTSS) placement.",
+      "defaultSensitivity": "High",
+      "definer": "https://understudy.example"
+    }
+  ],
+  "purposes": [
+    {
+      "code": "https://understudy.example/hcp/purposes/school-records",
+      "description": "Keep the school's record of your learning in your context"
+    },
+    {
+      "code": "https://understudy.example/hcp/purposes/learner-self-report",
+      "description": "Save what you tell the school portal about yourself"
+    },
+    {
+      "code": "https://understudy.example/hcp/purposes/practice-personalization",
+      "description": "Choose practice items and record how practice is going"
+    },
+    {
+      "code": "https://understudy.example/hcp/purposes/tutoring",
+      "description": "Tutor you on your coursework"
+    },
+    {
+      "code": "https://understudy.example/hcp/purposes/academic-advising",
+      "description": "Advise you on courses, graduation and plans after school"
+    },
+    {
+      "code": "https://understudy.example/hcp/purposes/placement",
+      "description": "Place you in the right group for a summer math program"
+    },
+    {
+      "code": "https://understudy.example/hcp/purposes/marketing",
+      "description": "Send you offers"
+    }
+  ],
+  "counts": {
+    "learners": 10,
+    "auditEvents": 1047,
+    "credentials": 576,
+    "credentialStatus.content.revoked": 2,
+    "credentialStatus.content.suspended": 3,
+    "credentialStatus.content.valid": 1,
+    "credentialStatus.supports.revoked": 1,
+    "delegations": 10,
+    "directives.custom.ask-first": 1,
+    "directives.share.ask-first": 1,
+    "directives.share.deny": 3,
+    "directives.sign.ask-first": 8,
+    "directives.transact.deny": 3,
+    "entries": 722,
+    "entries.issuer-attested": 576,
+    "entries.model-inferred": 88,
+    "entries.person-declared": 58,
+    "entries.status.active": 691,
+    "entries.status.conflicted": 3,
+    "entries.status.deleted": 2,
+    "entries.status.expired": 22,
+    "entries.status.revoked": 2,
+    "entries.status.suspended": 2,
+    "grants.active": 43,
+    "grants.expired": 10,
+    "grants.partlyDeniedByRule": 3,
+    "grants.revoked": 7,
+    "grants.revokedByRule": 4,
+    "grants.withSharingExclusions": 4,
+    "retrievals.carryingDirectives": 48,
+    "revocationNotices.abandoned": 1,
+    "revocationNotices.delivered": 6,
+    "scenarios": 123,
+    "scenarios.answered": 77,
+    "scenarios.invalid-token": 17,
+    "scenarios.scope-denied": 29,
+    "sharingReports": 7,
+    "standingRules": 13,
+    "standingRules.allCategories": 3,
+    "standingRules.requiringClaim": 2,
+    "supersededVersions": 51
+  },
+  "checks": {
+    "learnersPassing": 10,
+    "learnersFailing": 0,
+    "failures": []
+  },
+  "learners": [
+    {
+      "syntheticId": "SYN-52B6E5E9",
+      "subjectId": "did:example:understudy:syn-52b6e5e9",
+      "grade": "10",
+      "state": "TN",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 60,
+      "auditEvents": 87,
+      "scenarios": 11,
+      "checksPassed": true,
+      "path": "learners/SYN-52B6E5E9"
+    },
+    {
+      "syntheticId": "SYN-04DC274F",
+      "subjectId": "did:example:understudy:syn-04dc274f",
+      "grade": "7",
+      "state": "IL",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 95,
+      "auditEvents": 133,
+      "scenarios": 15,
+      "checksPassed": true,
+      "path": "learners/SYN-04DC274F"
+    },
+    {
+      "syntheticId": "SYN-3E7F0753",
+      "subjectId": "did:example:understudy:syn-3e7f0753",
+      "grade": "K",
+      "state": "AZ",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 56,
+      "auditEvents": 78,
+      "scenarios": 12,
+      "checksPassed": true,
+      "path": "learners/SYN-3E7F0753"
+    },
+    {
+      "syntheticId": "SYN-AA57B69D",
+      "subjectId": "did:example:understudy:syn-aa57b69d",
+      "grade": "8",
+      "state": "IL",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 79,
+      "auditEvents": 109,
+      "scenarios": 13,
+      "checksPassed": true,
+      "path": "learners/SYN-AA57B69D"
+    },
+    {
+      "syntheticId": "SYN-B5FD1FFD",
+      "subjectId": "did:example:understudy:syn-b5fd1ffd",
+      "grade": "8",
+      "state": "NJ",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 96,
+      "auditEvents": 139,
+      "scenarios": 14,
+      "checksPassed": true,
+      "path": "learners/SYN-B5FD1FFD"
+    },
+    {
+      "syntheticId": "SYN-B55510E1",
+      "subjectId": "did:example:understudy:syn-b55510e1",
+      "grade": "8",
+      "state": "IL",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 91,
+      "auditEvents": 122,
+      "scenarios": 12,
+      "checksPassed": true,
+      "path": "learners/SYN-B55510E1"
+    },
+    {
+      "syntheticId": "SYN-EDAD0F39",
+      "subjectId": "did:example:understudy:syn-edad0f39",
+      "grade": "9",
+      "state": "IL",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 70,
+      "auditEvents": 104,
+      "scenarios": 11,
+      "checksPassed": true,
+      "path": "learners/SYN-EDAD0F39"
+    },
+    {
+      "syntheticId": "SYN-97426BCB",
+      "subjectId": "did:example:understudy:syn-97426bcb",
+      "grade": "5",
+      "state": "AL",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 75,
+      "auditEvents": 116,
+      "scenarios": 11,
+      "checksPassed": true,
+      "path": "learners/SYN-97426BCB"
+    },
+    {
+      "syntheticId": "SYN-5F06B8CD",
+      "subjectId": "did:example:understudy:syn-5f06b8cd",
+      "grade": "5",
+      "state": "UT",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 61,
+      "auditEvents": 99,
+      "scenarios": 13,
+      "checksPassed": true,
+      "path": "learners/SYN-5F06B8CD"
+    },
+    {
+      "syntheticId": "SYN-62F24943",
+      "subjectId": "did:example:understudy:syn-62f24943",
+      "grade": "K",
+      "state": "CA",
+      "asOf": "2026-07-01T00:00:00Z",
+      "entries": 39,
+      "auditEvents": 60,
+      "scenarios": 11,
+      "checksPassed": true,
+      "path": "learners/SYN-62F24943"
+    }
+  ],
+  "files": [
+    {
+      "file": "learners/SYN-52B6E5E9/export.json",
+      "sha256": "12d12faa19034550e83782891f4de4d72a2284361387eca7676baee8063fec7d",
+      "bytes": 516411
+    },
+    {
+      "file": "learners/SYN-52B6E5E9/grants.json",
+      "sha256": "d96e29b70e698b7845ef7dd141225907b3c9bd2998b489488a60873df3620a03",
+      "bytes": 9508
+    },
+    {
+      "file": "learners/SYN-52B6E5E9/scenarios.json",
+      "sha256": "98fc4f2415ad2bdb1e72cb4e457345f5eaa7c532665f33499470219001986b09",
+      "bytes": 53360
+    },
+    {
+      "file": "learners/SYN-52B6E5E9/reads.json",
+      "sha256": "9f236dc9cc6ce484c32ecbe409e2dd8a538d9804a822b8127bbd2b676d4435f5",
+      "bytes": 354041
+    },
+    {
+      "file": "learners/SYN-52B6E5E9/disclosure-summary.json",
+      "sha256": "0b470ff6ba2480635d4f4e8f2dd718989366ba41d26ecc16ca6b11f02309d555",
+      "bytes": 2686
+    },
+    {
+      "file": "learners/SYN-52B6E5E9/sharing-reports.json",
+      "sha256": "976edc2cb5cd2d635cf9aa022e8cb684f8baad64df7d6a0ac713dbf0ce1e3c2f",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-52B6E5E9/understudy-record.json",
+      "sha256": "eb4070935569149dbfc87daa351dbbc5b94f29f5038c9c5e36838db6d57d7f9b",
+      "bytes": 118799
+    },
+    {
+      "file": "learners/SYN-04DC274F/export.json",
+      "sha256": "17f605439e7580b9c68a847f69e14ac685499c1b587dbfcae8468e1764c2b389",
+      "bytes": 842820
+    },
+    {
+      "file": "learners/SYN-04DC274F/grants.json",
+      "sha256": "67b677c100921cfc5308136c35f9ea307ef5bc52a7c5999bdbb67e5a12849c71",
+      "bytes": 9419
+    },
+    {
+      "file": "learners/SYN-04DC274F/scenarios.json",
+      "sha256": "18d54b234061be754ebfaf8021f778b74529ac64df50ea561f6234ee4dce38ef",
+      "bytes": 102125
+    },
+    {
+      "file": "learners/SYN-04DC274F/reads.json",
+      "sha256": "5e224933f74da52cd912f345ef5b4653330d7c58015b0880271b42257d25a884",
+      "bytes": 1724
+    },
+    {
+      "file": "learners/SYN-04DC274F/disclosure-summary.json",
+      "sha256": "abd50af69fb35c3b89d544d783dc0c538f8469ee2ad7bb70db4bc3505663c242",
+      "bytes": 2724
+    },
+    {
+      "file": "learners/SYN-04DC274F/sharing-reports.json",
+      "sha256": "da39ffbbdb4568253db522e5b29e3dc4e44058bb4a39ba99b04b394176f175bd",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-04DC274F/understudy-record.json",
+      "sha256": "7d2cba24460f0c9a1d15948b66a10d722db16b27e63d6c73351ddb5642d7a4dd",
+      "bytes": 153833
+    },
+    {
+      "file": "learners/SYN-3E7F0753/export.json",
+      "sha256": "8928db3e8a47f3dd12efda48efd472de72c35b07b491ed6ad732eb805794ae77",
+      "bytes": 395137
+    },
+    {
+      "file": "learners/SYN-3E7F0753/grants.json",
+      "sha256": "61ae202755a0b84444528510925280154e7b5bce547e3934d014804cc77c1cc3",
+      "bytes": 9104
+    },
+    {
+      "file": "learners/SYN-3E7F0753/scenarios.json",
+      "sha256": "20fb9b9d7907db82798a1881f9851a4828f67448770fa71dc771280f6fef9249",
+      "bytes": 54029
+    },
+    {
+      "file": "learners/SYN-3E7F0753/reads.json",
+      "sha256": "b17b71ce16ab0c7fb55c7953ab0db3679e696fe415038ed9b57d87f9a58377b3",
+      "bytes": 243880
+    },
+    {
+      "file": "learners/SYN-3E7F0753/disclosure-summary.json",
+      "sha256": "df00d2e1846793068b1f95cf92754ac6ca619a5c266f7fce22377016c93296a8",
+      "bytes": 2718
+    },
+    {
+      "file": "learners/SYN-3E7F0753/sharing-reports.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "file": "learners/SYN-3E7F0753/understudy-record.json",
+      "sha256": "0ea17eb313a6476e10bdcfbb36fe4b9e1a514462b1306b91fed27d02a62c0e26",
+      "bytes": 4710
+    },
+    {
+      "file": "learners/SYN-AA57B69D/export.json",
+      "sha256": "ca8f5364401645d7b3b4704aadd95bef9245d53a2e2c0aa9a68cfb5040a6785e",
+      "bytes": 707256
+    },
+    {
+      "file": "learners/SYN-AA57B69D/grants.json",
+      "sha256": "d9e8320d6ab07273d9bca4c625d6ee839d33d3fd4eb9c7f1bab4ea72b7863485",
+      "bytes": 9496
+    },
+    {
+      "file": "learners/SYN-AA57B69D/scenarios.json",
+      "sha256": "418e94617437c1ee69cdff8e5a3de756c1d49c5e84efa22e652337ae61e5b383",
+      "bytes": 75224
+    },
+    {
+      "file": "learners/SYN-AA57B69D/reads.json",
+      "sha256": "be0ee0b0eae82ca6b18e901f82f8b7f9df283c8d780fb757c420f7b1f41496af",
+      "bytes": 1724
+    },
+    {
+      "file": "learners/SYN-AA57B69D/disclosure-summary.json",
+      "sha256": "852ed308daad9dde37d09f69c550167d209c573fcd5306bd9cd4bef7d19ee9de",
+      "bytes": 2801
+    },
+    {
+      "file": "learners/SYN-AA57B69D/sharing-reports.json",
+      "sha256": "858c215c703e124f76ebfd5838ff0f33a896e43005f3ba78484884c6e0c00b65",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-AA57B69D/understudy-record.json",
+      "sha256": "44c4d0dd24cf6688a573b09027feb8028f2b32c7bc2c8553032e69d921ca3b98",
+      "bytes": 145136
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/export.json",
+      "sha256": "13fe9b2c34510a24a3dc60f13e8a1f9ca61c9421c1721e3450c35d8f07e7270d",
+      "bytes": 817834
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/grants.json",
+      "sha256": "76f10a4e3cd7f65b7365d186939ba11ce7ead0508b6b21279f9893504928c772",
+      "bytes": 9573
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/scenarios.json",
+      "sha256": "46acf6fc09b3f2f08b8f4f25e0f7a6e2141adf8e774e1d494afe6a39ada8d8ef",
+      "bytes": 98397
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/reads.json",
+      "sha256": "dc098218c4a08d15a920e62295de83065d28d1439a2a84a42352ee6850361b77",
+      "bytes": 527983
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/disclosure-summary.json",
+      "sha256": "6582732329a959d468060ad953e5f47b972f87068c8318faeedc7da11ebbeca9",
+      "bytes": 2795
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/sharing-reports.json",
+      "sha256": "7865c88e6a7625bd2940c16608a5625f1d36f799c5550a991944138eea73b0e0",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-B5FD1FFD/understudy-record.json",
+      "sha256": "b691e3b7d0558842d9e5d65536a0fe858928148352e843ee9dd18ccedfa820dc",
+      "bytes": 169026
+    },
+    {
+      "file": "learners/SYN-B55510E1/export.json",
+      "sha256": "aabd05f85bdddfeff980512d5fe991bd0c1aefa4a57c5101706e1458fa738c04",
+      "bytes": 813074
+    },
+    {
+      "file": "learners/SYN-B55510E1/grants.json",
+      "sha256": "34273aa1845d07444a2b506a47acf8472d633a391848869077b9a882c18830a1",
+      "bytes": 9576
+    },
+    {
+      "file": "learners/SYN-B55510E1/scenarios.json",
+      "sha256": "8f4faf5508e44d8627bbe67662309483216bbb94cbb4c32674972c03f3441b72",
+      "bytes": 79537
+    },
+    {
+      "file": "learners/SYN-B55510E1/reads.json",
+      "sha256": "9b012a5a8bab6d4179e6cfe6823c6787691346e76ee2dbf8d3592b283e1f78c1",
+      "bytes": 19197
+    },
+    {
+      "file": "learners/SYN-B55510E1/disclosure-summary.json",
+      "sha256": "add5f636636be65252b62e46d6930ec37cb62d0a8d08171b7bd9956fc75e0a18",
+      "bytes": 2762
+    },
+    {
+      "file": "learners/SYN-B55510E1/sharing-reports.json",
+      "sha256": "7630783f7ae0a9a2e6b64149fb18b409072ba2403bd37c9120a418561e4d5cfe",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-B55510E1/understudy-record.json",
+      "sha256": "874c301bb6a128e443a4ff1516dc2e13ad2b0d1aee1be6837038435625ce785c",
+      "bytes": 152383
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/export.json",
+      "sha256": "e089d95d3dd9224f399c135e5b030b97b6234b8936a8fa123c3615f2b81d0cb2",
+      "bytes": 598037
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/grants.json",
+      "sha256": "5dbe0f69cee340a3b96d6843cb21824f8812508dd59cd543da4b1b2194267055",
+      "bytes": 9494
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/scenarios.json",
+      "sha256": "a49d82b5b8000bd4e82a6d22d45d0eb02705cac40adc79d46cedf6c4326a3313",
+      "bytes": 61212
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/reads.json",
+      "sha256": "42ffb5690739dff3f6e6ffe9002a985aba18b422324b85ac206c9d6a1253d0ac",
+      "bytes": 400005
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/disclosure-summary.json",
+      "sha256": "de0bb54a65fb6f3ab425340e59e3689582bfdf0d6dfbab4b0ab26d31fa8d9637",
+      "bytes": 2789
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/sharing-reports.json",
+      "sha256": "1c2480cca6ca6cd5e0ff2e8ea5be54160f5c981b489fe102338769820a740e95",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-EDAD0F39/understudy-record.json",
+      "sha256": "6c7ea3d479437e781fc31c1aacd946ee8c72024a0599f4f0e67924be93f09381",
+      "bytes": 133617
+    },
+    {
+      "file": "learners/SYN-97426BCB/export.json",
+      "sha256": "e88ec2e90439dacdca31ecfa3bfe8c0ef10610d2d1042aac7da09eaceb6855ec",
+      "bytes": 661209
+    },
+    {
+      "file": "learners/SYN-97426BCB/grants.json",
+      "sha256": "77af2e44c6aa5620f60b63fcea4ab7d343773cbf0188debf2a9ae8b59598945e",
+      "bytes": 9380
+    },
+    {
+      "file": "learners/SYN-97426BCB/scenarios.json",
+      "sha256": "befbc3e65a76e2924bc95ec051b07026cea891f4b5381955328caf7fc8fe6953",
+      "bytes": 63681
+    },
+    {
+      "file": "learners/SYN-97426BCB/reads.json",
+      "sha256": "e7fe197822a3b030598c7b048afe8b6af0cc1f879b699c32d897211466f7e6e0",
+      "bytes": 425415
+    },
+    {
+      "file": "learners/SYN-97426BCB/disclosure-summary.json",
+      "sha256": "54151ea35ee982b271ff100cb5e3c1b65d515ce64644d7a7bc847dced73cd0a7",
+      "bytes": 2756
+    },
+    {
+      "file": "learners/SYN-97426BCB/sharing-reports.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "file": "learners/SYN-97426BCB/understudy-record.json",
+      "sha256": "86b677714cfbc5f2cf65a1921481a603ea398005a8f2a8367da0474c804431f6",
+      "bytes": 116798
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/export.json",
+      "sha256": "f4168a011057175b40f31f7b85a79df1b5f06f1b6cfcc082ac3df7dfac939bd1",
+      "bytes": 532469
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/grants.json",
+      "sha256": "6ccb17fa1bc8edbabb998127ba0b2e7fe8061e28c82efa3616257566b9fcbc37",
+      "bytes": 9388
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/scenarios.json",
+      "sha256": "d7b597a0bd0fda5260009f4dafd780397efab1bca70a42dd488ed4a391a040e4",
+      "bytes": 64147
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/reads.json",
+      "sha256": "9460d03b118ec6ef1a1e4449dcece74612d807ccefe67157900a8144c35012cd",
+      "bytes": 332259
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/disclosure-summary.json",
+      "sha256": "523ca221bcfa12501ffc6cf81a15088059f43df0a2e2ce20615b4af07a8efe0c",
+      "bytes": 2756
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/sharing-reports.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "file": "learners/SYN-5F06B8CD/understudy-record.json",
+      "sha256": "a7416ba076152ee58412ba6238cc3b0c5a53a0232b9104c81b17998a1aa996cc",
+      "bytes": 85874
+    },
+    {
+      "file": "learners/SYN-62F24943/export.json",
+      "sha256": "d639aa84f546686a0fc4c817dc3fecf5043fd64477593885357bf777de578587",
+      "bytes": 280309
+    },
+    {
+      "file": "learners/SYN-62F24943/grants.json",
+      "sha256": "b155340c1750830b466994ac5bd25fb41a9b686354960c491f8a00aee58be6ae",
+      "bytes": 9134
+    },
+    {
+      "file": "learners/SYN-62F24943/scenarios.json",
+      "sha256": "788f1f889f2a545fad9225dde461b0d5da896729081300796bc5f1818792827f",
+      "bytes": 38802
+    },
+    {
+      "file": "learners/SYN-62F24943/reads.json",
+      "sha256": "2090ae20ee2c649e14f52ab4f42f3dca89ea1ea3e26b2017a7dfe2a56d97a2ae",
+      "bytes": 162035
+    },
+    {
+      "file": "learners/SYN-62F24943/disclosure-summary.json",
+      "sha256": "43cdaa9b4595e90abc8d34f3bec9dcbe9ea2dc47b764c24a186e0161442304a7",
+      "bytes": 1871
+    },
+    {
+      "file": "learners/SYN-62F24943/sharing-reports.json",
+      "sha256": "7eb22e7686d23c19451f0285dc59e371844d291c395bf3b03a6bee05c0b00fe5",
+      "bytes": 922
+    },
+    {
+      "file": "learners/SYN-62F24943/understudy-record.json",
+      "sha256": "2b892b727f4e9ee6a9b4a13c7c9c17bdb29a57d1db1c80be216ce0b4fd5c814d",
+      "bytes": 4250
+    },
+    {
+      "file": "issuers.json",
+      "sha256": "bce6d4dddd3f1e1cb1450ebb24855e157af7280af4da1c82dc5054324be481ec",
+      "bytes": 2784
+    },
+    {
+      "file": "status-lists.json",
+      "sha256": "17dce7d84230955b05153682ac2abd05a9754689a10cc2954e82a47d9fdd1c34",
+      "bytes": 322210
+    },
+    {
+      "file": "README.md",
+      "sha256": "cc332d0de8a3ef295b17e89533f86296d14bcad2b0d734262b3d06a9f96e7fae",
+      "bytes": 2546
+    }
+  ]
+}

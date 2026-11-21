@@ -1,0 +1,97 @@
+{
+  "clients": [
+    {
+      "client": {
+        "id": "https://tutor.understudy.example/clients/hcp",
+        "name": "Example Tutor (synthetic)",
+        "operator": {
+          "id": "https://tutor.understudy.example",
+          "name": "Example Tutoring Co. (synthetic)"
+        },
+        "claims": [
+          "https://hcp.example/spec/clients/directives/2.0"
+        ]
+      },
+      "grants": [
+        {
+          "grantId": "urn:uuid:bb008517-ea51-5990-a70f-2575a85ec60b",
+          "status": "revoked"
+        }
+      ],
+      "categories": [
+        "education_learner_profile",
+        "general_preferences"
+      ],
+      "purposes": [
+        "https://understudy.example/hcp/purposes/tutoring"
+      ],
+      "entries": 25,
+      "retrievals": 4,
+      "firstAt": "2026-06-30T15:10:00Z",
+      "lastAt": "2026-06-30T15:18:00Z",
+      "usableUntil": "2026-06-30T20:00:30Z",
+      "notification": "delivered"
+    },
+    {
+      "client": {
+        "id": "https://advising.understudy.example/clients/hcp",
+        "name": "Example Advising Assistant (synthetic)",
+        "operator": {
+          "id": "https://advising.understudy.example",
+          "name": "Example Advising Co. (synthetic)"
+        }
+      },
+      "grants": [
+        {
+          "grantId": "urn:uuid:2df1e0c4-be4c-56b3-8e49-25905c1e72de",
+          "status": "expired"
+        }
+      ],
+      "categories": [
+        "education_learner_profile",
+        "goals_and_constraints",
+        "https://understudy.example/hcp/categories/education-support-plans"
+      ],
+      "purposes": [
+        "https://understudy.example/hcp/purposes/academic-advising"
+      ],
+      "entries": 1,
+      "retrievals": 2,
+      "firstAt": "2026-06-30T15:15:00Z",
+      "lastAt": "2026-06-30T15:16:00Z",
+      "usableUntil": "2026-07-02T11:46:30Z",
+      "notification": "none"
+    },
+    {
+      "client": {
+        "id": "https://summermath.understudy.example/clients/hcp",
+        "name": "Example Summer Math Program (synthetic)",
+        "operator": {
+          "id": "https://summermath.understudy.example",
+          "name": "Example Summer Math Program (synthetic)"
+        },
+        "claims": [
+          "https://hcp.example/spec/clients/directives/2.0"
+        ]
+      },
+      "grants": [
+        {
+          "grantId": "urn:uuid:447d49a9-d718-564e-be88-db8e4d726a22",
+          "status": "active"
+        }
+      ],
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purposes": [
+        "https://understudy.example/hcp/purposes/placement"
+      ],
+      "entries": 3,
+      "retrievals": 1,
+      "firstAt": "2026-06-30T15:19:00Z",
+      "lastAt": "2026-06-30T15:19:00Z",
+      "usableUntil": "2026-07-06T14:14:54Z",
+      "notification": "none"
+    }
+  ]
+}

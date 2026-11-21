@@ -1,0 +1,487 @@
+[
+  {
+    "grantId": "urn:uuid:bb008517-ea51-5990-a70f-2575a85ec60b",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "purposes": [
+      "https://understudy.example/hcp/purposes/tutoring"
+    ],
+    "disclosedAt": "2026-07-01T00:00:00Z",
+    "disclosures": [],
+    "directives": []
+  },
+  {
+    "grantId": "urn:uuid:2df1e0c4-be4c-56b3-8e49-25905c1e72de",
+    "client": {
+      "id": "https://advising.understudy.example/clients/hcp",
+      "name": "Example Advising Assistant (synthetic)",
+      "operator": {
+        "id": "https://advising.understudy.example",
+        "name": "Example Advising Co. (synthetic)"
+      }
+    },
+    "purposes": [
+      "https://understudy.example/hcp/purposes/academic-advising"
+    ],
+    "disclosedAt": "2026-07-01T00:00:00Z",
+    "disclosures": [],
+    "directives": []
+  },
+  {
+    "grantId": "urn:uuid:447d49a9-d718-564e-be88-db8e4d726a22",
+    "client": {
+      "id": "https://summermath.understudy.example/clients/hcp",
+      "name": "Example Summer Math Program (synthetic)",
+      "operator": {
+        "id": "https://summermath.understudy.example",
+        "name": "Example Summer Math Program (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "purposes": [
+      "https://understudy.example/hcp/purposes/placement"
+    ],
+    "disclosedAt": "2026-07-01T00:00:00Z",
+    "disclosures": [
+      {
+        "ref": "ref_TW5FaFIyRu6KyruYRY1Ca-",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Mathematics (CCSS): 17 of 23 standards mastered. Assessed but not yet mastered: 8.EE.C.8 (Near Mastery, 2.12/4) and 8.F.B.4 (Near Mastery, 2.17/4). 4 standards not yet assessed.",
+            "subject": "Mathematics",
+            "framework": "CCSS",
+            "masteredCount": 17,
+            "totalStandards": 23,
+            "rollupMethod": "decaying average (65% most recent), mastery at 3.0/4",
+            "notYetMastered": [
+              {
+                "standard": "8.EE.C.8",
+                "level": "Near Mastery",
+                "rollup": 2.12,
+                "lastEvidence": "2026-06-09"
+              },
+              {
+                "standard": "8.F.B.4",
+                "level": "Near Mastery",
+                "rollup": 2.17,
+                "lastEvidence": "2026-06-09"
+              }
+            ]
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:62ff56af-b0e4-5028-8a50-fc640e482c64",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: mastery_frontier/mathematics",
+              "issuer": {
+                "id": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+                "name": "Halecombe Unified School District"
+              },
+              "validFrom": "2026-06-09T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://halecombe-unified-school-district.k12.understudy.example/credentials/status/revocation#71497",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "71497",
+                "statusListCredential": "https://halecombe-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-b55510e1",
+                "type": "StudentRecordExtract",
+                "recordType": "mastery_frontier/mathematics",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Mathematics (CCSS): 17 of 23 standards mastered. Assessed but not yet mastered: 8.EE.C.8 (Near Mastery, 2.12/4) and 8.F.B.4 (Near Mastery, 2.17/4). 4 standards not yet assessed.",
+                  "subject": "Mathematics",
+                  "framework": "CCSS",
+                  "masteredCount": 17,
+                  "totalStandards": 23,
+                  "rollupMethod": "decaying average (65% most recent), mastery at 3.0/4",
+                  "notYetMastered": [
+                    {
+                      "standard": "8.EE.C.8",
+                      "level": "Near Mastery",
+                      "rollup": 2.12,
+                      "lastEvidence": "2026-06-09"
+                    },
+                    {
+                      "standard": "8.F.B.4",
+                      "level": "Near Mastery",
+                      "rollup": 2.17,
+                      "lastEvidence": "2026-06-09"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2026-06-09T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV#z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z21MCH1zENvFLarYZPaAxrpeuJnbjHu8NoCaV3q2b59eQz5f4TQU2sUokNUSCQdEv7Excjx2ZFTvNh9ZmmokBWcMA"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2026-06-10T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "mastery_frontier/mathematics"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-03T02:12:00Z"
+      },
+      {
+        "ref": "ref_nVfUd-kt8F1p5vt29jY-Qs",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Synthetic Growth Assessment (SGA), Mathematics: Spring 2026 scale score 2680 (71st percentile), growth at the 54th percentile since the previous window. Placement: On Grade Level. Proficiency level: Proficient.",
+            "subject": "Mathematics",
+            "testName": "Synthetic Growth Assessment (SGA)",
+            "windows": [
+              {
+                "window": "Fall 2025",
+                "scaleScore": 2666,
+                "percentile": 74,
+                "growthPercentile": null
+              },
+              {
+                "window": "Winter 2026",
+                "scaleScore": 2672,
+                "percentile": 70,
+                "growthPercentile": 27
+              },
+              {
+                "window": "Spring 2026",
+                "scaleScore": 2680,
+                "percentile": 71,
+                "growthPercentile": 54
+              }
+            ],
+            "placement": "On Grade Level",
+            "proficiencyLevel": "Proficient"
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:01bcadf9-a8ba-5ce3-91da-6b9a7dadb868",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: assessment/mathematics",
+              "issuer": {
+                "id": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+                "name": "Halecombe Unified School District"
+              },
+              "validFrom": "2026-05-01T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://halecombe-unified-school-district.k12.understudy.example/credentials/status/revocation#98718",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "98718",
+                "statusListCredential": "https://halecombe-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-b55510e1",
+                "type": "StudentRecordExtract",
+                "recordType": "assessment/mathematics",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Synthetic Growth Assessment (SGA), Mathematics: Spring 2026 scale score 2680 (71st percentile), growth at the 54th percentile since the previous window. Placement: On Grade Level. Proficiency level: Proficient.",
+                  "subject": "Mathematics",
+                  "testName": "Synthetic Growth Assessment (SGA)",
+                  "windows": [
+                    {
+                      "window": "Fall 2025",
+                      "scaleScore": 2666,
+                      "percentile": 74,
+                      "growthPercentile": null
+                    },
+                    {
+                      "window": "Winter 2026",
+                      "scaleScore": 2672,
+                      "percentile": 70,
+                      "growthPercentile": 27
+                    },
+                    {
+                      "window": "Spring 2026",
+                      "scaleScore": 2680,
+                      "percentile": 71,
+                      "growthPercentile": 54
+                    }
+                  ],
+                  "placement": "On Grade Level",
+                  "proficiencyLevel": "Proficient"
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2026-05-01T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV#z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z4uP9RazkstXzkhJaasbH8CpjfFp3nbSscqRc6dAdPSyijgg996s9iuvoAen1puoBGUVYXkFNGauAVFJQ9V2mENWR"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2026-05-02T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "assessment/mathematics"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-06T23:48:00Z"
+      },
+      {
+        "ref": "ref_15Fl00DnU7p1aWRZN7Ejyh",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Grade 8 Mathematics: current grade B (83.1%). 2 assignments missing: \"Unit 2 Quiz\" (Quiz, due 2025-11-10) and \"Quiz 6\" (Quiz, due 2026-02-11).",
+            "subject": "Mathematics",
+            "course": "Grade 8 Mathematics",
+            "currentGrade": {
+              "percent": 83.1,
+              "letter": "B"
+            },
+            "assignmentCount": 41,
+            "lateCount": 0,
+            "missingAssignments": [
+              {
+                "title": "Unit 2 Quiz",
+                "category": "Quiz",
+                "dueDate": "2025-11-10",
+                "pointsPossible": 25,
+                "standards": [
+                  "8.EE.B.6",
+                  "8.EE.C.7",
+                  "8.EE.C.8"
+                ]
+              },
+              {
+                "title": "Quiz 6",
+                "category": "Quiz",
+                "dueDate": "2026-02-11",
+                "pointsPossible": 15,
+                "standards": [
+                  "8.EE.C.8",
+                  "8.G.A.2"
+                ]
+              }
+            ]
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:f33caa65-4549-5601-a605-225ece2f5f18",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: course_progress/mathematics",
+              "issuer": {
+                "id": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+                "name": "Halecombe Unified School District"
+              },
+              "validFrom": "2026-06-11T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://halecombe-unified-school-district.k12.understudy.example/credentials/status/revocation#67540",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "67540",
+                "statusListCredential": "https://halecombe-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-b55510e1",
+                "type": "StudentRecordExtract",
+                "recordType": "course_progress/mathematics",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Grade 8 Mathematics: current grade B (83.1%). 2 assignments missing: \"Unit 2 Quiz\" (Quiz, due 2025-11-10) and \"Quiz 6\" (Quiz, due 2026-02-11).",
+                  "subject": "Mathematics",
+                  "course": "Grade 8 Mathematics",
+                  "currentGrade": {
+                    "percent": 83.1,
+                    "letter": "B"
+                  },
+                  "assignmentCount": 41,
+                  "lateCount": 0,
+                  "missingAssignments": [
+                    {
+                      "title": "Unit 2 Quiz",
+                      "category": "Quiz",
+                      "dueDate": "2025-11-10",
+                      "pointsPossible": 25,
+                      "standards": [
+                        "8.EE.B.6",
+                        "8.EE.C.7",
+                        "8.EE.C.8"
+                      ]
+                    },
+                    {
+                      "title": "Quiz 6",
+                      "category": "Quiz",
+                      "dueDate": "2026-02-11",
+                      "pointsPossible": 15,
+                      "standards": [
+                        "8.EE.C.8",
+                        "8.G.A.2"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2026-06-11T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV#z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3GwHRccXFkSWWVMniCjrsE777azRaRmBhG3TfE7gPrZZHwAz2seSq1GCSqZnCDjZQVLQ54qcPWiWmkaWLh2EuYot"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2026-06-12T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "course_progress/mathematics"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-02T21:24:00Z"
+      }
+    ],
+    "directives": [
+      {
+        "directiveId": "urn:uuid:0d93587e-e3a0-5d1a-b900-8b4f31b51e30",
+        "action": "sign",
+        "effect": "ask-first",
+        "text": "Ask me before you sign me up for anything or agree to anything for me.",
+        "categories": [
+          "education_learner_profile",
+          "goals_and_constraints",
+          "general_preferences",
+          "https://understudy.example/hcp/categories/education-support-plans"
+        ],
+        "setBy": "urn:uuid:ede347be-daa7-56a0-bbcb-d55aad855543",
+        "createdAt": "2025-09-06T19:30:00Z"
+      }
+    ]
+  }
+]

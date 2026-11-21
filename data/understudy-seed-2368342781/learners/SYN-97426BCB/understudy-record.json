@@ -1,0 +1,4419 @@
+{
+  "notice": "All records are fully synthetic, assembled from curated word pools by a seeded random generator. First names are common US given names; surnames and school names are constructed blends verified absent from the US Census 2010 surname file, so no name describes a real person, school, or district. No real student data was used and no PII is present. Records are era-neutral: academic-year labels order the record but no year carries a real-world event, and rates and distributions are anchored to published national statistics from 2009 to 2025, so a record resembles no single school year. Values are random-rule-generated and not suitable for training ML models.",
+  "student": {
+    "syntheticId": "SYN-97426BCB",
+    "firstName": "Valerie",
+    "lastName": "Oakhurst",
+    "gender": "F",
+    "homeLanguage": "English",
+    "dateOfBirth": "2015-06-19",
+    "grade": "5",
+    "state": "AL",
+    "stateName": "Alabama",
+    "schoolId": "SCH-6766F34F",
+    "schoolName": "Lingshaw Crossing Elementary School",
+    "sectionId": "SEC-372A874F",
+    "sectionCode": "5A",
+    "homeroomTeacher": "Mr. Lorgrave",
+    "academicYear": "2025–26",
+    "entryDate": "2025-08-19",
+    "daysEnrolled": 180,
+    "academicProfile": "standard",
+    "attendance": {
+      "absences": 9,
+      "tardies": 1,
+      "totalDays": 180
+    },
+    "chronicAbsentee": false,
+    "programs": [],
+    "assessments": [
+      {
+        "subject": "Mathematics",
+        "testName": "Synthetic Growth Assessment (SGA)",
+        "windows": [
+          {
+            "window": "Fall 2025",
+            "scaleScore": 2552,
+            "percentile": 39,
+            "growthPercentile": null
+          },
+          {
+            "window": "Winter 2026",
+            "scaleScore": 2576,
+            "percentile": 46,
+            "growthPercentile": 98
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 2596,
+            "percentile": 53,
+            "growthPercentile": 99
+          }
+        ],
+        "placement": "On Grade Level",
+        "proficiencyLevel": "Proficient"
+      },
+      {
+        "subject": "English Language Arts",
+        "testName": "Synthetic Growth Assessment (SGA)",
+        "windows": [
+          {
+            "window": "Fall 2025",
+            "scaleScore": 2534,
+            "percentile": 25,
+            "growthPercentile": null
+          },
+          {
+            "window": "Winter 2026",
+            "scaleScore": 2557,
+            "percentile": 31,
+            "growthPercentile": 89
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 2561,
+            "percentile": 26,
+            "growthPercentile": 15
+          }
+        ],
+        "placement": "1 Grade Level Below",
+        "proficiencyLevel": "Basic"
+      },
+      {
+        "subject": "Science",
+        "testName": "Synthetic Growth Assessment (SGA)",
+        "windows": [
+          {
+            "window": "Fall 2025",
+            "scaleScore": 2567,
+            "percentile": 50,
+            "growthPercentile": null
+          },
+          {
+            "window": "Winter 2026",
+            "scaleScore": 2584,
+            "percentile": 51,
+            "growthPercentile": 60
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 2590,
+            "percentile": 48,
+            "growthPercentile": 28
+          }
+        ],
+        "placement": "On Grade Level",
+        "proficiencyLevel": "Basic"
+      }
+    ],
+    "standardsMastery": [
+      {
+        "subject": "Mathematics",
+        "framework": "CCSS",
+        "masteredStandards": [
+          "5.OA.A.1",
+          "5.OA.A.2",
+          "5.OA.B.3",
+          "5.NBT.A.1",
+          "5.NBT.A.2",
+          "5.NBT.A.3",
+          "5.NBT.A.4",
+          "5.NBT.B.5",
+          "5.NBT.B.6",
+          "5.NF.A.1",
+          "5.NF.A.2",
+          "5.NF.B.3",
+          "5.NF.B.4",
+          "5.NF.B.6"
+        ],
+        "totalStandards": 24,
+        "rollupMethod": "decaying average (65% most recent), mastery at 3.0/4",
+        "standardLevels": [
+          {
+            "standard": "5.OA.A.1",
+            "level": "Mastery",
+            "rollup": 3.3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B271CE9C",
+                "date": "2025-09-11",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-2D50669F",
+                "date": "2026-05-12",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.OA.A.2",
+            "level": "Exceeds Mastery",
+            "rollup": 3.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B271CE9C",
+                "date": "2025-09-11",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-2D50669F",
+                "date": "2026-05-12",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.OA.B.3",
+            "level": "Mastery",
+            "rollup": 3.3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-EA6A2828",
+                "date": "2025-10-01",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-89045D2E",
+                "date": "2026-01-15",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.A.1",
+            "level": "Exceeds Mastery",
+            "rollup": 3.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-EA6A2828",
+                "date": "2025-10-01",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-6E2BCA43",
+                "date": "2026-01-28",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.A.2",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-EA6A2828",
+                "date": "2025-10-01",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.A.3",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B734B5CF",
+                "date": "2025-10-28",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.A.4",
+            "level": "Exceeds Mastery",
+            "rollup": 3.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B734B5CF",
+                "date": "2025-10-28",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-172121C6",
+                "date": "2026-02-17",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.B.5",
+            "level": "Exceeds Mastery",
+            "rollup": 3.83,
+            "evidence": [
+              {
+                "assignmentId": "ASG-9BD01ECE",
+                "date": "2025-11-17",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-6E2BCA43",
+                "date": "2026-01-28",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-BFFDDCAB",
+                "date": "2026-03-30",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.B.6",
+            "level": "Mastery",
+            "rollup": 3.3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-A041D5E2",
+                "date": "2025-12-08",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-7B0E2D69",
+                "date": "2026-03-09",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-BFFDDCAB",
+                "date": "2026-03-30",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NBT.B.7",
+            "level": "Near Mastery",
+            "rollup": 2,
+            "evidence": [
+              {
+                "assignmentId": "ASG-FB48E2E7",
+                "date": "2026-05-19",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "5.NF.A.1",
+            "level": "Mastery",
+            "rollup": 3.3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-89045D2E",
+                "date": "2026-01-15",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-BFFDDCAB",
+                "date": "2026-03-30",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NF.A.2",
+            "level": "Exceeds Mastery",
+            "rollup": 3.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-89045D2E",
+                "date": "2026-01-15",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-FB48E2E7",
+                "date": "2026-05-19",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NF.B.3",
+            "level": "Mastery",
+            "rollup": 3.3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-172121C6",
+                "date": "2026-02-17",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-2D50669F",
+                "date": "2026-05-12",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NF.B.4",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-7B0E2D69",
+                "date": "2026-03-09",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NF.B.6",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-7B0E2D69",
+                "date": "2026-03-09",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5.NF.B.7",
+            "level": "Below Mastery",
+            "rollup": 1.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-7B0E2D69",
+                "date": "2026-03-09",
+                "mark": 1
+              },
+              {
+                "assignmentId": "ASG-2D50669F",
+                "date": "2026-05-12",
+                "mark": 1
+              },
+              {
+                "assignmentId": "ASG-FB48E2E7",
+                "date": "2026-05-19",
+                "mark": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subject": "English Language Arts",
+        "framework": "CCSS",
+        "masteredStandards": [
+          "RL.5.1",
+          "RL.5.2",
+          "RL.5.3",
+          "RL.5.4",
+          "RI.5.1",
+          "RI.5.5"
+        ],
+        "totalStandards": 16,
+        "rollupMethod": "decaying average (65% most recent), mastery at 3.0/4",
+        "standardLevels": [
+          {
+            "standard": "RL.5.1",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-F34B7606",
+                "date": "2025-09-22",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-F7C89085",
+                "date": "2025-11-17",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-C2EDCCF4",
+                "date": "2026-04-03",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "RL.5.2",
+            "level": "Exceeds Mastery",
+            "rollup": 3.83,
+            "evidence": [
+              {
+                "assignmentId": "ASG-F34B7606",
+                "date": "2025-09-22",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-F259F11F",
+                "date": "2026-02-13",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-1E2A73E1",
+                "date": "2026-05-21",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "RL.5.3",
+            "level": "Mastery",
+            "rollup": 3.35,
+            "evidence": [
+              {
+                "assignmentId": "ASG-5B2273FC",
+                "date": "2025-10-21",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-F259F11F",
+                "date": "2026-02-13",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "RL.5.4",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-5B2273FC",
+                "date": "2025-10-21",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-28B225E0",
+                "date": "2026-05-26",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "RI.5.1",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-72F15723",
+                "date": "2025-12-11",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-BE15C3F7",
+                "date": "2026-04-27",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "RI.5.2",
+            "level": "Below Mastery",
+            "rollup": 1.83,
+            "evidence": [
+              {
+                "assignmentId": "ASG-F483D034",
+                "date": "2026-01-15",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-144B91A9",
+                "date": "2026-03-10",
+                "mark": 1
+              },
+              {
+                "assignmentId": "ASG-28B225E0",
+                "date": "2026-05-26",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "RI.5.5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-F483D034",
+                "date": "2026-01-15",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-C2EDCCF4",
+                "date": "2026-04-03",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-1E2A73E1",
+                "date": "2026-05-21",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "RF.5.4",
+            "level": "Near Mastery",
+            "rollup": 2.35,
+            "evidence": [
+              {
+                "assignmentId": "ASG-F259F11F",
+                "date": "2026-02-13",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-56859FD8",
+                "date": "2026-05-29",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "W.5.1",
+            "level": "Near Mastery",
+            "rollup": 2,
+            "evidence": [
+              {
+                "assignmentId": "ASG-1E2A73E1",
+                "date": "2026-05-21",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-56859FD8",
+                "date": "2026-05-29",
+                "mark": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subject": "Science",
+        "framework": "NGSS",
+        "masteredStandards": [
+          "5-PS1-1",
+          "5-PS1-2",
+          "5-PS1-3",
+          "5-PS1-4",
+          "5-PS2-1",
+          "5-PS3-1",
+          "5-LS2-1"
+        ],
+        "totalStandards": 13,
+        "rollupMethod": "decaying average (65% most recent), mastery at 3.0/4",
+        "standardLevels": [
+          {
+            "standard": "5-PS1-1",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-292FD4D9",
+                "date": "2025-09-29",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-BB1D9EFA",
+                "date": "2026-01-07",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "5-PS1-2",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-292FD4D9",
+                "date": "2025-09-29",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-7199314F",
+                "date": "2025-12-05",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-AB2F47C2",
+                "date": "2026-01-26",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-6682DF6A",
+                "date": "2026-06-01",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "5-PS1-3",
+            "level": "Exceeds Mastery",
+            "rollup": 3.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-292FD4D9",
+                "date": "2025-09-29",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-BB1D9EFA",
+                "date": "2026-01-07",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-C364C45A",
+                "date": "2026-03-13",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5-PS1-4",
+            "level": "Mastery",
+            "rollup": 3.23,
+            "evidence": [
+              {
+                "assignmentId": "ASG-656FE27F",
+                "date": "2025-10-20",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-BB1D9EFA",
+                "date": "2026-01-07",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-BF384581",
+                "date": "2026-04-08",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-C321CE96",
+                "date": "2026-05-26",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "5-PS2-1",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-04A1D985",
+                "date": "2025-11-13",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-966A4093",
+                "date": "2026-06-04",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "5-PS3-1",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-7199314F",
+                "date": "2025-12-05",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-15E918E1",
+                "date": "2026-02-18",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5-LS1-1",
+            "level": "Near Mastery",
+            "rollup": 2,
+            "evidence": [
+              {
+                "assignmentId": "ASG-966A4093",
+                "date": "2026-06-04",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "5-LS2-1",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-AB2F47C2",
+                "date": "2026-01-26",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-6682DF6A",
+                "date": "2026-06-01",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "5-ESS1-1",
+            "level": "Near Mastery",
+            "rollup": 2,
+            "evidence": [
+              {
+                "assignmentId": "ASG-15E918E1",
+                "date": "2026-02-18",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-966A4093",
+                "date": "2026-06-04",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "5-ESS1-2",
+            "level": "Below Mastery",
+            "rollup": 1.83,
+            "evidence": [
+              {
+                "assignmentId": "ASG-BF384581",
+                "date": "2026-04-08",
+                "mark": 1
+              },
+              {
+                "assignmentId": "ASG-6682DF6A",
+                "date": "2026-06-01",
+                "mark": 2
+              },
+              {
+                "assignmentId": "ASG-966A4093",
+                "date": "2026-06-04",
+                "mark": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subject": "Social Studies",
+        "framework": "C3",
+        "masteredStandards": [
+          "D2.Civ.1.3-5",
+          "D2.Civ.2.3-5",
+          "D2.Eco.1.3-5",
+          "D2.Eco.2.3-5",
+          "D2.Geo.1.3-5",
+          "D2.Geo.2.3-5",
+          "D2.His.1.3-5",
+          "D2.His.2.3-5",
+          "D2.Civ.3.3-5",
+          "D2.Civ.4.3-5",
+          "D2.Eco.3.3-5",
+          "D2.Eco.4.3-5",
+          "D2.Geo.3.3-5",
+          "D2.Geo.4.3-5"
+        ],
+        "totalStandards": 24,
+        "rollupMethod": "decaying average (65% most recent), mastery at 3.0/4",
+        "standardLevels": [
+          {
+            "standard": "D2.Civ.1.3-5",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B660281C",
+                "date": "2025-09-11",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-08E3202B",
+                "date": "2026-02-13",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "D2.Civ.2.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B660281C",
+                "date": "2025-09-11",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-2A51CED4",
+                "date": "2026-01-12",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-F48DC078",
+                "date": "2026-04-20",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Eco.1.3-5",
+            "level": "Exceeds Mastery",
+            "rollup": 4,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B660281C",
+                "date": "2025-09-11",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "standard": "D2.Eco.2.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-E93D1048",
+                "date": "2025-10-06",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-08E3202B",
+                "date": "2026-02-13",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Geo.1.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-783348E5",
+                "date": "2025-10-27",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Geo.2.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-783348E5",
+                "date": "2025-10-27",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-AE288C34",
+                "date": "2026-03-27",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.His.1.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-783348E5",
+                "date": "2025-10-27",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.His.2.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-CA96C6B0",
+                "date": "2025-11-18",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-C51C35C6",
+                "date": "2026-05-15",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Civ.3.3-5",
+            "level": "Mastery",
+            "rollup": 3.35,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B2808B9D",
+                "date": "2025-12-09",
+                "mark": 4
+              },
+              {
+                "assignmentId": "ASG-C51C35C6",
+                "date": "2026-05-15",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Civ.4.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-B2808B9D",
+                "date": "2025-12-09",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Eco.3.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-2A51CED4",
+                "date": "2026-01-12",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-AE288C34",
+                "date": "2026-03-27",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Eco.4.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-85A99371",
+                "date": "2026-01-22",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Geo.3.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-85A99371",
+                "date": "2026-01-22",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-9BCB03EF",
+                "date": "2026-05-22",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.Geo.4.3-5",
+            "level": "Mastery",
+            "rollup": 3,
+            "evidence": [
+              {
+                "assignmentId": "ASG-08E3202B",
+                "date": "2026-02-13",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "standard": "D2.His.3.3-5",
+            "level": "Below Mastery",
+            "rollup": 1.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-08E3202B",
+                "date": "2026-02-13",
+                "mark": 1
+              },
+              {
+                "assignmentId": "ASG-C51C35C6",
+                "date": "2026-05-15",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "D2.His.4.3-5",
+            "level": "Below Mastery",
+            "rollup": 1.65,
+            "evidence": [
+              {
+                "assignmentId": "ASG-C2FA863E",
+                "date": "2026-03-10",
+                "mark": 1
+              },
+              {
+                "assignmentId": "ASG-9BCB03EF",
+                "date": "2026-05-22",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "standard": "D2.Civ.5.3-5",
+            "level": "Near Mastery",
+            "rollup": 2.35,
+            "evidence": [
+              {
+                "assignmentId": "ASG-C2FA863E",
+                "date": "2026-03-10",
+                "mark": 3
+              },
+              {
+                "assignmentId": "ASG-417763A0",
+                "date": "2026-05-26",
+                "mark": 2
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "gradebooks": [
+      {
+        "subject": "Mathematics",
+        "course": "Grade 5 Mathematics",
+        "categoryWeights": {
+          "Test": 40,
+          "Quiz": 25,
+          "Project": 0,
+          "Classwork": 20,
+          "Homework": 15
+        },
+        "assignments": [
+          {
+            "assignmentId": "ASG-5F194259",
+            "title": "Homework 1",
+            "category": "Homework",
+            "assignedDate": "2025-08-28",
+            "dueDate": "2025-09-02",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2025-09-08",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-B271CE9C",
+            "title": "Unit 1 Test",
+            "category": "Test",
+            "assignedDate": "2025-09-02",
+            "dueDate": "2025-09-11",
+            "pointsPossible": 100,
+            "standards": [
+              "5.OA.A.1",
+              "5.OA.A.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 93,
+            "late": false,
+            "gradedDate": "2025-09-16",
+            "standardMarks": [
+              {
+                "standard": "5.OA.A.1",
+                "mark": 2
+              },
+              {
+                "standard": "5.OA.A.2",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-A56A4C56",
+            "title": "Classwork 1",
+            "category": "Classwork",
+            "assignedDate": "2025-09-18",
+            "dueDate": "2025-09-22",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 15,
+            "late": false,
+            "gradedDate": "2025-09-25",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-EA6A2828",
+            "title": "Unit 1 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2025-09-29",
+            "dueDate": "2025-10-01",
+            "pointsPossible": 5,
+            "standards": [
+              "5.OA.B.3",
+              "5.NBT.A.1",
+              "5.NBT.A.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 4,
+            "late": false,
+            "gradedDate": "2025-10-02",
+            "standardMarks": [
+              {
+                "standard": "5.OA.B.3",
+                "mark": 2
+              },
+              {
+                "standard": "5.NBT.A.1",
+                "mark": 3
+              },
+              {
+                "standard": "5.NBT.A.2",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-C0265713",
+            "title": "Classwork 3",
+            "category": "Classwork",
+            "assignedDate": "2025-10-07",
+            "dueDate": "2025-10-14",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 10,
+            "late": false,
+            "gradedDate": "2025-10-27",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-B734B5CF",
+            "title": "Unit 2 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2025-10-20",
+            "dueDate": "2025-10-28",
+            "pointsPossible": 25,
+            "standards": [
+              "5.NBT.A.3",
+              "5.NBT.A.4"
+            ],
+            "scoreStatus": "graded",
+            "score": 23,
+            "late": false,
+            "gradedDate": "2025-10-30",
+            "standardMarks": [
+              {
+                "standard": "5.NBT.A.3",
+                "mark": 4
+              },
+              {
+                "standard": "5.NBT.A.4",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-99970CCF",
+            "title": "Homework 2",
+            "category": "Homework",
+            "assignedDate": "2025-10-28",
+            "dueDate": "2025-11-03",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2025-11-07",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-9BD01ECE",
+            "title": "Ch. 2 Test",
+            "category": "Test",
+            "assignedDate": "2025-11-12",
+            "dueDate": "2025-11-17",
+            "pointsPossible": 100,
+            "standards": [
+              "5.NBT.B.5"
+            ],
+            "scoreStatus": "graded",
+            "score": 89,
+            "late": false,
+            "gradedDate": "2025-11-18",
+            "standardMarks": [
+              {
+                "standard": "5.NBT.B.5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-F46320CE",
+            "title": "Homework 3",
+            "category": "Homework",
+            "assignedDate": "2025-11-24",
+            "dueDate": "2025-11-25",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "exempt",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-A041D5E2",
+            "title": "Ch. 3 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2025-11-24",
+            "dueDate": "2025-12-08",
+            "pointsPossible": 30,
+            "standards": [
+              "5.NBT.B.6"
+            ],
+            "scoreStatus": "graded",
+            "score": 25,
+            "late": false,
+            "gradedDate": "2025-12-12",
+            "standardMarks": [
+              {
+                "standard": "5.NBT.B.6",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-8AAE68AD",
+            "title": "Classwork 4",
+            "category": "Classwork",
+            "assignedDate": "2025-12-05",
+            "dueDate": "2025-12-12",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 14,
+            "late": false,
+            "gradedDate": "2025-12-18",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-9F32E8A9",
+            "title": "Ch. 4 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-01-02",
+            "dueDate": "2026-01-12",
+            "pointsPossible": 15,
+            "standards": [
+              "5.NF.A.1",
+              "5.OA.B.3",
+              "5.NF.A.2"
+            ],
+            "scoreStatus": "exempt",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-89045D2E",
+            "title": "Unit 4 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2026-01-09",
+            "dueDate": "2026-01-15",
+            "pointsPossible": 15,
+            "standards": [
+              "5.NF.A.1",
+              "5.OA.B.3",
+              "5.NF.A.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 14,
+            "late": false,
+            "gradedDate": "2026-01-20",
+            "standardMarks": [
+              {
+                "standard": "5.NF.A.1",
+                "mark": 2
+              },
+              {
+                "standard": "5.OA.B.3",
+                "mark": 4
+              },
+              {
+                "standard": "5.NF.A.2",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-247FF50F",
+            "title": "Homework 4",
+            "category": "Homework",
+            "assignedDate": "2026-01-13",
+            "dueDate": "2026-01-15",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-01-16",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-6E2BCA43",
+            "title": "Unit 4 Test",
+            "category": "Test",
+            "assignedDate": "2026-01-20",
+            "dueDate": "2026-01-28",
+            "pointsPossible": 100,
+            "standards": [
+              "5.NBT.B.5",
+              "5.NBT.A.1"
+            ],
+            "scoreStatus": "graded",
+            "score": 100,
+            "late": false,
+            "gradedDate": "2026-02-02",
+            "standardMarks": [
+              {
+                "standard": "5.NBT.B.5",
+                "mark": 4
+              },
+              {
+                "standard": "5.NBT.A.1",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-68318A93",
+            "title": "Homework 5",
+            "category": "Homework",
+            "assignedDate": "2026-02-03",
+            "dueDate": "2026-02-06",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2026-02-09",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-172121C6",
+            "title": "Unit 4 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-02-11",
+            "dueDate": "2026-02-17",
+            "pointsPossible": 10,
+            "standards": [
+              "5.NF.B.3",
+              "5.NBT.A.4"
+            ],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-02-19",
+            "standardMarks": [
+              {
+                "standard": "5.NF.B.3",
+                "mark": 2
+              },
+              {
+                "standard": "5.NBT.A.4",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-443D15DD",
+            "title": "Homework 6",
+            "category": "Homework",
+            "assignedDate": "2026-02-26",
+            "dueDate": "2026-03-05",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "exempt",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-7B0E2D69",
+            "title": "Quiz 5",
+            "category": "Quiz",
+            "assignedDate": "2026-03-04",
+            "dueDate": "2026-03-09",
+            "pointsPossible": 30,
+            "standards": [
+              "5.NF.B.4",
+              "5.NBT.B.6",
+              "5.NF.B.6",
+              "5.NF.B.7"
+            ],
+            "scoreStatus": "graded",
+            "score": 25,
+            "late": false,
+            "gradedDate": "2026-03-10",
+            "standardMarks": [
+              {
+                "standard": "5.NF.B.4",
+                "mark": 4
+              },
+              {
+                "standard": "5.NBT.B.6",
+                "mark": 2
+              },
+              {
+                "standard": "5.NF.B.6",
+                "mark": 4
+              },
+              {
+                "standard": "5.NF.B.7",
+                "mark": 1
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-F8AF9DB8",
+            "title": "Classwork 6",
+            "category": "Classwork",
+            "assignedDate": "2026-03-06",
+            "dueDate": "2026-03-12",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-03-11",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-BFFDDCAB",
+            "title": "5.NF.A.1 Test",
+            "category": "Test",
+            "assignedDate": "2026-03-23",
+            "dueDate": "2026-03-30",
+            "pointsPossible": 80,
+            "standards": [
+              "5.NF.A.1",
+              "5.NBT.B.5",
+              "5.NBT.B.6"
+            ],
+            "scoreStatus": "graded",
+            "score": 77,
+            "late": false,
+            "gradedDate": "2026-04-03",
+            "standardMarks": [
+              {
+                "standard": "5.NF.A.1",
+                "mark": 4
+              },
+              {
+                "standard": "5.NBT.B.5",
+                "mark": 4
+              },
+              {
+                "standard": "5.NBT.B.6",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-9EBE5DC4",
+            "title": "Classwork 7",
+            "category": "Classwork",
+            "assignedDate": "2026-04-09",
+            "dueDate": "2026-04-13",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 15,
+            "late": false,
+            "gradedDate": "2026-04-20",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-B5796CD6",
+            "title": "Ch. 6 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2026-04-20",
+            "dueDate": "2026-04-24",
+            "pointsPossible": 10,
+            "standards": [
+              "5.OA.A.1"
+            ],
+            "scoreStatus": "missing",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-34CEF7C0",
+            "title": "Homework 7",
+            "category": "Homework",
+            "assignedDate": "2026-04-29",
+            "dueDate": "2026-05-04",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2026-05-07",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-2D50669F",
+            "title": "Unit 6 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-05-07",
+            "dueDate": "2026-05-12",
+            "pointsPossible": 20,
+            "standards": [
+              "5.OA.A.1",
+              "5.NF.B.7",
+              "5.NF.B.3",
+              "5.OA.A.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 17,
+            "late": false,
+            "gradedDate": "2026-05-18",
+            "standardMarks": [
+              {
+                "standard": "5.OA.A.1",
+                "mark": 4
+              },
+              {
+                "standard": "5.NF.B.7",
+                "mark": 1
+              },
+              {
+                "standard": "5.NF.B.3",
+                "mark": 4
+              },
+              {
+                "standard": "5.OA.A.2",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-FB48E2E7",
+            "title": "Unit 6 Quiz 2",
+            "category": "Quiz",
+            "assignedDate": "2026-05-11",
+            "dueDate": "2026-05-19",
+            "pointsPossible": 15,
+            "standards": [
+              "5.NF.B.7",
+              "5.NF.A.2",
+              "5.NBT.B.7"
+            ],
+            "scoreStatus": "graded",
+            "score": 13,
+            "late": false,
+            "gradedDate": "2026-05-20",
+            "standardMarks": [
+              {
+                "standard": "5.NF.B.7",
+                "mark": 2
+              },
+              {
+                "standard": "5.NF.A.2",
+                "mark": 4
+              },
+              {
+                "standard": "5.NBT.B.7",
+                "mark": 2
+              }
+            ]
+          }
+        ],
+        "currentGrade": {
+          "percent": 91.4,
+          "letter": "A-"
+        }
+      },
+      {
+        "subject": "English Language Arts",
+        "course": "Grade 5 English Language Arts",
+        "categoryWeights": {
+          "Test": 20,
+          "Quiz": 25,
+          "Project": 20,
+          "Classwork": 25,
+          "Homework": 10
+        },
+        "assignments": [
+          {
+            "assignmentId": "ASG-23E7F14D",
+            "title": "Homework 1",
+            "category": "Homework",
+            "assignedDate": "2025-09-04",
+            "dueDate": "2025-09-08",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2025-09-11",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-B9BE47FB",
+            "title": "Homework 2",
+            "category": "Homework",
+            "assignedDate": "2025-09-08",
+            "dueDate": "2025-09-12",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2025-09-16",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-F34B7606",
+            "title": "Unit 1 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2025-09-15",
+            "dueDate": "2025-09-22",
+            "pointsPossible": 20,
+            "standards": [
+              "RL.5.1",
+              "RL.5.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 18,
+            "late": false,
+            "gradedDate": "2025-09-26",
+            "standardMarks": [
+              {
+                "standard": "RL.5.1",
+                "mark": 3
+              },
+              {
+                "standard": "RL.5.2",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-210CBFE7",
+            "title": "Homework 3",
+            "category": "Homework",
+            "assignedDate": "2025-10-08",
+            "dueDate": "2025-10-09",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 10,
+            "late": false,
+            "gradedDate": "2025-10-10",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-5B2273FC",
+            "title": "Test 1",
+            "category": "Test",
+            "assignedDate": "2025-10-14",
+            "dueDate": "2025-10-21",
+            "pointsPossible": 80,
+            "standards": [
+              "RL.5.3",
+              "RL.5.4"
+            ],
+            "scoreStatus": "graded",
+            "score": 74,
+            "late": false,
+            "gradedDate": "2025-10-24",
+            "standardMarks": [
+              {
+                "standard": "RL.5.3",
+                "mark": 4
+              },
+              {
+                "standard": "RL.5.4",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-27988808",
+            "title": "Homework 4",
+            "category": "Homework",
+            "assignedDate": "2025-10-28",
+            "dueDate": "2025-11-03",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2025-11-05",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-F7C89085",
+            "title": "Unit 2 Project",
+            "category": "Project",
+            "assignedDate": "2025-10-30",
+            "dueDate": "2025-11-17",
+            "pointsPossible": 60,
+            "standards": [
+              "RL.5.1"
+            ],
+            "scoreStatus": "graded",
+            "score": 54,
+            "late": false,
+            "gradedDate": "2025-11-21",
+            "standardMarks": [
+              {
+                "standard": "RL.5.1",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-0C1F9262",
+            "title": "Classwork 2",
+            "category": "Classwork",
+            "assignedDate": "2025-11-20",
+            "dueDate": "2025-12-01",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 15,
+            "late": false,
+            "gradedDate": "2025-11-25",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-72F15723",
+            "title": "Unit 3 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2025-12-03",
+            "dueDate": "2025-12-11",
+            "pointsPossible": 15,
+            "standards": [
+              "RI.5.1"
+            ],
+            "scoreStatus": "graded",
+            "score": 14,
+            "late": false,
+            "gradedDate": "2025-12-19",
+            "standardMarks": [
+              {
+                "standard": "RI.5.1",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-4C9B9273",
+            "title": "Classwork 3",
+            "category": "Classwork",
+            "assignedDate": "2025-12-22",
+            "dueDate": "2026-01-07",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2026-01-12",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-F483D034",
+            "title": "Unit 4 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-01-09",
+            "dueDate": "2026-01-15",
+            "pointsPossible": 25,
+            "standards": [
+              "RI.5.2",
+              "RI.5.5"
+            ],
+            "scoreStatus": "graded",
+            "score": 21,
+            "late": false,
+            "gradedDate": "2026-01-20",
+            "standardMarks": [
+              {
+                "standard": "RI.5.2",
+                "mark": 2
+              },
+              {
+                "standard": "RI.5.5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-6AA97A17",
+            "title": "Homework 5",
+            "category": "Homework",
+            "assignedDate": "2026-01-12",
+            "dueDate": "2026-01-16",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-01-22",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-02B69F11",
+            "title": "Homework 6",
+            "category": "Homework",
+            "assignedDate": "2026-01-21",
+            "dueDate": "2026-01-27",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2026-02-02",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-F259F11F",
+            "title": "Unit 4 Quiz 2",
+            "category": "Quiz",
+            "assignedDate": "2026-02-05",
+            "dueDate": "2026-02-13",
+            "pointsPossible": 30,
+            "standards": [
+              "RL.5.2",
+              "RL.5.3",
+              "RF.5.4"
+            ],
+            "scoreStatus": "graded",
+            "score": 26,
+            "late": false,
+            "gradedDate": "2026-02-17",
+            "standardMarks": [
+              {
+                "standard": "RL.5.2",
+                "mark": 3
+              },
+              {
+                "standard": "RL.5.3",
+                "mark": 3
+              },
+              {
+                "standard": "RF.5.4",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-A3063BAE",
+            "title": "Homework 7",
+            "category": "Homework",
+            "assignedDate": "2026-02-13",
+            "dueDate": "2026-02-23",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-02-26",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-144B91A9",
+            "title": "Unit 5 Test",
+            "category": "Test",
+            "assignedDate": "2026-03-02",
+            "dueDate": "2026-03-10",
+            "pointsPossible": 50,
+            "standards": [
+              "RI.5.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 36,
+            "late": false,
+            "gradedDate": "2026-03-12",
+            "standardMarks": [
+              {
+                "standard": "RI.5.2",
+                "mark": 1
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-F39B82E3",
+            "title": "Homework 8",
+            "category": "Homework",
+            "assignedDate": "2026-03-13",
+            "dueDate": "2026-03-23",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-03-24",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-C2EDCCF4",
+            "title": "Classwork 4",
+            "category": "Classwork",
+            "assignedDate": "2026-04-02",
+            "dueDate": "2026-04-03",
+            "pointsPossible": 15,
+            "standards": [
+              "RL.5.1",
+              "RI.5.5"
+            ],
+            "scoreStatus": "graded",
+            "score": 14,
+            "late": false,
+            "gradedDate": "2026-04-06",
+            "standardMarks": [
+              {
+                "standard": "RL.5.1",
+                "mark": 3
+              },
+              {
+                "standard": "RI.5.5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-BA77D02B",
+            "title": "Classwork 5",
+            "category": "Classwork",
+            "assignedDate": "2026-04-15",
+            "dueDate": "2026-04-16",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2026-04-20",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-BE15C3F7",
+            "title": "Ch. 6 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-04-17",
+            "dueDate": "2026-04-27",
+            "pointsPossible": 25,
+            "standards": [
+              "RI.5.1"
+            ],
+            "scoreStatus": "graded",
+            "score": 24,
+            "late": false,
+            "gradedDate": "2026-04-30",
+            "standardMarks": [
+              {
+                "standard": "RI.5.1",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-0DF28F4A",
+            "title": "Homework 9",
+            "category": "Homework",
+            "assignedDate": "2026-05-04",
+            "dueDate": "2026-05-11",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 18,
+            "late": false,
+            "gradedDate": "2026-05-12",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-1E2A73E1",
+            "title": "Unit 6 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-05-12",
+            "dueDate": "2026-05-21",
+            "pointsPossible": 10,
+            "standards": [
+              "W.5.1",
+              "RI.5.5",
+              "RL.5.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-05-22",
+            "standardMarks": [
+              {
+                "standard": "W.5.1",
+                "mark": 2
+              },
+              {
+                "standard": "RI.5.5",
+                "mark": 3
+              },
+              {
+                "standard": "RL.5.2",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-28B225E0",
+            "title": "Review Quiz 1",
+            "category": "Quiz",
+            "assignedDate": "2026-05-20",
+            "dueDate": "2026-05-26",
+            "pointsPossible": 10,
+            "standards": [
+              "RL.5.4",
+              "RI.5.2"
+            ],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-05-27",
+            "standardMarks": [
+              {
+                "standard": "RL.5.4",
+                "mark": 3
+              },
+              {
+                "standard": "RI.5.2",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-56859FD8",
+            "title": "Review Quiz 2",
+            "category": "Quiz",
+            "assignedDate": "2026-05-22",
+            "dueDate": "2026-05-29",
+            "pointsPossible": 10,
+            "standards": [
+              "RF.5.4",
+              "W.5.1"
+            ],
+            "scoreStatus": "graded",
+            "score": 8,
+            "late": false,
+            "gradedDate": "2026-06-01",
+            "standardMarks": [
+              {
+                "standard": "RF.5.4",
+                "mark": 2
+              },
+              {
+                "standard": "W.5.1",
+                "mark": 2
+              }
+            ]
+          }
+        ],
+        "currentGrade": {
+          "percent": 91.1,
+          "letter": "A-"
+        }
+      },
+      {
+        "subject": "Science",
+        "course": "Grade 5 Science",
+        "categoryWeights": {
+          "Test": 35,
+          "Quiz": 30,
+          "Project": 10,
+          "Classwork": 15,
+          "Homework": 10
+        },
+        "assignments": [
+          {
+            "assignmentId": "ASG-9AC2D077",
+            "title": "Homework 1",
+            "category": "Homework",
+            "assignedDate": "2025-08-28",
+            "dueDate": "2025-09-03",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2025-09-04",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-A207E09C",
+            "title": "Homework 2",
+            "category": "Homework",
+            "assignedDate": "2025-09-04",
+            "dueDate": "2025-09-10",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 13,
+            "late": false,
+            "gradedDate": "2025-09-15",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-292FD4D9",
+            "title": "Unit 1 Project",
+            "category": "Project",
+            "assignedDate": "2025-09-11",
+            "dueDate": "2025-09-29",
+            "pointsPossible": 30,
+            "standards": [
+              "5-PS1-1",
+              "5-PS1-2",
+              "5-PS1-3"
+            ],
+            "scoreStatus": "graded",
+            "score": 29,
+            "late": false,
+            "gradedDate": "2025-10-06",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-1",
+                "mark": 3
+              },
+              {
+                "standard": "5-PS1-2",
+                "mark": 3
+              },
+              {
+                "standard": "5-PS1-3",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-EDD904C0",
+            "title": "Classwork 1",
+            "category": "Classwork",
+            "assignedDate": "2025-10-02",
+            "dueDate": "2025-10-07",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2025-10-03",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-656FE27F",
+            "title": "Unit 2 Test",
+            "category": "Test",
+            "assignedDate": "2025-10-15",
+            "dueDate": "2025-10-20",
+            "pointsPossible": 40,
+            "standards": [
+              "5-PS1-4"
+            ],
+            "scoreStatus": "graded",
+            "score": 33,
+            "late": false,
+            "gradedDate": "2025-10-21",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-4",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-68CD852C",
+            "title": "Homework 3",
+            "category": "Homework",
+            "assignedDate": "2025-10-27",
+            "dueDate": "2025-10-30",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 19,
+            "late": false,
+            "gradedDate": "2025-11-05",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-04A1D985",
+            "title": "Ch. 2 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2025-11-06",
+            "dueDate": "2025-11-13",
+            "pointsPossible": 15,
+            "standards": [
+              "5-PS2-1"
+            ],
+            "scoreStatus": "graded",
+            "score": 13,
+            "late": false,
+            "gradedDate": "2025-11-17",
+            "standardMarks": [
+              {
+                "standard": "5-PS2-1",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-AE2756B6",
+            "title": "Homework 4",
+            "category": "Homework",
+            "assignedDate": "2025-11-20",
+            "dueDate": "2025-11-24",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 4,
+            "late": false,
+            "gradedDate": "2025-11-25",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-7199314F",
+            "title": "Ch. 3 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2025-12-04",
+            "dueDate": "2025-12-05",
+            "pointsPossible": 10,
+            "standards": [
+              "5-PS1-2",
+              "5-PS3-1"
+            ],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2025-12-09",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-2",
+                "mark": 3
+              },
+              {
+                "standard": "5-PS3-1",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-DDFE00AA",
+            "title": "Classwork 3",
+            "category": "Classwork",
+            "assignedDate": "2025-12-11",
+            "dueDate": "2025-12-17",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 4,
+            "late": false,
+            "gradedDate": "2025-12-18",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-BB1D9EFA",
+            "title": "Ch. 3 Test",
+            "category": "Test",
+            "assignedDate": "2026-01-02",
+            "dueDate": "2026-01-07",
+            "pointsPossible": 60,
+            "standards": [
+              "5-PS1-3",
+              "5-PS1-4",
+              "5-PS1-1"
+            ],
+            "scoreStatus": "graded",
+            "score": 53,
+            "late": false,
+            "gradedDate": "2026-01-12",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-3",
+                "mark": 3
+              },
+              {
+                "standard": "5-PS1-4",
+                "mark": 4
+              },
+              {
+                "standard": "5-PS1-1",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-B5C4DC71",
+            "title": "Homework 5",
+            "category": "Homework",
+            "assignedDate": "2026-01-07",
+            "dueDate": "2026-01-12",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-01-20",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-AB2F47C2",
+            "title": "Ch. 4 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-01-15",
+            "dueDate": "2026-01-26",
+            "pointsPossible": 25,
+            "standards": [
+              "5-PS1-2",
+              "5-LS2-1"
+            ],
+            "scoreStatus": "graded",
+            "score": 21,
+            "late": false,
+            "gradedDate": "2026-01-29",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-2",
+                "mark": 3
+              },
+              {
+                "standard": "5-LS2-1",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-5526215C",
+            "title": "Homework 6",
+            "category": "Homework",
+            "assignedDate": "2026-01-30",
+            "dueDate": "2026-02-06",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-02-09",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-15E918E1",
+            "title": "Quiz 3",
+            "category": "Quiz",
+            "assignedDate": "2026-02-06",
+            "dueDate": "2026-02-18",
+            "pointsPossible": 30,
+            "standards": [
+              "5-ESS1-1",
+              "5-PS3-1"
+            ],
+            "scoreStatus": "graded",
+            "score": 25,
+            "late": false,
+            "gradedDate": "2026-02-23",
+            "standardMarks": [
+              {
+                "standard": "5-ESS1-1",
+                "mark": 2
+              },
+              {
+                "standard": "5-PS3-1",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-451C38F2",
+            "title": "Homework 7",
+            "category": "Homework",
+            "assignedDate": "2026-02-24",
+            "dueDate": "2026-03-02",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 8,
+            "late": false,
+            "gradedDate": "2026-02-27",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-C364C45A",
+            "title": "Unit 5 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-03-10",
+            "dueDate": "2026-03-13",
+            "pointsPossible": 15,
+            "standards": [
+              "5-PS1-3"
+            ],
+            "scoreStatus": "graded",
+            "score": 13,
+            "late": false,
+            "gradedDate": "2026-03-23",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-3",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-E52C5BF4",
+            "title": "Classwork 4",
+            "category": "Classwork",
+            "assignedDate": "2026-03-11",
+            "dueDate": "2026-03-24",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-03-26",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-BF384581",
+            "title": "Test 3",
+            "category": "Test",
+            "assignedDate": "2026-04-02",
+            "dueDate": "2026-04-08",
+            "pointsPossible": 40,
+            "standards": [
+              "5-PS1-4",
+              "5-ESS1-2"
+            ],
+            "scoreStatus": "graded",
+            "score": 33,
+            "late": false,
+            "gradedDate": "2026-04-14",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-4",
+                "mark": 4
+              },
+              {
+                "standard": "5-ESS1-2",
+                "mark": 1
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-DAA0A4C0",
+            "title": "Homework 8",
+            "category": "Homework",
+            "assignedDate": "2026-04-08",
+            "dueDate": "2026-04-13",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "exempt",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-9DF70638",
+            "title": "Classwork 5",
+            "category": "Classwork",
+            "assignedDate": "2026-04-24",
+            "dueDate": "2026-05-01",
+            "pointsPossible": 15,
+            "standards": [
+              "5-PS1-4",
+              "5-ESS1-2",
+              "5-LS2-1"
+            ],
+            "scoreStatus": "exempt",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-D5BE5C7F",
+            "title": "Homework 9",
+            "category": "Homework",
+            "assignedDate": "2026-05-07",
+            "dueDate": "2026-05-12",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-05-13",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-C321CE96",
+            "title": "Unit 6 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-05-18",
+            "dueDate": "2026-05-26",
+            "pointsPossible": 10,
+            "standards": [
+              "5-PS1-4"
+            ],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-06-01",
+            "standardMarks": [
+              {
+                "standard": "5-PS1-4",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-6682DF6A",
+            "title": "Review Quiz 1",
+            "category": "Quiz",
+            "assignedDate": "2026-05-27",
+            "dueDate": "2026-06-01",
+            "pointsPossible": 30,
+            "standards": [
+              "5-ESS1-2",
+              "5-LS2-1",
+              "5-PS1-2"
+            ],
+            "scoreStatus": "graded",
+            "score": 25,
+            "late": false,
+            "gradedDate": "2026-06-02",
+            "standardMarks": [
+              {
+                "standard": "5-ESS1-2",
+                "mark": 2
+              },
+              {
+                "standard": "5-LS2-1",
+                "mark": 4
+              },
+              {
+                "standard": "5-PS1-2",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-966A4093",
+            "title": "Review Quiz 2",
+            "category": "Quiz",
+            "assignedDate": "2026-06-01",
+            "dueDate": "2026-06-04",
+            "pointsPossible": 10,
+            "standards": [
+              "5-ESS1-2",
+              "5-PS2-1",
+              "5-LS1-1",
+              "5-ESS1-1"
+            ],
+            "scoreStatus": "graded",
+            "score": 7,
+            "late": false,
+            "gradedDate": "2026-06-05",
+            "standardMarks": [
+              {
+                "standard": "5-ESS1-2",
+                "mark": 2
+              },
+              {
+                "standard": "5-PS2-1",
+                "mark": 3
+              },
+              {
+                "standard": "5-LS1-1",
+                "mark": 2
+              },
+              {
+                "standard": "5-ESS1-1",
+                "mark": 2
+              }
+            ]
+          }
+        ],
+        "currentGrade": {
+          "percent": 86.8,
+          "letter": "B"
+        }
+      },
+      {
+        "subject": "Social Studies",
+        "course": "Grade 5 Social Studies",
+        "categoryWeights": {
+          "Test": 30,
+          "Quiz": 25,
+          "Project": 15,
+          "Classwork": 20,
+          "Homework": 10
+        },
+        "assignments": [
+          {
+            "assignmentId": "ASG-B702EE30",
+            "title": "Homework 1",
+            "category": "Homework",
+            "assignedDate": "2025-08-28",
+            "dueDate": "2025-09-02",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "missing",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-B660281C",
+            "title": "Ch. 1 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2025-09-02",
+            "dueDate": "2025-09-11",
+            "pointsPossible": 30,
+            "standards": [
+              "D2.Civ.1.3-5",
+              "D2.Civ.2.3-5",
+              "D2.Eco.1.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 28,
+            "late": false,
+            "gradedDate": "2025-09-12",
+            "standardMarks": [
+              {
+                "standard": "D2.Civ.1.3-5",
+                "mark": 4
+              },
+              {
+                "standard": "D2.Civ.2.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Eco.1.3-5",
+                "mark": 4
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-68F436D1",
+            "title": "Classwork 1",
+            "category": "Classwork",
+            "assignedDate": "2025-09-23",
+            "dueDate": "2025-09-24",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 16,
+            "late": false,
+            "gradedDate": "2025-09-25",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-E93D1048",
+            "title": "Ch. 1 Quiz 2",
+            "category": "Quiz",
+            "assignedDate": "2025-09-29",
+            "dueDate": "2025-10-06",
+            "pointsPossible": 15,
+            "standards": [
+              "D2.Eco.2.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 13,
+            "late": false,
+            "gradedDate": "2025-10-09",
+            "standardMarks": [
+              {
+                "standard": "D2.Eco.2.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-7D7E1FB7",
+            "title": "Homework 2",
+            "category": "Homework",
+            "assignedDate": "2025-10-06",
+            "dueDate": "2025-10-14",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 10,
+            "late": false,
+            "gradedDate": "2025-10-17",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-783348E5",
+            "title": "Unit 2 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2025-10-21",
+            "dueDate": "2025-10-27",
+            "pointsPossible": 5,
+            "standards": [
+              "D2.Geo.1.3-5",
+              "D2.Geo.2.3-5",
+              "D2.His.1.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 4,
+            "late": true,
+            "gradedDate": "2025-11-03",
+            "standardMarks": [
+              {
+                "standard": "D2.Geo.1.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Geo.2.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.His.1.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-C135FF16",
+            "title": "Homework 3",
+            "category": "Homework",
+            "assignedDate": "2025-11-04",
+            "dueDate": "2025-11-10",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "missing",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-CA96C6B0",
+            "title": "Quiz 3",
+            "category": "Quiz",
+            "assignedDate": "2025-11-10",
+            "dueDate": "2025-11-18",
+            "pointsPossible": 10,
+            "standards": [
+              "D2.His.2.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2025-11-24",
+            "standardMarks": [
+              {
+                "standard": "D2.His.2.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-79F4E2AB",
+            "title": "Homework 4",
+            "category": "Homework",
+            "assignedDate": "2025-11-19",
+            "dueDate": "2025-12-01",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 13,
+            "late": false,
+            "gradedDate": "2025-12-05",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-B2808B9D",
+            "title": "Test 1",
+            "category": "Test",
+            "assignedDate": "2025-12-02",
+            "dueDate": "2025-12-09",
+            "pointsPossible": 100,
+            "standards": [
+              "D2.Civ.3.3-5",
+              "D2.Civ.4.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 83,
+            "late": false,
+            "gradedDate": "2025-12-15",
+            "standardMarks": [
+              {
+                "standard": "D2.Civ.3.3-5",
+                "mark": 4
+              },
+              {
+                "standard": "D2.Civ.4.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-7B9920F9",
+            "title": "Homework 5",
+            "category": "Homework",
+            "assignedDate": "2025-12-15",
+            "dueDate": "2025-12-17",
+            "pointsPossible": 15,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 14,
+            "late": false,
+            "gradedDate": "2025-12-22",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-2A51CED4",
+            "title": "Quiz 4",
+            "category": "Quiz",
+            "assignedDate": "2026-01-07",
+            "dueDate": "2026-01-12",
+            "pointsPossible": 25,
+            "standards": [
+              "D2.Eco.3.3-5",
+              "D2.Civ.2.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 21,
+            "late": false,
+            "gradedDate": "2026-01-15",
+            "standardMarks": [
+              {
+                "standard": "D2.Eco.3.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Civ.2.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-B220BD26",
+            "title": "Classwork 3",
+            "category": "Classwork",
+            "assignedDate": "2026-01-09",
+            "dueDate": "2026-01-14",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 9,
+            "late": false,
+            "gradedDate": "2026-01-20",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-85A99371",
+            "title": "Project 1",
+            "category": "Project",
+            "assignedDate": "2026-01-07",
+            "dueDate": "2026-01-22",
+            "pointsPossible": 60,
+            "standards": [
+              "D2.Eco.4.3-5",
+              "D2.Geo.3.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 49,
+            "late": false,
+            "gradedDate": "2026-01-26",
+            "standardMarks": [
+              {
+                "standard": "D2.Eco.4.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Geo.3.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-67766BBF",
+            "title": "Homework 6",
+            "category": "Homework",
+            "assignedDate": "2026-01-26",
+            "dueDate": "2026-02-02",
+            "pointsPossible": 10,
+            "standards": [],
+            "scoreStatus": "missing",
+            "score": null,
+            "late": false,
+            "gradedDate": null,
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-08E3202B",
+            "title": "Classwork 4",
+            "category": "Classwork",
+            "assignedDate": "2026-02-06",
+            "dueDate": "2026-02-13",
+            "pointsPossible": 20,
+            "standards": [
+              "D2.Geo.4.3-5",
+              "D2.Eco.2.3-5",
+              "D2.Civ.1.3-5",
+              "D2.His.3.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 17,
+            "late": false,
+            "gradedDate": "2026-02-19",
+            "standardMarks": [
+              {
+                "standard": "D2.Geo.4.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Eco.2.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Civ.1.3-5",
+                "mark": 4
+              },
+              {
+                "standard": "D2.His.3.3-5",
+                "mark": 1
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-D14DD837",
+            "title": "Classwork 5",
+            "category": "Classwork",
+            "assignedDate": "2026-02-17",
+            "dueDate": "2026-02-23",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 19,
+            "late": false,
+            "gradedDate": "2026-02-24",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-C2FA863E",
+            "title": "Unit 5 Test",
+            "category": "Test",
+            "assignedDate": "2026-03-03",
+            "dueDate": "2026-03-10",
+            "pointsPossible": 80,
+            "standards": [
+              "D2.His.4.3-5",
+              "D2.Civ.5.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 67,
+            "late": false,
+            "gradedDate": "2026-03-24",
+            "standardMarks": [
+              {
+                "standard": "D2.His.4.3-5",
+                "mark": 1
+              },
+              {
+                "standard": "D2.Civ.5.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-729E1C3F",
+            "title": "Homework 7",
+            "category": "Homework",
+            "assignedDate": "2026-03-06",
+            "dueDate": "2026-03-11",
+            "pointsPossible": 20,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 20,
+            "late": false,
+            "gradedDate": "2026-03-23",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-AE288C34",
+            "title": "Unit 5 Quiz",
+            "category": "Quiz",
+            "assignedDate": "2026-03-13",
+            "dueDate": "2026-03-27",
+            "pointsPossible": 10,
+            "standards": [
+              "D2.Eco.3.3-5",
+              "D2.Geo.2.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 8,
+            "late": false,
+            "gradedDate": "2026-04-02",
+            "standardMarks": [
+              {
+                "standard": "D2.Eco.3.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.Geo.2.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-5C35EA84",
+            "title": "Homework 8",
+            "category": "Homework",
+            "assignedDate": "2026-04-02",
+            "dueDate": "2026-04-08",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-04-03",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-F48DC078",
+            "title": "Quiz 6",
+            "category": "Quiz",
+            "assignedDate": "2026-04-15",
+            "dueDate": "2026-04-20",
+            "pointsPossible": 30,
+            "standards": [
+              "D2.Civ.2.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 26,
+            "late": false,
+            "gradedDate": "2026-04-27",
+            "standardMarks": [
+              {
+                "standard": "D2.Civ.2.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-6CA83E8E",
+            "title": "Classwork 6",
+            "category": "Classwork",
+            "assignedDate": "2026-04-27",
+            "dueDate": "2026-04-28",
+            "pointsPossible": 5,
+            "standards": [],
+            "scoreStatus": "graded",
+            "score": 5,
+            "late": false,
+            "gradedDate": "2026-05-04",
+            "standardMarks": []
+          },
+          {
+            "assignmentId": "ASG-C51C35C6",
+            "title": "Unit 6 Classwork",
+            "category": "Classwork",
+            "assignedDate": "2026-05-12",
+            "dueDate": "2026-05-15",
+            "pointsPossible": 10,
+            "standards": [
+              "D2.His.2.3-5",
+              "D2.His.3.3-5",
+              "D2.Civ.3.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 8,
+            "late": false,
+            "gradedDate": "2026-05-18",
+            "standardMarks": [
+              {
+                "standard": "D2.His.2.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.His.3.3-5",
+                "mark": 2
+              },
+              {
+                "standard": "D2.Civ.3.3-5",
+                "mark": 3
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-9BCB03EF",
+            "title": "Test 3",
+            "category": "Test",
+            "assignedDate": "2026-05-13",
+            "dueDate": "2026-05-22",
+            "pointsPossible": 60,
+            "standards": [
+              "D2.Geo.3.3-5",
+              "D2.His.4.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 50,
+            "late": false,
+            "gradedDate": "2026-05-26",
+            "standardMarks": [
+              {
+                "standard": "D2.Geo.3.3-5",
+                "mark": 3
+              },
+              {
+                "standard": "D2.His.4.3-5",
+                "mark": 2
+              }
+            ]
+          },
+          {
+            "assignmentId": "ASG-417763A0",
+            "title": "Test 4",
+            "category": "Test",
+            "assignedDate": "2026-05-15",
+            "dueDate": "2026-05-26",
+            "pointsPossible": 60,
+            "standards": [
+              "D2.Civ.5.3-5"
+            ],
+            "scoreStatus": "graded",
+            "score": 48,
+            "late": false,
+            "gradedDate": "2026-05-27",
+            "standardMarks": [
+              {
+                "standard": "D2.Civ.5.3-5",
+                "mark": 2
+              }
+            ]
+          }
+        ],
+        "currentGrade": {
+          "percent": 82.5,
+          "letter": "B-"
+        }
+      }
+    ],
+    "practiceEvents": [
+      {
+        "standard": "5.OA.A.1",
+        "date": "2025-08-27",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.1",
+        "date": "2025-08-27",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.1",
+        "date": "2025-08-27",
+        "opportunity": 3,
+        "correct": false
+      },
+      {
+        "standard": "5.OA.A.1",
+        "date": "2025-08-27",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.1",
+        "date": "2025-08-27",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.2",
+        "date": "2025-08-27",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.2",
+        "date": "2025-08-27",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.2",
+        "date": "2025-08-27",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.2",
+        "date": "2025-08-27",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.2",
+        "date": "2025-08-27",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.A.1",
+        "date": "2025-09-02",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-15",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-15",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-15",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-15",
+        "opportunity": 4,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-15",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-15",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-15",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-15",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-15",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-15",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-15",
+        "opportunity": 1,
+        "correct": false
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-15",
+        "opportunity": 2,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-22",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-22",
+        "opportunity": 5,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-22",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-22",
+        "opportunity": 7,
+        "correct": false
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-22",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-29",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-29",
+        "opportunity": 9,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-29",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-09-29",
+        "opportunity": 11,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-29",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-29",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.2",
+        "date": "2025-09-29",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-29",
+        "opportunity": 4,
+        "correct": false
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-29",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-29",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-09-29",
+        "opportunity": 7,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-10-08",
+        "opportunity": 12,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-10-08",
+        "opportunity": 13,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-10-08",
+        "opportunity": 14,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-10-08",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-10-08",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.OA.B.3",
+        "date": "2025-10-08",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-10-14",
+        "opportunity": 15,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.1",
+        "date": "2025-10-14",
+        "opportunity": 16,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-14",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-14",
+        "opportunity": 2,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-14",
+        "opportunity": 3,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-14",
+        "opportunity": 4,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-14",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-23",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-10-30",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-10-30",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-10-30",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-10-30",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-10-30",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-10-30",
+        "opportunity": 5,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-10-30",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-11-07",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-11-07",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-11-07",
+        "opportunity": 10,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-11-07",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-11-12",
+        "opportunity": 8,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-11-12",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-11-12",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.5",
+        "date": "2025-11-12",
+        "opportunity": 11,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.4",
+        "date": "2025-11-17",
+        "opportunity": 1,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.A.4",
+        "date": "2025-11-17",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.4",
+        "date": "2025-11-17",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.4",
+        "date": "2025-11-17",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.4",
+        "date": "2025-11-17",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-11-17",
+        "opportunity": 1,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-11-17",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-11-17",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-11-25",
+        "opportunity": 4,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-12-02",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-12-02",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2025-12-02",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-12-22",
+        "opportunity": 11,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2025-12-22",
+        "opportunity": 12,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2026-01-02",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2026-01-02",
+        "opportunity": 9,
+        "correct": false
+      },
+      {
+        "standard": "5.NBT.B.6",
+        "date": "2026-01-02",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-02",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-02",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-02",
+        "opportunity": 1,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-02",
+        "opportunity": 2,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-12",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-12",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-12",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-12",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-12",
+        "opportunity": 4,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-12",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-20",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-20",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-20",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-01-20",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-20",
+        "opportunity": 6,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-20",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-20",
+        "opportunity": 8,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-20",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-20",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-01-28",
+        "opportunity": 11,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 12,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 13,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 14,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 15,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 16,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 17,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-05",
+        "opportunity": 18,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-05",
+        "opportunity": 1,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-17",
+        "opportunity": 19,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.2",
+        "date": "2026-02-17",
+        "opportunity": 20,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-17",
+        "opportunity": 2,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-17",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-17",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-17",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-02-17",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-02-17",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-02-17",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-02-17",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-02-17",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-02-17",
+        "opportunity": 3,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-02-25",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-02-25",
+        "opportunity": 11,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-02-25",
+        "opportunity": 12,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.A.1",
+        "date": "2026-02-25",
+        "opportunity": 13,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-25",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-25",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-02-25",
+        "opportunity": 8,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-02-25",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-02-25",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-02-25",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-03-03",
+        "opportunity": 5,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-03",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-03",
+        "opportunity": 7,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-10",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-10",
+        "opportunity": 9,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-10",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-23",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-23",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-23",
+        "opportunity": 3,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-23",
+        "opportunity": 4,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-23",
+        "opportunity": 5,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-23",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-23",
+        "opportunity": 11,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-03-23",
+        "opportunity": 12,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-03-31",
+        "opportunity": 9,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-03-31",
+        "opportunity": 10,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.3",
+        "date": "2026-03-31",
+        "opportunity": 11,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-31",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-03-31",
+        "opportunity": 8,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-04-08",
+        "opportunity": 6,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.4",
+        "date": "2026-04-08",
+        "opportunity": 7,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-08",
+        "opportunity": 9,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-08",
+        "opportunity": 10,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-08",
+        "opportunity": 11,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-04-08",
+        "opportunity": 13,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-04-08",
+        "opportunity": 14,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.7",
+        "date": "2026-04-08",
+        "opportunity": 15,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-17",
+        "opportunity": 12,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-17",
+        "opportunity": 13,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-17",
+        "opportunity": 14,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-27",
+        "opportunity": 15,
+        "correct": false
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-04-27",
+        "opportunity": 16,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2026-05-04",
+        "opportunity": 13,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.A.3",
+        "date": "2026-05-04",
+        "opportunity": 14,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-05-04",
+        "opportunity": 17,
+        "correct": true
+      },
+      {
+        "standard": "5.NF.B.6",
+        "date": "2026-05-04",
+        "opportunity": 18,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.7",
+        "date": "2026-05-28",
+        "opportunity": 1,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.7",
+        "date": "2026-05-28",
+        "opportunity": 2,
+        "correct": true
+      },
+      {
+        "standard": "5.NBT.B.7",
+        "date": "2026-05-28",
+        "opportunity": 3,
+        "correct": true
+      }
+    ],
+    "interests": [
+      "collecting rocks",
+      "coding games",
+      "space and astronomy",
+      "basketball"
+    ],
+    "durableSkills": {
+      "workHabits": [
+        {
+          "subject": "Mathematics",
+          "term": "Q1",
+          "mark": "E"
+        },
+        {
+          "subject": "Mathematics",
+          "term": "Q2",
+          "mark": "E"
+        },
+        {
+          "subject": "Mathematics",
+          "term": "Q3",
+          "mark": "E"
+        },
+        {
+          "subject": "Mathematics",
+          "term": "Q4",
+          "mark": "E"
+        },
+        {
+          "subject": "English Language Arts",
+          "term": "Q1",
+          "mark": "E"
+        },
+        {
+          "subject": "English Language Arts",
+          "term": "Q2",
+          "mark": "E"
+        },
+        {
+          "subject": "English Language Arts",
+          "term": "Q3",
+          "mark": "E"
+        },
+        {
+          "subject": "English Language Arts",
+          "term": "Q4",
+          "mark": "E"
+        },
+        {
+          "subject": "Science",
+          "term": "Q1",
+          "mark": "E"
+        },
+        {
+          "subject": "Science",
+          "term": "Q2",
+          "mark": "E"
+        },
+        {
+          "subject": "Science",
+          "term": "Q3",
+          "mark": "E"
+        },
+        {
+          "subject": "Science",
+          "term": "Q4",
+          "mark": "E"
+        },
+        {
+          "subject": "Social Studies",
+          "term": "Q1",
+          "mark": "E"
+        },
+        {
+          "subject": "Social Studies",
+          "term": "Q2",
+          "mark": "E"
+        },
+        {
+          "subject": "Social Studies",
+          "term": "Q3",
+          "mark": "E"
+        },
+        {
+          "subject": "Social Studies",
+          "term": "Q4",
+          "mark": "S"
+        }
+      ],
+      "selScreener": [
+        {
+          "window": "Fall",
+          "competency": "Self-Management",
+          "durableSkillCluster": "Character",
+          "scaleMean": 4.32,
+          "favorable": 94
+        },
+        {
+          "window": "Spring",
+          "competency": "Self-Management",
+          "durableSkillCluster": "Character",
+          "scaleMean": 3.94,
+          "favorable": 87
+        },
+        {
+          "window": "Fall",
+          "competency": "Growth Mindset",
+          "durableSkillCluster": "Growth Mindset",
+          "scaleMean": 4.15,
+          "favorable": 86
+        },
+        {
+          "window": "Spring",
+          "competency": "Growth Mindset",
+          "durableSkillCluster": "Growth Mindset",
+          "scaleMean": 3.85,
+          "favorable": 76
+        },
+        {
+          "window": "Fall",
+          "competency": "Self-Efficacy",
+          "durableSkillCluster": "Metacognition",
+          "scaleMean": 3.54,
+          "favorable": 64
+        },
+        {
+          "window": "Spring",
+          "competency": "Self-Efficacy",
+          "durableSkillCluster": "Metacognition",
+          "scaleMean": 4.09,
+          "favorable": 86
+        },
+        {
+          "window": "Fall",
+          "competency": "Social Awareness",
+          "durableSkillCluster": "Collaboration",
+          "scaleMean": 3.68,
+          "favorable": 76
+        },
+        {
+          "window": "Spring",
+          "competency": "Social Awareness",
+          "durableSkillCluster": "Collaboration",
+          "scaleMean": 4.06,
+          "favorable": 88
+        },
+        {
+          "window": "Fall",
+          "competency": "Emotion Regulation",
+          "durableSkillCluster": "Mindfulness",
+          "scaleMean": 3.63,
+          "favorable": 64
+        },
+        {
+          "window": "Spring",
+          "competency": "Emotion Regulation",
+          "durableSkillCluster": "Mindfulness",
+          "scaleMean": 3.19,
+          "favorable": 40
+        }
+      ]
+    }
+  }
+}

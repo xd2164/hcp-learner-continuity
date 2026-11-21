@@ -1,0 +1,154 @@
+{
+  "notice": "All records are fully synthetic, assembled from curated word pools by a seeded random generator. First names are common US given names; surnames and school names are constructed blends verified absent from the US Census 2010 surname file, so no name describes a real person, school, or district. No real student data was used and no PII is present. Records are era-neutral: academic-year labels order the record but no year carries a real-world event, and rates and distributions are anchored to published national statistics from 2009 to 2025, so a record resembles no single school year. Values are random-rule-generated and not suitable for training ML models.",
+  "student": {
+    "syntheticId": "SYN-62F24943",
+    "firstName": "Hailey",
+    "lastName": "Stanfell",
+    "gender": "F",
+    "homeLanguage": "Spanish",
+    "dateOfBirth": "2019-11-11",
+    "grade": "K",
+    "state": "CA",
+    "stateName": "California",
+    "schoolId": "SCH-E552F25D",
+    "schoolName": "Morrowvale Bend Elementary School",
+    "sectionId": "SEC-B68DB313",
+    "sectionCode": "KA",
+    "homeroomTeacher": "Mr. Pelward",
+    "academicYear": "2025–26",
+    "entryDate": "2025-11-03",
+    "daysEnrolled": 131,
+    "academicProfile": "standard",
+    "attendance": {
+      "absences": 16,
+      "tardies": 1,
+      "totalDays": 131
+    },
+    "chronicAbsentee": true,
+    "programs": [
+      {
+        "program": "IEP",
+        "entryDate": "2025-08-27",
+        "exitDate": null
+      },
+      {
+        "program": "English Learner",
+        "entryDate": "2025-11-17",
+        "exitDate": null
+      }
+    ],
+    "assessments": [
+      {
+        "subject": "Early Numeracy",
+        "testName": "Synthetic Early Learning Screener (SELS)",
+        "windows": [
+          {
+            "window": "Winter 2026",
+            "scaleScore": 398,
+            "percentile": 62,
+            "growthPercentile": null
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 410,
+            "percentile": 57,
+            "growthPercentile": 30
+          }
+        ],
+        "placement": "At Benchmark",
+        "proficiencyLevel": "Proficient"
+      },
+      {
+        "subject": "Early Literacy",
+        "testName": "Synthetic Early Learning Screener (SELS)",
+        "windows": [
+          {
+            "window": "Winter 2026",
+            "scaleScore": 371,
+            "percentile": 30,
+            "growthPercentile": null
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 386,
+            "percentile": 29,
+            "growthPercentile": 43
+          }
+        ],
+        "placement": "Below Benchmark",
+        "proficiencyLevel": "Basic"
+      }
+    ],
+    "standardsMastery": [
+      {
+        "subject": "Mathematics",
+        "framework": "CCSS",
+        "masteredStandards": [
+          "K.CC.A.1",
+          "K.CC.A.2",
+          "K.CC.A.3",
+          "K.CC.B.4",
+          "K.CC.B.5",
+          "K.CC.C.6",
+          "K.CC.C.7",
+          "K.OA.A.1",
+          "K.MD.A.1",
+          "K.MD.B.3",
+          "K.G.A.1"
+        ],
+        "totalStandards": 18
+      },
+      {
+        "subject": "English Language Arts",
+        "framework": "CCSS",
+        "masteredStandards": [
+          "RF.K.1",
+          "RF.K.2",
+          "RF.K.3",
+          "RL.K.1",
+          "RL.K.2",
+          "RL.K.3",
+          "RL.K.7"
+        ],
+        "totalStandards": 18
+      },
+      {
+        "subject": "Science",
+        "framework": "NGSS",
+        "masteredStandards": [
+          "K-PS2-1",
+          "K-PS2-2",
+          "K-PS3-1",
+          "K-PS3-2",
+          "K-LS1-1",
+          "K-ESS3-1",
+          "K-ESS3-2"
+        ],
+        "totalStandards": 10
+      },
+      {
+        "subject": "Social Studies",
+        "framework": "C3",
+        "masteredStandards": [
+          "D2.Civ.1.K-2",
+          "D2.Civ.2.K-2"
+        ],
+        "totalStandards": 24
+      }
+    ],
+    "accessScores": {
+      "listening": 3.3,
+      "speaking": 3.4,
+      "reading": 1.5,
+      "writing": 1.8,
+      "overall": 2.2,
+      "instrument": "Synthetic ELP Assessment (ELPAC-style)"
+    },
+    "interests": [
+      "gymnastics",
+      "puzzles",
+      "fishing",
+      "basketball"
+    ]
+  }
+}

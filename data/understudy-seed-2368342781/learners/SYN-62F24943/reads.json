@@ -1,0 +1,3944 @@
+[
+  {
+    "grantId": "urn:uuid:26deb8f3-e616-5cd4-8aee-a014b127dae8",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "purposes": [
+      "https://understudy.example/hcp/purposes/tutoring"
+    ],
+    "disclosedAt": "2026-07-01T00:00:00Z",
+    "disclosures": [
+      {
+        "ref": "ref_rwXlixtHCwH6CiUKb4_Rgf",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:62a97776-ac42-5895-9498-e5d8f3adc98c",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.CC.A.1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#64483",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "64483",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#45275",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "45275",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.CC.A.1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.CC.A.1",
+                  "description": "Mastery of Common Core State Standards standard K.CC.A.1 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.CC.A.1",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.CC.A.1",
+                      "targetCode": "K.CC.A.1",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3ecz6hsmWvtqt59zPro1f1JjEivmo4YGvA2YBkyF6X2kfJhQ826gby6nAazHs5zfF3MtQJqZaxBThToCKd9QoHmp"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.CC.A.1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_g644IsGiFflt2nFr98P2OT",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:d82bcaa4-fd09-5be2-b083-7162c5f44aa3",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.CC.A.2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#90994",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "90994",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#81859",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "81859",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.CC.A.2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.CC.A.2",
+                  "description": "Mastery of Common Core State Standards standard K.CC.A.2 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.CC.A.2",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.CC.A.2",
+                      "targetCode": "K.CC.A.2",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z5JFLD4K4bwdThNhYbqsugwUKSJ4iwuE7F336gp5PRvbMx3CSzvEzkHx4JwQ95oYYFEMNxTR7wn9wJztzFBeYVYbG"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.CC.A.2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_PGZd8ht08y7TIUHuGlIIcC",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:6322734c-5a39-54d8-8d3a-e29caf654933",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.CC.A.3: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#68440",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "68440",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#114368",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "114368",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.CC.A.3",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.CC.A.3",
+                  "description": "Mastery of Common Core State Standards standard K.CC.A.3 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.CC.A.3",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.CC.A.3",
+                      "targetCode": "K.CC.A.3",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3R16vZxBCWUgfbtPupffBvMEg9iPzL2hdiKxvv31goJqV2V3sj3eFKLf8HSRmbQ6NbZMWWcXkotG94rMdJm9W4pf"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.CC.A.3"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_XFBvjtJSbHROtlT2bRRoFe",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:f8b1afb0-6aee-55f6-a3db-8cc7028964d3",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.CC.B.4: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#75468",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "75468",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#32315",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "32315",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.CC.B.4",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.CC.B.4",
+                  "description": "Mastery of Common Core State Standards standard K.CC.B.4 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.CC.B.4",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.CC.B.4",
+                      "targetCode": "K.CC.B.4",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "zMJiVCM8aQoo4kQf6eVtZeaPotre7nt9tL4h2vCQXhq2NN7aGumENPZA8kx2zEAQapAD4FYmgbeuMpAoQhXKRQja"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.CC.B.4"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_Fv2YDKSjECZN3EvGGUMaoh",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:da1d980b-703d-5b2a-8a81-eb33949c8604",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.CC.B.5: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#39111",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "39111",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#2068",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "2068",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.CC.B.5",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.CC.B.5",
+                  "description": "Mastery of Common Core State Standards standard K.CC.B.5 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.CC.B.5",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.CC.B.5",
+                      "targetCode": "K.CC.B.5",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3Yj8Y958pZ7e2HsmhnCcQ4XVDFiNF3B1Fd96uWcV5kLFPDyV9uAuhDCnDL59kjg1R5qb4j3q8hNe7FWkuYgrXX56"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.CC.B.5"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_lp_WT2Z_XlKj9myK27excF",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:629cf3d4-1c5b-57c0-a85e-b7215caf7e21",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.CC.C.7: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#69440",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "69440",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#112000",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "112000",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.CC.C.7",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.CC.C.7",
+                  "description": "Mastery of Common Core State Standards standard K.CC.C.7 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.CC.C.7",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.CC.C.7",
+                      "targetCode": "K.CC.C.7",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z34Gqwh9P8WWyqJbFVgsgdkCbVMoJmuVaGDqvfs5eBBvnyB1QTVTLDWZiog4ryrhuPbSy5tJGmtgi994JpZnLtAcB"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.CC.C.7"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_r7UaLSKDcHyn6H4JoMOMaB",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:1d329c59-1c64-5ab7-9769-d93775b24c75",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.OA.A.1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#76292",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "76292",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#106498",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "106498",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.OA.A.1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.OA.A.1",
+                  "description": "Mastery of Common Core State Standards standard K.OA.A.1 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.OA.A.1",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.OA.A.1",
+                      "targetCode": "K.OA.A.1",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "zecLF31Puy1BjoCpkMygmujz3KSgFjZo543CWNrnGvV4rHCuf4i2UN4bpcXBpoqSMuQs7KDyagej6YSjDNEDrYyz"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.OA.A.1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_lZSH05tpXISKkA9PlRdUmv",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:2122603f-cbdd-594d-99cc-56bf5c9231bc",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.MD.A.1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#14937",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "14937",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#51080",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "51080",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.MD.A.1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.MD.A.1",
+                  "description": "Mastery of Common Core State Standards standard K.MD.A.1 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.MD.A.1",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.MD.A.1",
+                      "targetCode": "K.MD.A.1",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3ua7G7P3rUbHgA5iN4JWkwvNnBETMkeqVbs4GZDuDvTcRoipW5Moj1zM4aEgC5xMQUnMFx7m4THesGDK9XJQi1cc"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.MD.A.1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_Iuu8ALVL_xmSynMnhT6HGZ",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:d1c61f40-e63a-5e06-bb32-9cd16ff96e5a",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.MD.B.3: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#123304",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "123304",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#98074",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "98074",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.MD.B.3",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.MD.B.3",
+                  "description": "Mastery of Common Core State Standards standard K.MD.B.3 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.MD.B.3",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.MD.B.3",
+                      "targetCode": "K.MD.B.3",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z59TVXtZSp6d1j7AUdJ7sKCqds1jLgjrJoTJtjiK1oh21JkqtVngVCWMXzWfCQMwvV7JrxNLVQbwkVyYEkAVUJjM1"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.MD.B.3"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_zkFM2tkdN8ZNP1qrUWRaHg",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:45bf418d-a487-5c2e-9872-06511f3322e8",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS K.G.A.1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#28283",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "28283",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#19957",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "19957",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/K.G.A.1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS K.G.A.1",
+                  "description": "Mastery of Common Core State Standards standard K.G.A.1 (Mathematics, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS K.G.A.1",
+                      "targetUrl": "https://understudy.example/standards/CCSS/K.G.A.1",
+                      "targetCode": "K.G.A.1",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z54ctPMZW2iweKH6xDmUhkVyngRmEfvZktmBV21oF7gVivNEzuWXeGecRw2MX2xyhCVT7SseCBcZgivBi3TvtGveA"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/K.G.A.1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_WTvTy9kyOxIWQi_iPUfwbC",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Mathematics (CCSS): 11 of 18 standards mastered.",
+            "subject": "Mathematics",
+            "framework": "CCSS",
+            "masteredCount": 11,
+            "totalStandards": 18
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:cd9960de-5e1a-585f-b336-5302c1600ea8",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: mastery_frontier/mathematics",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#125595",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "125595",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "mastery_frontier/mathematics",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Mathematics (CCSS): 11 of 18 standards mastered.",
+                  "subject": "Mathematics",
+                  "framework": "CCSS",
+                  "masteredCount": 11,
+                  "totalStandards": 18
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z5AWuwSHB2Hiq6KYQ8D2kSnLtmurf7cSZVsSpAJgxynhV4v91iaXtwDpAyiS37tQz25C5aV2k1bDsdKMrNZVN4aGt"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "mastery_frontier/mathematics"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_pJxADE0leJtAKUS9HMcnT8",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:a181e7b0-b893-5572-a47d-55d92106a26f",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RF.K.1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#61350",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "61350",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#55933",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "55933",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RF.K.1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RF.K.1",
+                  "description": "Mastery of Common Core State Standards standard RF.K.1 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RF.K.1",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RF.K.1",
+                      "targetCode": "RF.K.1",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z26jVFdJvkoFtWgjo2GqCLndicFXurjoGpovXdi1skVj45Hxvu2mPUgDJLYKEHpkP15SmdYHts7UNrLpxW9VSq347"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RF.K.1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_zKypH5suu9p0wkmSehC2pe",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:123e3f6c-d6b2-555d-974a-98a79125a173",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RF.K.2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#109105",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "109105",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#63222",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "63222",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RF.K.2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RF.K.2",
+                  "description": "Mastery of Common Core State Standards standard RF.K.2 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RF.K.2",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RF.K.2",
+                      "targetCode": "RF.K.2",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z41XP6Q8gjsf75k6CDBBucJ5L1RQvik7ukpxdUmYZviDHgbQGSkFPy3KQVu8fGdFuNLg15Rf7RfWodEhHu6qh7ZDc"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RF.K.2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_MyXcEstT0IYIBos9cN_1Pz",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:f1937d36-f125-54c7-8503-d86931e9870e",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RF.K.3: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#60526",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "60526",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#47147",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "47147",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RF.K.3",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RF.K.3",
+                  "description": "Mastery of Common Core State Standards standard RF.K.3 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RF.K.3",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RF.K.3",
+                      "targetCode": "RF.K.3",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z4mcTtqjVePSU5BypcfJTemuByzYkVG4dNCB1toPXBvijYeq3KFmtmhGH3m8f9VHbMWh3bH8pgeCmu9Ts8j78Ac3G"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RF.K.3"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_U-g9rKTvYYI2ZZER6dwGTB",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:368201a7-4371-5d86-a36d-0537065beadb",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RL.K.1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#12003",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "12003",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#26445",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "26445",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RL.K.1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RL.K.1",
+                  "description": "Mastery of Common Core State Standards standard RL.K.1 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RL.K.1",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RL.K.1",
+                      "targetCode": "RL.K.1",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z4oh236sj1m9BfuKHiy7hUTr4CPvxYhg9NTazpgQnm9NnetncAkKur9tX8qV4obK8piwE1t6pT8CafDAitUaAkbh7"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RL.K.1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_AZsgWJFO3oVMdQSSb0n3P7",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:d603d93d-b60f-5c54-a4df-5da75ea5947c",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RL.K.2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#86652",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "86652",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#32253",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "32253",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RL.K.2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RL.K.2",
+                  "description": "Mastery of Common Core State Standards standard RL.K.2 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RL.K.2",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RL.K.2",
+                      "targetCode": "RL.K.2",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z28QBXsYXXZXpPfEKVAv8TwmSqWPy48NJWuwifUSh35P4g1ENkeGt7D16oKMoUz7DhtCE1r8MVco4tBCJP4y61vVr"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RL.K.2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_O96P2aN4BNgZY-GHWnAzgf",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:d9d839a7-dfc6-5b85-a9d5-03f066f31af7",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RL.K.3: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#54125",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "54125",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#55178",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "55178",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RL.K.3",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RL.K.3",
+                  "description": "Mastery of Common Core State Standards standard RL.K.3 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RL.K.3",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RL.K.3",
+                      "targetCode": "RL.K.3",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z5mAoP1ykHna9kYZMa3ALTPC7xgxZtcFwhr2TzEaB7KkxcHDNEpqfJMTbtpeEHjzKc2zuK3DA4M71DwHn3so2KhnJ"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RL.K.3"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_8D3m6Glq63arShLUCTK47-",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:941060c7-9671-5f68-b55f-45d531534d7e",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "CCSS RL.K.7: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#130858",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "130858",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#77765",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "77765",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/CCSS/RL.K.7",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "CCSS RL.K.7",
+                  "description": "Mastery of Common Core State Standards standard RL.K.7 (English Language Arts, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "CCSS RL.K.7",
+                      "targetUrl": "https://understudy.example/standards/CCSS/RL.K.7",
+                      "targetCode": "RL.K.7",
+                      "targetFramework": "Common Core State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3AZqdhATVvUiukn5fdhobNEKnPkHvaYdB29mRruvMJ49AB7drCa9j68mE6xLZt3vJPLzxnhJSzriLY6uCwE22ykQ"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/CCSS/RL.K.7"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_KNKnXI92OumNDQC7zkqGOi",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "English Language Arts (CCSS): 7 of 18 standards mastered.",
+            "subject": "English Language Arts",
+            "framework": "CCSS",
+            "masteredCount": 7,
+            "totalStandards": 18
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:b64b1cc4-6950-5149-81a9-dd6652c8bb72",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: mastery_frontier/english-language-arts",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#101129",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "101129",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "mastery_frontier/english-language-arts",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "English Language Arts (CCSS): 7 of 18 standards mastered.",
+                  "subject": "English Language Arts",
+                  "framework": "CCSS",
+                  "masteredCount": 7,
+                  "totalStandards": 18
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3bjBJZBzUtMpMA1EmcuhFFCs8FPzGVzL3VY6p3eBfix2rBmHPKTD2S9qKmHniez4TFZattM9yUEae8EPVBQtFSUc"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "mastery_frontier/english-language-arts"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_lP0SV2BpbzSVITDGKyWYiL",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:8273429a-f087-5a6e-8da3-9f03b0089986",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-PS2-1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#36462",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "36462",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#113266",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "113266",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-PS2-1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-PS2-1",
+                  "description": "Mastery of Next Generation Science Standards standard K-PS2-1 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-PS2-1",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-PS2-1",
+                      "targetCode": "K-PS2-1",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z2sD6Raexse8Vsut73dsfdt5LmgMFKH4SiBhnPaEzxBTKnqChbLqH65Bwe4Q2XpHCnc4z5bPJNDd2EvYNNVD2kq38"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-PS2-1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_pmfFuMTmZq4uAnVCLohICQ",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:f24aece0-9ff1-5263-822e-53c3c617833f",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-PS2-2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#43013",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "43013",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#80312",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "80312",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-PS2-2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-PS2-2",
+                  "description": "Mastery of Next Generation Science Standards standard K-PS2-2 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-PS2-2",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-PS2-2",
+                      "targetCode": "K-PS2-2",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "zaWDgGoFyPNVhftEYanE4sFg5KhK3UuLEu41ghpf3Q5bWhFHKv4BPHdTcDy3FVhx7CSJ2XZZQynaXJpyLNXiMnC2"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-PS2-2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_re69HRbyU87hDiaWcVEM3L",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:3e6c74b7-3863-5249-84f7-cd8c70c40f7c",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-PS3-1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#42896",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "42896",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#61356",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "61356",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-PS3-1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-PS3-1",
+                  "description": "Mastery of Next Generation Science Standards standard K-PS3-1 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-PS3-1",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-PS3-1",
+                      "targetCode": "K-PS3-1",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z5Mff257nb5kW6dt8y1M3s8DmJ7BvLxALcv8JDVpRdeyhYpqv3EDzaa6VRH7Ve7gWdpE5H3cbnrJsx4aepBzev3GT"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-PS3-1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_PCIDwNUVa_4sHxSjvNm2et",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:cc561c98-383e-57aa-9361-7ab76e4e198f",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-PS3-2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#48900",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "48900",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#44482",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "44482",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-PS3-2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-PS3-2",
+                  "description": "Mastery of Next Generation Science Standards standard K-PS3-2 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-PS3-2",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-PS3-2",
+                      "targetCode": "K-PS3-2",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z43awMM8oNXwsfywUdAFn6sXJbXjzUZ4j22abvxdThe3ezkoL4G2uoDkA4KwGVWzssa7P9ffCsdjKSQvKibF5J8nj"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-PS3-2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_BwPrO5zACFWe7ksT6wGRh0",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:97ada120-595c-5531-9940-303718808113",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-LS1-1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#45060",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "45060",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#62992",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "62992",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-LS1-1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-LS1-1",
+                  "description": "Mastery of Next Generation Science Standards standard K-LS1-1 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-LS1-1",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-LS1-1",
+                      "targetCode": "K-LS1-1",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "zhzwAg25mV4FZGrsfLkqakQiXG8Qa3ayXGPT9wNx5oP8tjFRuGHFHTAT8eCqFtEvtgcDAMznufqg4r4conVbdDkU"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-LS1-1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_v66DZC8mEQy9PvnbbDdURm",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:71adfeff-349f-5df3-90cd-eabb6b6f081c",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-ESS3-1: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#109352",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "109352",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#116500",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "116500",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-ESS3-1",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-ESS3-1",
+                  "description": "Mastery of Next Generation Science Standards standard K-ESS3-1 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-ESS3-1",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-ESS3-1",
+                      "targetCode": "K-ESS3-1",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "zEVXhYZicD2tXmxUz77ptVKqBDRxX4wLMhCejN3Z2mrPYKJjvDHtMkQucDKrwWt9TGznwtxeRe3Q2Rjx8QNhuhwq"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-ESS3-1"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_g8LIWbxH7noNYBQ-ZYoo7U",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:d216b278-77c8-5a90-84e1-ed8f29a17ab7",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "NGSS K-ESS3-2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#109966",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "109966",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#123244",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "123244",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/NGSS/K-ESS3-2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "NGSS K-ESS3-2",
+                  "description": "Mastery of Next Generation Science Standards standard K-ESS3-2 (Science, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "NGSS K-ESS3-2",
+                      "targetUrl": "https://understudy.example/standards/NGSS/K-ESS3-2",
+                      "targetCode": "K-ESS3-2",
+                      "targetFramework": "Next Generation Science Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "zPNedGfQtLtwLj6kMqZcFjEeAgZJcPQy1M7F7nzx3Dn9JdXDBtJNoF4BKkenALQxp5yf6eSBMN2CNHcmPkwzvHx2"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/NGSS/K-ESS3-2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_rALEs1p2e2mLqEJdzaOHDl",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Science (NGSS): 7 of 10 standards mastered.",
+            "subject": "Science",
+            "framework": "NGSS",
+            "masteredCount": 7,
+            "totalStandards": 10
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:4f794cbe-2d55-5f86-b37d-13d5ef8a0974",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: mastery_frontier/science",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#123534",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "123534",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "mastery_frontier/science",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Science (NGSS): 7 of 10 standards mastered.",
+                  "subject": "Science",
+                  "framework": "NGSS",
+                  "masteredCount": 7,
+                  "totalStandards": 10
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3ppwTyrzBkUfS9kWuk8RPQXGc8cEWRvaSziQHLHtbh3NgPzBqjSdRHKFogFDjyCYnRHzUxPmHPiz8fWcWZAaubgQ"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "mastery_frontier/science"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_Nlq4x7NLJym_LPSds75XiP",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:814e9ee0-2edd-5135-84a1-21a838cf5b57",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "C3 D2.Civ.1.K-2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#3979",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "3979",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#116631",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "116631",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/C3/D2.Civ.1.K-2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "C3 D2.Civ.1.K-2",
+                  "description": "Mastery of C3 Framework for Social Studies State Standards standard D2.Civ.1.K-2 (Social Studies, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "C3 D2.Civ.1.K-2",
+                      "targetUrl": "https://understudy.example/standards/C3/D2.Civ.1.K-2",
+                      "targetCode": "D2.Civ.1.K-2",
+                      "targetFramework": "C3 Framework for Social Studies State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3FyFBxJKgrxNAhVhyedS1yqTkqHuYuUKAL6iBY84hDSUBTd5iLG8PFNEyfiFYvkJGYx2GiAjS1L3iPXrf3EjryQB"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/C3/D2.Civ.1.K-2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_qjFXZ-GRw7I-Bi_Eeu-_jS",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/vc-evidence/2.0",
+          "evidence": 0
+        },
+        "evidence": [
+          {
+            "role": "content",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+              ],
+              "id": "urn:uuid:9f72d1a8-e3bc-57ac-b8b3-0b0e4e05fcc6",
+              "type": [
+                "VerifiableCredential",
+                "OpenBadgeCredential"
+              ],
+              "name": "C3 D2.Civ.2.K-2: Mastered",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "type": [
+                  "Profile"
+                ],
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": [
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#23459",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "revocation",
+                  "statusListIndex": "23459",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+                },
+                {
+                  "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension#3984",
+                  "type": "BitstringStatusListEntry",
+                  "statusPurpose": "suspension",
+                  "statusListIndex": "3984",
+                  "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/suspension"
+                }
+              ],
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": [
+                  "AchievementSubject"
+                ],
+                "achievement": {
+                  "id": "https://understudy.example/standards/C3/D2.Civ.2.K-2",
+                  "type": [
+                    "Achievement"
+                  ],
+                  "achievementType": "Competency",
+                  "name": "C3 D2.Civ.2.K-2",
+                  "description": "Mastery of C3 Framework for Social Studies State Standards standard D2.Civ.2.K-2 (Social Studies, grade K).",
+                  "criteria": {
+                    "narrative": "Recorded as mastered in the district's standards-mastery record."
+                  },
+                  "alignment": [
+                    {
+                      "type": [
+                        "Alignment"
+                      ],
+                      "targetName": "C3 D2.Civ.2.K-2",
+                      "targetUrl": "https://understudy.example/standards/C3/D2.Civ.2.K-2",
+                      "targetCode": "D2.Civ.2.K-2",
+                      "targetFramework": "C3 Framework for Social Studies State Standards",
+                      "targetType": "CFItem"
+                    }
+                  ]
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z2do3deRdf5cvroLsimtv6WMnmpbAxAMboKWLEMKtfRKyXHZ8mhktj13DnaojchamjtDzk6ep3kA7t2UbPXNqB5db"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "https://understudy.example/standards/C3/D2.Civ.2.K-2"
+        },
+        "standing": {
+          "assurance": "cryptographically-verified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_lTD-rK1vAQrpnacWR-2HuL",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Social Studies (C3): 2 of 24 standards mastered.",
+            "subject": "Social Studies",
+            "framework": "C3",
+            "masteredCount": 2,
+            "totalStandards": 24
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:abf7a21d-7ff5-52a0-8c97-b6c949d9819b",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: mastery_frontier/social-studies",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#115797",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "115797",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "mastery_frontier/social-studies",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Social Studies (C3): 2 of 24 standards mastered.",
+                  "subject": "Social Studies",
+                  "framework": "C3",
+                  "masteredCount": 2,
+                  "totalStandards": 24
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z2CtRceDKUFQ6ec8NgayDGhzEUzV4RNHzxb8fprYw6ehSqkrur6qhPCEEp2LpQ3Npx9Wt4qWwGcC8LGjegp4me3cn"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "mastery_frontier/social-studies"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      },
+      {
+        "ref": "ref_yGxKqn666JTKszyZ1wf84U",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Synthetic Early Learning Screener (SELS), Early Numeracy: Spring 2026 scale score 410 (57th percentile), growth at the 30th percentile since the previous window. Placement: At Benchmark. Proficiency level: Proficient.",
+            "subject": "Early Numeracy",
+            "testName": "Synthetic Early Learning Screener (SELS)",
+            "windows": [
+              {
+                "window": "Winter 2026",
+                "scaleScore": 398,
+                "percentile": 62,
+                "growthPercentile": null
+              },
+              {
+                "window": "Spring 2026",
+                "scaleScore": 410,
+                "percentile": 57,
+                "growthPercentile": 30
+              }
+            ],
+            "placement": "At Benchmark",
+            "proficiencyLevel": "Proficient"
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:37921721-5b98-55e7-a04d-727bd0ed08aa",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: assessment/early-numeracy",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2026-05-01T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#74833",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "74833",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "assessment/early-numeracy",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Synthetic Early Learning Screener (SELS), Early Numeracy: Spring 2026 scale score 410 (57th percentile), growth at the 30th percentile since the previous window. Placement: At Benchmark. Proficiency level: Proficient.",
+                  "subject": "Early Numeracy",
+                  "testName": "Synthetic Early Learning Screener (SELS)",
+                  "windows": [
+                    {
+                      "window": "Winter 2026",
+                      "scaleScore": 398,
+                      "percentile": 62,
+                      "growthPercentile": null
+                    },
+                    {
+                      "window": "Spring 2026",
+                      "scaleScore": 410,
+                      "percentile": 57,
+                      "growthPercentile": 30
+                    }
+                  ],
+                  "placement": "At Benchmark",
+                  "proficiencyLevel": "Proficient"
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2026-05-01T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z4QNsmAYX1G2sw28bvymfjaw8CbB34dx384uSLbCHY3wXiJ52xBzp1kLfTPKPTkGnp2f7hQGk4Va4XVTADSVzpcBw"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2026-05-02T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "assessment/early-numeracy"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-06T23:48:00Z"
+      },
+      {
+        "ref": "ref_uWj51j3f9A4hTiyJqwT0u5",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Synthetic Early Learning Screener (SELS), Early Literacy: Spring 2026 scale score 386 (29th percentile), growth at the 43rd percentile since the previous window. Placement: Below Benchmark. Proficiency level: Basic.",
+            "subject": "Early Literacy",
+            "testName": "Synthetic Early Learning Screener (SELS)",
+            "windows": [
+              {
+                "window": "Winter 2026",
+                "scaleScore": 371,
+                "percentile": 30,
+                "growthPercentile": null
+              },
+              {
+                "window": "Spring 2026",
+                "scaleScore": 386,
+                "percentile": 29,
+                "growthPercentile": 43
+              }
+            ],
+            "placement": "Below Benchmark",
+            "proficiencyLevel": "Basic"
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:a9d390b4-f4c4-5677-a1d7-1c0817561df1",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: assessment/early-literacy",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2026-05-01T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#65782",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "65782",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "assessment/early-literacy",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Synthetic Early Learning Screener (SELS), Early Literacy: Spring 2026 scale score 386 (29th percentile), growth at the 43rd percentile since the previous window. Placement: Below Benchmark. Proficiency level: Basic.",
+                  "subject": "Early Literacy",
+                  "testName": "Synthetic Early Learning Screener (SELS)",
+                  "windows": [
+                    {
+                      "window": "Winter 2026",
+                      "scaleScore": 371,
+                      "percentile": 30,
+                      "growthPercentile": null
+                    },
+                    {
+                      "window": "Spring 2026",
+                      "scaleScore": 386,
+                      "percentile": 29,
+                      "growthPercentile": 43
+                    }
+                  ],
+                  "placement": "Below Benchmark",
+                  "proficiencyLevel": "Basic"
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2026-05-01T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3i2tBpq3bTdkWZisgckubLxA6AyjCk4gLabL2cPdQYgTfYLLboQavskCoP4HuGTzxmWxgDaU8sXcZ6ZPvjsNF3Jf"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2026-05-02T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "assessment/early-literacy"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-06T23:48:00Z"
+      },
+      {
+        "ref": "ref_ftVfw1p56oe07aN_GelO3H",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Enrolled 131 days in 2025–26: 16 absences and 1 tardy over 131 school days (87.8% attendance). Chronically absent (missed 10% or more of enrolled days).",
+            "academicYear": "2025–26",
+            "daysEnrolled": 131,
+            "absences": 16,
+            "tardies": 1,
+            "totalDays": 131,
+            "attendanceRate": 87.8,
+            "chronicAbsentee": true
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:72dd8c47-5f16-599b-843a-057cf76f8129",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: attendance",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2026-06-11T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#122814",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "122814",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "attendance",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Enrolled 131 days in 2025–26: 16 absences and 1 tardy over 131 school days (87.8% attendance). Chronically absent (missed 10% or more of enrolled days).",
+                  "academicYear": "2025–26",
+                  "daysEnrolled": 131,
+                  "absences": 16,
+                  "tardies": 1,
+                  "totalDays": 131,
+                  "attendanceRate": 87.8,
+                  "chronicAbsentee": true
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2026-06-11T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z4CVx3bwt7XvkXumjURJk3dWf5zXPp5Cw4cxedTHYGX2Hp27hVF5mMGc7nYmTzeAoXUmdLybnmdpseoQNW5KqMJ8i"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2026-06-12T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "attendance"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-02T21:24:00Z"
+      },
+      {
+        "ref": "ref_LU0dnh7qicYU7PsTp8Sghn",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Identified as an English Learner since 2025-11-17 and currently receiving English language services. Most recent English proficiency (Synthetic ELP Assessment (ELPAC-style), 1.0-6.0): overall 2.2; listening 3.3, speaking 3.4, reading 1.5, writing 1.8.",
+            "program": "English Learner",
+            "entryDate": "2025-11-17",
+            "exitDate": null,
+            "englishProficiency": {
+              "listening": 3.3,
+              "speaking": 3.4,
+              "reading": 1.5,
+              "writing": 1.8,
+              "overall": 2.2,
+              "instrument": "Synthetic ELP Assessment (ELPAC-style)"
+            }
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:1b412f7a-da6f-5695-9d8d-24a2376578a7",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: english_learner_status",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-17T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#41772",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "41772",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "english_learner_status",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Identified as an English Learner since 2025-11-17 and currently receiving English language services. Most recent English proficiency (Synthetic ELP Assessment (ELPAC-style), 1.0-6.0): overall 2.2; listening 3.3, speaking 3.4, reading 1.5, writing 1.8.",
+                  "program": "English Learner",
+                  "entryDate": "2025-11-17",
+                  "exitDate": null,
+                  "englishProficiency": {
+                    "listening": 3.3,
+                    "speaking": 3.4,
+                    "reading": 1.5,
+                    "writing": 1.8,
+                    "overall": 2.2,
+                    "instrument": "Synthetic ELP Assessment (ELPAC-style)"
+                  }
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-17T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z3P2EdrBbHpS4p5R5RbvtJs2HXWddYuySfK5Fr2uYtEAp8XztGgZ7MpPLGm6qDdzfoDtCtf8RzEDGEt13pf8SBWLk"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-18T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "english_learner_status"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-23T11:48:00Z"
+      },
+      {
+        "ref": "ref_Tuzv0xhn-oQ-0IgonJVQp-",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": "I'm interested in gymnastics, puzzles, fishing, and basketball.",
+          "language": "en"
+        },
+        "evidence": [],
+        "assertion": {
+          "declarationType": "person-declared",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "general_preferences"
+          ],
+          "dimension": "interests"
+        },
+        "standing": {
+          "assurance": "unverified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T22:17:59.700Z",
+        "onwardSharing": true
+      },
+      {
+        "ref": "ref_hzrpGhD-lUeDtd-Lc6EODm",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": "Reading is hard for me.",
+          "language": "en"
+        },
+        "evidence": [],
+        "assertion": {
+          "declarationType": "person-declared",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "learner_statement/difficulty"
+        },
+        "standing": {
+          "assurance": "unverified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T15:03:59.600Z"
+      },
+      {
+        "ref": "ref_7pnOwaBQnhrQKQafSL51RD",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": "I like working with a friend.",
+          "language": "en"
+        },
+        "evidence": [],
+        "assertion": {
+          "declarationType": "person-declared",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "learner_statement/what_helps"
+        },
+        "standing": {
+          "assurance": "unverified",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T10:15:59.600Z"
+      }
+    ],
+    "directives": [
+      {
+        "directiveId": "urn:uuid:81382b9b-7452-5155-ad9d-8152e4f6b423",
+        "action": "sign",
+        "effect": "ask-first",
+        "text": "Ask me before you sign me up for anything or agree to anything for me.",
+        "categories": [
+          "education_learner_profile",
+          "goals_and_constraints",
+          "general_preferences",
+          "https://understudy.example/hcp/categories/education-support-plans"
+        ],
+        "setBy": "urn:uuid:2059ac23-532e-577f-8638-4b408a651e79",
+        "createdAt": "2025-11-15T19:30:00Z"
+      }
+    ]
+  },
+  {
+    "grantId": "urn:uuid:f13e7086-b732-56b3-a25b-9a720b67513c",
+    "client": {
+      "id": "https://advising.understudy.example/clients/hcp",
+      "name": "Example Advising Assistant (synthetic)",
+      "operator": {
+        "id": "https://advising.understudy.example",
+        "name": "Example Advising Co. (synthetic)"
+      }
+    },
+    "purposes": [
+      "https://understudy.example/hcp/purposes/academic-advising"
+    ],
+    "disclosedAt": "2026-07-01T00:00:00Z",
+    "disclosures": [],
+    "directives": []
+  },
+  {
+    "grantId": "urn:uuid:f7694d93-ed9d-5f8f-9ace-4b4800b41c89",
+    "client": {
+      "id": "https://summermath.understudy.example/clients/hcp",
+      "name": "Example Summer Math Program (synthetic)",
+      "operator": {
+        "id": "https://summermath.understudy.example",
+        "name": "Example Summer Math Program (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "purposes": [
+      "https://understudy.example/hcp/purposes/placement"
+    ],
+    "disclosedAt": "2026-07-01T00:00:00Z",
+    "disclosures": [
+      {
+        "ref": "ref_Za4A9YDY0st_jE3quYxUz1",
+        "version": 1,
+        "content": {
+          "profile": "https://hcp.example/spec/profiles/general-context/2.0",
+          "value": {
+            "summary": "Mathematics (CCSS): 11 of 18 standards mastered.",
+            "subject": "Mathematics",
+            "framework": "CCSS",
+            "masteredCount": 11,
+            "totalStandards": 18
+          },
+          "language": null
+        },
+        "evidence": [
+          {
+            "role": "supports",
+            "type": "verifiable-credential",
+            "credential": {
+              "@context": [
+                "https://www.w3.org/ns/credentials/v2",
+                {
+                  "StudentRecordExtractCredential": "https://understudy.example/vocab#StudentRecordExtractCredential",
+                  "StudentRecordExtract": "https://understudy.example/vocab#StudentRecordExtract",
+                  "recordType": "https://understudy.example/vocab#recordType",
+                  "academicYear": "https://understudy.example/vocab#academicYear",
+                  "extract": {
+                    "@id": "https://understudy.example/vocab#extract",
+                    "@type": "@json"
+                  }
+                }
+              ],
+              "id": "urn:uuid:cd9960de-5e1a-585f-b336-5302c1600ea8",
+              "type": [
+                "VerifiableCredential",
+                "StudentRecordExtractCredential"
+              ],
+              "name": "Student record extract: mastery_frontier/mathematics",
+              "issuer": {
+                "id": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "name": "Pellbrook Unified School District"
+              },
+              "validFrom": "2025-11-03T16:00:00Z",
+              "credentialStatus": {
+                "id": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation#125595",
+                "type": "BitstringStatusListEntry",
+                "statusPurpose": "revocation",
+                "statusListIndex": "125595",
+                "statusListCredential": "https://pellbrook-unified-school-district.k12.understudy.example/credentials/status/revocation"
+              },
+              "credentialSubject": {
+                "id": "did:example:understudy:syn-62f24943",
+                "type": "StudentRecordExtract",
+                "recordType": "mastery_frontier/mathematics",
+                "academicYear": "2025–26",
+                "extract": {
+                  "summary": "Mathematics (CCSS): 11 of 18 standards mastered.",
+                  "subject": "Mathematics",
+                  "framework": "CCSS",
+                  "masteredCount": 11,
+                  "totalStandards": 18
+                }
+              },
+              "proof": {
+                "type": "DataIntegrityProof",
+                "cryptosuite": "eddsa-rdfc-2022",
+                "created": "2025-11-03T16:00:00Z",
+                "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+                "proofPurpose": "assertionMethod",
+                "proofValue": "z5AWuwSHB2Hiq6KYQ8D2kSnLtmurf7cSZVsSpAJgxynhV4v91iaXtwDpAyiS37tQz25C5aV2k1bDsdKMrNZVN4aGt"
+              }
+            },
+            "verification": {
+              "result": "verified",
+              "at": "2025-11-04T02:00:00Z",
+              "by": "provider"
+            }
+          }
+        ],
+        "assertion": {
+          "declarationType": "issuer-attested",
+          "confidence": null,
+          "validUntil": null
+        },
+        "classification": {
+          "categories": [
+            "education_learner_profile"
+          ],
+          "dimension": "mastery_frontier/mathematics"
+        },
+        "standing": {
+          "assurance": "authenticated",
+          "confirmed": false
+        },
+        "useUntil": "2026-07-24T21:24:00Z"
+      }
+    ],
+    "directives": [
+      {
+        "directiveId": "urn:uuid:81382b9b-7452-5155-ad9d-8152e4f6b423",
+        "action": "sign",
+        "effect": "ask-first",
+        "text": "Ask me before you sign me up for anything or agree to anything for me.",
+        "categories": [
+          "education_learner_profile",
+          "goals_and_constraints",
+          "general_preferences",
+          "https://understudy.example/hcp/categories/education-support-plans"
+        ],
+        "setBy": "urn:uuid:2059ac23-532e-577f-8638-4b408a651e79",
+        "createdAt": "2025-11-15T19:30:00Z"
+      }
+    ]
+  }
+]

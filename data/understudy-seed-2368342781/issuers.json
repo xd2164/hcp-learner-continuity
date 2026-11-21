@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Brindcombe Unified School District",
+    "did": "did:key:z6MketD1iHCou3k5y6DixKdh61Vwa6wHdLLHT847bYTsyxUc",
+    "verificationMethod": "did:key:z6MketD1iHCou3k5y6DixKdh61Vwa6wHdLLHT847bYTsyxUc#z6MketD1iHCou3k5y6DixKdh61Vwa6wHdLLHT847bYTsyxUc",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  },
+  {
+    "name": "Halecombe Unified School District",
+    "did": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+    "verificationMethod": "did:key:z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV#z6Mkhx9HWSU1yzNSjuYxZpWBCm6mKpnCQsvYumGbckufvpiV",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  },
+  {
+    "name": "Garrowfell Unified School District",
+    "did": "did:key:z6Mkt7jMvaKPto67g5arQVgxgAwoVkd8VKePCQJBhcx6cZbp",
+    "verificationMethod": "did:key:z6Mkt7jMvaKPto67g5arQVgxgAwoVkd8VKePCQJBhcx6cZbp#z6Mkt7jMvaKPto67g5arQVgxgAwoVkd8VKePCQJBhcx6cZbp",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  },
+  {
+    "name": "Ivorholt Unified School District",
+    "did": "did:key:z6MkjaVvDGMxSHgvLMSLHVTswMonyLaVcEF4pfusFn9iSuYM",
+    "verificationMethod": "did:key:z6MkjaVvDGMxSHgvLMSLHVTswMonyLaVcEF4pfusFn9iSuYM#z6MkjaVvDGMxSHgvLMSLHVTswMonyLaVcEF4pfusFn9iSuYM",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  },
+  {
+    "name": "Brenfield Unified School District",
+    "did": "did:key:z6MkppFVgg1jUCQGh2JLuWKuN6Zh77gX1Me81S8iRwT8XZDG",
+    "verificationMethod": "did:key:z6MkppFVgg1jUCQGh2JLuWKuN6Zh77gX1Me81S8iRwT8XZDG#z6MkppFVgg1jUCQGh2JLuWKuN6Zh77gX1Me81S8iRwT8XZDG",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  },
+  {
+    "name": "Eldercrest Unified School District",
+    "did": "did:key:z6Mkt2jJWhmrsgvT5KpW3zyk9bbB28SKWWGU3zt58jp17aZk",
+    "verificationMethod": "did:key:z6Mkt2jJWhmrsgvT5KpW3zyk9bbB28SKWWGU3zt58jp17aZk#z6Mkt2jJWhmrsgvT5KpW3zyk9bbB28SKWWGU3zt58jp17aZk",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  },
+  {
+    "name": "Pellbrook Unified School District",
+    "did": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+    "verificationMethod": "did:key:z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9#z6Mkoi6kc6AokDGwjK2v8aJ4rTgRmB4nWBDzWb8AGAUpcUm9",
+    "note": "TEST KEY. Derived from the public label \"district:<name>\"; anyone can re-derive the private key. It secures nothing."
+  }
+]

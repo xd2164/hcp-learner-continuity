@@ -1,0 +1,68 @@
+{
+  "clients": [
+    {
+      "client": {
+        "id": "https://tutor.understudy.example/clients/hcp",
+        "name": "Example Tutor (synthetic)",
+        "operator": {
+          "id": "https://tutor.understudy.example",
+          "name": "Example Tutoring Co. (synthetic)"
+        },
+        "claims": [
+          "https://hcp.example/spec/clients/directives/2.0"
+        ]
+      },
+      "grants": [
+        {
+          "grantId": "urn:uuid:26deb8f3-e616-5cd4-8aee-a014b127dae8",
+          "status": "active"
+        }
+      ],
+      "categories": [
+        "education_learner_profile",
+        "goals_and_constraints",
+        "general_preferences"
+      ],
+      "purposes": [
+        "https://understudy.example/hcp/purposes/tutoring"
+      ],
+      "entries": 12,
+      "retrievals": 5,
+      "firstAt": "2026-06-30T15:10:00Z",
+      "lastAt": "2026-06-30T15:18:00Z",
+      "usableUntil": "2026-07-24T12:43:47.700Z",
+      "notification": "none"
+    },
+    {
+      "client": {
+        "id": "https://summermath.understudy.example/clients/hcp",
+        "name": "Example Summer Math Program (synthetic)",
+        "operator": {
+          "id": "https://summermath.understudy.example",
+          "name": "Example Summer Math Program (synthetic)"
+        },
+        "claims": [
+          "https://hcp.example/spec/clients/directives/2.0"
+        ]
+      },
+      "grants": [
+        {
+          "grantId": "urn:uuid:f7694d93-ed9d-5f8f-9ace-4b4800b41c89",
+          "status": "active"
+        }
+      ],
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purposes": [
+        "https://understudy.example/hcp/purposes/placement"
+      ],
+      "entries": 1,
+      "retrievals": 1,
+      "firstAt": "2026-06-30T15:19:00Z",
+      "lastAt": "2026-06-30T15:19:00Z",
+      "usableUntil": "2026-07-24T11:50:54Z",
+      "notification": "none"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "notice": "All records are fully synthetic, assembled from curated word pools by a seeded random generator. First names are common US given names; surnames and school names are constructed blends verified absent from the US Census 2010 surname file, so no name describes a real person, school, or district. No real student data was used and no PII is present. Records are era-neutral: academic-year labels order the record but no year carries a real-world event, and rates and distributions are anchored to published national statistics from 2009 to 2025, so a record resembles no single school year. Values are random-rule-generated and not suitable for training ML models.",
+  "student": {
+    "syntheticId": "SYN-3E7F0753",
+    "firstName": "Dominique",
+    "lastName": "Yormoor",
+    "gender": "F",
+    "homeLanguage": "Spanish",
+    "dateOfBirth": "2020-03-14",
+    "grade": "K",
+    "state": "AZ",
+    "stateName": "Arizona",
+    "schoolId": "SCH-69B9901F",
+    "schoolName": "Halecombe Point Elementary School",
+    "sectionId": "SEC-056C9238",
+    "sectionCode": "KA",
+    "homeroomTeacher": "Ms. Norcroft",
+    "academicYear": "2025–26",
+    "entryDate": "2025-08-26",
+    "daysEnrolled": 180,
+    "academicProfile": "strong",
+    "attendance": {
+      "absences": 5,
+      "tardies": 5,
+      "totalDays": 180
+    },
+    "chronicAbsentee": false,
+    "programs": [
+      {
+        "program": "Free/Reduced Lunch",
+        "entryDate": "2025-09-03",
+        "exitDate": null
+      }
+    ],
+    "assessments": [
+      {
+        "subject": "Early Numeracy",
+        "testName": "Synthetic Early Learning Screener (SELS)",
+        "windows": [
+          {
+            "window": "Fall 2025",
+            "scaleScore": 390,
+            "percentile": 80,
+            "growthPercentile": null
+          },
+          {
+            "window": "Winter 2026",
+            "scaleScore": 415,
+            "percentile": 82,
+            "growthPercentile": 59
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 431,
+            "percentile": 82,
+            "growthPercentile": 53
+          }
+        ],
+        "placement": "Above Benchmark",
+        "proficiencyLevel": "Advanced"
+      },
+      {
+        "subject": "Early Literacy",
+        "testName": "Synthetic Early Learning Screener (SELS)",
+        "windows": [
+          {
+            "window": "Fall 2025",
+            "scaleScore": 390,
+            "percentile": 80,
+            "growthPercentile": null
+          },
+          {
+            "window": "Winter 2026",
+            "scaleScore": 417,
+            "percentile": 84,
+            "growthPercentile": 68
+          },
+          {
+            "window": "Spring 2026",
+            "scaleScore": 432,
+            "percentile": 83,
+            "growthPercentile": 48
+          }
+        ],
+        "placement": "Above Benchmark",
+        "proficiencyLevel": "Advanced"
+      }
+    ],
+    "standardsMastery": [
+      {
+        "subject": "Mathematics",
+        "framework": "CCSS",
+        "masteredStandards": [
+          "K.CC.A.1",
+          "K.CC.A.2",
+          "K.CC.A.3",
+          "K.CC.B.4",
+          "K.CC.B.5",
+          "K.CC.C.6",
+          "K.CC.C.7",
+          "K.OA.A.1",
+          "K.OA.A.2",
+          "K.OA.A.3",
+          "K.OA.A.4",
+          "K.MD.A.1",
+          "K.MD.B.3",
+          "K.G.A.1",
+          "K.G.A.2"
+        ],
+        "totalStandards": 18
+      },
+      {
+        "subject": "English Language Arts",
+        "framework": "CCSS",
+        "masteredStandards": [
+          "RF.K.1",
+          "RF.K.2",
+          "RF.K.3",
+          "RL.K.1",
+          "RL.K.2",
+          "RL.K.3",
+          "RL.K.7",
+          "RI.K.1",
+          "RI.K.2",
+          "RI.K.7",
+          "W.K.1",
+          "W.K.2",
+          "W.K.3",
+          "SL.K.1",
+          "SL.K.2"
+        ],
+        "totalStandards": 18
+      },
+      {
+        "subject": "Science",
+        "framework": "NGSS",
+        "masteredStandards": [
+          "K-PS2-1",
+          "K-PS2-2",
+          "K-PS3-1",
+          "K-PS3-2",
+          "K-LS1-1",
+          "K-ESS2-1",
+          "K-ESS2-2",
+          "K-ESS3-1",
+          "K-ESS3-2"
+        ],
+        "totalStandards": 10
+      },
+      {
+        "subject": "Social Studies",
+        "framework": "C3",
+        "masteredStandards": [
+          "D2.Civ.1.K-2",
+          "D2.Civ.2.K-2",
+          "D2.Eco.1.K-2",
+          "D2.Eco.2.K-2",
+          "D2.Geo.1.K-2",
+          "D2.His.2.K-2",
+          "D2.Civ.4.K-2"
+        ],
+        "totalStandards": 24
+      }
+    ],
+    "interests": [
+      "dinosaurs",
+      "playing piano",
+      "camping",
+      "drawing",
+      "space and astronomy"
+    ]
+  }
+}

@@ -1,0 +1,308 @@
+[
+  {
+    "grantId": "urn:uuid:2519fea0-f988-5ea8-aab5-56c5d4fbdc5a",
+    "subject": {
+      "id": "did:example:understudy:pairwise:eff0ad1caaaaedceef1ba41c"
+    },
+    "authorizingPrincipal": {
+      "id": "did:example:understudy:pairwise:ead7f5ee58e06df738e5e829",
+      "delegation": "urn:uuid:4cf6e41b-917a-50ef-9aa8-da426ab92693"
+    },
+    "client": {
+      "id": "https://halecombe-unified-school-district.k12.understudy.example/clients/records-hcp",
+      "name": "Halecombe Unified School District Student Records",
+      "operator": {
+        "id": "https://halecombe-unified-school-district.k12.understudy.example",
+        "name": "Halecombe Unified School District"
+      }
+    },
+    "access": [
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "write"
+        ],
+        "categories": [
+          "education_learner_profile",
+          "https://understudy.example/hcp/categories/education-support-plans"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/school-records",
+            "description": "Keep the school's record of your learning in your context"
+          }
+        ]
+      }
+    ],
+    "scopes": [
+      "hcp:education_learner_profile:write",
+      "hcp:https://understudy.example/hcp/categories/education-support-plans:write"
+    ],
+    "grantType": "persistent",
+    "issuedAt": "2025-08-25T09:30:00Z",
+    "expiresAt": null,
+    "status": "active"
+  },
+  {
+    "grantId": "urn:uuid:7db4adb1-f416-5df3-aee0-77189df6aa2e",
+    "subject": {
+      "id": "did:example:understudy:pairwise:2849445255dd46e180240582"
+    },
+    "authorizingPrincipal": {
+      "id": "did:example:understudy:pairwise:b67c90db943fc98791aaad61",
+      "delegation": "urn:uuid:4cf6e41b-917a-50ef-9aa8-da426ab92693"
+    },
+    "client": {
+      "id": "https://halecombe-unified-school-district.k12.understudy.example/clients/student-portal",
+      "name": "Halecombe Unified School District Student Portal",
+      "operator": {
+        "id": "https://halecombe-unified-school-district.k12.understudy.example",
+        "name": "Halecombe Unified School District"
+      }
+    },
+    "access": [
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "write"
+        ],
+        "categories": [
+          "education_learner_profile",
+          "goals_and_constraints",
+          "general_preferences"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/learner-self-report",
+            "description": "Save what you tell the school portal about yourself"
+          }
+        ]
+      }
+    ],
+    "scopes": [
+      "hcp:education_learner_profile:write",
+      "hcp:goals_and_constraints:write",
+      "hcp:general_preferences:write"
+    ],
+    "grantType": "persistent",
+    "issuedAt": "2025-08-25T09:30:00Z",
+    "expiresAt": null,
+    "status": "active"
+  },
+  {
+    "grantId": "urn:uuid:d621d9ed-a71d-51ba-a07f-2060e6d0acb2",
+    "subject": {
+      "id": "did:example:understudy:pairwise:265514ae3284977e5e09249e"
+    },
+    "authorizingPrincipal": {
+      "id": "did:example:understudy:pairwise:2d00a8185d9b924d7eda5003",
+      "delegation": "urn:uuid:4cf6e41b-917a-50ef-9aa8-da426ab92693"
+    },
+    "client": {
+      "id": "https://practice.understudy.example/clients/hcp",
+      "name": "Understudy Practice (synthetic)",
+      "operator": {
+        "id": "https://practice.understudy.example",
+        "name": "Understudy Practice (synthetic)"
+      }
+    },
+    "access": [
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "read",
+          "write"
+        ],
+        "categories": [
+          "education_learner_profile"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/practice-personalization",
+            "description": "Choose practice items and record how practice is going"
+          }
+        ]
+      }
+    ],
+    "scopes": [
+      "hcp:education_learner_profile:read",
+      "hcp:education_learner_profile:write"
+    ],
+    "grantType": "persistent",
+    "issuedAt": "2025-08-25T09:30:00Z",
+    "expiresAt": null,
+    "status": "active"
+  },
+  {
+    "grantId": "urn:uuid:2ef625f0-be78-55db-b117-006e88ae6ecc",
+    "subject": {
+      "id": "did:example:understudy:pairwise:0c678fded6c7d77f32b6fbeb"
+    },
+    "authorizingPrincipal": {
+      "id": "did:example:understudy:pairwise:df4a29eb471665da0a82bfe0",
+      "delegation": "urn:uuid:4cf6e41b-917a-50ef-9aa8-da426ab92693"
+    },
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "access": [
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "read",
+          "write"
+        ],
+        "categories": [
+          "education_learner_profile"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/tutoring",
+            "description": "Tutor you on your coursework"
+          }
+        ]
+      },
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "read",
+          "write"
+        ],
+        "categories": [
+          "goals_and_constraints",
+          "general_preferences"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/tutoring",
+            "description": "Tutor you on your coursework"
+          }
+        ],
+        "onwardSharing": {
+          "domains": [
+            "library.understudy.example"
+          ],
+          "notTo": [
+            "https://summermath.understudy.example"
+          ]
+        }
+      }
+    ],
+    "scopes": [
+      "hcp:education_learner_profile:read",
+      "hcp:education_learner_profile:write",
+      "hcp:goals_and_constraints:read",
+      "hcp:goals_and_constraints:write",
+      "hcp:general_preferences:read",
+      "hcp:general_preferences:write"
+    ],
+    "grantType": "persistent",
+    "issuedAt": "2025-09-08T18:00:00Z",
+    "expiresAt": null,
+    "status": "revoked"
+  },
+  {
+    "grantId": "urn:uuid:6b2e785f-c4f2-50f0-88a5-ef0573fc607f",
+    "subject": {
+      "id": "did:example:understudy:pairwise:ca97e503e109892eab2fdbc1"
+    },
+    "authorizingPrincipal": {
+      "id": "did:example:understudy:pairwise:7b43d47e6e38b130f71f1e3f",
+      "delegation": "urn:uuid:4cf6e41b-917a-50ef-9aa8-da426ab92693"
+    },
+    "client": {
+      "id": "https://advising.understudy.example/clients/hcp",
+      "name": "Example Advising Assistant (synthetic)",
+      "operator": {
+        "id": "https://advising.understudy.example",
+        "name": "Example Advising Co. (synthetic)"
+      }
+    },
+    "access": [
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "read"
+        ],
+        "categories": [
+          "education_learner_profile",
+          "goals_and_constraints"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/academic-advising",
+            "description": "Advise you on courses, graduation and plans after school"
+          }
+        ]
+      }
+    ],
+    "scopes": [
+      "hcp:education_learner_profile:read",
+      "hcp:goals_and_constraints:read"
+    ],
+    "grantType": "temporary",
+    "issuedAt": "2026-06-30T14:00:00Z",
+    "expiresAt": "2026-06-30T18:00:00Z",
+    "status": "expired"
+  },
+  {
+    "grantId": "urn:uuid:26b13ece-5151-5517-a084-4180f60824fe",
+    "subject": {
+      "id": "did:example:understudy:pairwise:1843b0c3445149ccad954e80"
+    },
+    "authorizingPrincipal": {
+      "id": "did:example:understudy:pairwise:535b3848b8f9070fc86b2ba7",
+      "delegation": "urn:uuid:4cf6e41b-917a-50ef-9aa8-da426ab92693"
+    },
+    "client": {
+      "id": "https://summermath.understudy.example/clients/hcp",
+      "name": "Example Summer Math Program (synthetic)",
+      "operator": {
+        "id": "https://summermath.understudy.example",
+        "name": "Example Summer Math Program (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "access": [
+      {
+        "type": "https://hcp.example/spec/authorization/context-access",
+        "actions": [
+          "read"
+        ],
+        "categories": [
+          "education_learner_profile"
+        ],
+        "purposes": [
+          {
+            "code": "https://understudy.example/hcp/purposes/placement",
+            "description": "Place you in the right group for a summer math program"
+          }
+        ],
+        "narrowedTo": {
+          "entryIds": [
+            "urn:uuid:cd0d1943-8f64-5664-9f91-250ecc9a9bb2",
+            "urn:uuid:05b5b462-3e5e-5d2a-8146-23e0a4b1ae90",
+            "urn:uuid:67a31da6-686c-541f-bd51-03f0f57c98f6"
+          ]
+        }
+      }
+    ],
+    "scopes": [
+      "hcp:education_learner_profile:read"
+    ],
+    "grantType": "persistent",
+    "issuedAt": "2026-06-27T10:00:00Z",
+    "expiresAt": null,
+    "status": "revoked"
+  }
+]

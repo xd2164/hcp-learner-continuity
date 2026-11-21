@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "tutor-math-mastery",
+    "description": "A tutor asks what the learner knows in mathematics and what to work on next.",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:10:00Z",
+    "request": {
+      "query": "What has this learner mastered in mathematics, and which standards should they work on next?",
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "education_learner_profile"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "relevantEntryIds": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "mustNotDisclose": [
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "education_learner_profile"
+          ]
+        },
+        {
+          "directiveId": "urn:uuid:a5829bd5-a066-59bb-afcd-6bb3a597fbd0",
+          "whenDisclosing": [
+            "education_learner_profile"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tutor-missing-work",
+    "description": "A tutor asks which assignments are outstanding.",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:11:00Z",
+    "request": {
+      "query": "Which assignments is this learner missing, and in which courses?",
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "education_learner_profile"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "relevantEntryIds": [
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034"
+      ],
+      "mustNotDisclose": [
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "education_learner_profile"
+          ]
+        },
+        {
+          "directiveId": "urn:uuid:a5829bd5-a066-59bb-afcd-6bb3a597fbd0",
+          "whenDisclosing": [
+            "education_learner_profile"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tutor-open-query-excludes-support-plans",
+    "description": "A tutor asks about support plans without naming categories. The tutoring grant does not cover https://understudy.example/hcp/categories/education-support-plans, so the query succeeds over the categories it does cover and must return no IEP, 504 or MTSS entry (this learner has none).",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:12:00Z",
+    "request": {
+      "query": "Does this learner have an IEP, a 504 plan, or any accommodations I should know about?",
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "education_learner_profile",
+        "goals_and_constraints",
+        "general_preferences"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "relevantEntryIds": [],
+      "mustNotDisclose": [
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "education_learner_profile",
+            "goals_and_constraints",
+            "general_preferences"
+          ]
+        },
+        {
+          "directiveId": "urn:uuid:a5829bd5-a066-59bb-afcd-6bb3a597fbd0",
+          "whenDisclosing": [
+            "education_learner_profile",
+            "goals_and_constraints",
+            "general_preferences"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tutor-names-ungranted-category",
+    "description": "A tutor names the support-plans category outright. The grant does not cover it: the request fails, and the error must not reveal whether such entries exist.",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:13:00Z",
+    "request": {
+      "query": "Does this learner have an IEP or a 504 plan?",
+      "categories": [
+        "https://understudy.example/hcp/categories/education-support-plans"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "error",
+      "error": "scope-denied",
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ]
+    }
+  },
+  {
+    "id": "tutor-ungranted-purpose",
+    "description": "The tutoring client queries for a purpose the grant never approved. The request fails whatever the categories.",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:14:00Z",
+    "request": {
+      "query": "What is this learner interested in?",
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/marketing",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "error",
+      "error": "scope-denied",
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ]
+    }
+  },
+  {
+    "id": "advisor-graduation",
+    "description": "An advisor asks about graduation progress and plans after school.",
+    "client": {
+      "id": "https://advising.understudy.example/clients/hcp",
+      "name": "Example Advising Assistant (synthetic)",
+      "operator": {
+        "id": "https://advising.understudy.example",
+        "name": "Example Advising Co. (synthetic)"
+      }
+    },
+    "grantId": "urn:uuid:5cd6e28b-7284-5dc6-a3c5-f8efe58f895c",
+    "operation": "query",
+    "at": "2026-06-30T15:15:00Z",
+    "request": {
+      "query": "Is this learner on track to graduate, and what do they plan to do after high school?",
+      "categories": [
+        "education_learner_profile",
+        "goals_and_constraints"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/academic-advising",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "education_learner_profile",
+        "goals_and_constraints"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "relevantEntryIds": [
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8"
+      ],
+      "mustNotDisclose": [
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "education_learner_profile",
+            "goals_and_constraints"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "advisor-support-plans",
+    "description": "An advisor, whose grant covers the support-plans category, asks the question the tutor could not.",
+    "client": {
+      "id": "https://advising.understudy.example/clients/hcp",
+      "name": "Example Advising Assistant (synthetic)",
+      "operator": {
+        "id": "https://advising.understudy.example",
+        "name": "Example Advising Co. (synthetic)"
+      }
+    },
+    "grantId": "urn:uuid:5cd6e28b-7284-5dc6-a3c5-f8efe58f895c",
+    "operation": "query",
+    "at": "2026-06-30T15:16:00Z",
+    "request": {
+      "query": "Does this learner have an IEP, a 504 plan, or an academic intervention placement?",
+      "categories": [
+        "https://understudy.example/hcp/categories/education-support-plans"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/academic-advising",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "https://understudy.example/hcp/categories/education-support-plans"
+      ],
+      "eligibleEntryIds": [],
+      "relevantEntryIds": [],
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "https://understudy.example/hcp/categories/education-support-plans"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tutor-goals",
+    "description": "A tutor asks about the learner's goals, which its grant covers.",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:17:00Z",
+    "request": {
+      "query": "What does this learner want to do after school, and what are they working towards?",
+      "categories": [
+        "goals_and_constraints"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "goals_and_constraints"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7"
+      ],
+      "relevantEntryIds": [],
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "goals_and_constraints"
+          ]
+        },
+        {
+          "directiveId": "urn:uuid:a5829bd5-a066-59bb-afcd-6bb3a597fbd0",
+          "whenDisclosing": [
+            "goals_and_constraints"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tutor-interests",
+    "description": "A tutor asks what the learner likes, to choose examples. General preferences are low sensitivity; where the person elected onward sharing, the disclosure says the tutor may share from it.",
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:4bbf49fc-f256-59e9-ab59-38182d8c5b7c",
+    "operation": "query",
+    "at": "2026-06-30T15:18:00Z",
+    "request": {
+      "query": "What is this learner interested in outside school?",
+      "categories": [
+        "general_preferences"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "general_preferences"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7"
+      ],
+      "relevantEntryIds": [
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7"
+      ],
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "general_preferences"
+          ]
+        },
+        {
+          "directiveId": "urn:uuid:a5829bd5-a066-59bb-afcd-6bb3a597fbd0",
+          "whenDisclosing": [
+            "general_preferences"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "math-program-narrowed-grant",
+    "description": "A summer math program asks about the whole learner profile. Its grant is narrowed to a few named entries, so those are all it may be given, whatever it asks for.",
+    "client": {
+      "id": "https://summermath.understudy.example/clients/hcp",
+      "name": "Example Summer Math Program (synthetic)",
+      "operator": {
+        "id": "https://summermath.understudy.example",
+        "name": "Example Summer Math Program (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:d65fead5-0463-51fe-99c2-73a4f670b094",
+    "operation": "query",
+    "at": "2026-06-30T15:19:00Z",
+    "request": {
+      "query": "Tell me everything about how this learner is doing at school.",
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/placement",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "entries",
+      "categoriesSearched": [
+        "education_learner_profile"
+      ],
+      "eligibleEntryIds": [
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9"
+      ],
+      "relevantEntryIds": [
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9"
+      ],
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ],
+      "directives": [
+        {
+          "directiveId": "urn:uuid:ffcb7947-6a16-5481-8e15-dfb781ff453c",
+          "whenDisclosing": [
+            "education_learner_profile"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "advisor-after-expiry",
+    "description": "The advisor asks again after its four-hour grant has lapsed. A temporary grant ends on its own; the request fails as unauthenticated.",
+    "client": {
+      "id": "https://advising.understudy.example/clients/hcp",
+      "name": "Example Advising Assistant (synthetic)",
+      "operator": {
+        "id": "https://advising.understudy.example",
+        "name": "Example Advising Co. (synthetic)"
+      }
+    },
+    "grantId": "urn:uuid:5cd6e28b-7284-5dc6-a3c5-f8efe58f895c",
+    "operation": "query",
+    "at": "2026-07-01T00:00:00Z",
+    "request": {
+      "query": "Is this learner on track to graduate?",
+      "categories": [
+        "education_learner_profile"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/academic-advising",
+      "maxEntries": 20
+    },
+    "expect": {
+      "outcome": "error",
+      "error": "invalid-token",
+      "mustNotDisclose": [
+        "urn:uuid:ca8676a1-d94c-5ae0-9b80-c92119369c4b",
+        "urn:uuid:6aacb517-a679-54fc-9208-949360533f0c",
+        "urn:uuid:e4aa4848-9039-522d-8bfc-af16e75c1920",
+        "urn:uuid:2db38481-d6e4-50a2-99f4-20a5de586a75",
+        "urn:uuid:587642e0-e3e2-53e5-aa14-8d523353a01a",
+        "urn:uuid:fffb65f2-f3f6-5c6f-bc87-6dbc188e7975",
+        "urn:uuid:61f14103-35d5-596c-9856-185a0cd7d4fc",
+        "urn:uuid:f92f525b-04e5-5728-9b77-31b7e7526bf5",
+        "urn:uuid:6003f775-809d-570c-a25d-4ea42ae0b474",
+        "urn:uuid:256e1b37-271a-563a-aa1e-dd4698ee631f",
+        "urn:uuid:824218fa-9590-5e1b-a1ff-b305fb0527ac",
+        "urn:uuid:a693f060-0603-5257-817c-94b4dae79197",
+        "urn:uuid:66d30293-a3b6-5e1a-9130-63b2c56320d6",
+        "urn:uuid:4a29e0ed-2628-5406-82db-d705e93b1fde",
+        "urn:uuid:0ff31811-d340-5688-9421-983b2ceb880f",
+        "urn:uuid:584b3b24-3a28-50c5-9468-4a49c7e34aa3",
+        "urn:uuid:7b8aad97-20b5-5b3d-8b4f-34b28467824e",
+        "urn:uuid:991e040f-e43c-56c3-83a2-187302d47845",
+        "urn:uuid:a2cc327b-6036-5e02-8f6e-edd5f31942bc",
+        "urn:uuid:f1817c80-7cfa-5444-a89d-ce8aeb692ff8",
+        "urn:uuid:fe2ab3b1-9c9a-53fc-a721-7eaed16c0ad8",
+        "urn:uuid:42cbee29-8042-5c01-bfc9-0f5aa25b3415",
+        "urn:uuid:db2a5e75-74f4-5fb7-8e58-333b0739dd73",
+        "urn:uuid:282557cd-57eb-5629-a4da-5512d95cf957",
+        "urn:uuid:433b5f3c-a3a6-531a-a236-142eb617e226",
+        "urn:uuid:f6685e21-1f61-5c9a-bd96-5b5cf7254abd",
+        "urn:uuid:5ecc9b95-f6ca-5192-b4fe-c8e9271c7035",
+        "urn:uuid:de6cb9f6-a751-5df1-8d4a-3ee552808b4b",
+        "urn:uuid:6bb9c127-1638-5884-aabb-9ac288108509",
+        "urn:uuid:e35ea97c-ae1d-558e-935e-b2eafc9b0706",
+        "urn:uuid:3fa56584-1ec3-540a-8ae1-05e535f37b2f",
+        "urn:uuid:5b53955a-1e92-5fe7-82c0-ec10867b7cb6",
+        "urn:uuid:fadc298d-4e2a-5222-9483-12194ba2814f",
+        "urn:uuid:808138d9-2151-5dc9-a985-5135883445d7",
+        "urn:uuid:943b9316-a159-5900-81e3-ea36b666bf0d",
+        "urn:uuid:851b392f-9d77-5ad6-b324-d884d657122e",
+        "urn:uuid:d39775ef-d7e7-59f2-ac02-96c371f1d1ae",
+        "urn:uuid:bed7f68c-5d3e-58aa-b4f1-c6bb0090ccf5",
+        "urn:uuid:8ddff287-c1f7-5177-b720-99797844ce2b",
+        "urn:uuid:88738a81-fde7-54ad-abed-f034a5026943",
+        "urn:uuid:99c131b9-809b-55f7-a61f-dc72bcfdcc9e",
+        "urn:uuid:dbc719f4-db82-59fd-8130-741b79d79d2e",
+        "urn:uuid:71080320-6cd3-5995-a823-c5a9cc43ef15",
+        "urn:uuid:fc56bd23-c4dd-5412-a026-1ec23ee67ea9",
+        "urn:uuid:cb426936-71e7-59e4-9877-288e3890b536",
+        "urn:uuid:9af9814d-00ba-5171-a253-3fd7cc1abea9",
+        "urn:uuid:0ef8ecea-ba12-5549-bd06-4d3c83a02034",
+        "urn:uuid:6e1ce77c-6f32-5c98-8e8b-d1cb68dc940b",
+        "urn:uuid:5c9d7775-23ed-544a-bc11-2ab880151b0a",
+        "urn:uuid:c1d07f4a-c66e-5eb4-9be6-c554e72b6bf1",
+        "urn:uuid:1be7b1d7-fdf6-5629-a2ac-6b1cb085b6f8",
+        "urn:uuid:1e4189c6-7f71-554b-94e7-e03ca18f9ba7",
+        "urn:uuid:33c2e1bf-6316-5524-aaab-676efcffaab6",
+        "urn:uuid:6024966a-e1ea-5a18-8170-c61a73c21535",
+        "urn:uuid:8cca52de-8972-52b0-a447-e667436429b7",
+        "urn:uuid:2b28b677-713e-5c24-8e81-a43bcd4542a7",
+        "urn:uuid:87368852-c8c0-5537-891b-d3702380bf19",
+        "urn:uuid:0d39ec74-b136-5ff8-b99e-68bec1775448",
+        "urn:uuid:17648942-fb66-527c-b567-1871c2b9fbe4",
+        "urn:uuid:833666fb-9aa4-58fe-94cb-bfe7918c62b8",
+        "urn:uuid:eba85ab1-ee37-5306-af91-adf0619d25ef",
+        "urn:uuid:5fc8d097-3645-568a-96bb-78cae469a944",
+        "urn:uuid:3304daee-0e30-56ca-86cf-3c727f66e9b1",
+        "urn:uuid:bc017ca5-e15e-57d9-998e-9751c68bb425",
+        "urn:uuid:cc4c78e9-6301-550f-8af1-80608d71e5b5",
+        "urn:uuid:db4e2fbc-5f1c-5292-8dd0-865064a7d887",
+        "urn:uuid:87295fd2-f67f-5475-8862-581fbd691952",
+        "urn:uuid:13f5e9ab-059d-5109-8ef4-a994c8df7834",
+        "urn:uuid:780c64d4-caee-5d33-9b0c-2a5e9802c36a",
+        "urn:uuid:ca783921-b812-56f0-9e92-166ec424b2b0"
+      ]
+    }
+  }
+]

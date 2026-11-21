@@ -1,0 +1,34 @@
+[
+  {
+    "client": {
+      "id": "https://tutor.understudy.example/clients/hcp",
+      "name": "Example Tutor (synthetic)",
+      "operator": {
+        "id": "https://tutor.understudy.example",
+        "name": "Example Tutoring Co. (synthetic)"
+      },
+      "claims": [
+        "https://hcp.example/spec/clients/directives/2.0"
+      ]
+    },
+    "grantId": "urn:uuid:6d5c8454-b567-5120-86ff-0df69368e7dc",
+    "at": "2026-06-30T15:41:00Z",
+    "request": {
+      "recipient": {
+        "domain": "library.understudy.example",
+        "name": "Example Public Library reading program (synthetic)"
+      },
+      "refs": [
+        "ref_Cn4V43PeusKdBMLod5QdqK"
+      ],
+      "purpose": "https://understudy.example/hcp/purposes/tutoring",
+      "sharedAt": "2026-06-30T15:40:00Z"
+    },
+    "entryIds": [
+      "urn:uuid:92642625-dc94-5b3e-a0ac-3dd83650609c"
+    ],
+    "expect": {
+      "outcome": "accepted"
+    }
+  }
+]

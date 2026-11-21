@@ -1,0 +1,979 @@
+[
+  {
+    "learner": {
+      "id": "SYN-04DC274F",
+      "name": "Mara Yorwell",
+      "grade": "7",
+      "state": "Illinois",
+      "school": "Brenfield Springs Middle School",
+      "profile": "star"
+    },
+    "hcp": {
+      "entriesAtStart": 95,
+      "entriesAtEnd": 96,
+      "tutorBDisclosed": 71,
+      "tutorBByDeclaration": {
+        "issuer-attested": 60,
+        "model-inferred": 5,
+        "person-declared": 6
+      },
+      "withheldFromTutorB": {
+        "eligible, not needed for these questions": 19,
+        "suspended or revoked by the issuer": 1,
+        "restricted by the learner to other purposes": 1,
+        "expired": 4
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": "Grade 8 Mathematics (accelerated)",
+      "mastered": 17,
+      "totalStandards": 23,
+      "notYetMastered": [
+        "8.EE.C.8",
+        "8.F.B.4",
+        "8.F.B.5"
+      ],
+      "notAssessed": 3,
+      "assessment": null,
+      "statements": {
+        "pacing": "i only have about 15 mins on school nights after cross country. more time on weekends",
+        "difficulty": "i find math hard. i never know what the word problems are asking",
+        "what_helps": "can you explain what its asking first",
+        "strength": "My favorite subject is science. It's the one I'm best at.",
+        "goal": "I want a class that challenges me more in science."
+      },
+      "interests": "I'm interested in board games, anime and manga, chess, swimming, and running."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "8.EE.C.8",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "Learner asked: \"can you explain what its asking first\"",
+        "Known difficulty: \"i find math hard. i never know what the word problems are asking\"",
+        "Frame word problems around stated interests: I'm interested in board games, anime and manga, chess, swimming, and running."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS 8.EE.C.8: 4 of the last 5 attempts correct (7 of 10 in all). Estimated secure.",
+        "secure": true,
+        "entryId": "urn:uuid:2a24f493-1ad7-5e7b-af60-8ce1ee400966"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "8.F.B.4",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "8.EE.C.8: school record says not yet mastered, but newer practice evidence from Tutor A: Stepwise Math (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "Learner asked: \"can you explain what its asking first\"",
+        "Known difficulty: \"i find math hard. i never know what the word problems are asking\"",
+        "Frame word problems around stated interests: I'm interested in board games, anime and manga, chess, swimming, and running."
+      ],
+      "intake_items": 2,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 23 standards in the course (learner reports grade 7) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 46,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 2,
+      "intakeItemsWithoutHCP": 46,
+      "intakeMinutesSaved": 66,
+      "shareOfPoolAlreadyMastered": 0.74,
+      "personalizationSignalsWithHCP": 6,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-3E7F0753",
+      "name": "Dominique Yormoor",
+      "grade": "K",
+      "state": "Arizona",
+      "school": "Halecombe Point Elementary School",
+      "profile": "strong"
+    },
+    "hcp": {
+      "entriesAtStart": 56,
+      "entriesAtEnd": 56,
+      "tutorBDisclosed": 56,
+      "tutorBByDeclaration": {
+        "issuer-attested": 53,
+        "person-declared": 3
+      },
+      "withheldFromTutorB": {},
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": false,
+      "auditEventsDuringDemo": 9
+    },
+    "context": {
+      "course": null,
+      "mastered": 15,
+      "totalStandards": 18,
+      "notYetMastered": [],
+      "notAssessed": 3,
+      "assessment": null,
+      "statements": {
+        "difficulty": "Math is hard for me.",
+        "what_helps": "Can you tell me what to do out loud?"
+      },
+      "interests": "I'm interested in dinosaurs, playing piano, camping, drawing, and space and astronomy."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": null,
+      "reason": "3 standards in the course are not yet assessed: start with a short check",
+      "session_minutes": 20,
+      "approach": [
+        "Learner asked: \"Can you tell me what to do out loud?\"",
+        "Known difficulty: \"Math is hard for me.\"",
+        "Frame word problems around stated interests: I'm interested in dinosaurs, playing piano, camping, drawing, and space and astronomy."
+      ],
+      "intake_items": 6,
+      "asks_first": [],
+      "session": null
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": null,
+      "reason": "3 standards in the course are not yet assessed: start with a short check",
+      "session_minutes": 20,
+      "approach": [
+        "Learner asked: \"Can you tell me what to do out loud?\"",
+        "Known difficulty: \"Math is hard for me.\"",
+        "Frame word problems around stated interests: I'm interested in dinosaurs, playing piano, camping, drawing, and space and astronomy."
+      ],
+      "intake_items": 6,
+      "asks_first": []
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 18 standards in the course (learner reports grade K) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 36,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 6,
+      "intakeItemsWithoutHCP": 36,
+      "intakeMinutesSaved": 45,
+      "shareOfPoolAlreadyMastered": 0.83,
+      "personalizationSignalsWithHCP": 3,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": false
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-52B6E5E9",
+      "name": "Nicholas Lockdale",
+      "grade": "10",
+      "state": "Tennessee",
+      "school": "Brindvale Hollow High School",
+      "profile": "struggling"
+    },
+    "hcp": {
+      "entriesAtStart": 60,
+      "entriesAtEnd": 61,
+      "tutorBDisclosed": 57,
+      "tutorBByDeclaration": {
+        "issuer-attested": 44,
+        "model-inferred": 6,
+        "person-declared": 7
+      },
+      "withheldFromTutorB": {
+        "category not in the tutoring grant (e.g. support plans)": 1,
+        "expired": 3
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 17,
+      "totalStandards": 35,
+      "notYetMastered": [
+        "HSG-SRT.A.3",
+        "HSG-SRT.B.4"
+      ],
+      "notAssessed": 16,
+      "assessment": "Synthetic Growth Assessment (SGA), Mathematics: Spring 2026 scale score 2672 (42nd percentile), growth at the 39th percentile since the previous window. Placement: On Grade Level. Proficiency level: Basic.",
+      "statements": {
+        "difficulty": "math is the hardest one for me. i get behind on the homework and then i cant catch up",
+        "self_assessment": "im actually pretty good at math i just make silly mistakes",
+        "pacing": "i only have about 60 mins on school nights. more time on weekends",
+        "what_helps": "can we go one step at a time",
+        "accommodation": "Directions one step at a time is part of my learning plan. It helps me show what I actually know.",
+        "goal": "I want to get all my work turned in on time this semester."
+      },
+      "interests": "I'm interested in baseball, drone flying, singing, and space and astronomy."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "HSG-SRT.A.3",
+      "reason": "school record: Below Mastery (rollup 1.83/4, last evidence 2026-06-09)",
+      "session_minutes": 60,
+      "approach": [
+        "Learner asked: \"can we go one step at a time\"",
+        "Known difficulty: \"math is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in baseball, drone flying, singing, and space and astronomy."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS HSG-SRT.A.3: 3 of the last 5 attempts correct (6 of 10 in all). Estimated developing.",
+        "secure": false,
+        "entryId": "urn:uuid:8a613dec-2fdf-569f-b22e-0442aefd4526"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "HSG-SRT.A.3",
+      "reason": "school record: Below Mastery (rollup 1.83/4, last evidence 2026-06-09)",
+      "session_minutes": 60,
+      "approach": [
+        "HSG-SRT.A.3: Tutor A: Stepwise Math (synthetic) already practiced this (Tutored practice on CCSS HSG-SRT.A.3: 3 of the last 5 attempts correct (6 of 10 in all). Estimated developing.). Continue it, switching representation rather than repeating the same explanation.",
+        "Learner asked: \"can we go one step at a time\"",
+        "Known difficulty: \"math is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in baseball, drone flying, singing, and space and astronomy."
+      ],
+      "intake_items": 0,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 35 standards in the course (learner reports grade 10) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 70,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 0,
+      "intakeItemsWithoutHCP": 70,
+      "intakeMinutesSaved": 105,
+      "shareOfPoolAlreadyMastered": 0.49,
+      "personalizationSignalsWithHCP": 7,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-5F06B8CD",
+      "name": "Caroline Oakway",
+      "grade": "5",
+      "state": "Utah",
+      "school": "Corvale Bend Elementary School",
+      "profile": "developing"
+    },
+    "hcp": {
+      "entriesAtStart": 61,
+      "entriesAtEnd": 62,
+      "tutorBDisclosed": 58,
+      "tutorBByDeclaration": {
+        "issuer-attested": 44,
+        "model-inferred": 9,
+        "person-declared": 5
+      },
+      "withheldFromTutorB": {
+        "category not in the tutoring grant (e.g. support plans)": 1,
+        "restricted by the learner to other purposes": 1,
+        "expired": 2
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 12,
+      "totalStandards": 24,
+      "notYetMastered": [
+        "5.NF.B.4",
+        "5.NF.B.6",
+        "5.NBT.B.7"
+      ],
+      "notAssessed": 9,
+      "assessment": "Synthetic Growth Assessment (SGA), Mathematics: Spring 2026 scale score 2582 (42nd percentile), growth at the 58th percentile since the previous window. Placement: On Grade Level. Proficiency level: Basic.",
+      "statements": {
+        "difficulty": "i find social studies hard. i read it and then i dont remember what it said",
+        "what_helps": "can you show me one first then ill try the next one",
+        "accommodation": "It helps me to have directions one step at a time. It's part of my learning plan.",
+        "goal": "I want to read a chapter book all by myself."
+      },
+      "interests": "I'm interested in playing piano, drawing, dinosaurs, and baseball."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "5.NF.B.4",
+      "reason": "school record: Below Mastery (rollup 1.65/4, last evidence 2026-05-26)",
+      "session_minutes": 20,
+      "approach": [
+        "Learner asked: \"can you show me one first then ill try the next one\"",
+        "Known difficulty: \"i find social studies hard. i read it and then i dont remember what it said\"",
+        "Frame word problems around stated interests: I'm interested in playing piano, drawing, dinosaurs, and baseball."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS 5.NF.B.4: 3 of the last 5 attempts correct (6 of 10 in all). Estimated developing.",
+        "secure": false,
+        "entryId": "urn:uuid:976ffea0-c2d2-503c-a707-c1392c2001ea"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "5.NF.B.4",
+      "reason": "school record: Below Mastery (rollup 1.65/4, last evidence 2026-05-26)",
+      "session_minutes": 20,
+      "approach": [
+        "5.NF.B.4: Tutor A: Stepwise Math (synthetic) already practiced this (Tutored practice on CCSS 5.NF.B.4: 3 of the last 5 attempts correct (6 of 10 in all). Estimated developing.). Continue it, switching representation rather than repeating the same explanation.",
+        "Learner asked: \"can you show me one first then ill try the next one\"",
+        "Known difficulty: \"i find social studies hard. i read it and then i dont remember what it said\"",
+        "Frame word problems around stated interests: I'm interested in playing piano, drawing, dinosaurs, and baseball."
+      ],
+      "intake_items": 0,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 24 standards in the course (learner reports grade 5) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 48,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 0,
+      "intakeItemsWithoutHCP": 48,
+      "intakeMinutesSaved": 72,
+      "shareOfPoolAlreadyMastered": 0.5,
+      "personalizationSignalsWithHCP": 5,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-62F24943",
+      "name": "Hailey Stanfell",
+      "grade": "K",
+      "state": "California",
+      "school": "Morrowvale Bend Elementary School",
+      "profile": "standard"
+    },
+    "hcp": {
+      "entriesAtStart": 39,
+      "entriesAtEnd": 39,
+      "tutorBDisclosed": 37,
+      "tutorBByDeclaration": {
+        "issuer-attested": 34,
+        "person-declared": 3
+      },
+      "withheldFromTutorB": {
+        "suspended or revoked by the issuer": 1,
+        "category not in the tutoring grant (e.g. support plans)": 1
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": false,
+      "auditEventsDuringDemo": 9
+    },
+    "context": {
+      "course": null,
+      "mastered": 10,
+      "totalStandards": 18,
+      "notYetMastered": [],
+      "notAssessed": 8,
+      "assessment": null,
+      "statements": {
+        "what_helps": "I like working with a friend.",
+        "difficulty": "Reading is hard for me."
+      },
+      "interests": "I'm interested in gymnastics, puzzles, fishing, and basketball."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": null,
+      "reason": "8 standards in the course are not yet assessed: start with a short check",
+      "session_minutes": 20,
+      "approach": [
+        "Learner asked: \"I like working with a friend.\"",
+        "Known difficulty: \"Reading is hard for me.\"",
+        "Frame word problems around stated interests: I'm interested in gymnastics, puzzles, fishing, and basketball."
+      ],
+      "intake_items": 16,
+      "asks_first": [],
+      "session": null
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": null,
+      "reason": "8 standards in the course are not yet assessed: start with a short check",
+      "session_minutes": 20,
+      "approach": [
+        "Learner asked: \"I like working with a friend.\"",
+        "Known difficulty: \"Reading is hard for me.\"",
+        "Frame word problems around stated interests: I'm interested in gymnastics, puzzles, fishing, and basketball."
+      ],
+      "intake_items": 16,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 18 standards in the course (learner reports grade K) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 36,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 16,
+      "intakeItemsWithoutHCP": 36,
+      "intakeMinutesSaved": 30,
+      "shareOfPoolAlreadyMastered": 0.56,
+      "personalizationSignalsWithHCP": 3,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": false
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-97426BCB",
+      "name": "Valerie Oakhurst",
+      "grade": "5",
+      "state": "Alabama",
+      "school": "Lingshaw Crossing Elementary School",
+      "profile": "standard"
+    },
+    "hcp": {
+      "entriesAtStart": 75,
+      "entriesAtEnd": 76,
+      "tutorBDisclosed": 65,
+      "tutorBByDeclaration": {
+        "issuer-attested": 54,
+        "model-inferred": 6,
+        "person-declared": 5
+      },
+      "withheldFromTutorB": {
+        "eligible, not needed for these questions": 1,
+        "expired": 10
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 14,
+      "totalStandards": 24,
+      "notYetMastered": [
+        "5.NF.B.7",
+        "5.NBT.B.7"
+      ],
+      "notAssessed": 8,
+      "assessment": "Synthetic Growth Assessment (SGA), Mathematics: Spring 2026 scale score 2596 (53rd percentile), growth at the 99th percentile since the previous window. Placement: On Grade Level. Proficiency level: Proficient.",
+      "statements": {
+        "pacing": "i only have about 20 mins on school nights. more time on weekends",
+        "difficulty": "social studies is the hardest one for me. i get behind on the homework and then i cant catch up",
+        "goal": "I want to turn in all my work.",
+        "what_helps": "I like when you show me one first."
+      },
+      "interests": "I'm interested in collecting rocks, coding games, space and astronomy, and basketball."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "5.NF.B.7",
+      "reason": "school record: Below Mastery (rollup 1.65/4, last evidence 2026-05-19)",
+      "session_minutes": 20,
+      "approach": [
+        "Learner asked: \"I like when you show me one first.\"",
+        "Known difficulty: \"social studies is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in collecting rocks, coding games, space and astronomy, and basketball."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS 5.NF.B.7: 4 of the last 5 attempts correct (6 of 10 in all). Estimated secure.",
+        "secure": true,
+        "entryId": "urn:uuid:b4d5f3b7-ac8b-5bea-8821-58e7fe002cec"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "5.NBT.B.7",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-05-19)",
+      "session_minutes": 20,
+      "approach": [
+        "5.NF.B.7: school record says not yet mastered, but newer practice evidence from Tutor A: Stepwise Math (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "Learner asked: \"I like when you show me one first.\"",
+        "Known difficulty: \"social studies is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in collecting rocks, coding games, space and astronomy, and basketball."
+      ],
+      "intake_items": 2,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me.",
+        "Ask me before you contact my teachers or my school about me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 24 standards in the course (learner reports grade 5) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 48,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 2,
+      "intakeItemsWithoutHCP": 48,
+      "intakeMinutesSaved": 69,
+      "shareOfPoolAlreadyMastered": 0.58,
+      "personalizationSignalsWithHCP": 5,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-AA57B69D",
+      "name": "Louis Hollismere",
+      "grade": "8",
+      "state": "Illinois",
+      "school": "Brenfield Springs Middle School",
+      "profile": "standard"
+    },
+    "hcp": {
+      "entriesAtStart": 79,
+      "entriesAtEnd": 80,
+      "tutorBDisclosed": 71,
+      "tutorBByDeclaration": {
+        "issuer-attested": 58,
+        "model-inferred": 7,
+        "person-declared": 6
+      },
+      "withheldFromTutorB": {
+        "eligible, not needed for these questions": 8,
+        "category not in the tutoring grant (e.g. support plans)": 1
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 12,
+      "totalStandards": 23,
+      "notYetMastered": [
+        "8.EE.C.8",
+        "8.EE.B.6"
+      ],
+      "notAssessed": 9,
+      "assessment": null,
+      "statements": {
+        "pacing": "i only have about 15 mins on school nights after swim team. more time on weekends",
+        "difficulty": "science is the hardest one for me. i get behind on the homework and then i cant catch up",
+        "accommodation": "Short breaks to move around is part of my learning plan. It helps me show what I actually know.",
+        "goal": "I want to get all my work turned in on time this semester.",
+        "what_helps": "I learn by practicing. I need to do a bunch of the same kind before it sticks. If I don't get it the first time, it helps when it's explained a different way."
+      },
+      "interests": "I'm interested in karate, music production, and swimming."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "8.EE.C.8",
+      "reason": "school record: Below Mastery (rollup 1.83/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "Learner asked: \"I learn by practicing. I need to do a bunch of the same kind before it sticks. If I don't get it the first time, it helps when it's explained a different way.\"",
+        "Known difficulty: \"science is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in karate, music production, and swimming."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS 8.EE.C.8: 5 of the last 5 attempts correct (7 of 10 in all). Estimated secure.",
+        "secure": true,
+        "entryId": "urn:uuid:12e2043e-434a-5411-bdfc-57c5d6bdd558"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "8.EE.B.6",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "8.EE.C.8: school record says not yet mastered, but newer practice evidence from Tutor A: Stepwise Math (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "Learner asked: \"I learn by practicing. I need to do a bunch of the same kind before it sticks. If I don't get it the first time, it helps when it's explained a different way.\"",
+        "Known difficulty: \"science is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in karate, music production, and swimming."
+      ],
+      "intake_items": 2,
+      "asks_first": []
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 23 standards in the course (learner reports grade 8) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 46,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 2,
+      "intakeItemsWithoutHCP": 46,
+      "intakeMinutesSaved": 66,
+      "shareOfPoolAlreadyMastered": 0.52,
+      "personalizationSignalsWithHCP": 6,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-B55510E1",
+      "name": "Hunter Wexdon",
+      "grade": "8",
+      "state": "Illinois",
+      "school": "Brenfield Springs Middle School",
+      "profile": "standard"
+    },
+    "hcp": {
+      "entriesAtStart": 91,
+      "entriesAtEnd": 92,
+      "tutorBDisclosed": 71,
+      "tutorBByDeclaration": {
+        "issuer-attested": 61,
+        "model-inferred": 4,
+        "person-declared": 6
+      },
+      "withheldFromTutorB": {
+        "suspended or revoked by the issuer": 2,
+        "eligible, not needed for these questions": 14,
+        "expired": 5
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 16,
+      "totalStandards": 23,
+      "notYetMastered": [
+        "8.EE.C.8",
+        "8.F.B.4"
+      ],
+      "notAssessed": 5,
+      "assessment": null,
+      "statements": {
+        "pacing": "i only have about 15 mins on school nights after golf team. more time on weekends",
+        "difficulty": "social studies is the hardest one for me. i get behind on the homework and then i cant catch up",
+        "goal": "I want to get all my work turned in on time this semester.",
+        "what_helps": "I like being able to ask for help privately. I don't usually ask in front of the class.",
+        "self_assessment": "im good at math"
+      },
+      "interests": "I'm interested in space and astronomy, trading card games, and baseball."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "8.EE.C.8",
+      "reason": "school record: Near Mastery (rollup 2.12/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "Learner asked: \"I like being able to ask for help privately. I don't usually ask in front of the class.\"",
+        "Known difficulty: \"social studies is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in space and astronomy, trading card games, and baseball."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS 8.EE.C.8: 4 of the last 5 attempts correct (7 of 10 in all). Estimated secure.",
+        "secure": true,
+        "entryId": "urn:uuid:b17ec4b6-d9c6-5052-a564-f856d769e96f"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": null,
+      "reason": "5 standards in the course are not yet assessed: start with a short check",
+      "session_minutes": 15,
+      "approach": [
+        "8.EE.C.8: school record says not yet mastered, but newer practice evidence from Tutor A: Stepwise Math (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "8.F.B.4: school record says not yet mastered, but newer practice evidence from Understudy Practice (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "Learner asked: \"I like being able to ask for help privately. I don't usually ask in front of the class.\"",
+        "Known difficulty: \"social studies is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in space and astronomy, trading card games, and baseball."
+      ],
+      "intake_items": 14,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 23 standards in the course (learner reports grade 8) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 46,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 14,
+      "intakeItemsWithoutHCP": 46,
+      "intakeMinutesSaved": 48,
+      "shareOfPoolAlreadyMastered": 0.7,
+      "personalizationSignalsWithHCP": 6,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-B5FD1FFD",
+      "name": "Jordan Vergate",
+      "grade": "8",
+      "state": "New Jersey",
+      "school": "Fennelbrook Landing Middle School",
+      "profile": "standard"
+    },
+    "hcp": {
+      "entriesAtStart": 96,
+      "entriesAtEnd": 97,
+      "tutorBDisclosed": 70,
+      "tutorBByDeclaration": {
+        "issuer-attested": 54,
+        "model-inferred": 10,
+        "person-declared": 6
+      },
+      "withheldFromTutorB": {
+        "eligible, not needed for these questions": 20,
+        "restricted by the learner to other purposes": 1,
+        "expired": 6
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 17,
+      "totalStandards": 23,
+      "notYetMastered": [
+        "8.EE.C.8",
+        "8.F.A.2"
+      ],
+      "notAssessed": 4,
+      "assessment": null,
+      "statements": {
+        "pacing": "i only have about 30 mins on school nights after swim team. more time on weekends",
+        "difficulty": "math is the hardest one for me. i get behind on the homework and then i cant catch up",
+        "what_helps": "I learn by practicing. I need to do a bunch of the same kind before it sticks. Graphs and diagrams help me. I get it faster when I can see it.",
+        "goal": "I want to get all my work turned in on time this semester.",
+        "strength": "My favorite subject is science. It's the one I'm best at."
+      },
+      "interests": "I'm interested in mountain biking, reading, and swimming."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "8.EE.C.8",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-06-09)",
+      "session_minutes": 30,
+      "approach": [
+        "Learner asked: \"I learn by practicing. I need to do a bunch of the same kind before it sticks. Graphs and diagrams help me. I get it faster when I can see it.\"",
+        "Known difficulty: \"math is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in mountain biking, reading, and swimming."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS 8.EE.C.8: 5 of the last 5 attempts correct (9 of 10 in all). Estimated secure.",
+        "secure": true,
+        "entryId": "urn:uuid:716d85bd-844c-5e1e-a836-451da5d3ae20"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "8.F.A.2",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-06-09)",
+      "session_minutes": 30,
+      "approach": [
+        "8.EE.C.8: school record says not yet mastered, but newer practice evidence from Tutor A: Stepwise Math (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "Learner asked: \"I learn by practicing. I need to do a bunch of the same kind before it sticks. Graphs and diagrams help me. I get it faster when I can see it.\"",
+        "Known difficulty: \"math is the hardest one for me. i get behind on the homework and then i cant catch up\"",
+        "Frame word problems around stated interests: I'm interested in mountain biking, reading, and swimming."
+      ],
+      "intake_items": 2,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 23 standards in the course (learner reports grade 8) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 46,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 2,
+      "intakeItemsWithoutHCP": 46,
+      "intakeMinutesSaved": 66,
+      "shareOfPoolAlreadyMastered": 0.74,
+      "personalizationSignalsWithHCP": 6,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  },
+  {
+    "learner": {
+      "id": "SYN-EDAD0F39",
+      "name": "Beckett Ashvale",
+      "grade": "9",
+      "state": "Illinois",
+      "school": "Lingshaw Bend High School",
+      "profile": "standard"
+    },
+    "hcp": {
+      "entriesAtStart": 70,
+      "entriesAtEnd": 71,
+      "tutorBDisclosed": 65,
+      "tutorBByDeclaration": {
+        "issuer-attested": 50,
+        "model-inferred": 8,
+        "person-declared": 7
+      },
+      "withheldFromTutorB": {
+        "eligible, not needed for these questions": 1,
+        "expired": 5
+      },
+      "tutorAAfterRevocation": "invalid-token",
+      "tutorBSawTutorAEvidence": true,
+      "auditEventsDuringDemo": 10
+    },
+    "context": {
+      "course": null,
+      "mastered": 19,
+      "totalStandards": 34,
+      "notYetMastered": [
+        "HSA-SSE.B.3",
+        "HSA-CED.A.1"
+      ],
+      "notAssessed": 13,
+      "assessment": "Synthetic Growth Assessment (SGA), Mathematics: Spring 2026 scale score 2672 (52nd percentile), growth at the 47th percentile since the previous window. Placement: On Grade Level. Proficiency level: Proficient.",
+      "statements": {
+        "self_assessment": "im bad at math. i only do ok because i study a lot",
+        "pacing": "i only have about 15 mins on school nights after soccer team. more time on weekends",
+        "difficulty": "i find social studies hard. i never know how to start when i have to write something",
+        "goal": "I want to get all my work turned in on time this semester.",
+        "what_helps": "I work best with a partner or in a small group. I learn by practicing. I need to do a bunch of the same kind before it sticks."
+      },
+      "interests": "I'm interested in track and field, improv comedy, soccer, rock climbing, and 3D printing."
+    },
+    "tutorA": {
+      "tutor": "Tutor A: Stepwise Math (synthetic)",
+      "target": "HSA-SSE.B.3",
+      "reason": "school record: Below Mastery (rollup 1.83/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "Learner asked: \"I work best with a partner or in a small group. I learn by practicing. I need to do a bunch of the same kind before it sticks.\"",
+        "Known difficulty: \"i find social studies hard. i never know how to start when i have to write something\"",
+        "Frame word problems around stated interests: I'm interested in track and field, improv comedy, soccer, rock climbing, and 3D printing."
+      ],
+      "intake_items": 0,
+      "asks_first": [],
+      "session": {
+        "summary": "Tutored practice on CCSS HSA-SSE.B.3: 5 of the last 5 attempts correct (7 of 10 in all). Estimated secure.",
+        "secure": true,
+        "entryId": "urn:uuid:26b0cf65-27eb-5f8c-ae7f-6da85c68fe41"
+      }
+    },
+    "tutorB": {
+      "tutor": "Tutor B: Next Step Math (synthetic)",
+      "target": "HSA-CED.A.1",
+      "reason": "school record: Near Mastery (rollup 2/4, last evidence 2026-06-09)",
+      "session_minutes": 15,
+      "approach": [
+        "HSA-SSE.B.3: school record says not yet mastered, but newer practice evidence from Tutor A: Stepwise Math (synthetic) (model-inferred, medium confidence) says secure. Model-inferred, so confirm with 2 items rather than re-teach.",
+        "Learner asked: \"I work best with a partner or in a small group. I learn by practicing. I need to do a bunch of the same kind before it sticks.\"",
+        "Known difficulty: \"i find social studies hard. i never know how to start when i have to write something\"",
+        "Frame word problems around stated interests: I'm interested in track and field, improv comedy, soccer, rock climbing, and 3D printing."
+      ],
+      "intake_items": 2,
+      "asks_first": [
+        "Ask me before you sign me up for anything or agree to anything for me."
+      ]
+    },
+    "coldStart": {
+      "tutor": "Tutor B: Next Step Math (synthetic) without HCP",
+      "target": null,
+      "reason": "no prior context: diagnostic across all 34 standards in the course (learner reports grade 9) before any targeted practice",
+      "session_minutes": 20,
+      "approach": [
+        "Generic explanations; no known preferences, pacing or interests"
+      ],
+      "intake_items": 68,
+      "asks_first": []
+    },
+    "metrics": {
+      "intakeItemsWithHCP": 2,
+      "intakeItemsWithoutHCP": 68,
+      "intakeMinutesSaved": 99,
+      "shareOfPoolAlreadyMastered": 0.56,
+      "personalizationSignalsWithHCP": 6,
+      "personalizationSignalsWithoutHCP": 0,
+      "buildsOnTutorA": true
+    }
+  }
+]
