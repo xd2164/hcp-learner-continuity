@@ -194,7 +194,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     </div>
     <div class="row">
       <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Controls</button>
-      <button id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
     </div>
   </header>
   <div class="banner">Synthetic persona and data. What the university, the inference engine and LearnCard do here is an assumption to validate with each partner; it does not describe their systems today. LearnCard holds Dana's context here, using the Human Context Protocol (HCP 2.0-draft-3, working draft) underneath; who operates the context is still an open partner decision.</div>
@@ -1018,11 +1017,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   $("controlsBtn").addEventListener("click", () => toggleDrawer());
   $("closeDrawer").addEventListener("click", () => toggleDrawer(false));
   $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
-  $("themeBtn").addEventListener("click", () => {
-    const r = document.documentElement;
-    const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    r.dataset.theme = dark ? "light" : "dark";
-  });
 
   const HASH = location.hash;
   const m = /stage=(\d)/.exec(HASH); if (m) S.stage = +m[1];
