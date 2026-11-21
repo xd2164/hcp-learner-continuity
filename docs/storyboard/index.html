@@ -109,7 +109,10 @@ input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--text-pri
 .pk .val { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 
 /* system view */
-.ovgrid { display: grid; grid-template-columns: 1.75fr 1fr; gap: 18px; align-items: center; }
+.plainout { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.plainout li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.plainout .dot { margin-top: 7px; }
+.ovgrid { display: grid; grid-template-columns: 1.75fr 1fr; gap: 18px; align-items: start; }
 @media (max-width: 900px) { .ovgrid { grid-template-columns: 1fr; } }
 #diagram svg { width: 100%; height: auto; display: block; }
 .dg-node rect { fill: var(--surface-1); stroke: var(--border); stroke-width: 1.5; }
@@ -235,7 +238,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   <section class="panel" aria-labelledby="ovh" style="margin-bottom:14px">
     <div class="ovgrid">
       <div><h3 id="ovh">How it connects</h3><div id="diagram"></div></div>
-      <div><h3>What happens</h3><div id="system"></div></div>
+      <div><h3>What HCP produces here</h3><div id="system"></div></div>
     </div>
   </section>
 
@@ -624,11 +627,21 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   // ----------------------------------------------------------- system view
   const ORDER = ["univ", "infer", "learncard", "agent", "appb"];
   const DESC = { univ: "assessment results", infer: "P(Known) estimates", learncard: "credentials, estimates, goals, permissions · uses HCP", hcp: "goals, mastery history, preferences, provenance", agent: "three inputs → three outputs", appb: "an independent career service" };
+  function plainOutput(it) {
+    const n = Array.isArray(it.json) ? it.json.length : 1;
+    const name = it.type.startsWith("ContextEntry")
+      ? (it.decl === "issuer-attested" ? `${n} verified record${n > 1 ? "s" : ""}` : it.decl === "model-inferred" ? `${n} estimate${n > 1 ? "s" : ""} (labelled as inference)` : `${n} statement${n > 1 ? "s" : ""} in Dana's words`)
+      : { Grant: "Permission", Directive: "A rule that travels with the data", "Standing rule": "A standing block", "Query → response": "Answer to the request",
+          ContextExport: "Export", "Disclosure (onward share)": "Onward share" }[it.type] || it.type;
+    const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
+    return { name, kind };
+  }
   function viewSystem(st) {
     const outs = hcpOutputs(S.stage);
-    return h("ol", { class: "msgs", style: "margin-top:0" }, st.msgs.map(([who, what], k) => {
-      const n = outs.filter((o) => o.step === k).length;
-      return h("li", {}, h("b", {}, who + ": "), what, n ? h("span", { class: "hcptag", style: "margin-left:6px", title: "Produces HCP output: see the HCP output column" }, n > 1 ? `HCP ×${n}` : "HCP") : null);
+    return h("ul", { class: "plainout" }, outs.map((it) => {
+      const { name, kind } = plainOutput(it);
+      return h("li", {}, kind ? dot(kind) : h("span", { class: "dot", style: "background:var(--text-secondary)" }),
+        h("span", {}, h("b", {}, name + ": "), it.label));
     }));
   }
 
@@ -921,15 +934,15 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const out = [];
     const add = (type, label, json, opts) => out.push({ type, label, json, ...(opts || {}) });
     if (i === 0) {
-      add("Grant", "The university may write (write only, purpose: school records); no one can read yet", G[0], { step: 0 });
+      add("Grant", "The university may add records; no one can read yet", G[0], { step: 0 });
     }
     if (i === 1) {
-      add("Grant", "The inference engine may write estimates (write only)", G[1], { step: 2 });
+      add("Grant", "The inference engine may add estimates; it cannot read", G[1], { step: 2 });
       add("ContextEntry × 6", "one P(Known) estimate per competency, with confidence, basis and expiry", C.map(estEntry), { decl: "model-inferred", step: 2 });
     }
     if (i === 2) {
       add("ContextEntry × 3", "credentials, each carrying its Open Badge 3.0 as evidence", C.filter((c) => c.cred).map(credEntry), { decl: "issuer-attested", step: 0 });
-      add("ContextEntry × 3", "goal, constraint and preference, in Dana's own words",
+      add("ContextEntry × 3", "goal, constraint and preference",
         [saidEntry("goal", CAT.goals, "learner_statement/goal", GOAL), saidEntry("constraint", CAT.goals, "learner_statement/pacing", CONSTRAINT), saidEntry("pref", CAT.prefs, "learner_statement/what_helps", PREF)], { decl: "person-declared", step: 1 });
       const ex = hcpExport({ proven: false, likely: false, wanted: false, plan: false, rules: true, audit: false });
       add("Directive", "ask first before sharing; travels with every disclosure", ex.directives[0], { step: 1 });
@@ -946,14 +959,15 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       let label, resp;
       if (d.error) {
         resp = { outcome: "error", error: d.error };
-        label = `Refused: ${d.error}. Nothing is disclosed.`;
+        label = d.error === "invalid-token" ? "Refused: Dana revoked access, so nothing is shared." : "Refused: Dana isn't sharing anything with this service.";
       } else {
         const decl = { proven: "issuer-attested", likely: "model-inferred", wanted: "person-declared" };
         const counts = {};
         for (const e of d.entries) { const k = e.id === eid("plan", "1") ? "model-inferred (saved plan)" : decl[e.kind]; counts[k] = (counts[k] || 0) + 1; }
         const dirs = d.entries.length ? [{ directiveId: "urn:uuid:dana-directive-share", action: "share", effect: S.directiveOn ? "ask-first" : "permit", text: DIRECTIVE }] : [];
         resp = { outcome: "entries", entries: d.entries.map((e) => e.id), directives: dirs };
-        label = `${d.entries.length} entries disclosed (${Object.entries(counts).map(([k, v]) => v + " " + k).join(", ")})${dirs.length ? " + the ask-first directive" : ""}`;
+        const WORD = { "issuer-attested": "verified records", "model-inferred": "estimates", "person-declared": "of Dana's statements", "model-inferred (saved plan)": "saved plan" };
+        label = `${who === "appb" ? "Career app B" : "The advising agent"} receives ${Object.entries(counts).map(([k, v]) => v + " " + WORD[k]).join(", ")}${dirs.length ? ", plus Dana's ask-first rule" : ""}. Nothing else.`;
       }
       add("Query → response", label, { request: req, response: resp }, { step: 1 });
       if (who === "agent") {
@@ -969,14 +983,10 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const st = st0.dyn ? { ...st0, ...st0.dyn() } : st0;
     const outs = hcpOutputs(i);
     return h("div", {},
-      h("p", { class: "note", style: "margin:0 0 8px" }, "What this stage writes to, or reads from, Dana's context, in HCP's own structures."),
+      h("p", { class: "note", style: "margin:0 0 8px" }, "The same outputs as HCP JSON. Click one to open it."),
       ...outs.map((it, n) => {
         const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
-        const from = st.msgs[it.step] ? `Step ${it.step + 1} · ${st.msgs[it.step][0]}` : "";
-        const head = h("span", { class: "chiphead", style: "flex-direction:column;align-items:flex-start;gap:2px" },
-          h("span", { class: "note" }, from),
-          h("span", { class: "chiphead" }, kind ? dot(kind) : null, h("b", {}, it.type), it.decl ? h("span", { class: "pill" }, it.decl) : null),
-          h("span", {}, it.label));
+        const head = h("span", { class: "chiphead" }, kind ? dot(kind) : null, h("b", {}, it.type), it.decl ? h("span", { class: "pill" }, it.decl) : null);
         if (it.action) return h("div", { class: "hcpchip big" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export as HCP"));
         return h("details", { class: "hcpchip big", open: n === 0 }, h("summary", {}, head), h("pre", { tabindex: 0 }, JSON.stringify(it.json, null, 2)));
       }));
