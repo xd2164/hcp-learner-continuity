@@ -46,9 +46,16 @@ python -m hcp_demo.check_scenarios
 # 2. Run Track A for the ten synthetic learners; writes reports/track-a/
 python -m hcp_demo.track_a
 
-# 3. Tests
+# 3. Build the HTML view (docs/index.html; open it in a browser)
+python -m hcp_demo.html_view
+
+# 4. Tests
 python -m unittest discover -s tests
 ```
+
+**Interactive view:** <https://xd2164.github.io/hcp-learner-continuity/>. It has the cohort
+chart, and you can follow any learner through the five steps. It is a single self-contained file
+([docs/index.html](docs/index.html)) and works offline.
 
 Results from the current fixture ([reports/track-a/](reports/track-a/README.md)):
 
@@ -78,6 +85,7 @@ hcp_demo/provider.py               minimal in-memory HCP Provider (access decisi
 hcp_demo/check_scenarios.py        scores the provider against the fixture scenarios
 hcp_demo/tutors.py                 Tutor A, Tutor B and the cold-start counterfactual
 hcp_demo/track_a.py                runs the five-step handoff and writes reports
+hcp_demo/html_view.py              builds the self-contained HTML view (docs/index.html)
 reports/track-a/                   generated per-learner and cohort reports
 docs/                              vision, both tracks, data guide, HCP concept notes
 tests/                             unit tests
