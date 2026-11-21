@@ -1,0 +1,4 @@
+# Keep fixture bytes exact: manifest.json records a SHA-256 of every file.
+data/** -text
+*.py text eol=lf
+*.md text eol=lf
