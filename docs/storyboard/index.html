@@ -164,6 +164,13 @@ pre { margin: 0; padding: 10px; background: var(--surface-2); border-radius: 8px
 .otype.none { color: var(--muted); }
 .outitem.muted { background: var(--surface-2); border-style: dashed; color: var(--text-secondary); }
 .outitem pre { margin-top: 8px; max-height: 320px; }
+.hcpchip { display: block; margin: 6px 0 2px; border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; background: var(--surface-2); font-size: 12.5px; color: var(--text-secondary); }
+.hcpchip summary { cursor: pointer; list-style: none; }
+.hcpchip summary::-webkit-details-marker { display: none; }
+.hcpchip .chiphead { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.hcpchip b { color: var(--text-primary); }
+.hcptag { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; color: var(--surface-1); background: var(--text-secondary); border-radius: 4px; padding: 0 5px; }
+.hcpchip pre { margin-top: 6px; max-height: 260px; }
 .maptbl td:first-child { font-weight: 600; white-space: nowrap; }
 .maptbl code { font: 12px ui-monospace, Consolas, monospace; background: var(--surface-2); padding: 0 4px; border-radius: 4px; }
 .finding { border-left: 4px solid var(--likely); background: var(--surface-2); border-radius: 0 8px 8px 0; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
@@ -215,7 +222,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     <section class="panel hoodcol" aria-labelledby="uhh"><h3 id="uhh">Under the hood</h3><div id="hood"></div></section>
   </div>
 
-  <section class="panel" id="hcpout" style="margin-top:14px" aria-label="HCP output of this stage"></section>
   <section class="panel" id="hcpmap" style="margin-top:14px" hidden aria-labelledby="maph"></section>
 
   <footer>
@@ -624,8 +630,11 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
       }
       f.append(h("div", { class: "node" + (st.nodes.includes(k) ? " on" : "") }, h("div", { class: "t" }, OPS[k]), h("div", { class: "d" }, DESC[k])));
     });
-    return h("div", {}, f, h("h3", { style: "margin-top:14px" }, "What happens"),
-      h("ol", { class: "msgs" }, st.msgs.map(([who, what]) => h("li", {}, h("b", {}, who + ": "), what))));
+    const outs = hcpOutputs(S.stage);
+    return h("div", {}, f, h("h3", { style: "margin-top:14px" }, "What happens, and its HCP output"),
+      h("ol", { class: "msgs" }, st.msgs.map(([who, what], k) => h("li", {}, h("b", {}, who + ": "), what,
+        ...outs.filter((o) => o.step === k).map(hcpChip)))),
+      h("p", { class: "note", style: "margin-top:8px" }, "Click an HCP item to see its JSON."));
   }
 
   // --------------------------------------------------------- under the hood
@@ -861,26 +870,25 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     const out = [];
     const add = (type, label, json, opts) => out.push({ type, label, json, ...(opts || {}) });
     if (i === 0) {
-      add("Grant", "The university may write to Dana's context (write only, purpose: school records). No one can read yet.", G[0]);
-      out.push({ type: "Not HCP output", label: "The assessment attempts themselves stay at the university. HCP only carries what the university later writes as entries (stage 3).", none: true });
+      add("Grant", "The university may write (write only, purpose: school records); no one can read yet", G[0], { step: 0 });
     }
     if (i === 1) {
-      add("Grant", "The inference engine may write estimates (write only, purpose: competency estimation)", G[1]);
-      add("ContextEntry × 6", "P(Known) estimates, one per competency, each with confidence, basis and expiry", C.map(estEntry), { decl: "model-inferred" });
+      add("Grant", "The inference engine may write estimates (write only)", G[1], { step: 2 });
+      add("ContextEntry × 6", "one P(Known) estimate per competency, with confidence, basis and expiry", C.map(estEntry), { decl: "model-inferred", step: 2 });
     }
     if (i === 2) {
-      add("ContextEntry × 3", "University credentials, each carrying its Open Badge 3.0 as evidence", C.filter((c) => c.cred).map(credEntry), { decl: "issuer-attested" });
-      add("ContextEntry × 3", "Dana's goal, constraint and preference, in Dana's own words",
-        [saidEntry("goal", CAT.goals, "learner_statement/goal", GOAL), saidEntry("constraint", CAT.goals, "learner_statement/pacing", CONSTRAINT), saidEntry("pref", CAT.prefs, "learner_statement/what_helps", PREF)], { decl: "person-declared" });
+      add("ContextEntry × 3", "credentials, each carrying its Open Badge 3.0 as evidence", C.filter((c) => c.cred).map(credEntry), { decl: "issuer-attested", step: 0 });
+      add("ContextEntry × 3", "goal, constraint and preference, in Dana's own words",
+        [saidEntry("goal", CAT.goals, "learner_statement/goal", GOAL), saidEntry("constraint", CAT.goals, "learner_statement/pacing", CONSTRAINT), saidEntry("pref", CAT.prefs, "learner_statement/what_helps", PREF)], { decl: "person-declared", step: 1 });
       const ex = hcpExport({ proven: false, likely: false, wanted: false, plan: false, rules: true, audit: false });
-      add("Directive", "Ask first before sharing with an employer (travels with every disclosure)", ex.directives[0]);
-      add("Standing rule", "Never share accommodations, financial aid or demographics with advising services", ex.rules[0]);
-      add("Grant", "University advising agent may read what Dana shares, and save a plan Dana approves", G[2]);
-      add("ContextExport", "On demand: everything in Dana's context as one portable HCP file, plus grants", null, { action: true });
+      add("Directive", "ask first before sharing; travels with every disclosure", ex.directives[0], { step: 1 });
+      add("Grant", "University advising agent may read what Dana shares, and save a plan Dana approves", G[2], { step: 2 });
+      add("Standing rule", "never share accommodations, financial aid or demographics", ex.rules[0], { step: 2 });
+      add("ContextExport", "any time: Dana's whole context as one portable HCP file, plus grants", null, { action: true, step: 2 });
     }
     if (i === 3) {
       const who = S.advisor === "appb" ? "appb" : "agent";
-      if (who === "appb") add("Grant", "Career app B may read for 4 hours (temporary), purpose: career navigation", G[3]);
+      if (who === "appb") add("Grant", "Career app B may read for 4 hours (temporary)", G[3], { step: 0 });
       const d = disclosed(who);
       const req = { operation: "query", query: who === "appb" ? "Skills, goals and plan for career navigation" : "What should Dana do next toward cloud security?",
         purpose: who === "appb" ? PURPOSE.career : PURPOSE.advising };
@@ -896,36 +904,21 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
         resp = { outcome: "entries", entries: d.entries.map((e) => e.id), directives: dirs };
         label = `${d.entries.length} entries disclosed (${Object.entries(counts).map(([k, v]) => v + " " + k).join(", ")})${dirs.length ? " + the ask-first directive" : ""}`;
       }
-      add("Query → response", label, { request: req, response: resp });
+      add("Query → response", label, { request: req, response: resp }, { step: 1 });
       if (who === "agent") {
-        if (S.planSaved) add("ContextEntry × 1", "The advising plan, saved after Dana confirmed", planEntry(), { decl: "model-inferred" });
-        else out.push({ type: "ContextEntry", label: "The advising plan is written only after Dana clicks “Save plan to my context”.", none: true });
-        if (S.shared === "approved") add("Disclosure (onward share)", "Skills summary shared with an employer after Dana approved, as the ask-first directive requires",
-          { action: "share", directiveId: "urn:uuid:dana-directive-share", approvedBy: DANA.did, included: ["issuer-attested credentials", "model-inferred estimate, labelled"] });
+        if (S.planSaved) add("ContextEntry × 1", "the advising plan, saved after Dana confirmed", planEntry(), { decl: "model-inferred", step: 3 });
+        if (S.shared === "approved") add("Disclosure (onward share)", "skills summary shared with an employer after Dana approved",
+          { action: "share", directiveId: "urn:uuid:dana-directive-share", approvedBy: DANA.did, included: ["issuer-attested credentials", "model-inferred estimate, labelled"] }, { step: 2 });
       }
     }
-    const base = stageAudit(i).filter((e) => i !== 3 || (S.advisor === "appb" ? e.grantId === GID.appb : e.grantId !== GID.appb));
-    const acts = auditEvents().filter((e) => e.eventId.includes("-act-")).filter((e, k) => S.actions[k] && S.actions[k].at === i);
-    const evs = base.concat(acts);
-    if (evs.length) add(`Audit event${evs.length > 1 ? "s" : ""} × ${evs.length}`, evs.map((e) => e.eventType).join(", "), evs);
     return out;
   }
-  function viewOutputs(i) {
-    const kindOf = (d) => d === "issuer-attested" ? "proven" : d === "model-inferred" ? "likely" : d === "person-declared" ? "wanted" : null;
-    return h("div", {},
-      h("div", { class: "row", style: "justify-content:space-between" },
-        h("div", {}, h("h2", {}, "HCP output of this stage"),
-          h("p", { class: "sub" }, "What this stage writes to, or reads from, Dana's context, in HCP's own structures. Expand any item for its JSON.")),
-        i >= 2 ? h("button", { type: "button", on: { click: () => openExport() } }, "Export as HCP") : null),
-      h("div", { class: "outlist" }, hcpOutputs(i).map((it) => {
-        const k = kindOf(it.decl);
-        const head = h("span", { class: "outhead" },
-          h("span", { class: "otype" + (it.none ? " none" : "") }, k ? dot(k) : null, it.type),
-          it.decl ? h("span", { class: "pill" }, it.decl) : null, h("span", {}, it.label));
-        if (it.none) return h("div", { class: "outitem muted" }, head);
-        if (it.action) return h("div", { class: "outitem" }, head, " ", h("button", { type: "button", style: "margin-left:8px", on: { click: () => openExport() } }, "Export as HCP"));
-        return h("details", { class: "outitem" }, h("summary", {}, head), h("pre", { tabindex: 0 }, JSON.stringify(it.json, null, 2)));
-      })));
+  function hcpChip(it) {
+    const kind = it.decl === "issuer-attested" ? "proven" : it.decl === "model-inferred" ? "likely" : it.decl === "person-declared" ? "wanted" : null;
+    const head = h("span", { class: "chiphead" }, h("span", { class: "hcptag" }, "HCP"), kind ? dot(kind) : null,
+      h("b", {}, it.type), it.decl ? h("span", { class: "note" }, it.decl) : null, h("span", {}, it.label));
+    if (it.action) return h("div", { class: "hcpchip" }, head, h("button", { type: "button", style: "margin-top:6px", on: { click: () => openExport() } }, "Export as HCP"));
+    return h("details", { class: "hcpchip" }, h("summary", {}, head), h("pre", { tabindex: 0 }, JSON.stringify(it.json, null, 2)));
   }
 
   // ---------------------------------------------------------------- audit
@@ -980,7 +973,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     document.querySelector(".hoodcol").hidden = S.compare && S.stage >= 3;
     $("learner").replaceChildren(VIEWS[S.stage]());
     $("system").replaceChildren(viewSystem(st));
-    $("hcpout").replaceChildren(viewOutputs(S.stage));
     $("hcpmap").hidden = S.stage !== 2;
     if (S.stage === 2) $("hcpmap").replaceChildren(mapView());
     $("hood").replaceChildren(hoodFor(S.stage));
@@ -1070,6 +1062,8 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     S.cats.likely = true;
     S.advisor = "agent";
     ok("outputs: every stage lists its HCP output", [0, 1, 2, 3].every((k) => hcpOutputs(k).length > 0));
+    ok("outputs: every output is attached to a journey step", [0, 1, 2, 3].every((k) => hcpOutputs(k).every((o) => Number.isInteger(o.step) && o.step < STAGES[k].msgs.length + (STAGES[k].dyn ? 4 : 0))));
+    ok("outputs: no audit or 'not HCP' rows", [0, 1, 2, 3].every((k) => hcpOutputs(k).every((o) => !/Audit|Not HCP/.test(o.type) && !o.none)));
     ok("outputs: stage 2 writes 6 model-inferred entries", hcpOutputs(1).some((o) => o.decl === "model-inferred" && o.json.length === 6));
     ok("outputs: stage 3 writes credentials, statements, directive, rule, grant", ["Directive", "Standing rule", "Grant"].every((t) => hcpOutputs(2).some((o) => o.type === t)));
     S.agentRevoked = true;
