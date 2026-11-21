@@ -189,12 +189,11 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
 <div class="wrap">
   <header class="top">
     <div>
-      <h1>Dana's journey: University → inference engine → LearnCard → AI advising</h1>
-      <p class="sub">Storyboard for feasibility review. Follow Dana, a synthetic university learner, through four stages. The controls are live.</p>
+      <h1>Dana's journey</h1>
+      <p class="sub">University → inference engine → LearnCard → AI advising</p>
     </div>
     <div class="row">
-      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Dana's LearnCard controls</button>
-      <button id="presenterBtn" type="button" aria-pressed="false">Presenter mode</button>
+      <button id="controlsBtn" type="button" aria-expanded="false" aria-controls="drawer">Controls</button>
       <button id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
     </div>
   </header>
@@ -1019,9 +1018,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   $("controlsBtn").addEventListener("click", () => toggleDrawer());
   $("closeDrawer").addEventListener("click", () => toggleDrawer(false));
   $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
-  $("presenterBtn").addEventListener("click", (e) => {
-    const on = $("root").classList.toggle("presenter"); e.currentTarget.setAttribute("aria-pressed", String(on));
-  });
   $("themeBtn").addEventListener("click", () => {
     const r = document.documentElement;
     const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
