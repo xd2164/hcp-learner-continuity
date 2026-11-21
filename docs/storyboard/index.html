@@ -205,8 +205,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   </div>
 
   <section class="panel" id="hcpmap" style="margin-top:14px" hidden aria-labelledby="maph"></section>
-  <div class="value" id="value"></div>
-  <details class="notes" id="notes"><summary>Speaker notes and feasibility</summary><div id="notesBody"></div></details>
 
   <footer>
     Keyboard: ← → to move between stages. Hover or focus a citation chip to see the entry behind it. Everything is computed in this page from synthetic data; nothing is sent anywhere.
@@ -896,9 +894,6 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
     $("hcpmap").hidden = S.stage !== 2;
     if (S.stage === 2) $("hcpmap").replaceChildren(mapView());
     $("hood").replaceChildren(hoodFor(S.stage));
-    $("value").replaceChildren(...st.value.map(([w, t]) => h("div", { class: "v" }, h("b", {}, "Value · " + w), t)),
-      h("div", { class: "v" }, h("b", {}, "Feasibility · " + st.feas[0]), st.feas[1]));
-    $("notesBody").replaceChildren(h("p", {}, st.notes));
     renderDrawer();
     hideTip();
     history.replaceState(null, "", "#stage=" + S.stage + (S.compare ? "&compare=1" : "") + (S.advisor === "appb" ? "&advisor=appb" : ""));
@@ -924,7 +919,7 @@ footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
   $("closeDrawer").addEventListener("click", () => toggleDrawer(false));
   $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeModal(); });
   $("presenterBtn").addEventListener("click", (e) => {
-    const on = $("root").classList.toggle("presenter"); e.currentTarget.setAttribute("aria-pressed", String(on)); $("notes").open = on;
+    const on = $("root").classList.toggle("presenter"); e.currentTarget.setAttribute("aria-pressed", String(on));
   });
   $("themeBtn").addEventListener("click", () => {
     const r = document.documentElement;
