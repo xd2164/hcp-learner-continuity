@@ -5,7 +5,7 @@ track yet, and building one is step 1 below.
 
 ## Journey
 
-WGU → HCP + LearnCard → Career app A → Career app B
+University → HCP + learner wallet → Career app A → Career app B
 
 A learner carries verified skills, achievements and career goals across
 independent advising services. The second service gives better recommendations
@@ -20,7 +20,7 @@ Career navigation changes the issuer and the vocabulary, not the mechanism.
 
 | Track A (K-12 tutoring) | Track B (career navigation) |
 |---|---|
-| District issues an `OpenBadgeCredential` per CCSS standard | WGU issues credentials per competency or course (Open Badges 3.0 / CLR 2.0) |
+| District issues an `OpenBadgeCredential` per CCSS standard | The university issues credentials per competency or course (Open Badges 3.0 / CLR 2.0) |
 | Standards as `classification.dimension` | Competencies and skills (for example, Open Skills Network / RSD URIs) as dimensions |
 | Learner statements: what helps, pacing | Learner statements: career goals, constraints (location, schedule, pay) |
 | Practice system's `model-inferred` estimate | Career app A's inferred skill gaps or fit scores, with confidence |
@@ -29,7 +29,7 @@ Career navigation changes the issuer and the vocabulary, not the mechanism.
 
 ## Where the wallet fits
 
-In Track B the learner holds the credentials in a wallet (LearnCard) and
+In Track B the learner holds the credentials in a learner wallet and
 presents them. The HCP Provider records them as entries whose evidence is the
 presented credential. Applications therefore get both a portable, verifiable
 achievement and governed, purpose-bound context around it (goals, preferences,
@@ -41,9 +41,9 @@ revocation is enforced.
 
 ## Demonstration flow
 
-1. **Institutional record.** A synthetic WGU learner with completed competencies,
+1. **Institutional record.** A synthetic university learner with completed competencies,
    credentials and transcript-level data.
-2. **Wallet.** The credentials are issued to the learner's LearnCard wallet and
+2. **Wallet.** The credentials are issued to the learner's wallet and
    presented into HCP as `issuer-attested` entries.
 3. **Career app A.** It reads skills and goals under a temporary advising grant,
    recommends a pathway, and writes `model-inferred` skill-gap entries.
@@ -63,11 +63,11 @@ revocation is enforced.
 3. **Career apps.** Add `career.py`, mirroring `tutors.py`: A recommends and writes
    gaps; B continues; the cold-start counterfactual asks for a résumé.
 4. **Wallet integration.** Replace fixture credentials with credentials issued to
-   and presented from a LearnCard test wallet.
+   and presented from a test wallet.
 
 ## Open questions
 
-- Competency framework alignment between WGU, the knowledge graph and the career
+- Competency framework alignment between the university, the knowledge graph and the career
   apps' skill taxonomies. Is a crosswalk needed, or a shared skills registry?
 - Grant duration for advising. The fixture's advisor grant is temporary and
   expires within hours. Is that the right default for career services?

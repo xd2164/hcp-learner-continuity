@@ -4,7 +4,7 @@
 
 | Step | What happens | In this repo |
 |---|---|---|
-| 1. Existing learner record | A synthetic student's knowledge, mastery history and gaps, mapped to standards (Learning Commons knowledge graph in the pilot). | Understudy export: school-issued Open Badge credentials per standard, a mastery-frontier extract, assessments, practice estimates from a model, and the learner's own statements. |
+| 1. Existing learner record | A synthetic student's knowledge, mastery history and gaps, mapped to standards (the learning-platform partner's knowledge graph in the pilot). | Understudy export: school-issued Open Badge credentials per standard, a mastery-frontier extract, assessments, practice estimates from a model, and the learner's own statements. |
 | 2. Tutor A personalizes | Tutor A reads authorized context and targets the learner's frontier. | `plan_tutor_a`: picks the lowest not-yet-mastered standard, uses the learner's stated pacing, what helps and interests. |
 | 3. New evidence | The learner practices; progress is written back to HCP with its source and permissions. | `run_session` writes a `model-inferred` practice estimate (medium confidence, validity window, rationale) under Tutor A's grant. |
 | 4. Switch to Tutor B | The learner revokes Tutor A and grants Tutor B, an independent product. | Tutor A's next call gets `invalid-token`. Tutor B reads the updated context, including Tutor A's entry. |
@@ -53,10 +53,10 @@ reaches Tutor B along with the entries it covers.
 
 ## From demo to pilot
 
-1. Replace the Understudy export with Learning Commons synthetic records mapped
+1. Replace the Understudy export with the learning-platform partner's synthetic records mapped
    to its knowledge graph (same HCP shape, so the provider and checker carry over).
 2. Replace the rule-based tutors with two independently built tutors (for example,
-   one on Playlab and one from Quill or another partner), each calling a real
+   from two different tutoring providers), each calling a real
    HCP provider over the HTTP or MCP binding.
 3. Run the with/without comparison on matched synthetic learners, then on
    consenting real learners under an IRB-style protocol.

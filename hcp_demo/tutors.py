@@ -2,8 +2,8 @@
 
 The tutors are deliberately simple and deterministic (no model calls) so the
 demo is repeatable and the comparison is about *context*, not tutor quality.
-A real pilot would swap these for products such as those built on Playlab or
-Quill; the HCP calls they make would be the same.
+A real pilot would swap these for independently built tutoring
+products; the HCP calls they make would be the same.
 """
 from __future__ import annotations
 

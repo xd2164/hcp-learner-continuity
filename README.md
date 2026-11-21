@@ -13,7 +13,7 @@ It runs two parallel demonstrations on the same infrastructure:
 
 | | Track A: AI tutoring | Track B: Career navigation |
 |---|---|---|
-| Journey | Learning Commons → HCP → Tutor A → Tutor B | WGU → HCP + LearnCard → Career app A → Career app B |
+| Journey | Learning platform → HCP → Tutor A → Tutor B | University → HCP + learner wallet → Career app A → Career app B |
 | Evidence | Assessment and mastery records | Institutional competencies and credentials |
 | Status here | **Runnable demo on synthetic learners** | Design and data mapping ([docs/track-b-career-navigation.md](docs/track-b-career-navigation.md)) |
 

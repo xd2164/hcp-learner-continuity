@@ -33,19 +33,19 @@ HCP, and a wallet the learner controls.
 
 ### Track A: AI tutoring
 
-Learning Commons → HCP → AI Tutor A → AI Tutor B
+Learning platform → HCP → AI Tutor A → AI Tutor B
 
 A learner switches tutors without losing their mastery history,
-misconceptions or learning progress. Potential partners: Learning Commons,
-Playlab, Quill. Details: [track-a-tutoring.md](track-a-tutoring.md).
+misconceptions or learning progress. Potential partners: a learning-platform
+partner with a knowledge graph, and AI tutoring providers. Details: [track-a-tutoring.md](track-a-tutoring.md).
 
 ### Track B: Career navigation
 
-WGU → HCP + LearnCard → Career app A → Career app B
+University → HCP + learner wallet → Career app A → Career app B
 
 A learner carries verified skills, achievements and career goals across
-independent advising services. Potential partners: WGU, LEF, independent
-career-navigation providers. Details: [track-b-career-navigation.md](track-b-career-navigation.md).
+independent advising services. Potential partners: a competency-based
+university, a workforce-learning partner, and independent career-navigation providers. Details: [track-b-career-navigation.md](track-b-career-navigation.md).
 
 ## How the two tracks reinforce each other
 
@@ -58,14 +58,14 @@ career-navigation providers. Details: [track-b-career-navigation.md](track-b-car
 | What it shows       | Two tutors sharing learning continuity | Two career services using portable skills  |
 | Outcome to test     | Learning relevance and progress        | Recommendation quality and reduced intake  |
 
-A wallet such as LearnCard is not required for the first tutoring demo. It
+A learner wallet is not required for the first tutoring demo. It
 would add complexity without showing more value to the learner. It becomes useful
 once verified tutoring outcomes feed into a broader learner record, which is
 where the two tracks meet.
 
 ## Sequencing
 
-1. **Tutoring first.** Learning Commons already has a prototype that turns
+1. **Tutoring first.** A learning-platform partner already has a prototype that turns
    synthetic records into HCP, so this is the nearest-term demonstration. This
    repo runs that handoff end to end on the Understudy fixture.
 2. **Career navigation next.** It connects institutional achievements to
